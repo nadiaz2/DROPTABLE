@@ -83,24 +83,23 @@ namespace WebSockets
 		{
 			get
 			{
-				List<NetworkInterfaceInfo> values = new List<NetworkInterfaceInfo>();
+				var values = new List<NetworkInterfaceInfo>();
 
-				foreach (var nic in NetworkInterface.GetAllNetworkInterfaces())
+				// All interfaces that are up and have a default gateway
+				var validInterfaces =
+					NetworkInterface.GetAllNetworkInterfaces()
+					.Where((nic) => nic.OperationalStatus == OperationalStatus.Up)
+					.Where((nic) => nic.GetIPProperties()?.GatewayAddresses?.Count > 0);
+
+				foreach (var nic in validInterfaces)
 				{
-					var properties = nic.GetIPProperties();
+					var validIP = nic.GetIPProperties().UnicastAddresses
+						.Where((ip) => ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+						.Select((ip) => ip.Address.ToString())
+						.DefaultIfEmpty("0.0.0.0").First();
 
-					// Checks if the network connection is up AND if the network interface has a default gateway
-					if ((properties?.GatewayAddresses?.Count > 0) && (nic.OperationalStatus == OperationalStatus.Up))
-					{
-						foreach (var ip in properties.UnicastAddresses)
-						{
-							if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-							{
-								//Debug.Log($"{nic.Name} {ip.Address.ToString()}");
-								values.Add(new NetworkInterfaceInfo(nic.Name, ip.Address.ToString()));
-							}
-						}
-					}
+					//Debug.Log($"{nic.Name} {validIP.Address.ToString()}");
+					values.Add(new NetworkInterfaceInfo(nic.Name, validIP));
 				}
 
 				return values;
