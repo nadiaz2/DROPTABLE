@@ -1,0 +1,1 @@
+let last_page  = 'game1.html';
