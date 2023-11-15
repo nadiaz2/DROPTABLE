@@ -51,7 +51,7 @@ public class PhoneClicked : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
-            if (Physics.Raycast(ray, out Hit, 1000f))
+            if (Physics.Raycast(ray, out Hit))
             {
                 if (Hit.collider.gameObject.tag == "Phone")
                 {
@@ -72,7 +72,7 @@ public class PhoneClicked : MonoBehaviour
         SocketServer server = SocketServer.Instance;
         int port = server.StartServer();
         NetworkInterfaceInfo interfaceInfo = server.Networks.FirstOrDefault();
-        EncodeTextToQRCode($"http://{interfaceInfo.IPString}:{port}/");
+        EncodeTextToQRCode($"http://{interfaceInfo.IPString}:{port}/before.html");
     }
 
     private void EncodeTextToQRCode(string textWrite)
