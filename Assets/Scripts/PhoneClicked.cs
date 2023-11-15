@@ -4,6 +4,12 @@ using UnityEngine;
 
 using System;
 
+using WebSockets;
+using System.Linq;
+
+using ZXing;
+using ZXing.QrCode;
+
 public class PhoneClicked : MonoBehaviour
 {
     private Vector3 startPosition;
@@ -15,6 +21,10 @@ public class PhoneClicked : MonoBehaviour
 
     private GameObject camera;
 
+    // QRCode Fields
+    private Texture2D _storeEncodedTexture;
+    public GameObject phoneScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +32,10 @@ public class PhoneClicked : MonoBehaviour
         startRotation = gameObject.transform.rotation;
         lerpPercent = 0.0f;
         phoneMoving = false;
-        
 
         camera = GameObject.Find("PlayerCamera");
+
+        _storeEncodedTexture = new Texture2D(256, 256);
     }
 
     // Update is called once per frame
@@ -58,6 +69,34 @@ public class PhoneClicked : MonoBehaviour
 
     private void DisplayQRCode()
     {
-        Debug.Log("Hi");
+        SocketServer server = SocketServer.Instance;
+        int port = server.StartServer();
+        NetworkInterfaceInfo interfaceInfo = server.Networks.FirstOrDefault();
+        EncodeTextToQRCode($"http://{interfaceInfo.IPString}:{port}/");
+    }
+
+    private void EncodeTextToQRCode(string textWrite)
+    {
+        //string textWrite = string.IsNullOrEmpty(_textInputField.text) ? "Please give what you want to encode" : _textInputField.text;
+        
+        Color32[] _convertPixelToTexture = Encode(textWrite, _storeEncodedTexture.width, _storeEncodedTexture.height);
+        _storeEncodedTexture.SetPixels32(_convertPixelToTexture);
+        _storeEncodedTexture.Apply();
+
+        phoneScreen.GetComponent<Renderer>().material.mainTexture = _storeEncodedTexture;
+    }
+
+    private Color32[] Encode(string textForEncoding, int width, int height)
+    {
+        BarcodeWriter writer = new BarcodeWriter
+        {
+            Format = BarcodeFormat.QR_CODE,
+            Options = new QrCodeEncodingOptions
+            {
+                Height = height,
+                Width = width,
+            }
+        };
+        return writer.Write(textForEncoding);
     }
 }
