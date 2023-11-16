@@ -10,6 +10,7 @@ using System.Net.NetworkInformation;
 using System.Collections.Generic;
 
 using UnityEngine;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WebSockets
 {
@@ -43,10 +44,12 @@ namespace WebSockets
 
 		private SocketServer()
 		{
-			httpsv = new HttpServer(PORT);
-			httpsv.AddWebSocketService<Echo>("/");
+			httpsv = new HttpServer(PORT, true);
+			httpsv.AddWebSocketService<HandleMessage>("/");
+            httpsv.SslConfiguration.ServerCertificate = new X509Certificate2("Assets/Certificate/Droptable.pfx", "123456");
 
-			httpsv.DocumentRootPath = "Assets/HTTP_Public";
+
+            httpsv.DocumentRootPath = "Assets/HTTP_Public";
 			httpsv.AllowForwardedRequest = true;
 
 			SetHTTPGet();

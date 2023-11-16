@@ -11,10 +11,11 @@
 <script>
     window.onload = async function (e) {
         e.preventDefault();
-        let webSocket = new WebSocket('ws://' + window.location.host)
+        let webSocket = new WebSocket('wss://' + window.location.host)
 
         //receiving
         webSocket.onmessage = (event) => {
+            console.log(event.data)
             const pc_message = JSON.parse(event.data)
             if (pc_message.name === "MiniGameStart"){
                 console.log(pc_message);
@@ -37,6 +38,9 @@
             return new Promise(poll);
 
         }
+        
+        const obj = {name: "connect", message: 1};
+        webSocket.send(JSON.stringify(obj));
     }
 </script>
 <style>

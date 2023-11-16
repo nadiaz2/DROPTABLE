@@ -1,13 +1,22 @@
-using System;
+using UnityEngine;
+
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
+using JSONObjects;
+
 namespace WebSocketBehaviors {
-    public class Echo : WebSocketBehavior
+    public class HandleMessage : WebSocketBehavior
     {
         protected override void OnMessage (MessageEventArgs e)
         {
-            Send (e.Data);
+            MessageObject messageData = JsonUtility.FromJson<MessageObject>(e.Data);
+            Debug.Log(messageData.name);
+
+            if(messageData.name == "connect")
+            {
+                Send($"{{\"name\": \"MiniGameStart\", \"message\": 1}}");
+            }
         }
     }
 }

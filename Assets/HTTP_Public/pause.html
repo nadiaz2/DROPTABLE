@@ -9,7 +9,7 @@
 <script>
     window.onload = async function (e) {
         e.preventDefault();
-        let webSocket = new WebSocket('ws://' + window.location.host)
+        let webSocket = new WebSocket('wss://' + window.location.host)
 
         //receiving
         webSocket.onmessage = (event) => {

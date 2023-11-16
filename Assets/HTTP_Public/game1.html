@@ -4,8 +4,11 @@
 <head >
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="game1.js"></script>
+
 </head>
-<body >
+<body>
 
 <div class="grid-container">
   <div class="grid-item"><button class="icon" type="button" onclick="window.location.href='browser.html'">Browser</button></div>
@@ -19,11 +22,11 @@
 
 <button class="home" type="button" onclick="window.location.href='game1.html'">Home</button>
 </body>
-
+<!--
 <script>
   window.onload = async function (e) {
     e.preventDefault();
-    let webSocket = new WebSocket('ws://' + window.location.host);
+    let webSocket = new WebSocket('wss://' + window.location.host);
 
     //receiving
     webSocket.onmessage = (event) => {
@@ -39,6 +42,7 @@
   }
 
   function handleOrientation(event){
+    console.log(event.absolute);
     if (event.beta > 100 || event.beta < -100){
       window.location.href = 'pause.html';
     }
@@ -55,6 +59,7 @@
 
   }
 </script>
+-->
 
 <style>
   .grid-container {

@@ -72,7 +72,7 @@ public class PhoneClicked : MonoBehaviour
         SocketServer server = SocketServer.Instance;
         int port = server.StartServer();
         NetworkInterfaceInfo interfaceInfo = server.Networks.FirstOrDefault();
-        EncodeTextToQRCode($"http://{interfaceInfo.IPString}:{port}/before.html");
+        EncodeTextToQRCode($"https://{interfaceInfo.IPString}:{port}/before.html");
     }
 
     private void EncodeTextToQRCode(string textWrite)
