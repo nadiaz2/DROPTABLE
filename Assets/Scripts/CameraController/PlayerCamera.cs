@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    public DialogueTrigger trigger;
     public float sensX;
     public float sensY;
 
@@ -16,7 +15,7 @@ public class PlayerCamera : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        if (!trigger.dialogueStart)
+        if (!DialogueTrigger.dialogueStart)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -26,7 +25,7 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!trigger.dialogueStart)
+        if (!DialogueTrigger.dialogueStart)
         {
             // get mouse input
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;

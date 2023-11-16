@@ -6,7 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
 
     public Dialogue dialogue;
-    public bool dialogueStart = false;
+    public static bool dialogueStart = false;
 
 
     public void TriggerDialogue()
@@ -16,5 +16,7 @@ public class DialogueTrigger : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
+
+
 
 }

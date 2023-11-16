@@ -5,12 +5,11 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour
 {
     public Transform cameraPosition;
-    public DialogueTrigger trigger;
 
     // Update is called once per frame
     void Update()
     {
-        if (!trigger.dialogueStart)
+        if (!DialogueTrigger.dialogueStart)
         {
             transform.position = cameraPosition.position;
         }

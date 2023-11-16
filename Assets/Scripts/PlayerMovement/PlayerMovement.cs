@@ -34,6 +34,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DialogueTrigger.dialogueStart)
+        {
+            rb.velocity = Vector3.zero;
+            rb.drag = groundDrag;
+            return;
+        }
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsground);
 
@@ -49,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (DialogueTrigger.dialogueStart)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
         MovePlayer();
     }
 
