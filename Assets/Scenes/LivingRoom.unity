@@ -1885,7 +1885,7 @@ MonoBehaviour:
   dialogue:
     names:
     - Mysterious TV
-    - Tom
+    - Mysterious TV
     - Mysterious TV
     sentences:
     - This is a TV
@@ -2293,7 +2293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     names:
-    - Tom
+    - Tom (you)
     - Jacob
     - 
     sentences:
@@ -4228,12 +4228,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     names:
-    - Tom
+    - Tom (you)
     - 
     - Jacob
     - 
     - Jacob
-    - Tom
+    - Tom (you)
     - 
     - 
     - Jacob
