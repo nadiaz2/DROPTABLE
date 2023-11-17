@@ -19,6 +19,8 @@ public class PhoneClicked : MonoBehaviour
     private float lerpPercent;
     private bool phoneMoving;
 
+    public static bool onPhone = false;
+
     private GameObject camera;
 
     // QRCode Fields
@@ -58,7 +60,7 @@ public class PhoneClicked : MonoBehaviour
                     phoneMoving = true;
                     finalPosition = camera.transform.position + camera.transform.forward * 10f;
                     finalRotation = camera.transform.rotation * Quaternion.AngleAxis(180, Vector3.up);
-
+                    onPhone = true;
                     DisplayQRCode();
                 }
             }
