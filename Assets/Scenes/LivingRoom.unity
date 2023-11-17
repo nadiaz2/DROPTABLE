@@ -808,7 +808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cfb978ba163a640996ca38f323a6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 806800768}
   sensX: 800
   sensY: 800
   orientation: {fileID: 1130286925}
@@ -1131,8 +1130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 2058001966}
   dialogueText: {fileID: 1428187408}
-  trigger: {fileID: 806800768}
-  Charactertrigger: {fileID: 1893242662}
   animator: {fileID: 1783958855}
   textSpeed: 0.1
 --- !u!4 &615378955
@@ -1527,6 +1524,50 @@ Transform:
   - {fileID: 180105951}
   m_Father: {fileID: 2011511414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &803302790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 803302792}
+  - component: {fileID: 803302791}
+  m_Layer: 0
+  m_Name: SocketIOClient
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &803302791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803302790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca920a4ee6ae2d4394cb4032885f882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &803302792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803302790}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.409832, y: 291.23706, z: -583.635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &805898222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,10 +1801,6 @@ MonoBehaviour:
     - This is a TV
     - It does nothing so far
     - Go Away
-  CharacterDialogue:
-    names: []
-    sentences: []
-  dialogueStart: 0
 --- !u!114 &806800769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2483,7 +2520,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPosition: {fileID: 1599033830}
-  trigger: {fileID: 806800768}
 --- !u!1 &1327558480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3991,10 +4027,6 @@ MonoBehaviour:
     sentences:
     - Hi Tom
     - Hi Jacob
-  CharacterDialogue:
-    names: []
-    sentences: []
-  dialogueStart: 0
 --- !u!114 &1893242663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4457,3 +4489,4 @@ SceneRoots:
   - {fileID: 637259128}
   - {fileID: 1926368472}
   - {fileID: 1893242667}
+  - {fileID: 803302792}
