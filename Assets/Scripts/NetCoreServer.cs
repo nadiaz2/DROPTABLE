@@ -13,17 +13,9 @@ namespace WebSockets
 	public class NetCoreWebsockets
 	{
 		private const int port = 3000 ;
+        public static NetCoreWebsockets Instance { get; } = new NetCoreWebsockets();
 
-		private static readonly NetCoreWebsockets instance = new NetCoreWebsockets();
-		public static NetCoreWebsockets Instance
-		{
-			get
-			{
-				return instance;
-			}
-		}
-
-		private SslContext context;
+        private SslContext context;
 		private Server server;
 
 		private NetCoreWebsockets()

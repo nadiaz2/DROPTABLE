@@ -53,12 +53,10 @@ public class PhoneClicked : MonoBehaviour
             RaycastHit Hit;
             if (Physics.Raycast(ray, out Hit))
             {
-                if (Hit.collider.gameObject.tag == "Phone")
+                if (Hit.collider.gameObject.CompareTag("Phone"))
                 {
                     phoneMoving = true;
                     finalPosition = camera.transform.position + camera.transform.forward * 10f;
-
-                    Vector3 rot = camera.transform.rotation.eulerAngles;
                     finalRotation = camera.transform.rotation * Quaternion.AngleAxis(180, Vector3.up);
 
                     DisplayQRCode();
@@ -69,9 +67,10 @@ public class PhoneClicked : MonoBehaviour
 
     private void DisplayQRCode()
     {
-        SocketServer server = SocketServer.Instance;
+        //SocketServer server = SocketServer.Instance;
         //NetCoreWebsockets server = NetCoreWebsockets.Instance;
-        int port = server.StartServer();
+        //int port = server.StartServer();
+        int port = 8000;
         NetworkInterfaceInfo interfaceInfo = Utility.Networks.FirstOrDefault();
         EncodeTextToQRCode($"https://{interfaceInfo.IPString}:{port}/before.html");
     }

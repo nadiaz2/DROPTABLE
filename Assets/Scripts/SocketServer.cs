@@ -58,27 +58,21 @@ namespace WebSockets
 
 	public sealed class SocketServer
 	{
-		private static readonly SocketServer instance = new SocketServer();
-		public static SocketServer Instance
-		{
-			get
-			{
-				return instance;
-			}
-		}
+        public static SocketServer Instance { get; } = new SocketServer();
 
-		const int PORT = 3000;
+        const int PORT = 3000;
 
 		private static bool running = false;
-		private HttpServer httpsv;
+		private readonly HttpServer httpsv;
 
 		private SocketServer()
 		{
 			httpsv = new HttpServer(PORT, true);
 			httpsv.AddWebSocketService<HandleMessage>("/");
 			httpsv.SslConfiguration.ServerCertificate = new X509Certificate2("Assets/Certificate/Droptable.pfx", "123456");
+            httpsv.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
 
-			httpsv.DocumentRootPath = "Assets/HTTP_Public";
+            httpsv.DocumentRootPath = "Assets/HTTP_Public";
 
 			SetHTTPGet();
 		}
