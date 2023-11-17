@@ -43,6 +43,7 @@ public class PhoneClicked : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(phoneMoving) {
             this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
             this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
@@ -53,9 +54,9 @@ public class PhoneClicked : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
-            if (Physics.Raycast(ray, out Hit))
+            if (Physics.Raycast(ray, out Hit, 75f))
             {
-                if (Hit.collider.gameObject.CompareTag("Phone"))
+                if (Hit.collider.gameObject.CompareTag("Phone") && JacobDialogue.JacobTalked)
                 {
                     phoneMoving = true;
                     finalPosition = camera.transform.position + camera.transform.forward * 10f;
