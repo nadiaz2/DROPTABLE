@@ -81,5 +81,8 @@ public class DialogueManager : MonoBehaviour
         Cursor.visible = false;
         DialogueTrigger.dialogueStart = false;
 
+        if(GameManager.state == GameState.TalkingToJacob) {
+            GameManager.state = GameState.FinishedTalking;
+        }
     }
 }
