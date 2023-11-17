@@ -808,7 +808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cfb978ba163a640996ca38f323a6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 806800768}
   sensX: 800
   sensY: 800
   orientation: {fileID: 1130286925}
@@ -1131,10 +1130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 2058001966}
   dialogueText: {fileID: 1428187408}
-  trigger: {fileID: 806800768}
-  Charactertrigger: {fileID: 1893242662}
   animator: {fileID: 1783958855}
-  textSpeed: 0.1
+  textSpeed: 0.01
 --- !u!4 &615378955
 Transform:
   m_ObjectHideFlags: 0
@@ -1760,10 +1757,6 @@ MonoBehaviour:
     - This is a TV
     - It does nothing so far
     - Go Away
-  CharacterDialogue:
-    names: []
-    sentences: []
-  dialogueStart: 0
 --- !u!114 &806800769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2483,7 +2476,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPosition: {fileID: 1599033830}
-  trigger: {fileID: 806800768}
 --- !u!1 &1327558480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,15 +3978,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     names:
+    - Tom
+    - 
+    - Jacob
+    - 
     - Jacob
     - Tom
+    - 
+    - 
+    - Jacob
+    - 
     sentences:
-    - Hi Tom
-    - Hi Jacob
-  CharacterDialogue:
-    names: []
-    sentences: []
-  dialogueStart: 0
+    - What did you go out for so late? Does discussing with the professor really
+      take this long? Or did you hook up with the professor?
+    - (Faced with Tom's boring joke, Jacob seemed to ignore it.)
+    - Nothing much, just chatted with an acquaintance.
+    - "(Tom didn\u2019t really care about Jacob's answer, because his question was
+      instinctively raised, and he didn\u2019t care why Jacob came back so late.)"
+    - You said you wanted to ask me about the homework. Bring a chair over to my
+      room and do it. I'll order some takeout first. Do you want anything?
+    - Just order whatever you're having, thanks.
+    - "(Then they began their \"discussion\" about the homework. Rather than a discussion,
+      it was more like a one-sided indoctrination. Like a goose being force-fed for
+      foie gras due to human desire, and just like the goose, he didn\u2019t digest
+      much.)"
+    - "(Tom just wanted to know how to write the homework. He was not interested
+      in the process, but his damn pride didn\u2019t allow him to directly ask for
+      the answers, and even if he did ask, Jacob probably wouldn't agree to tell
+      him the answers directly. Just when the progress was at a stalemate, Jacob's
+      phone rang.)"
+    - "The takeout is here... Hello? Yes, it's the door at the garage, no, there
+      are no potted plants in front of our door... No, not the blue door, that's
+      our neighbor\u2019s, ugh, I'll come down to pick it up, don\u2019t move, I\u2019m
+      coming."
+    - (After hanging up and casually placing his phone on the table, Jacob quickly
+      walked outside. Watching Jacob's gradually disappearing figure, Tom, bored
+      at this moment, casually picked up Jacob's phone.)
 --- !u!114 &1893242663
 MonoBehaviour:
   m_ObjectHideFlags: 0
