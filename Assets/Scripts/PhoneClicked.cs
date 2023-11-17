@@ -20,6 +20,7 @@ public class PhoneClicked : MonoBehaviour
     private bool phoneMoving;
 
     public static bool onPhone = false;
+    public static bool wasPaused = false;
 
     private GameObject camera;
 
@@ -43,8 +44,29 @@ public class PhoneClicked : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(wasPaused)
+        {
+            finalPosition = camera.transform.position + camera.transform.forward * 10f;
+            finalRotation = camera.transform.rotation * Quaternion.AngleAxis(180, Vector3.up);
+            wasPaused = false;
+        }
 
-        if(phoneMoving) {
+        if (PhoneFoundDialogue.photoFound || GameManager.state == GameState.GamePaused)
+        {
+            this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
+            this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
+            lerpPercent = Math.Max(lerpPercent - 0.005f, 0.0f);
+            onPhone = false;
+        }
+        else if(GameManager.state == GameState.PlayingGame)
+        {
+            this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
+            this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
+            lerpPercent = Math.Min(lerpPercent + 0.005f, 1.0f);
+            onPhone = true;
+        }
+        else if(phoneMoving)
+        {
             this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
             this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
             lerpPercent = Math.Min(lerpPercent + 0.005f, 1.0f);

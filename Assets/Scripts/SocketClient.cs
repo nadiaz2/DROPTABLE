@@ -58,12 +58,15 @@ public class SocketClient : MonoBehaviour
         {
             var obj = response.GetValue<string>();
             Debug.Log(obj);
+            GameManager.state = GameState.PlayingGame;
+            PhoneClicked.wasPaused = true;
         });
 
         socket.On("PhoneFaceDown", (response) =>
         {
-            var obj = response.GetValue<string>();
-            Debug.Log(obj);
+            //var obj = response.GetValue<string>();
+            //Debug.Log(obj);
+            GameManager.state = GameState.GamePaused;
         });
 
         socket.On("MiniGameEnd", (response) =>
