@@ -69,9 +69,10 @@ public class PhoneClicked : MonoBehaviour
 
     private void DisplayQRCode()
     {
-        SocketServer server = SocketServer.Instance;
+        //SocketServer server = SocketServer.Instance;
+        NetCoreWebsockets server = NetCoreWebsockets.Instance;
         int port = server.StartServer();
-        NetworkInterfaceInfo interfaceInfo = server.Networks.FirstOrDefault();
+        NetworkInterfaceInfo interfaceInfo = Utility.Networks.FirstOrDefault();
         EncodeTextToQRCode($"https://{interfaceInfo.IPString}:{port}/before.html");
     }
 
