@@ -56,7 +56,7 @@ public class PhoneClicked : MonoBehaviour
             RaycastHit Hit;
             if (Physics.Raycast(ray, out Hit, 75f))
             {
-                if (Hit.collider.gameObject.CompareTag("Phone") && JacobDialogue.JacobTalked)
+                if (Hit.collider.gameObject.CompareTag("Phone") && (GameManager.state == GameState.FinishedTalking))
                 {
                     phoneMoving = true;
                     finalPosition = camera.transform.position + camera.transform.forward * 10f;

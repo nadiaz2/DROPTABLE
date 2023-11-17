@@ -7,17 +7,25 @@ public class JacobDialogue : MonoBehaviour
 
     public DialogueTrigger trigger;
 
-    public static bool JacobTalked = false;
+    private Vector3 startPosition;
+    public Vector3 finalPosition;
+    private float lerpPercent;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        startPosition = transform.position;
+        lerpPercent = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.state == GameState.FinishedTalking) {
+            this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
+            lerpPercent = Math.Min(lerpPercent + 0.005f, 1.0f);
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -27,7 +35,7 @@ public class JacobDialogue : MonoBehaviour
                 if (Hit.collider.gameObject.tag == "Jacob")
                 {
                     trigger.TriggerDialogue();
-                    JacobTalked = true;
+                    GameManager.state = GameState.TalkingToJacob;
                 }
             }
         }
