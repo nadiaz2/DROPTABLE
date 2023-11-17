@@ -78,9 +78,7 @@ namespace WebSockets
 			httpsv.AddWebSocketService<HandleMessage>("/");
 			httpsv.SslConfiguration.ServerCertificate = new X509Certificate2("Assets/Certificate/Droptable.pfx", "123456");
 
-
 			httpsv.DocumentRootPath = "Assets/HTTP_Public";
-			//httpsv.AllowForwardedRequest = true;
 
 			SetHTTPGet();
 		}
