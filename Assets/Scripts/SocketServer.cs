@@ -26,63 +26,9 @@ namespace WebSockets
 		public string IPString { get; }
 	}
 
-	public sealed class SocketServer
+	class Utility
 	{
-		private static readonly SocketServer instance = new SocketServer();
-		public static SocketServer Instance
-		{
-			get
-			{
-				return instance;
-			}
-		}
-
-		const int PORT = 3000;
-
-		private static bool running = false;
-		private HttpServer httpsv;
-
-		private SocketServer()
-		{
-			httpsv = new HttpServer(PORT, true);
-			httpsv.AddWebSocketService<HandleMessage>("/");
-            httpsv.SslConfiguration.ServerCertificate = new X509Certificate2("Assets/Certificate/Droptable.pfx", "123456");
-
-
-            httpsv.DocumentRootPath = "Assets/HTTP_Public";
-			httpsv.AllowForwardedRequest = true;
-
-			SetHTTPGet();
-		}
-
-
-		public int StartServer()
-		{
-			if (running)
-			{
-				return PORT;
-			}
-
-			httpsv.Start();
-
-			// Print info about server to console
-			if (httpsv.IsListening)
-			{
-				Debug.Log($"{Networks.FirstOrDefault().IPString}");
-				Debug.Log($"Listening on port {httpsv.Port}, and providing WebSocket services:");
-
-				foreach (var path in httpsv.WebSocketServices.Paths)
-				{
-					Debug.Log($"- {path}");
-				}
-			}
-
-			running = true;
-
-			return PORT;
-		}
-
-		public List<NetworkInterfaceInfo> Networks
+		public static List<NetworkInterfaceInfo> Networks
 		{
 			get
 			{
@@ -108,6 +54,57 @@ namespace WebSockets
 				return values;
 			}
 		}
+	}
+
+	public sealed class SocketServer
+	{
+        public static SocketServer Instance { get; } = new SocketServer();
+
+        const int PORT = 3000;
+
+		private static bool running = false;
+		private readonly HttpServer httpsv;
+
+		private SocketServer()
+		{
+			httpsv = new HttpServer(PORT, true);
+			httpsv.AddWebSocketService<HandleMessage>("/");
+			httpsv.SslConfiguration.ServerCertificate = new X509Certificate2("Assets/Certificate/Droptable.pfx", "123456");
+            httpsv.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+
+            httpsv.DocumentRootPath = "Assets/HTTP_Public";
+
+			SetHTTPGet();
+		}
+
+
+		public int StartServer()
+		{
+			if (running)
+			{
+				return PORT;
+			}
+
+			httpsv.Start();
+
+			// Print info about server to console
+			if (httpsv.IsListening)
+			{
+				Debug.Log($"{Utility.Networks.FirstOrDefault().IPString}");
+				Debug.Log($"Listening on port {httpsv.Port}, and providing WebSocket services:");
+
+				foreach (var path in httpsv.WebSocketServices.Paths)
+				{
+					Debug.Log($"- {path}");
+				}
+			}
+
+			running = true;
+
+			return PORT;
+		}
+
+
 
 		private void SetHTTPGet()
 		{
