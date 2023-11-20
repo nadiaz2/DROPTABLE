@@ -19,6 +19,9 @@ public class PhoneClicked : MonoBehaviour
     private float lerpPercent;
     private bool phoneMoving;
 
+    public static bool onPhone = false;
+    public static bool wasPaused = false;
+
     private GameObject camera;
 
     // QRCode Fields
@@ -41,7 +44,29 @@ public class PhoneClicked : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(phoneMoving) {
+        if(wasPaused)
+        {
+            finalPosition = camera.transform.position + camera.transform.forward * 10f;
+            finalRotation = camera.transform.rotation * Quaternion.AngleAxis(180, Vector3.up);
+            wasPaused = false;
+        }
+
+        if (PhoneFoundDialogue.photoFound || GameManager.state == GameState.GamePaused)
+        {
+            this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
+            this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
+            lerpPercent = Math.Max(lerpPercent - 0.005f, 0.0f);
+            onPhone = false;
+        }
+        else if(GameManager.state == GameState.PlayingGame)
+        {
+            this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
+            this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
+            lerpPercent = Math.Min(lerpPercent + 0.005f, 1.0f);
+            onPhone = true;
+        }
+        else if(phoneMoving)
+        {
             this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
             this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
             lerpPercent = Math.Min(lerpPercent + 0.005f, 1.0f);
@@ -51,14 +76,14 @@ public class PhoneClicked : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
-            if (Physics.Raycast(ray, out Hit))
+            if (Physics.Raycast(ray, out Hit, 75f))
             {
-                if (Hit.collider.gameObject.CompareTag("Phone"))
+                if (Hit.collider.gameObject.CompareTag("Phone") && (GameManager.state == GameState.FinishedTalking))
                 {
                     phoneMoving = true;
                     finalPosition = camera.transform.position + camera.transform.forward * 10f;
                     finalRotation = camera.transform.rotation * Quaternion.AngleAxis(180, Vector3.up);
-
+                    onPhone = true;
                     DisplayQRCode();
                 }
             }

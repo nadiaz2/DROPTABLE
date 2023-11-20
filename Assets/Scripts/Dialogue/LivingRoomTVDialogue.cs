@@ -20,7 +20,7 @@ public class LivingRoomTVDialogue : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
-            if (Physics.Raycast(ray, out Hit))
+            if (Physics.Raycast(ray, out Hit, 100f))
             {
                 if (Hit.collider.gameObject.tag == "TV")
                 {

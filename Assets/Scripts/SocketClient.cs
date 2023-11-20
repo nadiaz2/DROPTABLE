@@ -11,6 +11,8 @@ public class SocketClient : MonoBehaviour
 {
     private SocketIOUnity socket;
 
+    private bool minigamePlayed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,11 @@ public class SocketClient : MonoBehaviour
         socket.On("PlayerConnect", (response) =>
         {
             var obj = response.GetValue<string>();
-            socket.Emit("MiniGameStart", "game1");
+            if (!minigamePlayed)
+            {
+                minigamePlayed = true;
+                socket.Emit("MiniGameStart", "game1");
+            }
             Debug.Log(obj);
         });
         
@@ -52,18 +58,22 @@ public class SocketClient : MonoBehaviour
         {
             var obj = response.GetValue<string>();
             Debug.Log(obj);
+            GameManager.state = GameState.PlayingGame;
+            PhoneClicked.wasPaused = true;
         });
 
         socket.On("PhoneFaceDown", (response) =>
         {
-            var obj = response.GetValue<string>();
-            Debug.Log(obj);
+            //var obj = response.GetValue<string>();
+            //Debug.Log(obj);
+            GameManager.state = GameState.GamePaused;
         });
 
         socket.On("MiniGameEnd", (response) =>
         {
-            var obj = response.GetValue<string>();
-            Debug.Log(obj);
+            //var obj = response.GetValue<string>();
+            //Debug.Log(obj);
+            PhoneFoundDialogue.photoFound = true;
         });
 
         Debug.Log("before connect");
