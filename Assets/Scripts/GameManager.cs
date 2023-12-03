@@ -4,7 +4,7 @@ enum GameState {
 	TalkingToJacob,
 	FinishedTalking,
 	PlayingGame,
-	GamePaused
+	GamePaused,
 }
 class GameManager {
 	public static GameState state = GameState.GameStart;
