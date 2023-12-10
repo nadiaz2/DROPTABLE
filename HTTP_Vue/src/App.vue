@@ -1,17 +1,8 @@
+import { RouterLink, RouterView } from 'vue-router'
+
 <template>
-  <v-container class="background">
-    <v-row>
-      <v-col
-        v-for="n in 24"
-        :key="n"
-        cols="3"
-      >
-        <v-card @click="goToPage('page' + n)" class="app-card">
-          <v-card-title>App {{ n }}</v-card-title>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+  <RouterView />
+
 </template>
 
 <script>
@@ -19,14 +10,11 @@
 
 import 'vuetify/styles';
 
-
-
 export default {
-  name: 'YourComponent',
+  name: 'App',
   methods: {
     goToPage(page) {
       console.log(page);
-
     }
   }
 
@@ -43,5 +31,8 @@ export default {
 }
 .background{
   background-image: url("https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+.app-card{
+  margin: auto;
 }
 </style>
