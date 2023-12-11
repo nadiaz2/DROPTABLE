@@ -8,6 +8,7 @@ TagManager:
   - Phone
   - Jacob
   - TomsDoor
+  - JacobsDoor
   layers:
   - Default
   - TransparentFX
