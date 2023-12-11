@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import { createVuetify } from 'vuetify';
 import 'vuetify/styles';  // Ensure to import Vuetify styles
-import router from "@/router";
+import router from "./router";
 
 const app = createApp(App);
 

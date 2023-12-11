@@ -9,6 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 
 import 'vuetify/styles';
+import { RouterLink, RouterView } from 'vue-router'
 
 export default {
   name: 'App',
