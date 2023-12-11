@@ -1,27 +1,34 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import page1 from "@/views/page1.vue";
 
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/default/Default.vue'),
+    component: () => import('@/components/game1/game1_main.vue'),
     children: [
       {
-        path: '',
-        name: 'Home',
-        // route level code-splitting
-        // this generates a separate chunk (Home-[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import('@/views/Home.vue'),
+        path: '/pause',
+        name: 'pause',
+        component: () => import('@/components/others/pause.vue'),
       },
-      { path: '/page1', component: page1, name: 'page1' },
+      { path: '/game1_main',
+        name: 'game1_main',
+        component: () => import('@/components/game1/game1_main.vue'),
+      },
+      { path: '/game1_album',
+        name: 'game1_album',
+        component: () => import('@/components/game1/game1_album.vue'),
+      },
+      { path: '/game1_browser',
+        name: 'game1_browser',
+        component: () => import('@/components/game1/game1_browser.vue'),
+      },
     ],
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 })
 
