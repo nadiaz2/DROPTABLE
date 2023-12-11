@@ -8,6 +8,7 @@ public class chair : MonoBehaviour
     public bool interactable, sitting;
     public Camera standingCamera, sittingCamera;
 
+
     void OnTriggerStay(Collider other)
     {
 
@@ -31,7 +32,8 @@ public class chair : MonoBehaviour
         {
             intText.SetActive(false);
         }
-            if (interactable)
+
+        if (interactable)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
