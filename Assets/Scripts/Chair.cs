@@ -8,7 +8,6 @@ public class chair : MonoBehaviour
     public bool interactable, sitting;
     public Camera standingCamera, sittingCamera;
 
-
     void OnTriggerStay(Collider other)
     {
 
@@ -16,6 +15,7 @@ public class chair : MonoBehaviour
         {
             intText.SetActive(true);
             interactable = true;
+            
         }
     }
     void OnTriggerExit(Collider other)
@@ -45,6 +45,8 @@ public class chair : MonoBehaviour
                 interactable = false;
                 standingCamera.GetComponent<AudioListener>().enabled = false;
                 sittingCamera.GetComponent<AudioListener>().enabled = true;
+                GameManager.state = GameState.ClassRoomSubtitleEnd;
+
             }
         }
         if (sitting)

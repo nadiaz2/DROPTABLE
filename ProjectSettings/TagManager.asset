@@ -9,6 +9,7 @@ TagManager:
   - Jacob
   - TomsDoor
   - JacobsDoor
+  - SeatCamera
   layers:
   - Default
   - TransparentFX

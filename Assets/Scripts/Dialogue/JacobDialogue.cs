@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using SocketIOClient;
+using UnityEditor;
 using UnityEngine;
 
 public class JacobDialogue : MonoBehaviour
@@ -10,48 +11,72 @@ public class JacobDialogue : MonoBehaviour
     public DialogueTrigger trigger;
     private bool talkedAlready = false;
 
-    private Vector3 startPosition;
-    public Vector3 finalPosition;
-    private float lerpPercent;
 
-    public float moveSpeed;
+    public GameObject JacobText;
+    public bool interactable;
+    public chair chair;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
-        lerpPercent = 0f;
+
     }
 
+    /*
     // Update is called once per frame
     void Update()
     {
-
-        if (PhoneFoundDialogue.photoFound)
-        {
-            this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
-            lerpPercent = Math.Max(lerpPercent - moveSpeed, 0.0f);
-
-        } 
-        else if (GameManager.state == GameState.FinishedTalking)
-        {
-            this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
-            lerpPercent = Math.Min(lerpPercent + moveSpeed, 1.0f);
-        }
 
         // Triggering Dialogue with Jacob
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
-            if (Physics.Raycast(ray, out Hit, 100f))
+            if (Physics.Raycast(ray, out Hit, 1000f))
             {
                 if (Hit.collider.gameObject.tag == "Jacob" && !talkedAlready)
                 {
+                    Debug.Log("Here");
                     trigger.TriggerDialogue();
                     GameManager.state = GameState.TalkingToJacob;
                     talkedAlready = true;
                 }
+            }
+        }
+    }
+    */
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("SeatCamera") && !talkedAlready)
+        {
+            JacobText.SetActive(true);
+            interactable = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("SeatCamera"))
+        {
+            JacobText.SetActive(false);
+            interactable = false;
+        }
+    }
+
+    void Update()
+    {
+        if (!chair.sitting)
+        {
+            JacobText.SetActive(false);
+        }
+        if (interactable)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !talkedAlready)
+            {
+                JacobText.SetActive(false);
+                interactable = false;
+                trigger.TriggerDialogue();
+                talkedAlready = true;
             }
         }
     }

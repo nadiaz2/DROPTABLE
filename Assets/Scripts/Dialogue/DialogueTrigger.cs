@@ -11,10 +11,17 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>(gameObject).StartDialogue(dialogue);
-        dialogueStart = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        if (GameManager.state != GameState.ClassRoomSubtitleStart)
+        {
+            FindObjectOfType<DialogueManager>(gameObject).StartDialogue(dialogue);
+            dialogueStart = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if (GameManager.state == GameState.ClassRoomSubtitleStart)
+        {
+            FindObjectOfType<SubtitleManager>(gameObject).StartSubtitle(dialogue);
+        }
     }
 
 
