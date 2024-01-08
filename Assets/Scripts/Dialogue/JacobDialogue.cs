@@ -4,21 +4,23 @@ using System.Collections.Generic;
 using SocketIOClient;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JacobDialogue : MonoBehaviour
 {
-
     public DialogueTrigger trigger;
     private bool talkedAlready = false;
-
 
     public GameObject JacobText;
     public bool interactable;
     public chair chair;
+    private string sceneName;
 
     // Start is called before the first frame update
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
 
     }
 
@@ -48,7 +50,7 @@ public class JacobDialogue : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("SeatCamera") && !talkedAlready)
+        if ((other.CompareTag("SeatCamera") || other.CompareTag("MainCamera")) && !talkedAlready)
         {
             JacobText.SetActive(true);
             interactable = true;
@@ -56,7 +58,7 @@ public class JacobDialogue : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("SeatCamera"))
+        if (other.CompareTag("SeatCamera") || other.CompareTag("MainCamera"))
         {
             JacobText.SetActive(false);
             interactable = false;
@@ -65,9 +67,11 @@ public class JacobDialogue : MonoBehaviour
 
     void Update()
     {
-        if (!chair.sitting)
-        {
-            JacobText.SetActive(false);
+        if (sceneName == "Classroom") {
+            if (!chair.sitting)
+            {
+                JacobText.SetActive(false);
+            }
         }
         if (interactable)
         {
@@ -76,6 +80,7 @@ public class JacobDialogue : MonoBehaviour
                 JacobText.SetActive(false);
                 interactable = false;
                 trigger.TriggerDialogue();
+                GameManager.state = GameState.TalkingToJacob;
                 talkedAlready = true;
             }
         }

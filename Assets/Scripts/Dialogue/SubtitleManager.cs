@@ -32,7 +32,7 @@ public class SubtitleManager : MonoBehaviour
     public void StartSubtitle(Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
-
+        Debug.Log(sentences);
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)

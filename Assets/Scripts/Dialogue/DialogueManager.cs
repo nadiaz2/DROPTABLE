@@ -9,7 +9,6 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
-
     public Animator animator;
 
     public float textSpeed;
