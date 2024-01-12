@@ -25,8 +25,8 @@ public class LivingRoomTVDialogue : MonoBehaviour
                 if (Hit.collider.gameObject.tag == "TV")
                 {
                     trigger.TriggerDialogue();
-                }
             }
+                }
         }
     }
 

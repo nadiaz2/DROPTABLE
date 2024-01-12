@@ -7,6 +7,10 @@ TagManager:
   - TV
   - Phone
   - Jacob
+  - TomsDoor
+  - JacobsDoor
+  - SeatCamera
+  - JacobLivingRoom
   layers:
   - Default
   - TransparentFX

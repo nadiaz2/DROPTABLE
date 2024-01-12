@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html lang="en" >
+<head >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="game1.js"></script>
+
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="grid-item"><button class="icon" type="button" onclick="window.location.href='browser.html'">Browser</button></div>
+  <div class="grid-item"><button class="icon" type="button" onclick="window.location.href='album.html'">Album</button></div>
+  <div class="grid-item"><button class="icon" type="button">Message</button></div>
+  <div class="grid-item"><button class="icon" type="button">Phone</button></div>
+  <div class="grid-item"><button class="icon" type="button">DoorBash</button></div>
+  <div class="grid-item"><button class="icon" type="button">Notcord</button></div>
+  <div class="grid-item"><button class="icon" type="button">MeTube</button></div>
+</div>
+
+<button class="home" type="button" onclick="window.location.href='game1.html'">Home</button>
+</body>
+<!--
+<script>
+  window.onload = async function (e) {
+    e.preventDefault();
+    let webSocket = new WebSocket('wss://' + window.location.host);
+
+    //receiving
+    webSocket.onmessage = (event) => {
+      let pc_message = JSON.parse(event.data);
+      console.log(pc_message);
+    };
+
+    await until(() => webSocket.readyState === WebSocket.OPEN);
+
+    const obj = {name: "PhoneFaceUp", message: 1};
+    webSocket.send(JSON.stringify(obj));
+    window.addEventListener("deviceorientation", handleOrientation);
+  }
+
+  function handleOrientation(event){
+    console.log(event.absolute);
+    if (event.beta > 100 || event.beta < -100){
+      window.location.href = 'pause.html';
+    }
+  }
+
+  function until(conditionFunction) {
+
+    const poll = resolve => {
+      if (conditionFunction()) resolve();
+      else setTimeout(_ => poll(resolve), 100);
+    }
+
+    return new Promise(poll);
+
+  }
+</script>
+-->
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+  .grid-item {
+    padding: 10px;
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+  }
+  .icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px
+  }
+  .home{
+    float: right;
+    width: 100%;
+    margin-right: 0;
+    font-size: 13px;
+    height: 5%;
+    overflow: auto;
+    position: absolute;
+    right:    0;
+    bottom:   0;
+  }
+</style>
+</html>
