@@ -29,7 +29,6 @@ unitySocketIO.on('connection', function(socket) {
 
     socket.emit('UUID', UUID)
 })
-
 // -------- End Socket IO Server --------
 
 // ------- WebRTC Phone Connection ------
