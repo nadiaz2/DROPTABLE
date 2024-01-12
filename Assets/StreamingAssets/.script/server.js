@@ -1,87 +1,118 @@
-console.log(__dirname)
+const { RTCPeerConnection, RTCSessionDescription, RTCIceCandidate } = require('wrtc'),
+    { io } = require('socket.io-client'),
+    { Server } = require('socket.io'),
+    UUID = require('crypto').randomUUID(),
+    PORT = 3500,
+    WEB_URL = ""
 
-const express = require('express'),
-    app = express(),
-    https = require('https'),
-    http = require('http'),
-    fs = require('fs'),
-    { Server } = require('socket.io')
+// WebRTC variables
+let _peer     // The RTCPeerConnection object connected to the other user
+let _channel  // The data channel used to communicate to the peer
 
-app.use(express.static('public'))
-
-app.get('/', (req, res) => {
-    res.redirect('/before.html')
-})
-
-const options = {
-    pfx: fs.readFileSync('Droptable.pfx'),
-    passphrase: '123456',
-}
-
-const httpServer = https.createServer(options, app, (req, res) => {
-    res.writeHead(200)
-    res.end('hello world\n')
-})
-
-// ---------- Socket IO ----------
-const insecureServer = http.createServer((req, res) => {
-    res.writeHead(200)
-    res.end('hello world\n')
-})
-const secureIO = new Server(httpServer)
-const insecureIO = new Server(insecureServer)
-let unityClient = null
-let phoneClient = null
-
-const onConnect = socket => {
+// ---------- Socket IO Server ----------
+const unitySocketIO = new Server(PORT)
+unitySocketIO.on('connection', function(socket) {
     console.log('connection')
 
-    // Pass all messages between phone and unity
+    // Pass all messages from unity to phone
     socket.use((packet, next) => {
-        //console.log(packet)
-        // Handler
-        //console.log(socket === phoneClient)
+        let mainData = JSON.parse(packet[1])
+        mainData.name = packet[0]
 
-        if(packet[0] !== 'Device') {
-            next()
-        } 
-        
-        if((socket === unityClient) && (phoneClient !== null)) {
-            phoneClient.emit(packet[0], packet[1])
-            console.log('To Phone:', packet)
-        } else if((socket === phoneClient) && (unityClient !== null)) {
-            unityClient.emit(packet[0], packet[1])
-            console.log('To Unity:', packet)
-        } else {
-            console.log('To Neither:', packet)
-        }
-
-        next()
+        let dataStr = JSON.parse(mainData)
+        _channel.send(dataStr)  // send to phone
     })
 
     socket.on('disconnect', () => {
-        console.log('user disconnected')
+        console.log('Unity SocketIO disconnected')
     })
 
-    socket.on('Device', (obj) => {
-        console.log('Device:', obj)
-        if (obj === 'Phone') {
-            phoneClient = socket
-            //socket.emit('MiniGameStart')
-        } else if (obj === 'Unity') {
-            unityClient = socket
+    socket.emit('UUID', UUID)
+})
+
+// -------- End Socket IO Server --------
+
+// ------- WebRTC Phone Connection ------
+
+// Create Socket.IO connection for WebRTC handshake
+const socket = io(WEB_URL, {rejectUnauthorized: false})
+socket.on('offer', handleOffer)
+socket.on('ice-candidate', function(incoming) {
+    const candidate = new RTCIceCandidate(incoming)
+    _peer.addIceCandidate(candidate).catch(e => console.log(e))
+})
+socket.on('connect', function() {
+    console.log('Connected!')
+    socket.emit('create room', UUID)
+})
+
+function handleOffer(incoming) {
+    _peer = createPeer(incoming.caller)
+
+    const desc = new RTCSessionDescription(incoming.sdp)
+    _peer.setRemoteDescription(desc).then(() => {
+        return _peer.createAnswer()
+    }).then((answer) => {
+        return _peer.setLocalDescription(answer)
+    }).then(() => {
+        const payload = {
+            target: incoming.caller,
+            caller: socket.id,
+            sdp: _peer.localDescription
         }
+        socket.emit('answer', payload)
     })
+}
 
-    socket.on('hi', (msg) => console.log('yay'))
+function createPeer(partnerID) {
+    const peer = new RTCPeerConnection({
+        iceServers: [
+            {
+                urls: 'stun:stun.stunprotocol.org'
+            }
+        ]
+    })
+    peer.onicecandidate = (e) => handleICECandidateEvent(e, partnerID)
+    peer.ondatachannel = handleDataChannelEvent // runs when the remote peer calls .createDataChannel()
+
+    return peer
+}
+
+function handleICECandidateEvent(e, partnerID) {
+    if(e.candidate) {
+        const payload = {
+            target: partnerID,
+            candidate: e.candidate
+        }
+        socket.emit('ice-candidate', payload)
+    }
 }
 
 
-secureIO.on('connection', onConnect)
-insecureIO.on('connection', onConnect)
+// RTCDataChannel event handlers
+function handleDataChannelEvent(e) {
+    _channel = e.channel
+    _channel.onmessage = handleChannelMessage
+    _channel.onopen = handleChannelOpen
+    _channel.onclose = handleChannelClose
+}
 
-insecureServer.listen(8001)
-// -------- End Socket IO --------
+function handleChannelMessage(event) {
+    const dataObj = JSON.parse(event.data)
 
+    const name = dataObj.name
+    delete dataObj.name
+    const newDataStr = JSON.stringify(dataObj)
 
-httpServer.listen(8000)
+    unitySocketIO.emit(name, newDataStr)
+}
+
+function handleChannelOpen(event) {
+    console.log('Phone WebRTC connected')
+}
+
+function handleChannelClose(event) {
+    console.log('Phone connection closed')
+}
+
+// ----- End WebRTC Phone Connection ----

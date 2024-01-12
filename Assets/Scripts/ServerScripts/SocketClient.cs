@@ -30,7 +30,7 @@ public class SocketClient : MonoBehaviour
 
         socket.OnConnected += (sender, e) =>
         {
-            socket.Emit("Device", "Unity");
+            //socket.Emit("Device", "Unity");
         };
         socket.OnDisconnected += (sender, e) =>
         {
