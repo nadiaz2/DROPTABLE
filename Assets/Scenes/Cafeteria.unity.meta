@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/NodeJs.meta
+guid: 19a05dabae1776e42882745d24ae9e02
+folderAsset: yes
+========
 guid: 7ed774875f81c8e4198f078d95066e46
+>>>>>>>> origin/Day1:Assets/Scenes/Cafeteria.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
