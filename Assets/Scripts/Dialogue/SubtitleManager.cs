@@ -11,12 +11,12 @@ public class SubtitleManager : MonoBehaviour
     public Animator animator;
 
     public float textSpeed;
-    private Queue<string> sentences;
+    private Queue<string> sentences = new Queue<string>();
 
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        
     }
 
     private void Update()
@@ -32,13 +32,13 @@ public class SubtitleManager : MonoBehaviour
     public void StartSubtitle(Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
-        Debug.Log(sentences);
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
+        Debug.Log(sentences);
 
         DisplayNextSentence();
     }
@@ -54,7 +54,9 @@ public class SubtitleManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        Debug.Log(subTitleText.text);
         subTitleText.text = "";
+        Debug.Log(subTitleText.text);
         foreach (char letter in sentence.ToCharArray())
         {
             subTitleText.text += letter;
