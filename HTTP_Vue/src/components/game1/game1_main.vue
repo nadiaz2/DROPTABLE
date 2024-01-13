@@ -97,8 +97,8 @@ export default {
   data() {
     return {
       items: [
-        { title: 'Browser', label: 'Browser', route: 'pause', logo: 'https://www.logo.wine/a/logo/Google_Chrome/Google_Chrome-Logo.wine.svg' },
-        { title: 'Album', label: 'Photos', route: 'album',logo:'https://9to5google.com/wp-content/uploads/sites/4/2020/06/google_photos_logo_2020.png'},
+        { title: 'Browser', label: 'Browser', route: 'game1_browser', logo: 'https://www.logo.wine/a/logo/Google_Chrome/Google_Chrome-Logo.wine.svg' },
+        { title: 'Album', label: 'Photos', route: 'game1_album',logo:'https://9to5google.com/wp-content/uploads/sites/4/2020/06/google_photos_logo_2020.png'},
         { title: 'Album', label: 'Biscord', route: 'album' ,logo:'https://cdn.logojoy.com/wp-content/uploads/20220329171749/discord-blue-app-logo.png'},
         { title: 'Album', label: 'Y', route: 'album' ,logo:'https://cdn.logojoy.com/wp-content/uploads/20220329171747/blue-app-logo-twitter.jpg'},
         { title: 'Album', label: 'Bluedit', route: 'album',logo:'https://cdn.logojoy.com/wp-content/uploads/20220329171609/reddit-social-media-app-logo.png' },
@@ -127,10 +127,6 @@ export default {
   height: 30px;
   width: 100%;
 
-}
-
-.my-col {
-  margin: 0;
 }
 
 .battery {
