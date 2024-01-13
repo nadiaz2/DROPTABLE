@@ -3,6 +3,8 @@ import App from './App.vue';
 import { createVuetify } from 'vuetify';
 import 'vuetify/styles';  // Ensure to import Vuetify styles
 import router from "./router";
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+
 
 const app = createApp(App);
 
