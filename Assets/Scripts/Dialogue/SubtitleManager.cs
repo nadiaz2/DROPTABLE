@@ -38,7 +38,6 @@ public class SubtitleManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-        Debug.Log(sentences);
 
         DisplayNextSentence();
     }
@@ -54,9 +53,7 @@ public class SubtitleManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
-        Debug.Log(subTitleText.text);
         subTitleText.text = "";
-        Debug.Log(subTitleText.text);
         foreach (char letter in sentence.ToCharArray())
         {
             subTitleText.text += letter;
