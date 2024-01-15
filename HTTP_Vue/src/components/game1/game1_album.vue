@@ -1,105 +1,177 @@
 <template>
-  <v-container class="background">
-    <v-col>
-      <v-row class="ma-2, pa-2">
-        <v-card @click="this.$router.push('page1')" class="app-card">
-        </v-card>
+  <v-app>
+    <v-container >
+      <v-app-bar elevation="0" aspect-ratio="1" class="bar">
+        <v-btn @click="navigateToPage(route)">
+          <v-icon size="40">mdi-arrow-left</v-icon>
+        </v-btn>
+        <v-toolbar-title class="title-size">Album</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-app-bar>
+    </v-container>
 
-        <v-card class="app-card">
-        </v-card>
-
-        <v-card class="app-card">
-        </v-card>
-
-        <v-card  class="app-card">
-        </v-card>
+    <v-container class="photo">
+      <v-row>
+        <v-col cols="4" v-for="(image, index) in images" :key="index" class="no-padding">
+          <v-img :src="image" aspect-ratio="1" cover></v-img>
+        </v-col>
       </v-row>
-
-      <v-row class="ma-2, pa-2">
-        <v-card  class="app-card">
-        </v-card>
-
-        <v-card  class="app-card">
-        </v-card>
-
-        <v-card  class="app-card">
-        </v-card>
-
-        <v-card  class="app-card">
-        </v-card>
-      </v-row>
-
-    </v-col>
-  </v-container>
+    </v-container>
+  </v-app>
 </template>
 
-<script setup>
-if (
-  DeviceMotionEvent &&
-  typeof DeviceMotionEvent.requestPermission === "function"
-) {
-  DeviceMotionEvent.requestPermission();
-}
-
-// let webSocket = new WebSocket('wss://' + window.location.host);
-//
-// //receiving
-// webSocket.onmessage = (event) => {
-//   let pc_message = JSON.parse(event.data);
-//   console.log(pc_message);
-// };
-//
-// await until(() => webSocket.readyState === WebSocket.OPEN);
-//
-// const obj = { name: "PhoneFaceUp", message: 1 };
-// webSocket.send(JSON.stringify(obj));
-window.addEventListener("deviceorientation", handleOrientation);
-
-function handleOrientation(event) {
-  console.log(event.absolute);
-  if (event.beta > 100 || event.beta < -100) {
-    window.location.href = 'pause.html';
-  }
-}
-
-function until(conditionFunction) {
-
-  const poll = resolve => {
-    if (conditionFunction()) resolve();
-    else setTimeout(_ => poll(resolve), 100);
-  }
-
-  return new Promise(poll);
-
-}
-
-</script>
-
 <script>
-import router from "@/router";
-
 export default {
-  name: 'game1main',
+  data() {
+    return {
+      route: 'game1_main',
+      images: [
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg', 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+
+        // Add more image URLs here
+      ]
+    };
+  },
   methods: {
     flipListener(e) {
       console.log(page);
+    },
+    navigateToPage(routeName) {
+      this.$router.push({ name: routeName });
     }
   }
-
-
 }
 </script>
 
 <style scoped>
-.app-card{
-  border-radius:10px;
-  height:70px;
-  width: 70px;
+.photo {
+  margin-top: 10%;
+
 }
-.background{
-  background-image: url("https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+.no-padding {
+  padding: 1% !important;
 }
-.app-card{
-  margin: auto;
+.bar {
+  padding-top: 2%;
+}
+.title-size {
+  font-size: 150%;
+  /* font-weight: bold; */
+  /* color: white; */
 }
 </style>
