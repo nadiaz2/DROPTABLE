@@ -40,6 +40,10 @@ public class Doors : MonoBehaviour
             {
                 SceneManager.LoadScene("JacobsRoom");
             }
+            if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "LivingRoomDoor")
+            {
+                SceneManager.LoadScene("LivingRoom");
+            }
         }
     }
 
