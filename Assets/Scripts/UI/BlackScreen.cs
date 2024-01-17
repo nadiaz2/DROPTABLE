@@ -31,6 +31,10 @@ public class BlackScreen : MonoBehaviour
         {
             //call GoTransparent function after 2 seconds 
             Invoke("GoTransparent", 3);
+
+            // Sets new game state with delay
+            Invoke("classOver", 5);
+            
         }
     }
 
@@ -51,6 +55,11 @@ public class BlackScreen : MonoBehaviour
         goTransparent = false;
     }
 
+    
+    void classOver()
+    {
+        GameManager.state = GameState.ClassOver;
+    }
 
 
 }

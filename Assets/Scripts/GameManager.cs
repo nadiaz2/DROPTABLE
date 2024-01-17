@@ -8,6 +8,7 @@ enum GameState {
 	ClassRoomSubtitleStart,
 	ClassRoomSeated,
 	ClassRoomSubtitleEnd,
+	ClassOver,
 }
 class GameManager {
 	public static GameState state = GameState.GameStart;

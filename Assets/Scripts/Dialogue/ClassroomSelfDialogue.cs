@@ -11,7 +11,10 @@ public class ClassroomSelfDialogue : MonoBehaviour
     void Start()
     {
         GameManager.state = GameState.ClassRoomSubtitleStart;
-        trigger.TriggerDialogue();
-    }
+        if (GameManager.state == GameState.ClassRoomSubtitleStart)
+        {
+            trigger.TriggerDialogue();
+        }
 
+    }
 }

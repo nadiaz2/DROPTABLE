@@ -51,14 +51,17 @@ public class chair : MonoBehaviour
         }
         if (sitting)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (GameManager.state != GameState.FinishedTalking)
             {
-                playerSitting.SetActive(false);
-                standText.SetActive(false);
-                playerStanding.SetActive(true);
-                sitting = false;
-                standingCamera.GetComponent<AudioListener>().enabled = true;
-                sittingCamera.GetComponent<AudioListener>().enabled = false;
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    playerSitting.SetActive(false);
+                    standText.SetActive(false);
+                    playerStanding.SetActive(true);
+                    sitting = false;
+                    standingCamera.GetComponent<AudioListener>().enabled = true;
+                    sittingCamera.GetComponent<AudioListener>().enabled = false;
+                }
             }
         }
     }

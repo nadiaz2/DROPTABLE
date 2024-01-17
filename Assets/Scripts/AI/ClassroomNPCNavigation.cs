@@ -21,7 +21,10 @@ public class ClassroomNPCNavigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (GameManager.state == GameState.ClassOver)
+        {
+            Move();
+        }
     }
 
     void Move()
