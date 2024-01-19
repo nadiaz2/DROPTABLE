@@ -44,11 +44,16 @@ public class SubtitleManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        if(sentences.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-
+        Invoke("DisplayNextSentence", 5);
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -69,5 +74,6 @@ public class SubtitleManager : MonoBehaviour
         DialogueTrigger.dialogueStart = false;
 
     }
+
 
 }
