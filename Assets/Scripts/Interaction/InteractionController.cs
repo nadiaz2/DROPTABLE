@@ -3,22 +3,43 @@ using System.Linq;
 
 public class InteractionController : MonoBehaviour
 {
-    // Mask for the 8th layer (index based)
-    // 8th layer = Interaction layer
-    public LayerMask layerMask = 1 << 8;
+    public OutlineManager outlineManager;
     public int interactionRadius = 5;
+
+    private GameObject lastClosest = null;
+    private GameObject[] targets;
+
+    void Start()
+    {
+        targets = GameObject.FindGameObjectsWithTag("Interactable");
+        Debug.Log(targets.Length);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        var colliders = Physics.OverlapSphere(transform.position, interactionRadius, layerMask.value);
-        var ordered = colliders.OrderBy(c => (transform.position - c.transform.position).sqrMagnitude).ToArray();
-        if(ordered.Length < 1)
+        // ignore class if no interactables
+        if(targets.Length < 1)
         {
             return;
         }
 
-        Interactable closestInteractable = ordered[0].gameObject.GetComponent<Interactable>();
-        closestInteractable.Interact();
+        GameObject[] ordered = targets.OrderBy(go => (transform.position - go.transform.position).sqrMagnitude).ToArray();
+        GameObject closest = ordered[0];
+        float distance = (transform.position - closest.transform.position).magnitude;
+        if(distance > interactionRadius)
+        {
+            closest = null;
+        }
+        //Debug.Log($"{distance} {closest}");
+        if (closest != lastClosest)
+        {
+            outlineManager.Unhighlight(lastClosest);
+            outlineManager.Highlight(closest);
+            lastClosest = closest;
+            Debug.Log("new interaction!");
+        }
+
+        //lastClosest.GetComponent<Interactable>().Interact();
     }
 }

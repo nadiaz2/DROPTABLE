@@ -86,10 +86,10 @@ public class PlayerMovement : MonoBehaviour
         // calcaulate movement direction
         moveDirection = (forward * verticalInput) + (right * horizontalInput);
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-        
+
         Vector3 facing = rb.velocity.normalized;
         facing.y = 0;
-        if(facing.magnitude > 0) {
+        if(facing.sqrMagnitude > 0.0f) {
             transform.rotation = Quaternion.LookRotation(facing);
         }
     }

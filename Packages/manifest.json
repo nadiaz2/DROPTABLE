@@ -1,6 +1,16 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "Arvtesh",
+      "url": "https://registry.npmjs.org/",
+      "scopes": [
+        "com.unityfx"
+      ]
+    }
+  ],
   "dependencies": {
     "com.itisnajim.socketiounity": "https://github.com/itisnajim/SocketIOUnity.git",
+    "com.unityfx.outline": "0.8.5",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.collab-proxy": "2.0.7",
     "com.unity.feature.development": "1.0.1",
