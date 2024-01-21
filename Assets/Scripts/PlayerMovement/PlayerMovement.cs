@@ -5,33 +5,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [Header("Movement")]
+    public Transform movementReference;
     public float moveSpeed;
-
     public float groundDrag;
 
-    public float jumpForce;
-    public float jumpCooldown;
-    public float airMultiplier;
-    private bool readyToJump;
+    // Movement Axis
+    private Vector3 forward;
+    private Vector3 right;
 
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-
-    [Header("Ground Check")]
-    public float playerHeight;
-    public LayerMask whatIsground;
-    bool grounded;
-
-    public Transform orientation;
-
+    // Input values
     float horizontalInput;
     float verticalInput;
 
-    Vector3 moveDirection;
+    // Current Movement Values
+    private Vector3 moveDirection;
+    private Rigidbody rb;
 
-    Rigidbody rb;
+    // If the player is currently frozen due to movement being restricted (sitting, on phone, etc.)
+    // Other scripts will generally set this value
+    public bool immobile { get; set; }
 
 
     // Start is called before the first frame update
@@ -39,34 +32,30 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        readyToJump = true;
+        rb.drag = groundDrag;
+
+        forward = Vector3.ProjectOnPlane(movementReference.forward, Vector3.up).normalized;
+        right = Vector3.ProjectOnPlane(movementReference.right, Vector3.up).normalized;
+
+        immobile = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (DialogueTrigger.dialogueStart || PhoneClicked.onPhone)
+        if (immobile)
         {
             rb.velocity = Vector3.zero;
-            rb.drag = groundDrag;
             return;
         }
-        // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsground);
 
         SpeedControl();
         MyInput();
-
-        // handle drag
-        if (grounded)
-            rb.drag = groundDrag;
-        else
-            rb.drag = 0;
     }
 
     private void FixedUpdate()
     {
-        if (DialogueTrigger.dialogueStart || PhoneClicked.onPhone)
+        if (immobile)
         {
             rb.velocity = Vector3.zero;
             return;
@@ -78,35 +67,8 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
-        /*
-        // when to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
-        {
-            readyToJump = false;
-
-            Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
-        }
-        */
     }
 
-    private void MovePlayer()
-    {
-        // calcaulate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
-        // on ground
-        if (grounded)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-        }else if(!grounded)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-        }
-
-    }
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -119,17 +81,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Jump()
+    private void MovePlayer()
     {
-        //reset y velocity
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-    }
-
-    private void ResetJump()
-    {
-        readyToJump = true;
+        // calcaulate movement direction
+        moveDirection = (forward * verticalInput) + (right * horizontalInput);
+        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        
+        Vector3 facing = rb.velocity.normalized;
+        facing.y = 0;
+        if(facing.magnitude > 0) {
+            transform.rotation = Quaternion.LookRotation(facing);
+        }
     }
 }
 
