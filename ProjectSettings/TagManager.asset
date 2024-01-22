@@ -12,6 +12,8 @@ TagManager:
   - SeatCamera
   - JacobLivingRoom
   - LivingRoomDoor
+  - OnWayHomeDoor
+  - Morgan
   layers:
   - Default
   - TransparentFX

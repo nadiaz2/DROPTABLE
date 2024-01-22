@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialogueTrigger.dialogueStart || PhoneClicked.onPhone)
+        if (DialogueTrigger.dialogueStart || PhoneClicked.onPhone || GameManager.state == GameState.MorganCloseUp)
         {
             rb.velocity = Vector3.zero;
             rb.drag = groundDrag;
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (DialogueTrigger.dialogueStart || PhoneClicked.onPhone)
+        if (DialogueTrigger.dialogueStart || PhoneClicked.onPhone || GameManager.state == GameState.MorganCloseUp)
         {
             rb.velocity = Vector3.zero;
             return;

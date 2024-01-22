@@ -44,6 +44,10 @@ public class Doors : MonoBehaviour
             {
                 SceneManager.LoadScene("LivingRoom");
             }
+            if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "OnWayHomeDoor" && GameManager.state == GameState.ClassOver)
+            {
+                SceneManager.LoadScene("OnWayHome");
+            }
         }
     }
 

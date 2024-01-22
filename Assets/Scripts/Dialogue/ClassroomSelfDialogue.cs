@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class ClassroomSelfDialogue : MonoBehaviour
 {
@@ -10,15 +11,18 @@ public class ClassroomSelfDialogue : MonoBehaviour
 
     private bool trigger2Started = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.state = GameState.ClassRoomSubtitleStart;
-        if (GameManager.state == GameState.ClassRoomSubtitleStart)
+        if (GameManager.state == GameState.BackToClassroom)
         {
-            trigger.TriggerDialogue();
+            gameObject.SetActive(false);
+            return;
         }
 
+        GameManager.state = GameState.ClassRoomStart;
+        trigger.TriggerDialogue();
     }
 
     void Update()

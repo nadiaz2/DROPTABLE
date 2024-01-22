@@ -5,10 +5,14 @@ enum GameState {
 	FinishedTalking,
 	PlayingGame,
 	GamePaused,
-	ClassRoomSubtitleStart,
+	ClassRoomStart,
 	ClassRoomSeated,
 	ClassRoomSubtitleEnd,
 	ClassOver,
+    OnWayHomeStart,
+    BackToClassroom,
+	PickedupHeadphones,
+    MorganCloseUp,
 }
 class GameManager {
 	public static GameState state = GameState.GameStart;
