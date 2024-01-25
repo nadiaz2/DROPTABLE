@@ -1,12 +1,14 @@
 <template>
-  <v-container class="background">
-    <v-col>
-      <picture></picture>
-      <v-textarea>
-        This page is an egg only.
-      </v-textarea>
-    </v-col>
-  </v-container>
+  <v-app>
+    <v-app-bar elevation="0" aspect-ratio="1" class="bar">
+      <v-btn @click="navigateToPage(route)">
+        <v-icon size="40">mdi-arrow-left</v-icon>
+      </v-btn>
+      <v-toolbar-title class="title-size">Browser</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    This is supposed to be Pornhub
+  </v-app>
 </template>
 
 <script setup>
@@ -56,26 +58,35 @@ import router from "@/router";
 
 export default {
   name: 'game1main',
+  data() {
+    return {
+      route: 'game1_main',
+      externalUrl: 'https://www.apple.com/' // Replace with your external URL
+    };
+  },
   methods: {
     flipListener(e) {
       console.log(page);
+    },
+    navigateToPage(routeName) {
+      this.$router.push({ name: routeName });
     }
-  }
+  },
 
 
 }
 </script>
 
 <style scoped>
-.app-card{
-  border-radius:10px;
-  height:70px;
+.app-card {
+  border-radius: 10px;
+  height: 70px;
   width: 70px;
 }
-.background{
-  background-image: url("https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-}
-.app-card{
+
+
+
+.app-card {
   margin: auto;
 }
 </style>

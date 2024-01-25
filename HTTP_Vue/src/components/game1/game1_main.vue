@@ -10,7 +10,7 @@
       <v-row>
         <!-- Iterate over your items. Each v-col is set to span 3 columns -->
         <v-col cols="3" v-for="item in items" :key="item.name" class="d-flex flex-column align-center">
-          <v-card :image="item.logo" @click="navigateToPage(item.route)" class="app-card">
+          <v-card :image="item.logo" cover @click="navigateToPage(item.route)" class="app-card">
           </v-card>
           <div class="card-label">{{ item.label }}</div>
         </v-col>
@@ -104,6 +104,8 @@ export default {
         { title: 'Album', label: 'Bluedit', route: 'album',logo:'https://cdn.logojoy.com/wp-content/uploads/20220329171609/reddit-social-media-app-logo.png' },
         { title: 'Album', label: 'GasAnA', route: 'album' ,logo:'https://cdn.logojoy.com/wp-content/uploads/20220329171759/airbnb-pink-app-logo.png'},
         { title: 'Album', label: 'Linkeout', route: 'album' ,logo:'https://cdn.logojoy.com/wp-content/uploads/20220329171743/linkedin-blue-app-logo.jpg'},
+        { title: 'Contacts', label: 'Contacts', route: 'game1_contact' ,logo:'https://cdn-icons-png.flaticon.com/512/3621/3621438.png'},
+        { title: 'Message', label: 'Message', route: 'game1_message' ,logo:'https://cdn-icons-png.flaticon.com/128/3991/3991948.png'},
 
         // ... more items ...
       ]
