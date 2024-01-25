@@ -13,6 +13,7 @@ enum GameState {
     BackToClassroom,
 	PickedupHeadphones,
     MorganCloseUp,
+	AfterHeadphones,
 }
 class GameManager {
 	public static GameState state = GameState.GameStart;

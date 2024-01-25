@@ -34,6 +34,7 @@ public class MorganCloseUp : MonoBehaviour
     {
         playerCamera.SetActive(true); ;
         morgan.SetActive(false); ;
+        GameManager.state = GameState.AfterHeadphones;
     }
 
 
