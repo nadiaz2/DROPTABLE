@@ -4,22 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+    public Image characterPortriatImage;
 
     public Animator animator;
 
     public float textSpeed;
     private Queue<string> sentences;
     private Queue<string> names;
+    private Queue<Image> characterPortraits;
 
     // Start is called before the first frame update
     void Start()
     {
         names = new Queue<string>();
         sentences = new Queue<string>();
+        characterPortraits = new Queue<Image>();
     }
 
    
@@ -39,6 +43,10 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+        foreach (Image characterPortrait in dialogue.characterPortraits)
+        {
+            characterPortraits.Enqueue(characterPortrait);
+        }
 
         DisplayNextSentence();
     }
@@ -54,6 +62,12 @@ public class DialogueManager : MonoBehaviour
 
         string name = names.Dequeue();
         nameText.text = name;
+
+        Image image = characterPortraits.Dequeue();
+        if (image != null)
+        {
+            characterPortriatImage.sprite = image.sprite;
+        }
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
