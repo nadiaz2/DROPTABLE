@@ -13,6 +13,8 @@ TagManager:
   - JacobLivingRoom
   - LivingRoomDoor
   - Interactable
+  - OnWayHomeDoor
+  - Morgan
   layers:
   - Default
   - TransparentFX

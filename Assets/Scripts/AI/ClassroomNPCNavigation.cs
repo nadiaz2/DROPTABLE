@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ClassroomNPCNavigation : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class ClassroomNPCNavigation : MonoBehaviour
 
     public Transform[] waypoints;
     private int waypointIndex;
+    public Transform morganWaypoint;
+
+    private bool studentsMoved = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +26,14 @@ public class ClassroomNPCNavigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.state == GameState.ClassOver)
+        if (GameManager.state == GameState.ClassOver && !studentsMoved)
         {
             Move();
+            Debug.Log("Moved");
+        }
+        if (GameManager.state == GameState.PickedupHeadphones && !studentsMoved)
+        {
+            MorganMove();
         }
     }
 
@@ -31,6 +41,7 @@ public class ClassroomNPCNavigation : MonoBehaviour
     {
         if (waypointIndex >= waypoints.Length)
         {
+            studentsMoved = true;
             return;
         }
 
@@ -45,5 +56,11 @@ public class ClassroomNPCNavigation : MonoBehaviour
             waypointIndex++;
         }
     }
+
+    void MorganMove()
+    {
+        agent.SetDestination(morganWaypoint.position);
+    }
+
 
 }

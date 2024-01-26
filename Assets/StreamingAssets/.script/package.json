@@ -1,9 +1,0 @@
-{
-    "dependencies": {
-        "express": "^4.16.4",
-        "node-pre-gyp": "^0.17.0",
-        "socket.io": "^4.7.2",
-        "socket.io-client": "^4.7.4",
-        "wrtc": "^0.4.7"
-    }
-}

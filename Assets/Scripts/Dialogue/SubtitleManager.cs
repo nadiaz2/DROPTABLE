@@ -72,7 +72,10 @@ public class SubtitleManager : MonoBehaviour
         Debug.Log("End of conversation.");
         animator.SetBool("isOpen", false);
         DialogueTrigger.dialogueStart = false;
-
+        if(GameManager.state == GameState.OnWayHomeStart)
+        {
+            GameManager.state = GameState.BackToClassroom;
+        }
     }
 
 

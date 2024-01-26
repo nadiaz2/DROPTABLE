@@ -11,7 +11,7 @@ public class chair : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
 
-        if (other.CompareTag("MainCamera"))
+        if (other.CompareTag("MainCamera") && GameManager.state != GameState.BackToClassroom)
         {
             intText.SetActive(true);
             interactable = true;
@@ -35,7 +35,7 @@ public class chair : MonoBehaviour
 
         if (interactable)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && GameManager.state != GameState.BackToClassroom)
             {
                 intText.SetActive(false);
                 standText.SetActive(true);

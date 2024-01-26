@@ -18,10 +18,9 @@ public class DialogueTrigger : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        else if (GameManager.state == GameState.ClassRoomSubtitleStart || GameManager.state == GameState.ClassOver)
+        else if (GameManager.state == GameState.ClassRoomStart || GameManager.state == GameState.ClassOver || GameManager.state == GameState.OnWayHomeStart || GameManager.state == GameState.PickedupHeadphones)
         {
             FindObjectOfType<SubtitleManager>(gameObject).StartSubtitle(dialogue);
-            Debug.Log("Here");
         }
     }
 
