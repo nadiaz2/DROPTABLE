@@ -3517,7 +3517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 470724768}
-  - component: {fileID: 470724767}
+  - component: {fileID: 470724770}
   - component: {fileID: 470724769}
   m_Layer: 0
   m_Name: SceneManager
@@ -3526,21 +3526,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &470724767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470724766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebc9959d15848a459a156aa497d380a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: {fileID: 470724769}
-  jacob: {fileID: 885341849}
-  headphones: {fileID: 809392393}
 --- !u!4 &470724768
 Transform:
   m_ObjectHideFlags: 0
@@ -3573,6 +3558,21 @@ MonoBehaviour:
     characterPortraits: []
     sentences:
     - Damn, why is it so hard to untangle these headphones.
+--- !u!114 &470724770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470724766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af682c59ecbe074fb50b609cf447e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 470724769}
+  jacob: {fileID: 885341849}
+  headphones: {fileID: 809392393}
 --- !u!1 &481452865
 GameObject:
   m_ObjectHideFlags: 0

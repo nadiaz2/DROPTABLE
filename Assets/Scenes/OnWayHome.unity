@@ -862,8 +862,8 @@ GameObject:
   m_Component:
   - component: {fileID: 972837633}
   - component: {fileID: 972837635}
-  - component: {fileID: 972837634}
   - component: {fileID: 972837636}
+  - component: {fileID: 972837637}
   m_Layer: 0
   m_Name: ClassroomSceneTrigger
   m_TagString: Untagged
@@ -886,18 +886,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &972837634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972837632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af806e6ebc35ac245a960ec3f409bc90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &972837635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -946,6 +934,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &972837637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972837632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba4f194c59f2574bb749ceab58afd3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1018579805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,6 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     names: []
+    characterPortraits: []
     sentences:
     - Uh, I'm bored I'm going to listen to some music to past the time while walking
       home.

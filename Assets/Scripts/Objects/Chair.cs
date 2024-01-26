@@ -10,7 +10,6 @@ public class chair : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        Debug.Log($"OnTriggerStay: {GameManager.state}");
 
         if (other.CompareTag("MainCamera") && GameManager.state != GameState.BackToClassroom)
         {
