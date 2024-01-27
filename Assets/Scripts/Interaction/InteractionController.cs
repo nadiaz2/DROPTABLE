@@ -1,45 +1,73 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class InteractionController : MonoBehaviour
 {
     public OutlineManager outlineManager;
+    public Text prompt;
     public int interactionRadius = 5;
 
     private GameObject lastClosest = null;
+    private Interactable target = null;
     private GameObject[] targets;
 
     void Start()
     {
         targets = GameObject.FindGameObjectsWithTag("Interactable");
-        Debug.Log(targets.Length);
     }
 
     // Update is called once per frame
     void Update()
     {
         // ignore class if no interactables
-        if(targets.Length < 1)
+        if (targets.Length < 1)
         {
             return;
         }
 
         GameObject[] ordered = targets.OrderBy(go => (transform.position - go.transform.position).sqrMagnitude).ToArray();
-        GameObject closest = ordered[0];
-        float distance = (transform.position - closest.transform.position).magnitude;
-        if(distance > interactionRadius)
+
+        // Determine closest interactable object
+        GameObject closest = null;
+        int index = 0;
+        while ((index < ordered.Length) && (closest == null))
         {
-            closest = null;
+            Interactable interactable = ordered[i].GetComponent<Interactable>();
+            if (interactable.IsActive())
+            {
+                closest = ordered[i];
+            }
+            index++;
         }
-        //Debug.Log($"{distance} {closest}");
+
+        // Check if closest is within range
+        if (closest != null) // null if no interactables are active
+        {
+            float distance = (transform.position - closest.transform.position).magnitude;
+            if (distance > interactionRadius)
+            {
+                closest = null;
+            }
+        }
+
+        // Change interaction target
         if (closest != lastClosest)
         {
             outlineManager.Unhighlight(lastClosest);
             outlineManager.Highlight(closest);
+
             lastClosest = closest;
-            Debug.Log("new interaction!");
+            target = closest?.GetComponent<Interactable>();
+
+            prompt.text = target?.GetPrompt();
+            //Debug.Log("new interaction!");
         }
 
-        //lastClosest.GetComponent<Interactable>().Interact();
+        // If interact button pressed, interact with object
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            target.Interact();
+        }
     }
 }

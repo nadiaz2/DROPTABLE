@@ -3,10 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
+enum ClassroomState
+{
+    // States for first time in classroom
+    Start,
+    Seated,
+    SubtitleEnd,
+    ClassOver,
+
+    // States for returning to pick up headphones
+    Return,
+    PuckedUpHeadphones,
+    MorganCloseUp,
+    AfterHeadphones
+}
+
 public class ClassroomSceneManager : MonoBehaviour
 {
-    public DialogueTrigger trigger;
+    public GameObject jacob;
+    public GameObject headphones;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Returning to classroom to pick up headphones
+        if (GameManager.state == GameState.BackToClassroom)
+        {
+            jacob.SetActive(false);
+            headphones.SetActive(true);
+        }
+    }
+
+    /*
+    public DialogueTrigger trigger;
     public GameObject jacob;
     public GameObject headphones;
 
@@ -32,4 +61,5 @@ public class ClassroomSceneManager : MonoBehaviour
             triggerStarted = true;
         }
     }
+    */
 }

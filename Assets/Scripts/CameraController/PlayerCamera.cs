@@ -15,7 +15,7 @@ public class PlayerCamera : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        if (!DialogueTrigger.dialogueStart && !PhoneClicked.onPhone)
+        if (!DialogueManager.dialogueOngoing && !PhoneClicked.onPhone)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -25,7 +25,7 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!DialogueTrigger.dialogueStart && !PhoneClicked.onPhone)
+        if (!DialogueManager.dialogueOngoing && !PhoneClicked.onPhone)
         {
             // get mouse input
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;

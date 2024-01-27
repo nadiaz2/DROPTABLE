@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -10,42 +11,36 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Image characterPortriatImage;
-
     public Animator animator;
-
     public float textSpeed;
-    private Queue<string> sentences;
-    private Queue<string> names;
-    private Queue<Image> characterPortraits;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        names = new Queue<string>();
-        sentences = new Queue<string>();
-        characterPortraits = new Queue<Image>();
+    private static bool _dialogueOngoing;
+    public static bool dialogueOngoing {
+        get {
+            return _dialogueOngoing;
+        }
     }
 
-   
-    public void StartDialogue(Dialogue dialogue)
+    // Start is called before the first frame update
+    private void Start() {
+        _dialogueOngoing = false;
+    }
+
+    private Queue<Dialogue> slides = new Queue<Dialogue>();
+    private Action callbackFunc;
+
+    public void StartDialogue(Dialogue[] dialogues, Action callback = null)
     {
         animator.SetBool("isOpen", true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        sentences.Clear();
-        names.Clear();
+        _dialogueOngoing = true;
 
-        foreach (string name in dialogue.names)
+        this.callbackFunc = callback;
+        foreach (Dialogue dialogue in dialogues)
         {
-            names.Enqueue(name);
-        }
-
-        foreach (string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
-        }
-        foreach (Image characterPortrait in dialogue.characterPortraits)
-        {
-            characterPortraits.Enqueue(characterPortrait);
+            this.slides.Enqueue(dialogue);
         }
 
         DisplayNextSentence();
@@ -53,26 +48,24 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-
-        if (sentences.Count == 0)
+        if (slides.Count == 0)
         {
             EndDialogue();
             return;
         }
+        Dialogue slide = slides.Dequeue();
 
-        string name = names.Dequeue();
-        nameText.text = name;
 
-        Image image = characterPortraits.Dequeue();
+        this.nameText.text = slide.name;
+
+        Image image = slide.characterPortrait;
         if (image != null)
         {
-            characterPortriatImage.sprite = image.sprite;
+            this.characterPortriatImage.sprite = image.sprite;
         }
 
-        string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-
+        StartCoroutine(TypeSentence(slide.sentence));
     }
 
     IEnumerator TypeSentence (string sentence)
@@ -88,14 +81,18 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of conversation.");
+        //Debug.Log("End of conversation.");
         animator.SetBool("isOpen", false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        DialogueTrigger.dialogueStart = false;
 
+        _dialogueOngoing = false;
+
+        this.callbackFunc?.Invoke();
+        /*
         if(GameManager.state == GameState.TalkingToJacob) {
             GameManager.state = GameState.FinishedTalking;
         }
+        */
     }
 }
