@@ -33,10 +33,10 @@ public class InteractionController : MonoBehaviour
         int index = 0;
         while ((index < ordered.Length) && (closest == null))
         {
-            Interactable interactable = ordered[i].GetComponent<Interactable>();
+            Interactable interactable = ordered[index].GetComponent<Interactable>();
             if (interactable.IsActive())
             {
-                closest = ordered[i];
+                closest = ordered[index];
             }
             index++;
         }
@@ -54,20 +54,21 @@ public class InteractionController : MonoBehaviour
         // Change interaction target
         if (closest != lastClosest)
         {
+            //Debug.Log($"Closest Interactable: {closest}");
             outlineManager.Unhighlight(lastClosest);
             outlineManager.Highlight(closest);
 
             lastClosest = closest;
             target = closest?.GetComponent<Interactable>();
 
-            prompt.text = target?.GetPrompt();
-            //Debug.Log("new interaction!");
+            string targetPrompt = target?.GetPrompt();
+            prompt.text = (targetPrompt == null) ? "" : $"[E] {targetPrompt}";
         }
 
         // If interact button pressed, interact with object
         if (Input.GetKeyDown(KeyCode.E))
         {
-            target.Interact();
+            target?.Interact();
         }
     }
 }

@@ -3,34 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
-enum ClassroomState
+[System.Flags]
+public enum ClassroomState
 {
     // States for first time in classroom
-    Start,
-    Seated,
-    SubtitleEnd,
-    ClassOver,
+    Start = 1,
+    Seated = 2,
+    //FinishedTalking,
+//SubtitleEnd,
+    ClassOver = 4,
 
     // States for returning to pick up headphones
-    Return,
-    PuckedUpHeadphones,
-    MorganCloseUp,
-    AfterHeadphones
+    Return = 8,
+    PickedUpHeadphones = 16,
+    MorganCloseUp = 32,
+    AfterHeadphones = 64
 }
 
-public class ClassroomSceneManager : MonoBehaviour
+public class ClassroomManager : MonoBehaviour
 {
     public GameObject jacob;
-    public GameObject headphones;
+    public Headphones headphones;
+
+    public BlackScreen blackScreen;
+
+    public static ClassroomState state { get; set; }
+    public static ClassroomManager currentInstance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    private static ClassroomManager _instance;
 
     // Start is called before the first frame update
     void Start()
     {
+        ClassroomManager._instance = this;
+
+        blackScreen.goBlacked = false;
+
         // Returning to classroom to pick up headphones
         if (GameManager.state == GameState.BackToClassroom)
         {
             jacob.SetActive(false);
-            headphones.SetActive(true);
+            headphones.gameObject.SetActive(true);
+            headphones.interactable = true;
+            state = ClassroomState.Return;
+        }
+        else
+        {
+            state = ClassroomState.Start;
+        }
+    }
+
+    public void FadeOut()
+    {
+        if(blackScreen != null)
+        {
+            blackScreen.goBlacked = true;
+        }
+    }
+
+    public void FadeIn()
+    {
+        if(blackScreen != null)
+        {
+            blackScreen.goBlacked = false;
         }
     }
 

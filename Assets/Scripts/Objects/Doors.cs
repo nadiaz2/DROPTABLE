@@ -4,12 +4,37 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Doors : MonoBehaviour
+public class Doors : MonoBehaviour, Interactable
 {
 
-    public GameObject enterText;
-    public bool interactable;
+    public string sceneName;
+    public ClassroomState enabledStates;
 
+    private bool active;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        this.active = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(enabledStates.HasFlag(ClassroomManager.state))
+        {
+            this.active = true;
+        }
+        else
+        {
+            this.active = false;
+        }
+    }
+
+    //public GameObject enterText;
+    //public bool interactable;
+
+    /*
     void OnTriggerStay(Collider other)
     {
 
@@ -44,11 +69,27 @@ public class Doors : MonoBehaviour
             {
                 SceneManager.LoadScene("LivingRoom");
             }
-            if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "OnWayHomeDoor" && GameManager.state == GameState.ClassOver)
+            if (Input.GetKeyDown(KeyCode.E) && gameObject.tag == "OnWayHomeDoor" && ClassroomManager.state == ClassroomState.ClassOver)
             {
                 SceneManager.LoadScene("OnWayHome");
             }
         }
+    }
+    */
+
+    public void Interact()
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public string GetPrompt()
+    {
+        return "Leave Classroom";
+    }
+
+    public bool IsActive()
+    {
+        return this.active;
     }
 
 }

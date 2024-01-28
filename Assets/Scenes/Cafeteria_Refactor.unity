@@ -3698,7 +3698,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317080649}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15b0ece1cfcf55f43b73d77dc1f20ce8, type: 3}
   m_Name: 
@@ -3745,7 +3745,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317080649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 334c522154c18bd4aacfea36ced9878c, type: 3}
   m_Name: 
@@ -18100,15 +18100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    names:
-    - Mysterious TV
-    - Mysterious TV
-    - Mysterious TV
-    sentences:
-    - This is a TV
-    - It does nothing so far
-    - Go Away
+  dialogueManager: {fileID: 0}
+  dialogues: []
 --- !u!114 &1481592822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23984,6 +23977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineManager: {fileID: 317080656}
+  prompt: {fileID: 0}
   interactionRadius: 120
 --- !u!1 &1904742263
 GameObject:

@@ -4,4 +4,5 @@ public interface Interactable
 {
     public void Interact();
     public string GetPrompt();
+    public bool IsActive();
 }

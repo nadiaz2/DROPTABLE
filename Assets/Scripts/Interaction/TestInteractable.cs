@@ -18,4 +18,5 @@ public class TestInteractable : MonoBehaviour, Interactable
 
     public void Interact(){}
     public string GetPrompt(){return "";}
+    public bool IsActive(){return true;}
 }

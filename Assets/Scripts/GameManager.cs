@@ -17,7 +17,7 @@ enum GameState
 	AfterHeadphones,
 }
 */
-enum GameState
+public enum GameState
 {
 	GameStart,
 	ClassRoomStart,
@@ -25,7 +25,7 @@ enum GameState
 	BackToClassroom
 }
 
-class GameManager
+public class GameManager
 {
 	public static GameState state = GameState.GameStart;
 }

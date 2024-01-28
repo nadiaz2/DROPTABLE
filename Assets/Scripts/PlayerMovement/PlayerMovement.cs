@@ -20,7 +20,14 @@ public class PlayerMovement : MonoBehaviour
 
     // Current Movement Values
     private Vector3 moveDirection;
-    private Rigidbody rb;
+    private Rigidbody _rb;
+    public Rigidbody rb
+    {
+        get
+        {
+            return this._rb;
+        }
+    }
 
     // If the player is currently frozen due to movement being restricted (sitting, on phone, etc.)
     // Other scripts will generally set this value
@@ -30,9 +37,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
-        rb.drag = groundDrag;
+        _rb = GetComponent<Rigidbody>();
+        _rb.freezeRotation = true;
+        _rb.drag = groundDrag;
 
         forward = Vector3.ProjectOnPlane(movementReference.forward, Vector3.up).normalized;
         right = Vector3.ProjectOnPlane(movementReference.right, Vector3.up).normalized;
@@ -45,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (immobile)
         {
-            rb.velocity = Vector3.zero;
+            _rb.velocity = Vector3.zero;
             return;
         }
 
@@ -57,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (immobile)
         {
-            rb.velocity = Vector3.zero;
+            _rb.velocity = Vector3.zero;
             return;
         }
         MovePlayer();
@@ -71,13 +78,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void SpeedControl()
     {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        Vector3 flatVel = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
 
         // limit velocity if needed
-        if(flatVel.magnitude > moveSpeed)
+        if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            _rb.velocity = new Vector3(limitedVel.x, _rb.velocity.y, limitedVel.z);
         }
     }
 
@@ -85,15 +92,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // calcaulate movement direction
         moveDirection = (forward * verticalInput) + (right * horizontalInput);
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        _rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
-        Vector3 facing = rb.velocity.normalized;
+        Vector3 facing = _rb.velocity.normalized;
         facing.y = 0;
-        if(facing.sqrMagnitude > 0.0f) {
+        if (facing.sqrMagnitude > 0.0f)
+        {
             transform.rotation = Quaternion.LookRotation(facing);
         }
     }
 }
-
-
-
