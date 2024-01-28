@@ -1,26 +1,74 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class InteractionController : MonoBehaviour
 {
-    // Mask for the 8th layer (index based)
-    // 8th layer = Interaction layer
-    private const int LAYER_MASK = 1 << 8;
+    public OutlineManager outlineManager;
+    public Text prompt;
+    public int interactionRadius = 5;
 
-    [SerializeField]
-    private const int interactionRadius = 5;
+    private GameObject lastClosest = null;
+    private Interactable target = null;
+    private GameObject[] targets;
+
+    void Start()
+    {
+        targets = GameObject.FindGameObjectsWithTag("Interactable");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        var colliders = Physics.OverlapSphere(transform.position, interactionRadius, LAYER_MASK);
-        var ordered = colliders.OrderBy(c => (transform.position - c.transform.position).sqrMagnitude).ToArray();
-        if(ordered.Length < 1)
+        // ignore class if no interactables
+        if (targets.Length < 1)
         {
             return;
         }
 
-        Interactable closestInteractable = ordered[0].gameObject.GetComponent<Interactable>();
-        closestInteractable.Interact();
+        GameObject[] ordered = targets.OrderBy(go => (transform.position - go.transform.position).sqrMagnitude).ToArray();
+
+        // Determine closest interactable object
+        GameObject closest = null;
+        int index = 0;
+        while ((index < ordered.Length) && (closest == null))
+        {
+            Interactable interactable = ordered[index].GetComponent<Interactable>();
+            if (interactable.IsActive())
+            {
+                closest = ordered[index];
+            }
+            index++;
+        }
+
+        // Check if closest is within range
+        if (closest != null) // null if no interactables are active
+        {
+            float distance = (transform.position - closest.transform.position).magnitude;
+            if (distance > interactionRadius)
+            {
+                closest = null;
+            }
+        }
+
+        // Change interaction target
+        if (closest != lastClosest)
+        {
+            //Debug.Log($"Closest Interactable: {closest}");
+            outlineManager.Unhighlight(lastClosest);
+            outlineManager.Highlight(closest);
+
+            lastClosest = closest;
+            target = closest?.GetComponent<Interactable>();
+
+            string targetPrompt = target?.GetPrompt();
+            prompt.text = (targetPrompt == null) ? "" : $"[E] {targetPrompt}";
+        }
+
+        // If interact button pressed, interact with object
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            target?.Interact();
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -7,36 +8,34 @@ public class SubtitleManager : MonoBehaviour
 {
 
     public TextMeshProUGUI subTitleText;
-
     public Animator animator;
-
     public float textSpeed;
-    private Queue<string> sentences = new Queue<string>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Queue<string> sentences = new Queue<string>();
+    private Action callbackFunc;
 
     private void Update()
     {
+        /*
         if (GameManager.state == GameState.ClassRoomSubtitleEnd)
         {
             EndDialogue();
             GameManager.state = GameState.ClassRoomSeated;
             return;
         }
+        */
     }
 
-    public void StartSubtitle(Dialogue dialogue)
+
+    public void StartSubtitle(string[] subtitles, Action callback = null)
     {
         animator.SetBool("isOpen", true);
-        sentences.Clear();
+        //this.sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        this.callbackFunc = callback;
+        foreach (string sentence in subtitles)
         {
-            sentences.Enqueue(sentence);
+            this.sentences.Enqueue(sentence);
         }
 
         DisplayNextSentence();
@@ -44,13 +43,13 @@ public class SubtitleManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        if (this.sentences.Count == 0)
         {
             EndDialogue();
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        string sentence = this.sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         Invoke("DisplayNextSentence", 5);
@@ -69,14 +68,14 @@ public class SubtitleManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of conversation.");
+        //Debug.Log("End of conversation.");
         animator.SetBool("isOpen", false);
-        DialogueTrigger.dialogueStart = false;
+        this.callbackFunc?.Invoke();
+        /*
         if(GameManager.state == GameState.OnWayHomeStart)
         {
             GameManager.state = GameState.BackToClassroom;
         }
+        */
     }
-
-
 }

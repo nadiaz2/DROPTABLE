@@ -12,6 +12,7 @@ TagManager:
   - SeatCamera
   - JacobLivingRoom
   - LivingRoomDoor
+  - Interactable
   - OnWayHomeDoor
   - Morgan
   layers:

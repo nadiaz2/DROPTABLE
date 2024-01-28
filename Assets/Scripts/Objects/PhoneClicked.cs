@@ -49,14 +49,14 @@ public class PhoneClicked : MonoBehaviour
             wasPaused = false;
         }
 
-        if (PhoneFoundDialogue.photoFound || GameManager.state == GameState.GamePaused)
+        if (PhoneFoundDialogue.photoFound || LivingRoomManager.state == LivingRoomState.GamePaused)
         {
             this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
             this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
             lerpPercent = Math.Max(lerpPercent - 0.005f, 0.0f);
             onPhone = false;
         }
-        else if(GameManager.state == GameState.PlayingGame)
+        else if(LivingRoomManager.state == LivingRoomState.PlayingGame)
         {
             this.transform.position = Vector3.Lerp(startPosition, finalPosition, lerpPercent);
             this.transform.rotation = Quaternion.Slerp(startRotation, finalRotation, lerpPercent);
@@ -76,7 +76,7 @@ public class PhoneClicked : MonoBehaviour
             RaycastHit Hit;
             if (Physics.Raycast(ray, out Hit, 75f))
             {
-                if (Hit.collider.gameObject.CompareTag("Phone") && (GameManager.state == GameState.FinishedTalking))
+                if (Hit.collider.gameObject.CompareTag("Phone") && (LivingRoomManager.state == LivingRoomState.FinishedTalking))
                 {
                     phoneMoving = true;
                     finalPosition = camera.transform.position + camera.transform.forward * 10f;

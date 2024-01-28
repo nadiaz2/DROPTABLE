@@ -9,7 +9,7 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!DialogueTrigger.dialogueStart && !PhoneClicked.onPhone)
+        if (!DialogueManager.dialogueOngoing && !PhoneClicked.onPhone)
         {
             transform.position = cameraPosition.position;
         }

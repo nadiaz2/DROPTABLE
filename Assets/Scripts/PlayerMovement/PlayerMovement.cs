@@ -5,70 +5,66 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [Header("Movement")]
+    public Transform movementReference;
     public float moveSpeed;
-
     public float groundDrag;
 
-    public float jumpForce;
-    public float jumpCooldown;
-    public float airMultiplier;
-    private bool readyToJump;
+    // Movement Axis
+    private Vector3 forward;
+    private Vector3 right;
 
-    [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space;
-
-    [Header("Ground Check")]
-    public float playerHeight;
-    public LayerMask whatIsground;
-    bool grounded;
-
-    public Transform orientation;
-
+    // Input values
     float horizontalInput;
     float verticalInput;
 
-    Vector3 moveDirection;
+    // Current Movement Values
+    private Vector3 moveDirection;
+    private Rigidbody _rb;
+    public Rigidbody rb
+    {
+        get
+        {
+            return this._rb;
+        }
+    }
 
-    Rigidbody rb;
+    // If the player is currently frozen due to movement being restricted (sitting, on phone, etc.)
+    // Other scripts will generally set this value
+    public bool immobile { get; set; }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
-        readyToJump = true;
+        _rb = GetComponent<Rigidbody>();
+        _rb.freezeRotation = true;
+        _rb.drag = groundDrag;
+
+        forward = Vector3.ProjectOnPlane(movementReference.forward, Vector3.up).normalized;
+        right = Vector3.ProjectOnPlane(movementReference.right, Vector3.up).normalized;
+
+        immobile = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (DialogueTrigger.dialogueStart || PhoneClicked.onPhone || GameManager.state == GameState.MorganCloseUp)
+        if (immobile)
         {
-            rb.velocity = Vector3.zero;
-            rb.drag = groundDrag;
+            _rb.velocity = Vector3.zero;
             return;
         }
-        // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsground);
 
         SpeedControl();
         MyInput();
-
-        // handle drag
-        if (grounded)
-            rb.drag = groundDrag;
-        else
-            rb.drag = 0;
     }
 
     private void FixedUpdate()
     {
-        if (DialogueTrigger.dialogueStart || PhoneClicked.onPhone || GameManager.state == GameState.MorganCloseUp)
+        if (immobile)
         {
-            rb.velocity = Vector3.zero;
+            _rb.velocity = Vector3.zero;
             return;
         }
         MovePlayer();
@@ -78,60 +74,31 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+    }
 
-        /*
-        // when to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
+
+        // limit velocity if needed
+        if (flatVel.magnitude > moveSpeed)
         {
-            readyToJump = false;
-
-            Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            _rb.velocity = new Vector3(limitedVel.x, _rb.velocity.y, limitedVel.z);
         }
-        */
     }
 
     private void MovePlayer()
     {
         // calcaulate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = (forward * verticalInput) + (right * horizontalInput);
+        _rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
-        // on ground
-        if (grounded)
+        Vector3 facing = _rb.velocity.normalized;
+        facing.y = 0;
+        if (facing.sqrMagnitude > 0.0f)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-        }else if(!grounded)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            transform.rotation = Quaternion.LookRotation(facing);
         }
-
-    }
-    private void SpeedControl()
-    {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        // limit velocity if needed
-        if(flatVel.magnitude > moveSpeed)
-        {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
-        }
-    }
-
-    private void Jump()
-    {
-        //reset y velocity
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-    }
-
-    private void ResetJump()
-    {
-        readyToJump = true;
     }
 }
-
-
-

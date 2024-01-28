@@ -21,12 +21,12 @@ public class MorganCloseUp : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Morgan" && GameManager.state == GameState.PickedupHeadphones)
+        if (other.gameObject.tag == "Morgan" && ClassroomManager.state == ClassroomState.PickedUpHeadphones)
         {
             Invoke("returnToPlayerCamera", 5);
             morgan.SetActive(true);
             playerCamera.SetActive(false);
-            GameManager.state = GameState.MorganCloseUp;
+            ClassroomManager.state = ClassroomState.MorganCloseUp;
         }
     }
 
@@ -34,7 +34,7 @@ public class MorganCloseUp : MonoBehaviour
     {
         playerCamera.SetActive(true); ;
         morgan.SetActive(false); ;
-        GameManager.state = GameState.AfterHeadphones;
+        ClassroomManager.state = ClassroomState.AfterHeadphones;
     }
 
 

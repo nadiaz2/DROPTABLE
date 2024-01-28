@@ -7,27 +7,49 @@ using UnityEngine.UI;
 public class BlackScreen : MonoBehaviour
 {
 
-    public Animator animator;
+    //public Animator animator;
 
-    private bool goBlacked = true;
-    private bool goTransparent = false;
+    //private bool goBlacked = true;
+    //private bool goTransparent = false;
+
+    public bool goBlacked = true;
+    public float fadeSeconds = 2;
+    private Image image;
+    private float percentFade = 1.0f;
 
     void Start()
     {
         // set color of the panel transparent
-        GameObject.Find("Canvas/BlackScreen").GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        this.image = GetComponent<Image>();
+        this.image.color = Color.black;
+
+        //animator.SetBool("SceneVisible", true);
 
     }
-  
+
     // Update is called once per frame
     void Update()
     {
-        if ((GameManager.state == GameState.FinishedTalking) && goBlacked)
+        if (goBlacked && (percentFade != 1.0f))
+        {
+            percentFade += Time.deltaTime / fadeSeconds;
+            percentFade = Mathf.Min(percentFade, 1.0f);
+            this.image.color = Color.Lerp(Color.clear, Color.black, percentFade);
+        }
+        else if(!goBlacked && (percentFade != 0.0f))
+        {
+            percentFade -= Time.deltaTime / fadeSeconds;
+            percentFade = Mathf.Max(percentFade, 0.0f);
+            this.image.color = Color.Lerp(Color.clear, Color.black, percentFade);
+        }
+
+        /*
+        if ((LivingRoomManager.state == LivingRoomState.FinishedTalking) && goBlacked)
         {
             //call GoBlack function after a couple of seconds 
             Invoke("GoBlack", 3);
         }
-        if ((GameManager.state == GameState.FinishedTalking) && goTransparent && !goBlacked)
+        if ((LivingRoomManager.state == LivingRoomState.FinishedTalking) && goTransparent && !goBlacked)
         {
             //call GoTransparent function after 2 seconds 
             Invoke("GoTransparent", 3);
@@ -36,13 +58,15 @@ public class BlackScreen : MonoBehaviour
             Invoke("classOver", 5);
             
         }
+        */
     }
 
+    /*
     void GoBlack()
     {
         // set color of the panel - black
         //GameObject.Find("Canvas/BlackScreen").GetComponent<Image>().color = new Color(0, 0, 0, 255);
-        animator.SetTrigger("FadeOut");
+        animator.SetBool("SceneVisible", false);
         goBlacked = false;
         goTransparent = true;
     }
@@ -51,15 +75,15 @@ public class BlackScreen : MonoBehaviour
     {
         // set color of the panel transparent
         //GameObject.Find("Canvas/BlackScreen").GetComponent<Image>().color = new Color(0, 0, 0, 0);
-        animator.SetTrigger("FadeIn");
+        animator.SetBool("SceneVisible", true);
         goTransparent = false;
     }
 
     
     void classOver()
     {
-        GameManager.state = GameState.ClassOver;
+        ClassroomManager.state = ClassroomState.ClassOver;
     }
-
+    */
 
 }
