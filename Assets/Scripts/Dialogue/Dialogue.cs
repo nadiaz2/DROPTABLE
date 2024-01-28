@@ -8,12 +8,12 @@ using UnityEngine.UI;
 public class Dialogue
 {
 
-    public string[] names;
+    public string name;
 
-    public Image[] characterPortraits;
+    public Image characterPortrait;
 
     [TextArea(7, 15)]
-    public string[] sentences;
+    public string sentence;
 
 
 }

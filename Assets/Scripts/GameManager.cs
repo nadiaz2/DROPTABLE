@@ -1,5 +1,6 @@
-
-enum GameState {
+/*
+enum GameState
+{
 	GameStart,
 	TalkingToJacob,
 	FinishedTalking,
@@ -9,12 +10,22 @@ enum GameState {
 	ClassRoomSeated,
 	ClassRoomSubtitleEnd,
 	ClassOver,
-    OnWayHomeStart,
-    BackToClassroom,
+	OnWayHomeStart,
+	BackToClassroom,
 	PickedupHeadphones,
-    MorganCloseUp,
+	MorganCloseUp,
 	AfterHeadphones,
 }
-class GameManager {
+*/
+public enum GameState
+{
+	GameStart,
+	ClassRoomStart,
+	OnWayHomeStart,
+	BackToClassroom
+}
+
+public class GameManager
+{
 	public static GameState state = GameState.GameStart;
 }

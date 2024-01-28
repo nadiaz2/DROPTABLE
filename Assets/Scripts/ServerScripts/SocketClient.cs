@@ -56,7 +56,7 @@ public class SocketClient : MonoBehaviour
         {
             var obj = response.GetValue<string>();
             Debug.Log(obj);
-            GameManager.state = GameState.PlayingGame;
+            LivingRoomManager.state = LivingRoomState.PlayingGame;
             PhoneClicked.wasPaused = true;
         });
 
@@ -64,7 +64,7 @@ public class SocketClient : MonoBehaviour
         {
             //var obj = response.GetValue<string>();
             //Debug.Log(obj);
-            GameManager.state = GameState.GamePaused;
+            LivingRoomManager.state = LivingRoomState.GamePaused;
         });
 
         socket.On("MiniGameEnd", (response) =>

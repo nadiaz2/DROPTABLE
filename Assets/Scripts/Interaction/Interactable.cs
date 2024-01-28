@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public abstract class Interactable : MonoBehaviour
+public interface Interactable
 {
-    public abstract void Interact();
+    public void Interact();
+    public string GetPrompt();
+    public bool IsActive();
 }

@@ -45,13 +45,13 @@ public class chair : MonoBehaviour
                 interactable = false;
                 standingCamera.GetComponent<AudioListener>().enabled = false;
                 sittingCamera.GetComponent<AudioListener>().enabled = true;
-                GameManager.state = GameState.ClassRoomSubtitleEnd;
+                //ClassroomManager.state = ClassroomState.SubtitleEnd;
 
             }
         }
         if (sitting)
         {
-            if (GameManager.state != GameState.FinishedTalking)
+            if (LivingRoomManager.state != LivingRoomState.FinishedTalking)
             {
                 if (Input.GetKeyDown(KeyCode.Q))
                 {

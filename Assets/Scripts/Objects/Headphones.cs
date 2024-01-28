@@ -3,40 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Headphones : MonoBehaviour
+public class Headphones : MonoBehaviour, Interactable
 {
+    public bool interactable = false;
 
-    public GameObject pickupText;
-    public bool interactable;
-
-    void OnTriggerStay(Collider other)
+    public void Interact()
     {
-
-        if (other.CompareTag("MainCamera"))
-        {
-            pickupText.SetActive(true);
-            interactable = true;
-        }
-    }
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("MainCamera"))
-        {
-            pickupText.SetActive(false);
-            interactable = false;
-        }
+        this.interactable = false;
+        gameObject.SetActive(false);
+        ClassroomManager.state = ClassroomState.PickedUpHeadphones;
     }
 
-    private void Update()
+    public string GetPrompt()
     {
-        if (interactable)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                GameManager.state = GameState.PickedupHeadphones;
-                gameObject.SetActive(false);
-                pickupText.SetActive(false);
-            }
-        }
+        return "Pick Up Headphones";
+    }
+
+    public bool IsActive()
+    {
+        return this.interactable;
     }
 }
