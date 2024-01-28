@@ -3571,7 +3571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 470724769}
-  jacob: {fileID: 885341849}
+  jacob: {fileID: 0}
   headphones: {fileID: 809392393}
 --- !u!1 &481452865
 GameObject:
@@ -5554,8 +5554,83 @@ Transform:
   m_Children:
   - {fileID: 1432583744}
   - {fileID: 87977283}
+  - {fileID: 809392397}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &705799846
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 189.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1055.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_Name
+      value: JacobModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 87f2dcb3762cc4c4790f85cc6f8e858f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551129132}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551129133}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1551129134}
+  m_SourcePrefab: {fileID: 100100000, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
 --- !u!1 &711629199
 GameObject:
   m_ObjectHideFlags: 0
@@ -6146,35 +6221,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 704589398}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.024999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.024999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 174.52972
+      value: 2.0066946
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.17
+      value: -0.6807501
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -943.32
+      value: 2.2726676
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: -0.64819306
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: -0.64819306
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.28257006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.28257006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6281,6 +6368,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: {fileID: 1339117675}
   interactable: 0
+--- !u!4 &809392397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26576e1e13cd1a947906ed0d584d24a8, type: 3}
+  m_PrefabInstance: {fileID: 809392392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &859000013
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,220 +6544,6 @@ Transform:
   - {fileID: 148427844}
   m_Father: {fileID: 1385358890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &885341849
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 885341850}
-  - component: {fileID: 885341855}
-  - component: {fileID: 885341854}
-  - component: {fileID: 885341853}
-  - component: {fileID: 885341852}
-  - component: {fileID: 885341851}
-  - component: {fileID: 885341856}
-  m_Layer: 0
-  m_Name: Jacob
-  m_TagString: Jacob
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &885341850
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885341849}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.3996144, z: -0, w: -0.9166834}
-  m_LocalPosition: {x: 186.5, y: 59.4, z: -1064}
-  m_LocalScale: {x: 40, y: 40, z: 40}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &885341851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885341849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    names:
-    - Tom (you)
-    - 
-    - Jacob
-    - 
-    - Jacob
-    - Tom (you)
-    - 
-    - 
-    - Jacob
-    - 
-    characterPortraits:
-    - {fileID: 285282256}
-    - {fileID: 1995313475}
-    - {fileID: 1173044992}
-    - {fileID: 1995313475}
-    - {fileID: 1173044992}
-    - {fileID: 285282256}
-    - {fileID: 1995313475}
-    - {fileID: 1995313475}
-    - {fileID: 1173044992}
-    - {fileID: 1995313475}
-    sentences:
-    - What did you go out for so late? Does discussing with the professor really
-      take this long? Or did you hook up with the professor?
-    - (Faced with Tom's boring joke, Jacob seemed to ignore it.)
-    - Nothing much, just chatted with an acquaintance.
-    - "(Tom didn\u2019t really care about Jacob's answer, because his question was
-      instinctively raised, and he didn\u2019t care why Jacob came back so late.)"
-    - You said you wanted to ask me about the homework. Bring a chair over to my
-      room and do it. I'll order some takeout first. Do you want anything?
-    - Just order whatever you're having, thanks.
-    - "(Then they began their \"discussion\" about the homework. Rather than a discussion,
-      it was more like a one-sided indoctrination. Like a goose being force-fed for
-      foie gras due to human desire, and just like the goose, he didn\u2019t digest
-      much.)"
-    - "(Tom just wanted to know how to write the homework. He was not interested
-      in the process, but his damn pride didn\u2019t allow him to directly ask for
-      the answers, and even if he did ask, Jacob probably wouldn't agree to tell
-      him the answers directly. Just when the progress was at a stalemate, Jacob's
-      phone rang.)"
-    - "The takeout is here... Hello? Yes, it's the door at the garage, no, there
-      are no potted plants in front of our door... No, not the blue door, that's
-      our neighbor\u2019s, ugh, I'll come down to pick it up, don\u2019t move, I\u2019m
-      coming."
-    - (After hanging up and casually placing his phone on the table, Jacob quickly
-      walked outside. Watching Jacob's gradually disappearing figure, Tom, bored
-      at this moment, casually picked up Jacob's phone.)
---- !u!114 &885341852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885341849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8bad93a3f37179469b4bc4d506f9ccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: {fileID: 885341851}
-  JacobText: {fileID: 441580021}
-  interactable: 0
-  chair: {fileID: 1907739599}
---- !u!136 &885341853
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885341849}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &885341854
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885341849}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &885341855
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885341849}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &885341856
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885341849}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &890332635
 GameObject:
   m_ObjectHideFlags: 0
@@ -8780,8 +8658,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 25, y: 25, z: 150}
-  m_Center: {x: 0, y: 0, z: 90}
+  m_Size: {x: 25, y: 25, z: 200}
+  m_Center: {x: 0, y: 0, z: 115}
 --- !u!1 &1102947813
 GameObject:
   m_ObjectHideFlags: 0
@@ -11133,7 +11011,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 42.83595, y: 15.394909, z: 42.83595}
+  m_LocalScale: {x: 42.83595, y: 24.8, z: 42.83595}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 424666068}
@@ -13118,6 +12996,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543217954}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1551129125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+  m_PrefabInstance: {fileID: 705799846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1551129132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551129125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8bad93a3f37179469b4bc4d506f9ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 1551129133}
+  JacobText: {fileID: 441580021}
+  interactable: 0
+  chair: {fileID: 1907739599}
+--- !u!114 &1551129133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551129125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    names:
+    - Tom (you)
+    - 
+    - Jacob
+    - 
+    - Jacob
+    - Tom (you)
+    - 
+    - 
+    - Jacob
+    - 
+    characterPortraits:
+    - {fileID: 285282256}
+    - {fileID: 1995313475}
+    - {fileID: 1173044992}
+    - {fileID: 1995313475}
+    - {fileID: 1173044992}
+    - {fileID: 285282256}
+    - {fileID: 1995313475}
+    - {fileID: 1995313475}
+    - {fileID: 1173044992}
+    - {fileID: 1995313475}
+    sentences:
+    - What did you go out for so late? Does discussing with the professor really
+      take this long? Or did you hook up with the professor?
+    - (Faced with Tom's boring joke, Jacob seemed to ignore it.)
+    - Nothing much, just chatted with an acquaintance.
+    - "(Tom didn\u2019t really care about Jacob's answer, because his question was
+      instinctively raised, and he didn\u2019t care why Jacob came back so late.)"
+    - You said you wanted to ask me about the homework. Bring a chair over to my
+      room and do it. I'll order some takeout first. Do you want anything?
+    - Just order whatever you're having, thanks.
+    - "(Then they began their \"discussion\" about the homework. Rather than a discussion,
+      it was more like a one-sided indoctrination. Like a goose being force-fed for
+      foie gras due to human desire, and just like the goose, he didn\u2019t digest
+      much.)"
+    - "(Tom just wanted to know how to write the homework. He was not interested
+      in the process, but his damn pride didn\u2019t allow him to directly ask for
+      the answers, and even if he did ask, Jacob probably wouldn't agree to tell
+      him the answers directly. Just when the progress was at a stalemate, Jacob's
+      phone rang.)"
+    - "The takeout is here... Hello? Yes, it's the door at the garage, no, there
+      are no potted plants in front of our door... No, not the blue door, that's
+      our neighbor\u2019s, ugh, I'll come down to pick it up, don\u2019t move, I\u2019m
+      coming."
+    - (After hanging up and casually placing his phone on the table, Jacob quickly
+      walked outside. Watching Jacob's gradually disappearing figure, Tom, bored
+      at this moment, casually picked up Jacob's phone.)
+--- !u!136 &1551129134
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551129125}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Height: 100
+  m_Direction: 1
+  m_Center: {x: 0, y: 50, z: 0}
 --- !u!1 &1560943794
 GameObject:
   m_ObjectHideFlags: 0
@@ -17581,7 +17564,6 @@ SceneRoots:
   - {fileID: 1351802272}
   - {fileID: 344925722}
   - {fileID: 495349701}
-  - {fileID: 885341850}
   - {fileID: 1848165712}
   - {fileID: 704589398}
-  - {fileID: 809392392}
+  - {fileID: 705799846}
