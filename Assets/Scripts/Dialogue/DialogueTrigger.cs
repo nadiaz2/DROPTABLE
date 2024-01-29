@@ -12,4 +12,9 @@ public class DialogueTrigger : MonoBehaviour
     {
         dialogueManager.StartDialogue(dialogues, callback);
     }
+
+    public void ContinueDialogue()
+    {
+        dialogueManager.DisplayNextSentence();
+    }
 }

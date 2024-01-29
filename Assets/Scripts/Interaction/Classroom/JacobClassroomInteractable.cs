@@ -7,6 +7,7 @@ public class JacobClassroomInteractable : MonoBehaviour, Interactable
     public DialogueTrigger trigger;
 
     private ClassroomState lastState;
+    private bool talking;
     private bool active;
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class JacobClassroomInteractable : MonoBehaviour, Interactable
     {
         lastState = ClassroomManager.state;
         active = false;
+        talking = false;
     }
 
     // Update is called once per frame
@@ -45,12 +47,21 @@ public class JacobClassroomInteractable : MonoBehaviour, Interactable
 
     public void Interact()
     {
-        trigger.TriggerDialogue(() => {
-            this.active = false;
-            ClassroomManager.currentInstance.Invoke("FadeOut", 1);
-            StartCoroutine(ChangeSceneState(3.5f, ClassroomState.ClassOver));
-            ClassroomManager.currentInstance.Invoke("FadeIn", 4);
-        });
+        if(!talking)
+        {
+            talking = true;
+            trigger.TriggerDialogue(() => {
+                this.active = false;
+                ClassroomManager.currentInstance.Invoke("FadeOut", 1);
+                StartCoroutine(ChangeSceneState(3.5f, ClassroomState.ClassOver));
+                ClassroomManager.currentInstance.Invoke("FadeIn", 4);
+            });
+        }
+        else
+        {
+            trigger.ContinueDialogue();
+        }
+
     }
 
     public string GetPrompt()

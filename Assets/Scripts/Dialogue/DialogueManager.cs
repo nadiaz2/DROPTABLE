@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
+        Debug.Log($"EndDialogue {slides.Count}");
         _dialogueOngoing = true;
 
         this.callbackFunc = callback;
@@ -48,12 +48,13 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        //Debug.Log($"EndDialogue {slides.Count}");
         if (slides.Count == 0)
         {
             EndDialogue();
             return;
         }
-        Dialogue slide = slides.Dequeue();
+        Dialogue slide = this.slides.Dequeue();
 
 
         this.nameText.text = slide.name;
@@ -81,7 +82,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        //Debug.Log("End of conversation.");
+        Debug.Log("End of conversation.");
         animator.SetBool("isOpen", false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
