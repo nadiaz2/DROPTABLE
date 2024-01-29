@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 83759863}
   - component: {fileID: 83759862}
   - component: {fileID: 83759861}
-  - component: {fileID: 83759860}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -144,19 +143,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &83759860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83759859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383246e15e8d8744d9eb02b6b3fb7009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 83759861}
 --- !u!95 &83759861
 Animator:
   serializedVersion: 5
@@ -436,6 +422,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1949450968}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &540898063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 540898064}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &540898064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540898063}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1304167162}
+  - {fileID: 1092760762}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630963205
 GameObject:
@@ -1182,6 +1201,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086114223}
   m_CullTransparentMesh: 1
+--- !u!1 &1092760761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092760762}
+  - component: {fileID: 1092760763}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092760762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092760761}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.3996144, z: -0, w: -0.9166834}
+  m_LocalPosition: {x: 176, y: 65.30002, z: -945.19995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 540898064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1092760763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092760761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af682c59ecbe074fb50b609cf447e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jacob: {fileID: 0}
+  headphones: {fileID: 0}
+  blackScreen: {fileID: 0}
 --- !u!1 &1152754522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,15 +1427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    names: []
-    characterPortraits: []
-    sentences:
-    - Uh, I'm bored I'm going to listen to some music to past the time while walking
-      home.
-    - '"Damn, did I leave them in the classroom? The next class in that classroom
-      is about to start.'
-    - " It'll be embarrassing if I don\u2019t go and get them now.\"\r\n"
+  dialogueManager: {fileID: 0}
+  dialogues: []
 --- !u!114 &1193293712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1546,12 +1605,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304167160}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 540898064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1367754060
 GameObject:
@@ -2157,8 +2216,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1863580565}
   - {fileID: 2035912993}
+  - {fileID: 540898064}
   - {fileID: 150533718}
-  - {fileID: 1304167162}
   - {fileID: 83759865}
   - {fileID: 1949450968}
   - {fileID: 878182584}
