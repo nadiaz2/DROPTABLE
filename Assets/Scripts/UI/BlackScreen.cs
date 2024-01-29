@@ -12,7 +12,7 @@ public class BlackScreen : MonoBehaviour
     //private bool goBlacked = true;
     //private bool goTransparent = false;
 
-    public bool goBlacked = true;
+    [HideInInspector] public bool goBlacked = true;
     public float fadeSeconds = 2;
     private Image image;
     private float percentFade = 1.0f;
@@ -22,14 +22,12 @@ public class BlackScreen : MonoBehaviour
         // set color of the panel transparent
         this.image = GetComponent<Image>();
         this.image.color = Color.black;
-
-        //animator.SetBool("SceneVisible", true);
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log($"{goBlacked} ::: {percentFade} ::: {this.image.color}");
         if (goBlacked && (percentFade != 1.0f))
         {
             percentFade += Time.deltaTime / fadeSeconds;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MorganCloseUp : MonoBehaviour
 {
 
-    public GameObject playerCamera, morgan;
+    public GameObject playerCamera, morganCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -24,16 +24,19 @@ public class MorganCloseUp : MonoBehaviour
         if (other.gameObject.tag == "Morgan" && ClassroomManager.state == ClassroomState.PickedUpHeadphones)
         {
             Invoke("returnToPlayerCamera", 5);
-            morgan.SetActive(true);
+            morganCamera.SetActive(true);
             playerCamera.SetActive(false);
+            this.gameObject.SetActive(false);
             ClassroomManager.state = ClassroomState.MorganCloseUp;
         }
+
     }
 
     void returnToPlayerCamera()
     {
-        playerCamera.SetActive(true); ;
-        morgan.SetActive(false); ;
+        playerCamera.SetActive(true);
+        morganCamera.SetActive(false);
+        this.gameObject.SetActive(true);
         ClassroomManager.state = ClassroomState.AfterHeadphones;
     }
 

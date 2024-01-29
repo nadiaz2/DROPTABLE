@@ -9,8 +9,6 @@ public enum ClassroomState
     // States for first time in classroom
     Start = 1,
     Seated = 2,
-    //FinishedTalking,
-//SubtitleEnd,
     ClassOver = 4,
 
     // States for returning to pick up headphones

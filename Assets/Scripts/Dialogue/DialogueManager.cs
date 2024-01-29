@@ -8,6 +8,7 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public PlayerMovement player;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Image characterPortriatImage;
@@ -34,7 +35,8 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Debug.Log($"EndDialogue {slides.Count}");
+        player.immobile = true;
+
         _dialogueOngoing = true;
 
         this.callbackFunc = callback;
@@ -88,6 +90,7 @@ public class DialogueManager : MonoBehaviour
         Cursor.visible = false;
 
         _dialogueOngoing = false;
+        player.immobile = false;
 
         this.callbackFunc?.Invoke();
         /*

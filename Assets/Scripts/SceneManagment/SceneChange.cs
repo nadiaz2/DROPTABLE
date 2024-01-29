@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public string SceneName;
+    public GameState gameState;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +22,16 @@ public class SceneChange : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player" && GameManager.state == GameState.BackToClassroom)
+        if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Classroom");
+            OnWayHomeManager.currentInstance.FadeOut();
+            Invoke("ChangeScene", 2);
         }
+    }
+
+    private void ChangeScene()
+    {
+        GameManager.state = gameState;
+        SceneManager.LoadScene(SceneName);
     }
 }

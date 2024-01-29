@@ -22,7 +22,10 @@ public enum GameState
 	GameStart,
 	ClassRoomStart,
 	OnWayHomeStart,
-	BackToClassroom
+	BackToClassroom,
+	ReturningHomeAfterHeadphones,
+	LivingRoomStart,
+
 }
 
 public class GameManager

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class ClassroomSelfDialogue : MonoBehaviour
 {
@@ -9,27 +8,39 @@ public class ClassroomSelfDialogue : MonoBehaviour
     public SubtitleTrigger trigger;
     public SubtitleTrigger trigger2;
 
+    private bool triggerStarted = false;
     private bool trigger2Started = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if (ClassroomManager.state == ClassroomState.Return)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
-        trigger.TriggerSubtitle();
+        
     }
 
     void Update()
     {
-        if (ClassroomManager.state == ClassroomState.ClassOver && !trigger2Started)
+        switch(ClassroomManager.state)
         {
-            trigger2.TriggerSubtitle();
-            trigger2Started = true;
+            case ClassroomState.Start:
+                if (!triggerStarted)
+                {
+                    trigger.TriggerSubtitle();
+                    triggerStarted = true;
+                }
+                break;
+
+            case ClassroomState.ClassOver:
+                if (!trigger2Started)
+                {
+                    trigger2.TriggerSubtitle();
+                    trigger2Started = true;
+                }
+                break;
+
+            case ClassroomState.Return:
+                gameObject.SetActive(false);
+                break;
         }
     }
 

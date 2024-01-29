@@ -6,17 +6,14 @@ using static UnityEditor.PlayerSettings;
 [System.Flags]
 public enum OnWayHomeState
 {
-    // States for first time in classroom
-    Start = 1,
-    Seated = 2,
-    Return = 3,
-
+    Start = 1
 }
 
 public class OnWayHomeManager : MonoBehaviour
 {
-    public GameObject jacob;
-    public Headphones headphones;
+    public GameObject classroomSceneTrigger;
+    public GameObject livingRoomSceneTrigger;
+    public SubtitleTrigger subtitleTrigger;
 
     public BlackScreen blackScreen;
 
@@ -37,18 +34,24 @@ public class OnWayHomeManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
-        // Returning to classroom to pick up headphones
-        if (GameManager.state == GameState.BackToClassroom)
-        {
-            jacob.SetActive(false);
-            headphones.gameObject.SetActive(true);
-            headphones.interactable = true;
-            state = OnWayHomeState.Return;
-        }
-        else
+        if (GameManager.state == GameState.OnWayHomeStart)
         {
             state = OnWayHomeState.Start;
+            livingRoomSceneTrigger.SetActive(false);
+            classroomSceneTrigger.SetActive(false);
+
+            subtitleTrigger.TriggerSubtitle(() =>
+            {
+                classroomSceneTrigger.SetActive(true);
+            });
         }
+        else if (GameManager.state == GameState.ReturningHomeAfterHeadphones)
+        {
+           livingRoomSceneTrigger.SetActive(true);
+           classroomSceneTrigger.SetActive(false);
+
+        }
+
     }
 
     public void FadeOut()
