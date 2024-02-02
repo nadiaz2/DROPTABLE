@@ -15,7 +15,6 @@ public enum LivingRoomState
 public class LivingRoomManager : MonoBehaviour
 {
     public GameObject jacob;
-    public GameObject headphones;
 
     public static LivingRoomState state { get; set; }
 
