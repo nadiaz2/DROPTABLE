@@ -7,13 +7,9 @@ TagManager:
   - TV
   - Phone
   - Jacob
-  - TomsDoor
-  - JacobsDoor
   - SeatCamera
   - JacobLivingRoom
-  - LivingRoomDoor
   - Interactable
-  - OnWayHomeDoor
   - Morgan
   layers:
   - Default

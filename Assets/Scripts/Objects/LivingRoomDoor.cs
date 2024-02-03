@@ -29,6 +29,15 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
                 SceneManager.LoadScene("LivingRoom");
                 break;
         }
+
+        switch (JacobsRoomManager.state)
+        {
+            case JacobsRoomState.Start:
+                GameManager.state = GameState.OnWayHomeStart;
+                SceneManager.LoadScene("LivingRoom");
+                break;
+        }
+
     }
 
 
