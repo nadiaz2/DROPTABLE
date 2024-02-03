@@ -10,26 +10,24 @@ public class OutsideDoor : MonoBehaviour, Interactable
     // Start is called before the first frame update
     void Start()
     {
-        active = true;
+        active = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //this.active = (LivingRoomManager.state == LivingRoomState.Start);
+        this.active = (LivingRoomManager.state == LivingRoomState.Day2Start);
     }
 
     public void Interact()
     {
-        switch (TomsRoomManager.state)
+        switch (LivingRoomManager.state)
         {
-            case TomsRoomState.Start:
-                GameManager.state = GameState.OnWayHomeStart;
-                SceneManager.LoadScene("LivingRoom");
+            case LivingRoomState.Day2Start:
+                SceneManager.LoadScene("OutsideHome");
                 break;
 
-           
         }
 
     }

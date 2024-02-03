@@ -11,6 +11,8 @@ public enum TomsRoomState
 
     //States for Day2
     StartDay2,
+    RachelDeathMessageSeen,
+
 }
 
 public class TomsRoomManager : MonoBehaviour
@@ -21,10 +23,19 @@ public class TomsRoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //TODO Temp for testing day 2
+        GameManager.state = GameState.Day2StartTomsRoom;
+
         //Start of Day 2
         if (GameManager.state == GameState.Day2StartTomsRoom)
         {
-            //Send message to phone to send noticification from school on phone
+            //TODO Send message to phone to send noticification from school on phone
+
+            
+            //TODO Sends message back saying player has seen phone message (if statement)
+            state = TomsRoomState.RachelDeathMessageSeen;
+            
         }
         else
         {

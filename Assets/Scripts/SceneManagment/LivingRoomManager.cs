@@ -10,6 +10,9 @@ public enum LivingRoomState
     FinishedTalking,
     PlayingGame,
 	GamePaused,
+
+    //Day 2 States
+    Day2Start,
 }
 
 public class LivingRoomManager : MonoBehaviour
@@ -21,6 +24,16 @@ public class LivingRoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        state = LivingRoomState.Start;
+        // Start of Day 2 going to class
+        if (GameManager.state == GameState.Day2HeadBackToSchool)
+        {
+            state = LivingRoomState.Day2Start;
+        }
+        else
+        {
+            // Day 1 first time in livingroom
+            state = LivingRoomState.Start;
+        }
+        
     }
 }

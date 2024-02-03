@@ -10,14 +10,14 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
     // Start is called before the first frame update
     void Start()
     {
-        active = true;
+        active = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //this.active = (LivingRoomManager.state == LivingRoomState.Start);
+        this.active = (TomsRoomManager.state == TomsRoomState.RachelDeathMessageSeen);
     }
 
     public void Interact()
@@ -25,11 +25,11 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
         switch (TomsRoomManager.state)
         {
             case TomsRoomState.Start:
-                GameManager.state = GameState.OnWayHomeStart;
                 SceneManager.LoadScene("LivingRoom");
                 break;
 
-            case TomsRoomState.StartDay2:
+            case TomsRoomState.RachelDeathMessageSeen:
+                GameManager.state = GameState.Day2HeadBackToSchool;
                 SceneManager.LoadScene("LivingRoom");
                 break;
         }
@@ -37,7 +37,6 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
         switch (JacobsRoomManager.state)
         {
             case JacobsRoomState.Start:
-                GameManager.state = GameState.OnWayHomeStart;
                 SceneManager.LoadScene("LivingRoom");
                 break;
         }

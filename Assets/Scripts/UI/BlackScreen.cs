@@ -27,7 +27,7 @@ public class BlackScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"{goBlacked} ::: {percentFade} ::: {this.image.color}");
+        //Debug.Log($"{goBlacked} ::: {percentFade} ::: {this.image.color}");
         if (goBlacked && (percentFade != 1.0f))
         {
             percentFade += Time.deltaTime / fadeSeconds;
