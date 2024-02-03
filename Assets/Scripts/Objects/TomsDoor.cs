@@ -28,6 +28,7 @@ public class TomsDoor : MonoBehaviour, Interactable
                 GameManager.state = GameState.OnWayHomeStart;
                 SceneManager.LoadScene("TomsRoom");
                 break;
+
         }
     }
 

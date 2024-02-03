@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LivingRoomDoor : MonoBehaviour, Interactable
+public class OutsideDoor : MonoBehaviour, Interactable
 {
     private bool active;
 
@@ -29,17 +29,7 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
                 SceneManager.LoadScene("LivingRoom");
                 break;
 
-            case TomsRoomState.StartDay2:
-                SceneManager.LoadScene("LivingRoom");
-                break;
-        }
-
-        switch (JacobsRoomManager.state)
-        {
-            case JacobsRoomState.Start:
-                GameManager.state = GameState.OnWayHomeStart;
-                SceneManager.LoadScene("LivingRoom");
-                break;
+           
         }
 
     }
@@ -47,7 +37,7 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
 
     public string GetPrompt()
     {
-        return "Living Room";
+        return "Outside";
     }
 
     public bool IsActive()

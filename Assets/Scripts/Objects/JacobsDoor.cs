@@ -10,14 +10,14 @@ public class JacobsDoor : MonoBehaviour, Interactable
     // Start is called before the first frame update
     void Start()
     {
-        active = false;
+        active = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.active = (LivingRoomManager.state == LivingRoomState.Start);
+        //this.active = (LivingRoomManager.state == LivingRoomState.Start);
     }
 
     public void Interact()
