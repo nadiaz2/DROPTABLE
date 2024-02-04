@@ -11,7 +11,7 @@ public class Lunch : MonoBehaviour, Interactable
     {
         this.interactable = false;
         gameObject.SetActive(false);
-        CafeteriaManager.state = CafeteriaState.Day2LunchTime;
+        CafeteriaManager.state = CafeteriaState.Day2EmilyPhone;
     }
 
     public string GetPrompt()
