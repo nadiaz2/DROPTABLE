@@ -54,6 +54,7 @@ public class OnWayHomeManager : MonoBehaviour
 
         }else if (GameManager.state == GameState.Day2HeadBackToSchool)
         {
+            //Debug.Log(GameManager.state);
             player.transform.position = comingFromOutsideHouse.position;
         }
 

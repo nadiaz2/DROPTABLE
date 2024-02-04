@@ -25,7 +25,6 @@ public class TomsDoor : MonoBehaviour, Interactable
         switch (LivingRoomManager.state)
         {
             case LivingRoomState.Start:
-                GameManager.state = GameState.OnWayHomeStart;
                 SceneManager.LoadScene("TomsRoom");
                 break;
 

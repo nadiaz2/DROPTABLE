@@ -29,6 +29,7 @@ public class LivingRoomManager : MonoBehaviour
         // Start of Day 2 going to class
         if (GameManager.state == GameState.Day2HeadBackToSchool)
         {
+            //Debug.Log(GameManager.state);
             state = LivingRoomState.Day2Start;
             player.transform.position = inFrontTomsDoor.position;
 
