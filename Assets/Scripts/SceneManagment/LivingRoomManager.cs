@@ -17,7 +17,9 @@ public enum LivingRoomState
 
 public class LivingRoomManager : MonoBehaviour
 {
+    public GameObject player;
     public GameObject jacob;
+    public Transform inFrontTomsDoor;
 
     public static LivingRoomState state { get; set; }
 
@@ -28,6 +30,8 @@ public class LivingRoomManager : MonoBehaviour
         if (GameManager.state == GameState.Day2HeadBackToSchool)
         {
             state = LivingRoomState.Day2Start;
+            player.transform.position = inFrontTomsDoor.position;
+
         }
         else
         {

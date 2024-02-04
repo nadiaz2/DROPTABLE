@@ -15,6 +15,9 @@ public class OnWayHomeManager : MonoBehaviour
     public GameObject livingRoomSceneTrigger;
     public SubtitleTrigger subtitleTrigger;
 
+    public GameObject player;
+    public Transform comingFromOutsideHouse;
+
     public BlackScreen blackScreen;
 
     public static OnWayHomeState state { get; set; }
@@ -49,6 +52,9 @@ public class OnWayHomeManager : MonoBehaviour
            livingRoomSceneTrigger.SetActive(true);
            classroomSceneTrigger.SetActive(false);
 
+        }else if (GameManager.state == GameState.Day2HeadBackToSchool)
+        {
+            player.transform.position = comingFromOutsideHouse.position;
         }
 
     }

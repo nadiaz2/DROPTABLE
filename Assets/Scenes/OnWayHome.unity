@@ -924,6 +924,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759309890}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &871004227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 871004228}
+  m_Layer: 0
+  m_Name: TomsRoomExitPlayerSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &871004228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871004227}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -248.1, y: 26.8, z: -1619.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &878182584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1423,6 +1454,8 @@ MonoBehaviour:
   classroomSceneTrigger: {fileID: 972837632}
   livingRoomSceneTrigger: {fileID: 716158372}
   subtitleTrigger: {fileID: 1092760763}
+  player: {fileID: 1949450965}
+  comingFromOutsideHouse: {fileID: 871004228}
   blackScreen: {fileID: 1357937966}
 --- !u!1 &1152754522
 GameObject:
@@ -2196,7 +2229,7 @@ Transform:
   m_GameObject: {fileID: 1857693115}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -694.3, y: -4.2, z: 964.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 32, y: 32, z: 32}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2476,7 +2509,7 @@ Transform:
   m_GameObject: {fileID: 1949450965}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 220.7, y: 26.8, z: -708.7}
+  m_LocalPosition: {x: -248.1, y: 26.8, z: -554}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2545,3 +2578,4 @@ SceneRoots:
   - {fileID: 1193293710}
   - {fileID: 972837633}
   - {fileID: 716158376}
+  - {fileID: 871004228}
