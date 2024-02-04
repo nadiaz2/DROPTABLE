@@ -44,8 +44,7 @@ public class OnWayHomeManager : MonoBehaviour
             {
                 classroomSceneTrigger.SetActive(true);
             });
-        }
-        else if (GameManager.state == GameState.ReturningHomeAfterHeadphones)
+        }else if (GameManager.state == GameState.ReturningHomeAfterHeadphones)
         {
            livingRoomSceneTrigger.SetActive(true);
            classroomSceneTrigger.SetActive(false);

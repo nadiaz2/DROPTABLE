@@ -11,6 +11,10 @@ public enum OutsideHomeState
 
 public class OutsideHomeManager : MonoBehaviour
 {
+    public GameObject onWayHomeSceneTrigger;
+    public SubtitleTrigger subtitleTrigger;
+
+    public BlackScreen blackScreen;
 
     public static OutsideHomeState state { get; set; }
     public static OutsideHomeManager currentInstance
@@ -27,11 +31,17 @@ public class OutsideHomeManager : MonoBehaviour
     {
         OutsideHomeManager._instance = this;
 
-        //blackScreen.goBlacked = false;
+        blackScreen.goBlacked = false;
+
+
+        if (GameManager.state == GameState.Day2HeadBackToSchool)
+        {
+            onWayHomeSceneTrigger.SetActive(true);
+        }
 
     }
 
-    /*
+
     public void FadeOut()
     {
         if (blackScreen != null)
@@ -47,5 +57,5 @@ public class OutsideHomeManager : MonoBehaviour
             blackScreen.goBlacked = false;
         }
     }
-    */
+
 }

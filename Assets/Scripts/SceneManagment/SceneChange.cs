@@ -24,7 +24,10 @@ public class SceneChange : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            OnWayHomeManager.currentInstance.FadeOut();
+            if (SceneManager.GetActiveScene().name == "OnWayHome")
+            {
+                OnWayHomeManager.currentInstance.FadeOut();
+            }
             Invoke("ChangeScene", 2);
         }
     }
