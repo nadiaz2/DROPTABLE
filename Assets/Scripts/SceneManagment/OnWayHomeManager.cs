@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
+using static UnityEngine.GraphicsBuffer;
 
 [System.Flags]
 public enum OnWayHomeState
@@ -17,6 +18,7 @@ public class OnWayHomeManager : MonoBehaviour
 
     public GameObject player;
     public Transform comingFromOutsideHouse;
+    public Transform comingFromClassroom;
 
     public BlackScreen blackScreen;
 
@@ -42,6 +44,8 @@ public class OnWayHomeManager : MonoBehaviour
             state = OnWayHomeState.Start;
             livingRoomSceneTrigger.SetActive(false);
             classroomSceneTrigger.SetActive(false);
+            player.transform.position = new Vector3(-248, 27, -555);
+            //player.transform.position = comingFromClassroom.position;
 
             subtitleTrigger.TriggerSubtitle(() =>
             {
@@ -51,14 +55,22 @@ public class OnWayHomeManager : MonoBehaviour
         {
            livingRoomSceneTrigger.SetActive(true);
            classroomSceneTrigger.SetActive(false);
+           player.transform.position = new Vector3(-248, 27, -555);
+           //player.transform.position = comingFromClassroom.position;
 
-        }else if (GameManager.state == GameState.Day2HeadBackToSchool)
+        }
+        else if (GameManager.state == GameState.Day2HeadBackToSchool)
         {
             //Debug.Log(GameManager.state);
-            player.transform.position = comingFromOutsideHouse.position;
+            classroomSceneTrigger.SetActive(true);
+            //player.transform.position = comingFromOutsideHouse.position;
+            player.transform.position = new Vector3(-248, 27, -1600);
         }
 
+
     }
+
+
 
     public void FadeOut()
     {

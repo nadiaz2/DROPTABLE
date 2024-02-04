@@ -31,7 +31,7 @@ public class LivingRoomManager : MonoBehaviour
         {
             //Debug.Log(GameManager.state);
             state = LivingRoomState.Day2Start;
-            player.transform.position = inFrontTomsDoor.position;
+            player.transform.position = new Vector3(205, 53, -516);
 
         }
         else
