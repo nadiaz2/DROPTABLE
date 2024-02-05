@@ -649,7 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleManager: {fileID: 1015833092}
   subtitles:
-  - I fianlly got through class, I should go grab lunch.
+  - I finally got through class, I should go grab lunch.
 --- !u!1 &69331393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,6 +1643,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 67532458}
+  - {fileID: 2035584694}
   - {fileID: 1015833091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18757,6 +18758,8 @@ GameObject:
   - component: {fileID: 1401799940}
   - component: {fileID: 1401799943}
   - component: {fileID: 1401799942}
+  - component: {fileID: 1401799944}
+  - component: {fileID: 1401799945}
   m_Layer: 0
   m_Name: Emily
   m_TagString: Interactable
@@ -18837,10 +18840,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fb16e011c90314bb8f7b0c90200376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 1401799942}
+  dialogueManager: {fileID: 2035584695}
+  subtitleManager: {fileID: 1015833092}
+  subtitleTrigger: {fileID: 1401799942}
+  subtitleTrigger2: {fileID: 1401799945}
+  dialogueTrigger: {fileID: 1401799944}
   rachelPhoto: {fileID: 1746645131}
   player: {fileID: 1901485171}
   interactable: 0
+--- !u!114 &1401799944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401799939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 2035584695}
+  dialogues:
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Wait, that dress...
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Did your friend wear this dress often?
+  - name: Emily
+    characterPortrait: {fileID: 0}
+    sentence: Yeah, she's been wearing this dress a lot lately.
+  - name: Emily
+    characterPortrait: {fileID: 0}
+    sentence: She saved for a long time to buy it. She was wearing it yesterday morning
+      when I saw her. Why do you ask?
+--- !u!114 &1401799945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401799939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 1015833092}
+  subtitles:
+  - Isn't that the same dress on Jacobs phone??
+  - I need to check Jacobs phone again after I get out of this afternoon's class.
+  - I should head to that class now.
 --- !u!1 &1411445442
 GameObject:
   m_ObjectHideFlags: 0
@@ -27858,6 +27909,57 @@ Transform:
   - {fileID: 447588041}
   m_Father: {fileID: 1165956702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2035584693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2035584694}
+  - component: {fileID: 2035584695}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2035584694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035584693}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 133658546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2035584695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035584693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807a90703784ce5418acb6c9b91ac8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1901485172}
+  nameText: {fileID: 1826236310}
+  dialogueText: {fileID: 1825257430}
+  characterPortriatImage: {fileID: 0}
+  animator: {fileID: 1701740920}
+  textSpeed: 0.01
+  finished: 0
 --- !u!1 &2035775200
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,7 +66,7 @@ public class SubtitleManager : MonoBehaviour
     }
 
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         //Debug.Log("End of conversation.");
         animator.SetBool("isOpen", false);

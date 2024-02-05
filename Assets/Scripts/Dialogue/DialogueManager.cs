@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public Image characterPortriatImage;
     public Animator animator;
     public float textSpeed;
+    public bool finished = false;
 
     private static bool _dialogueOngoing;
     public static bool dialogueOngoing {
@@ -54,6 +55,7 @@ public class DialogueManager : MonoBehaviour
         if (slides.Count == 0)
         {
             EndDialogue();
+            finished = true;
             return;
         }
         Dialogue slide = this.slides.Dequeue();

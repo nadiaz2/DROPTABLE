@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class EmilyCafeteria : MonoBehaviour, Interactable
 {
-
-    public SubtitleTrigger trigger;
+    public DialogueManager dialogueManager;
+    public SubtitleManager subtitleManager;
+    public SubtitleTrigger subtitleTrigger;
+    public SubtitleTrigger subtitleTrigger2;
+    public DialogueTrigger dialogueTrigger;
     public GameObject rachelPhoto;
     public GameObject player;
 
     public bool interactable = false;
-    private bool triggerStarted = false;
+    private bool subtitleTriggerStarted = false;
+    private bool subtitleTriggerStarted2 = false;
+    private bool dialogueTriggerStarted = false;
 
 
     // Start is called before the first frame update
@@ -26,12 +31,11 @@ public class EmilyCafeteria : MonoBehaviour, Interactable
         switch (CafeteriaManager.state)
         {
             case CafeteriaState.Day2EmilyPhone:
-                if (!triggerStarted)
+                if (!subtitleTriggerStarted)
                 {
-                    trigger.TriggerSubtitle();
+                    subtitleTrigger.TriggerSubtitle();
                     interactable = true;
-                    triggerStarted = true;
-                    CafeteriaManager.state = CafeteriaState.Day2SeenPhoto;
+                    subtitleTriggerStarted = true;
                 }
                 break;
 
@@ -40,6 +44,27 @@ public class EmilyCafeteria : MonoBehaviour, Interactable
                 {
                     rachelPhoto.SetActive(false);
                     player.gameObject.SetActive(true);
+                    CafeteriaManager.state = CafeteriaState.Day2TalkWithEmily;
+                }
+                break;
+
+            case CafeteriaState.Day2TalkWithEmily:
+                if (!dialogueTriggerStarted)
+                {
+                    dialogueTrigger.TriggerDialogue();
+                    dialogueTriggerStarted = true;
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                    {
+                        dialogueTrigger.ContinueDialogue();
+                    }
+                }
+                if(dialogueManager.finished && !subtitleTriggerStarted2)
+                {
+                    subtitleTrigger2.TriggerSubtitle();
+                    subtitleTriggerStarted2 = true;
                 }
                 break;
         }
@@ -50,6 +75,8 @@ public class EmilyCafeteria : MonoBehaviour, Interactable
         this.interactable = false;
         rachelPhoto.SetActive(true);
         player.gameObject.SetActive(false);
+        subtitleManager.EndDialogue();
+        CafeteriaManager.state = CafeteriaState.Day2SeenPhoto;
 
     }
 
