@@ -22,6 +22,7 @@
 
 <script>
 export default {
+  name: 'game1_album',
   data() {
     return {
       route: 'game1_main',
