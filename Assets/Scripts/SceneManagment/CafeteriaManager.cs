@@ -13,6 +13,7 @@ public enum CafeteriaState
     Day2EmilyPhone,
     Day2SeenPhoto,
     Day2TalkWithEmily,
+    Day2FinishedTalkingWithEmily,
 
 }
 

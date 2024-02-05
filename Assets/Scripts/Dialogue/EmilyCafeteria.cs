@@ -65,6 +65,8 @@ public class EmilyCafeteria : MonoBehaviour, Interactable
                 {
                     subtitleTrigger2.TriggerSubtitle();
                     subtitleTriggerStarted2 = true;
+                    CafeteriaManager.state = CafeteriaState.Day2FinishedTalkingWithEmily;
+                    Debug.Log(CafeteriaManager.state);
                 }
                 break;
         }

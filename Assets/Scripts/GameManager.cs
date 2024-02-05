@@ -27,6 +27,7 @@ public enum GameState
 	LivingRoomStart,
 	Day2StartTomsRoom,
 	Day2HeadBackToSchool,
+	Day2AfternoonClass,
 
 }
 

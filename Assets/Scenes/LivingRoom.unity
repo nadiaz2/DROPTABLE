@@ -3614,7 +3614,7 @@ GameObject:
   - component: {fileID: 1722421145}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3691,7 +3691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineManager: {fileID: 851172001}
   prompt: {fileID: 1955988229}
-  interactionRadius: 100
+  interactionRadius: 120
 --- !u!1 &1732946482
 GameObject:
   m_ObjectHideFlags: 0
