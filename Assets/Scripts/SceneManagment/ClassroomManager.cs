@@ -15,13 +15,21 @@ public enum ClassroomState
     Return = 8,
     PickedUpHeadphones = 16,
     MorganCloseUp = 32,
-    AfterHeadphones = 64
+    AfterHeadphones = 64,
+
+    // States for Day 2
+    Day2AfternoonClass,
+    Day2ClassOver,
+    Day2Seated,
 }
 
 public class ClassroomManager : MonoBehaviour
 {
     public GameObject jacob;
     public Headphones headphones;
+
+    public SubtitleTrigger subtitleTriggerDay2;
+    public bool day2SubtitleTriggered;
 
     public BlackScreen blackScreen;
 
@@ -49,10 +57,35 @@ public class ClassroomManager : MonoBehaviour
             headphones.gameObject.SetActive(true);
             headphones.interactable = true;
             state = ClassroomState.Return;
+        }else if (GameManager.state == GameState.Day2AfternoonClass)
+        {
+            jacob.SetActive(false);
+            day2SubtitleTriggered = false;
+            state = ClassroomState.Day2AfternoonClass;
         }
         else
         {
+            // Start of the game
             state = ClassroomState.Start;
+        }
+
+    }
+
+    private void Update()
+    {
+        switch (ClassroomManager.state)
+        {
+            case ClassroomState.Day2Seated:
+                if (!day2SubtitleTriggered)
+                {
+                    subtitleTriggerDay2.TriggerSubtitle(() =>
+                    {
+                        ClassroomManager.state = ClassroomState.Day2ClassOver;
+                    });
+                    day2SubtitleTriggered = true;
+                }
+
+                break;
         }
     }
 

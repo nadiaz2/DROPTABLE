@@ -38,6 +38,12 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
             case ClassroomState.ClassOver:
                 this.active = true;
                 break;
+            case ClassroomState.Day2AfternoonClass:
+                this.active = true;
+                break;
+            case ClassroomState.Day2ClassOver:
+                this.active = true;
+                break;
             default:
                 this.active = false;
                 break;
@@ -45,6 +51,12 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
         Debug.Log($"State Change {ClassroomManager.state}, Active {this.active}");
 
         lastState = ClassroomManager.state;
+    }
+
+    private IEnumerator ChangeSceneState(float waitTime, ClassroomState state)
+    {
+        yield return new WaitForSeconds(waitTime);
+        ClassroomManager.state = state;
     }
 
     public void Interact()
@@ -59,24 +71,46 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
                 this.active = false;
                 ClassroomManager.state = ClassroomState.Seated;
                 break;
+
             case ClassroomState.ClassOver:
                 player.immobile = false;
                 player.transform.position = standingPlacement.position;
                 player.transform.rotation = standingPlacement.rotation;
                 this.active = false;
                 break;
+
+            case ClassroomState.Day2AfternoonClass:
+                player.immobile = true;
+                player.rb.velocity = Vector3.zero;
+                player.transform.position = sittingPlacement.position;
+                player.transform.rotation = sittingPlacement.rotation;
+                this.active = false;
+                ClassroomManager.currentInstance.Invoke("FadeOut", 1);
+                StartCoroutine(ChangeSceneState(4f, ClassroomState.Day2Seated));
+                ClassroomManager.currentInstance.Invoke("FadeIn", 4);
+                break;
+
+            case ClassroomState.Day2ClassOver:
+                player.immobile = false;
+                player.transform.position = standingPlacement.position;
+                player.transform.rotation = standingPlacement.rotation;
+                this.active = false;
+                break;
+
+            default:
+                Debug.Log($"Invalid Interaction State: {ClassroomManager.state}");
+                break;
         }
     }
 
     public string GetPrompt()
     {
-        if (ClassroomManager.state == ClassroomState.ClassOver)
+        if (ClassroomManager.state == ClassroomState.ClassOver || ClassroomManager.state == ClassroomState.Day2ClassOver)
         {
             return "Stand Up";
         }
         else
         {
-
             return "Sit Down";
         }
     }

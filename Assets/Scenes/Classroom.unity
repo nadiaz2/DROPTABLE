@@ -3381,6 +3381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 470724768}
   - component: {fileID: 470724770}
+  - component: {fileID: 470724771}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3417,7 +3418,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jacob: {fileID: 2053152392}
   headphones: {fileID: 809392396}
+  subtitleTriggerDay2: {fileID: 470724771}
+  day2SubtitleTriggered: 0
   blackScreen: {fileID: 1728037586}
+--- !u!114 &470724771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470724766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 1826034952}
+  subtitles:
+  - "Jacob can't be that kind of person, can he? But how do you explain the dress
+    in his photo?\r"
+  - "Maybe it was just taken outside with a girl who happened to have the same dress.\r\n\r\n\r"
+  - "But that's not right, that dress is a very expensive brand, xxx. No one around
+    us should have the means to afford it, and why is it on the ground?\r\n\r\n\r"
+  - Could it be a photo taken after the incident? It's very likely, but this floor
+    pattern looks familiar. Where is this place...
+  - 'Professor: Alright, students, don''t forget to submit your assignments to the
+    platform before class next Monday...'
 --- !u!1 &481452865
 GameObject:
   m_ObjectHideFlags: 0
@@ -14650,7 +14676,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1907739598}
   - component: {fileID: 1907739600}
-  - component: {fileID: 1907739599}
   - component: {fileID: 1907739601}
   m_Layer: 0
   m_Name: TomsChair
@@ -14678,26 +14703,6 @@ Transform:
   - {fileID: 1719754485}
   m_Father: {fileID: 1267083794}
   m_LocalEulerAnglesHint: {x: 0, y: -169.545, z: 0}
---- !u!114 &1907739599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907739597}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0121aa10f919e1f489b2b4062f1c67c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStanding: {fileID: 1351802269}
-  playerSitting: {fileID: 0}
-  intText: {fileID: 0}
-  standText: {fileID: 0}
-  interactable: 0
-  sitting: 0
-  standingCamera: {fileID: 0}
-  sittingCamera: {fileID: 0}
 --- !u!54 &1907739600
 Rigidbody:
   m_ObjectHideFlags: 0

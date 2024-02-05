@@ -63,10 +63,11 @@ public class EmilyCafeteria : MonoBehaviour, Interactable
                 }
                 if(dialogueManager.finished && !subtitleTriggerStarted2)
                 {
-                    subtitleTrigger2.TriggerSubtitle();
+                    subtitleTrigger2.TriggerSubtitle(() => {
+                        CafeteriaManager.state = CafeteriaState.Day2FinishedTalkingWithEmily;
+                    });
                     subtitleTriggerStarted2 = true;
-                    CafeteriaManager.state = CafeteriaState.Day2FinishedTalkingWithEmily;
-                    Debug.Log(CafeteriaManager.state);
+                    
                 }
                 break;
         }
