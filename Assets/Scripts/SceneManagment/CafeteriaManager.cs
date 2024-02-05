@@ -10,8 +10,6 @@ public enum CafeteriaState
 
     // Day 2 States
     Day2LunchTime,
-    Day2EmilyPhone,
-    Day2SeenPhoto,
 }
 
 public class CafeteriaManager : MonoBehaviour
