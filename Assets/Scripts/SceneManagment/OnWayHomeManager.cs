@@ -15,6 +15,7 @@ public class OnWayHomeManager : MonoBehaviour
     public GameObject classroomSceneTrigger;
     public GameObject livingRoomSceneTrigger;
     public GameObject cafeteriaSceneTrigger;
+    public GameObject outsideHomeSceneTrigger;
     public SubtitleTrigger subtitleTrigger;
 
     public GameObject player;
@@ -52,7 +53,8 @@ public class OnWayHomeManager : MonoBehaviour
             {
                 classroomSceneTrigger.SetActive(true);
             });
-        }else if (GameManager.state == GameState.ReturningHomeAfterHeadphones)
+        }
+        else if (GameManager.state == GameState.ReturningHomeAfterHeadphones)
         {
            livingRoomSceneTrigger.SetActive(true);
            classroomSceneTrigger.SetActive(false);
@@ -67,7 +69,10 @@ public class OnWayHomeManager : MonoBehaviour
             //player.transform.position = comingFromOutsideHouse.position;
             player.transform.position = new Vector3(-248, 27, -1600);
         }
-
+        else if (GameManager.state == GameState.Day2HeadBackHome)
+        {
+            outsideHomeSceneTrigger.SetActive(true);
+        }
 
     }
 

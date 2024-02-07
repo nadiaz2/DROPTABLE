@@ -28,6 +28,7 @@ public enum GameState
 	Day2StartTomsRoom,
 	Day2HeadBackToSchool,
 	Day2AfternoonClass,
+	Day2HeadBackHome,
 
 }
 

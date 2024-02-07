@@ -13,6 +13,7 @@ public enum LivingRoomState
 
     //Day 2 States
     Day2Start,
+    Day2ReturnHome,
 }
 
 public class LivingRoomManager : MonoBehaviour
@@ -38,6 +39,24 @@ public class LivingRoomManager : MonoBehaviour
         {
             // Day 1 first time in livingroom
             state = LivingRoomState.Start;
+        }
+
+        switch (GameManager.state)
+        {
+            // Day 1 first time in livingroom
+            // case
+            // state = LivingRoomState.Start;
+
+            case GameState.Day2HeadBackToSchool:
+                //Debug.Log(GameManager.state);
+                state = LivingRoomState.Day2Start;
+                player.transform.position = new Vector3(205, 53, -516);
+                break;
+
+            case GameState.Day2HeadBackHome:
+                state = LivingRoomState.Day2ReturnHome;
+                break;
+
         }
         
     }

@@ -16,7 +16,7 @@ public class ClassroomDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (ClassroomManager.state == ClassroomState.ClassOver) || (ClassroomManager.state == ClassroomState.AfterHeadphones);
+        this.active = (ClassroomManager.state == ClassroomState.ClassOver) || (ClassroomManager.state == ClassroomState.AfterHeadphones) || (ClassroomManager.state == ClassroomState.Day2ClassOver);
     }
 
     public void Interact()
@@ -30,6 +30,11 @@ public class ClassroomDoor : MonoBehaviour, Interactable
 
             case ClassroomState.AfterHeadphones:
                 GameManager.state = GameState.ReturningHomeAfterHeadphones;
+                SceneManager.LoadScene("OnWayHome");
+                break;
+
+            case ClassroomState.Day2ClassOver:
+                GameManager.state = GameState.Day2HeadBackHome;
                 SceneManager.LoadScene("OnWayHome");
                 break;
         }

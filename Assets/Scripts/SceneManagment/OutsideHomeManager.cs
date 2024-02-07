@@ -6,7 +6,10 @@ using static UnityEditor.PlayerSettings;
 [System.Flags]
 public enum OutsideHomeState
 {
-    Start = 1
+    Start,
+
+    //Day 2
+    Day2BackFromSchool,
 }
 
 public class OutsideHomeManager : MonoBehaviour
@@ -33,10 +36,15 @@ public class OutsideHomeManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
-
-        if (GameManager.state == GameState.Day2HeadBackToSchool)
+        switch (GameManager.state)
         {
-            onWayHomeSceneTrigger.SetActive(true);
+            case GameState.Day2HeadBackToSchool:
+                onWayHomeSceneTrigger.SetActive(true);
+                break;
+
+            case GameState.Day2HeadBackHome:
+                OutsideHomeManager.state = OutsideHomeState.Day2BackFromSchool;
+                break;
         }
 
     }
