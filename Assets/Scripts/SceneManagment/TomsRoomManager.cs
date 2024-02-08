@@ -23,11 +23,25 @@ public class TomsRoomManager : MonoBehaviour
 
     public TomsBed tomsBed;
 
+    public BlackScreen blackScreen;
+
     public static TomsRoomState state { get; set; }
+
+    public static TomsRoomManager currentInstance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    private static TomsRoomManager _instance;
 
     // Start is called before the first frame update
     void Start()
     {
+        TomsRoomManager._instance = this;
+
+        blackScreen.goBlacked = false;
 
         //TODO Temp for testing day 2
         //GameManager.state = GameState.Day2StartTomsRoom;
@@ -52,5 +66,22 @@ public class TomsRoomManager : MonoBehaviour
             
         }
 
+    }
+
+
+    public void FadeOut()
+    {
+        if (blackScreen != null)
+        {
+            blackScreen.goBlacked = true;
+        }
+    }
+
+    public void FadeIn()
+    {
+        if (blackScreen != null)
+        {
+            blackScreen.goBlacked = false;
+        }
     }
 }

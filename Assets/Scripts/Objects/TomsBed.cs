@@ -14,6 +14,8 @@ public class TomsBed : MonoBehaviour, Interactable
         this.interactable = false;
         Debug.Log("Slept");
         //trigger.TriggerSubtitle();
+        TomsRoomManager.currentInstance.Invoke("FadeOut", 1);
+        TomsRoomManager.currentInstance.Invoke("FadeIn", 4);
     }
 
     public string GetPrompt()
