@@ -18,7 +18,8 @@ public enum OutsideHomeState
 public class OutsideHomeManager : MonoBehaviour
 {
     public GameObject onWayHomeSceneTrigger;
-    public SubtitleTrigger subtitleTrigger;
+    //public SubtitleTrigger subtitleTrigger;
+    public TrashBags trashBags;
 
     public BlackScreen blackScreen;
 
@@ -43,6 +44,7 @@ public class OutsideHomeManager : MonoBehaviour
         {
             case GameState.ReturningHomeAfterHeadphones:
                 OutsideHomeManager.state = OutsideHomeState.BackFromSchool;
+                trashBags.interactable = true;
                 break;
 
             case GameState.Day2HeadBackToSchool:
