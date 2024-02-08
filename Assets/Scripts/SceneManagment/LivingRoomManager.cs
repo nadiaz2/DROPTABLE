@@ -23,12 +23,19 @@ public class LivingRoomManager : MonoBehaviour
     public GameObject player;
     public GameObject jacob;
     public Transform inFrontTomsDoor;
+    public SubtitleTrigger reminderTrigger;
+
 
     public static LivingRoomState state { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
+        //Temp for testing
+        if (TomsRoomManager.state != TomsRoomState.Day1Start || JacobsRoomManager.state != JacobsRoomState.Day1Start)
+        {
+            GameManager.state = GameState.ReturningHomeAfterHeadphones;
+        }
 
         switch (GameManager.state)
         {
@@ -36,6 +43,7 @@ public class LivingRoomManager : MonoBehaviour
             case GameState.ReturningHomeAfterHeadphones:
                 GameManager.state = GameState.Day1LivingRoomStart;
                 state = LivingRoomState.Day1ReturnHome;
+                reminderTrigger.TriggerSubtitle();
                 break;
 
             case GameState.Day2HeadBackToSchool:

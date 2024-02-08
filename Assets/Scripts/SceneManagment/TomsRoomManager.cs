@@ -21,6 +21,8 @@ public enum TomsRoomState
 public class TomsRoomManager : MonoBehaviour
 {
 
+    public TomsBed tomsBed;
+
     public static TomsRoomState state { get; set; }
 
     // Start is called before the first frame update
@@ -36,6 +38,7 @@ public class TomsRoomManager : MonoBehaviour
         {
             case GameState.Day1LivingRoomStart:
                 state = TomsRoomState.Day1Start;
+                tomsBed.interactable = true;
                 break;
 
             case GameState.Day2StartTomsRoom:
