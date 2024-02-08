@@ -29,24 +29,12 @@ public class LivingRoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Start of Day 2 going to class
-        if (GameManager.state == GameState.Day2HeadBackToSchool)
-        {
-            //Debug.Log(GameManager.state);
-            state = LivingRoomState.Day2Start;
-            player.transform.position = new Vector3(205, 53, -516);
-
-        }
-        else
-        {
-            // Day 1 first time in livingroom
-            state = LivingRoomState.Start;
-        }
 
         switch (GameManager.state)
         {
             // Day 1 first time in livingroom
             case GameState.ReturningHomeAfterHeadphones:
+                GameManager.state = GameState.Day1LivingRoomStart;
                 state = LivingRoomState.Day1ReturnHome;
                 break;
 

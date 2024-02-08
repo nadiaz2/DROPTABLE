@@ -9,7 +9,10 @@ public enum TomsRoomState
     PlayingGame,
     GamePaused,
 
-    //States for Day2
+    // Day 1
+    Day1Start,
+
+    // States for Day2
     StartDay2,
     RachelDeathMessageSeen,
 
@@ -25,22 +28,26 @@ public class TomsRoomManager : MonoBehaviour
     {
 
         //TODO Temp for testing day 2
-        GameManager.state = GameState.Day2StartTomsRoom;
+        //GameManager.state = GameState.Day2StartTomsRoom;
 
         //Start of Day 2
-        if (GameManager.state == GameState.Day2StartTomsRoom)
+
+        switch (GameManager.state)
         {
-            //TODO Send message to phone to send noticification from school on phone
+            case GameState.Day1LivingRoomStart:
+                state = TomsRoomState.Day1Start;
+                break;
+
+            case GameState.Day2StartTomsRoom:
+                //TODO Send message to phone to send noticification from school on phone
+
+
+                //TODO Sends message back saying player has seen phone message (if statement)
+                state = TomsRoomState.RachelDeathMessageSeen;
+                break;
 
             
-            //TODO Sends message back saying player has seen phone message (if statement)
-            state = TomsRoomState.RachelDeathMessageSeen;
-            
         }
-        else
-        {
-            //First time entering scene Day 1
-            state = TomsRoomState.Start;
-        }
+
     }
 }

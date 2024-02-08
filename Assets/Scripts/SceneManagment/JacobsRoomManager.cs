@@ -8,6 +8,9 @@ public enum JacobsRoomState
     Start,
     PlayingGame,
     GamePaused,
+
+    // Day 1
+    Day1Start
 }
 
 public class JacobsRoomManager : MonoBehaviour
@@ -18,6 +21,11 @@ public class JacobsRoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        state = JacobsRoomState.Start;
+        switch (GameManager.state)
+        {
+            case GameState.Day1LivingRoomStart:
+                state = JacobsRoomState.Day1Start;
+                break;
+        }
     }
 }
