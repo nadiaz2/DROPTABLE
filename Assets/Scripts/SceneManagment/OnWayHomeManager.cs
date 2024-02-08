@@ -13,9 +13,9 @@ public enum OnWayHomeState
 public class OnWayHomeManager : MonoBehaviour
 {
     public GameObject classroomSceneTrigger;
-    public GameObject livingRoomSceneTrigger;
+    public GameObject outsideHomeSceneTriggerDay1;
     public GameObject cafeteriaSceneTrigger;
-    public GameObject outsideHomeSceneTrigger;
+    public GameObject outsideHomeSceneTriggerDay2;
     public SubtitleTrigger subtitleTrigger;
 
     public GameObject player;
@@ -44,7 +44,7 @@ public class OnWayHomeManager : MonoBehaviour
         if (GameManager.state == GameState.OnWayHomeStart)
         {
             state = OnWayHomeState.Start;
-            livingRoomSceneTrigger.SetActive(false);
+            outsideHomeSceneTriggerDay1.SetActive(false);
             classroomSceneTrigger.SetActive(false);
             player.transform.position = new Vector3(-248, 27, -555);
             //player.transform.position = comingFromClassroom.position;
@@ -56,7 +56,7 @@ public class OnWayHomeManager : MonoBehaviour
         }
         else if (GameManager.state == GameState.ReturningHomeAfterHeadphones)
         {
-           livingRoomSceneTrigger.SetActive(true);
+           outsideHomeSceneTriggerDay1.SetActive(true);
            classroomSceneTrigger.SetActive(false);
            player.transform.position = new Vector3(-248, 27, -555);
            //player.transform.position = comingFromClassroom.position;
@@ -71,7 +71,7 @@ public class OnWayHomeManager : MonoBehaviour
         }
         else if (GameManager.state == GameState.Day2HeadBackHome)
         {
-            outsideHomeSceneTrigger.SetActive(true);
+            outsideHomeSceneTriggerDay2.SetActive(true);
         }
 
     }

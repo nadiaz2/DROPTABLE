@@ -16,16 +16,21 @@ public class HomeDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (OutsideHomeManager.state == OutsideHomeState.Day2BackFromSchool);
+        this.active = (OutsideHomeManager.state == OutsideHomeState.Day2BackFromSchool || OutsideHomeManager.state == OutsideHomeState.BackFromSchool);
     }
 
     public void Interact()
     {
         switch (OutsideHomeManager.state)
         {
+            case OutsideHomeState.BackFromSchool:
+                SceneManager.LoadScene("LivingRoom");
+                break;
+
             case OutsideHomeState.Day2BackFromSchool:
                 SceneManager.LoadScene("LivingRoom");
                 break;
+
 
         }
 

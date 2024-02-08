@@ -11,6 +11,8 @@ public enum LivingRoomState
     PlayingGame,
 	GamePaused,
 
+    Day1ReturnHome,
+
     //Day 2 States
     Day2Start,
     Day2ReturnHome,
@@ -44,8 +46,9 @@ public class LivingRoomManager : MonoBehaviour
         switch (GameManager.state)
         {
             // Day 1 first time in livingroom
-            // case
-            // state = LivingRoomState.Start;
+            case GameState.ReturningHomeAfterHeadphones:
+                state = LivingRoomState.Day1ReturnHome;
+                break;
 
             case GameState.Day2HeadBackToSchool:
                 //Debug.Log(GameManager.state);

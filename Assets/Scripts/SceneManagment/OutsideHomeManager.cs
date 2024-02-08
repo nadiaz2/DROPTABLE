@@ -8,6 +8,9 @@ public enum OutsideHomeState
 {
     Start,
 
+    //Day 1
+    BackFromSchool,
+
     //Day 2
     Day2BackFromSchool,
 }
@@ -38,6 +41,10 @@ public class OutsideHomeManager : MonoBehaviour
 
         switch (GameManager.state)
         {
+            case GameState.ReturningHomeAfterHeadphones:
+                OutsideHomeManager.state = OutsideHomeState.BackFromSchool;
+                break;
+
             case GameState.Day2HeadBackToSchool:
                 onWayHomeSceneTrigger.SetActive(true);
                 break;
