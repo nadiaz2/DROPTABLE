@@ -12,6 +12,7 @@ public enum LivingRoomState
 	GamePaused,
 
     Day1ReturnHome,
+    Day1JacobsBackAfterBed,
 
     //Day 2 States
     Day2Start,
@@ -26,13 +27,15 @@ public class LivingRoomManager : MonoBehaviour
     public SubtitleTrigger reminderTrigger;
 
 
+
     public static LivingRoomState state { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
+
         //Temp for testing
-        if (TomsRoomManager.state != TomsRoomState.Day1Start || JacobsRoomManager.state != JacobsRoomState.Day1Start)
+        if (GameManager.state == GameState.GameStart)
         {
             GameManager.state = GameState.ReturningHomeAfterHeadphones;
         }
@@ -46,6 +49,12 @@ public class LivingRoomManager : MonoBehaviour
                 reminderTrigger.TriggerSubtitle();
                 break;
 
+            case GameState.Day1JacobsBack:
+                state = LivingRoomState.Day1JacobsBackAfterBed;
+                jacob.gameObject.SetActive(true);
+                Debug.Log("here");
+                break;
+
             case GameState.Day2HeadBackToSchool:
                 //Debug.Log(GameManager.state);
                 state = LivingRoomState.Day2Start;
@@ -57,6 +66,7 @@ public class LivingRoomManager : MonoBehaviour
                 break;
 
         }
+        Debug.Log($"Game: {GameManager.state}, Tom: {TomsRoomManager.state}, Living Room: {state}");
         
     }
 }

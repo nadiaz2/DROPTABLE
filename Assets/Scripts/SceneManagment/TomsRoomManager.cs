@@ -11,10 +11,13 @@ public enum TomsRoomState
 
     // Day 1
     Day1Start,
+    Day1JacobsBack,
+
 
     // States for Day2
     StartDay2,
     RachelDeathMessageSeen,
+
 
 }
 
@@ -54,6 +57,7 @@ public class TomsRoomManager : MonoBehaviour
                 state = TomsRoomState.Day1Start;
                 tomsBed.interactable = true;
                 break;
+
 
             case GameState.Day2StartTomsRoom:
                 //TODO Send message to phone to send noticification from school on phone

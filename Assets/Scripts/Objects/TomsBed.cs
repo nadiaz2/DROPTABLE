@@ -15,6 +15,7 @@ public class TomsBed : MonoBehaviour, Interactable
         TomsRoomManager.currentInstance.Invoke("FadeOut", 1);
         TomsRoomManager.currentInstance.Invoke("FadeIn", 4);
         Invoke("playSubtitle", 6);
+        TomsRoomManager.state = TomsRoomState.Day1JacobsBack;
     }
 
     private void playSubtitle()

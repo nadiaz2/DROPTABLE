@@ -25,6 +25,7 @@ public enum GameState
 	BackToClassroom,
 	ReturningHomeAfterHeadphones,
 	Day1LivingRoomStart,
+	Day1JacobsBack,
 	Day2StartTomsRoom,
 	Day2HeadBackToSchool,
 	Day2AfternoonClass,
