@@ -351,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleManager: {fileID: 424650666}
   subtitles:
-  - Jacobs back I shouldn't go into his room right now.
+  - Jacobs back, I shouldn't go into his room right now without his permission.
 --- !u!1 &155488186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,8 +2837,8 @@ MonoBehaviour:
     sentence: Nothing much, just chatted with an acquaintance.
   - name: Jacob
     characterPortrait: {fileID: 0}
-    sentence: You said you wanted help with the homework. Bring a chair over to my
-      room. I'll order some takeout first. Do you want anything?
+    sentence: You said you wanted help with the homework. Get set up at the table.
+      I'll order some takeout first. Do you want anything?
   - name: Tom (You)
     characterPortrait: {fileID: 0}
     sentence: Just get me whatever you're having, thanks.
@@ -2892,7 +2892,7 @@ Transform:
   m_GameObject: {fileID: 1189855507}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.3996144, z: -0, w: -0.9166834}
-  m_LocalPosition: {x: 47.4, y: 60, z: -600.8}
+  m_LocalPosition: {x: -119.4, y: 60, z: -489.3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:

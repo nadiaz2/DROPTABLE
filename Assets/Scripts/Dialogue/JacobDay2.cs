@@ -26,7 +26,8 @@ public class JacobDay2 : MonoBehaviour, Interactable
         if (!dialogueTriggerStarted)
         {
             dialogueTrigger.TriggerDialogue(() => { 
-                this.interactable = false; 
+                this.interactable = false;
+                LivingRoomManager.state = LivingRoomState.Day2TalkedWithJacob;
             });
             dialogueTriggerStarted = true;
         }

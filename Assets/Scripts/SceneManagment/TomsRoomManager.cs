@@ -19,12 +19,17 @@ public enum TomsRoomState
     RachelDeathMessageSeen,
 
 
+    // States for Day 3
+    StartDay3,
+
 }
 
 public class TomsRoomManager : MonoBehaviour
 {
 
     public TomsBed tomsBed;
+
+    public SubtitleTrigger subtitleTrigger;
 
     public BlackScreen blackScreen;
 
@@ -46,10 +51,11 @@ public class TomsRoomManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
-        //TODO Temp for testing day 2
+        //TODO Temp for testing day 2 & Day 3
         if (GameManager.state == GameState.GameStart)
         {
-            GameManager.state = GameState.Day2StartTomsRoom;
+            //GameManager.state = GameState.Day2StartTomsRoom;
+            GameManager.state = GameState.Day3StartTomsRoom;
         }
 
         //Start of Day 2
@@ -70,7 +76,12 @@ public class TomsRoomManager : MonoBehaviour
                 state = TomsRoomState.RachelDeathMessageSeen;
                 break;
 
-            
+            case GameState.Day3StartTomsRoom:
+                state = TomsRoomState.StartDay3;
+                subtitleTrigger.TriggerSubtitle();
+                break;
+
+
         }
 
     }

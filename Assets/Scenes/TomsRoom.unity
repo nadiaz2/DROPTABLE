@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 150243188}
   - component: {fileID: 150243189}
+  - component: {fileID: 150243190}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -168,7 +169,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tomsBed: {fileID: 1120736203}
+  subtitleTrigger: {fileID: 150243190}
   blackScreen: {fileID: 1992151177}
+--- !u!114 &150243190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150243187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 1284605634}
+  subtitles:
+  - God, I keep thinking about Jacob and Rachel.
+  - I need to figure out what happened. I will need to get the keys to Jacob's lab.
+  - He should have it in his room.
 --- !u!1 &169694340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3801,7 +3820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f40121d02c31c2542bcc92a9841d71ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -217.9
+      value: -197.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f40121d02c31c2542bcc92a9841d71ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3809,7 +3828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f40121d02c31c2542bcc92a9841d71ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 117.4
+      value: 115.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f40121d02c31c2542bcc92a9841d71ca, type: 3}
       propertyPath: m_LocalRotation.w

@@ -19,7 +19,7 @@ public class JacobsDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome || LivingRoomManager.state == LivingRoomState.Day1JacobsBackAfterBed);
+        this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome || LivingRoomManager.state == LivingRoomState.Day1JacobsBackAfterBed || LivingRoomManager.state == LivingRoomState.Day2TalkedWithJacob);
     }
 
     public void Interact()
@@ -31,6 +31,10 @@ public class JacobsDoor : MonoBehaviour, Interactable
                 break;
 
             case LivingRoomState.Day1JacobsBackAfterBed:
+                subtitleTrigger.TriggerSubtitle();
+                break;
+
+            case LivingRoomState.Day2TalkedWithJacob:
                 subtitleTrigger.TriggerSubtitle();
                 break;
         }

@@ -26,10 +26,16 @@ public enum GameState
 	ReturningHomeAfterHeadphones,
 	Day1LivingRoomStart,
 	Day1JacobsBack,
+
+	// Day 2
 	Day2StartTomsRoom,
 	Day2HeadBackToSchool,
 	Day2AfternoonClass,
 	Day2HeadBackHome,
+
+	// Day 3
+	Day3StartTomsRoom,
+
 
 }
 
