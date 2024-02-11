@@ -77,8 +77,13 @@ public class TomsRoomManager : MonoBehaviour
                 break;
 
             case GameState.Day3StartTomsRoom:
-                state = TomsRoomState.StartDay3;
-                subtitleTrigger.TriggerSubtitle();
+                if(TomsRoomManager.state != TomsRoomState.StartDay3)
+                {
+                    subtitleTrigger.TriggerSubtitle(() =>
+                    {
+                        state = TomsRoomState.StartDay3;
+                    });
+                }
                 break;
 
 

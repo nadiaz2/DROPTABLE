@@ -186,7 +186,8 @@ MonoBehaviour:
   subtitleManager: {fileID: 1284605634}
   subtitles:
   - God, I keep thinking about Jacob and Rachel.
-  - I need to figure out what happened. I will need to get the keys to Jacob's lab.
+  - I need to figure out what happened. I'm going to need to get the keys to Jacob's
+    lab.
   - He should have it in his room.
 --- !u!1 &169694340
 GameObject:
