@@ -17,7 +17,7 @@ public class TomsDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome);
+        this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome || LivingRoomManager.state == LivingRoomState.Day1JacobsBackAfterBed);
     }
 
     public void Interact()
@@ -25,6 +25,10 @@ public class TomsDoor : MonoBehaviour, Interactable
         switch (LivingRoomManager.state)
         {
             case LivingRoomState.Day1ReturnHome:
+                SceneManager.LoadScene("TomsRoom");
+                break;
+
+            case LivingRoomState.Day1JacobsBackAfterBed:
                 SceneManager.LoadScene("TomsRoom");
                 break;
 

@@ -7,6 +7,7 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
 {
     private bool active;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,6 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
 
             case TomsRoomState.Day1JacobsBack:
                 GameManager.state = GameState.Day1JacobsBack;
-                Debug.Log(GameManager.state);
                 SceneManager.LoadScene("LivingRoom");
                 break;
 
@@ -62,4 +62,5 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
     {
         return this.active;
     }
+
 }

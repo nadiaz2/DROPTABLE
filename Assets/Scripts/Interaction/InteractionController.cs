@@ -14,12 +14,15 @@ public class InteractionController : MonoBehaviour
 
     void Start()
     {
-        targets = GameObject.FindGameObjectsWithTag("Interactable");
+        //targets = GameObject.FindGameObjectsWithTag("Interactable");
+        //Debug.Log(targets.Length);
     }
 
     // Update is called once per frame
     void Update()
     {
+        targets = GameObject.FindGameObjectsWithTag("Interactable");
+
         // ignore class if no interactables
         if (targets.Length < 1)
         {
@@ -66,7 +69,7 @@ public class InteractionController : MonoBehaviour
         }
 
         // If interact button pressed, interact with object
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
             target?.Interact();
         }

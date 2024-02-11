@@ -22,10 +22,11 @@ public enum LivingRoomState
 public class LivingRoomManager : MonoBehaviour
 {
     public GameObject player;
-    public GameObject jacob;
+    public JacobDay2 jacob;
     public Transform inFrontTomsDoor;
     public SubtitleTrigger reminderTrigger;
 
+    public BlackScreen blackScreen;
 
 
     public static LivingRoomState state { get; set; }
@@ -33,6 +34,7 @@ public class LivingRoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        blackScreen.goBlacked = false;
 
         //Temp for testing
         if (GameManager.state == GameState.GameStart)
@@ -52,11 +54,10 @@ public class LivingRoomManager : MonoBehaviour
             case GameState.Day1JacobsBack:
                 state = LivingRoomState.Day1JacobsBackAfterBed;
                 jacob.gameObject.SetActive(true);
-                Debug.Log("here");
+                jacob.interactable = true;
                 break;
 
             case GameState.Day2HeadBackToSchool:
-                //Debug.Log(GameManager.state);
                 state = LivingRoomState.Day2Start;
                 player.transform.position = new Vector3(205, 53, -516);
                 break;
@@ -66,7 +67,24 @@ public class LivingRoomManager : MonoBehaviour
                 break;
 
         }
-        Debug.Log($"Game: {GameManager.state}, Tom: {TomsRoomManager.state}, Living Room: {state}");
+        //Debug.Log($"Game: {GameManager.state}, Tom: {TomsRoomManager.state}, Living Room: {state}");
         
+    }
+
+
+    public void FadeOut()
+    {
+        if (blackScreen != null)
+        {
+            blackScreen.goBlacked = true;
+        }
+    }
+
+    public void FadeIn()
+    {
+        if (blackScreen != null)
+        {
+            blackScreen.goBlacked = false;
+        }
     }
 }

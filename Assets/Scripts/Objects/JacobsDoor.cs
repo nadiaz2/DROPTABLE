@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class JacobsDoor : MonoBehaviour, Interactable
 {
+    public SubtitleTrigger subtitleTrigger;
+
     private bool active;
 
     // Start is called before the first frame update
@@ -17,7 +19,7 @@ public class JacobsDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome);
+        this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome || LivingRoomManager.state == LivingRoomState.Day1JacobsBackAfterBed);
     }
 
     public void Interact()
@@ -26,6 +28,10 @@ public class JacobsDoor : MonoBehaviour, Interactable
         {
             case LivingRoomState.Day1ReturnHome:
                 SceneManager.LoadScene("JacobsRoom");
+                break;
+
+            case LivingRoomState.Day1JacobsBackAfterBed:
+                subtitleTrigger.TriggerSubtitle();
                 break;
         }
     }

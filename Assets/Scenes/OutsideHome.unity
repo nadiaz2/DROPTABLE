@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: OnWayHome
-  gameState: 7
+  gameState: 8
 --- !u!54 &8349059
 Rigidbody:
   m_ObjectHideFlags: 0

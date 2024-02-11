@@ -47,7 +47,10 @@ public class TomsRoomManager : MonoBehaviour
         blackScreen.goBlacked = false;
 
         //TODO Temp for testing day 2
-        //GameManager.state = GameState.Day2StartTomsRoom;
+        if (GameManager.state == GameState.GameStart)
+        {
+            GameManager.state = GameState.Day2StartTomsRoom;
+        }
 
         //Start of Day 2
 

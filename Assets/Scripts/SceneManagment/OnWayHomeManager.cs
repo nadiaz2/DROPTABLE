@@ -41,6 +41,8 @@ public class OnWayHomeManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
+        Debug.Log(GameManager.state);
+
         if (GameManager.state == GameState.OnWayHomeStart)
         {
             state = OnWayHomeState.Start;
