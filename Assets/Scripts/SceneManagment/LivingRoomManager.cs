@@ -13,20 +13,21 @@ public enum LivingRoomState
 
     Day1ReturnHome,
     Day1JacobsBackAfterBed,
+    Day1TalkedWithJacob,
 
     //Day 2 States
     Day2Start,
     Day2ReturnHome,
-    Day2TalkedWithJacob,
 
     //Day 3 States
     Day3Start,
+    Day3TalkedWithJacob,
 }
 
 public class LivingRoomManager : MonoBehaviour
 {
     public GameObject player;
-    public JacobDay2 jacob;
+    public JacobLivingRoom jacob;
     public Transform inFrontTomsDoor;
     public SubtitleTrigger reminderTrigger;
 
@@ -57,7 +58,7 @@ public class LivingRoomManager : MonoBehaviour
                 break;
 
             case GameState.Day1JacobsBack:
-                if (LivingRoomManager.state != LivingRoomState.Day2TalkedWithJacob)
+                if (LivingRoomManager.state != LivingRoomState.Day1TalkedWithJacob)
                 {
                     state = LivingRoomState.Day1JacobsBackAfterBed;
                     jacob.gameObject.SetActive(true);
@@ -82,13 +83,25 @@ public class LivingRoomManager : MonoBehaviour
 
         switch (LivingRoomManager.state)
         {
-            case LivingRoomState.Day2TalkedWithJacob:
+            case LivingRoomState.Day1TalkedWithJacob:
                 jacob.gameObject.SetActive(false);
                 jacob.interactable = false;
                 break;
         }
         Debug.Log($"Game: {GameManager.state}, Tom: {TomsRoomManager.state}, Living Room: {state}");
         
+    }
+
+
+    private void Update()
+    {
+        switch (GameManager.state)
+        {
+            case GameState.Day3FinishedMiniGame:
+                jacob.gameObject.SetActive(true);
+                jacob.interactable = true;
+                break;
+        }
     }
 
 

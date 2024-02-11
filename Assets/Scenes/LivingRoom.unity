@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 66692087}
   - component: {fileID: 66692088}
   - component: {fileID: 66692089}
+  - component: {fileID: 66692090}
   m_Layer: 0
   m_Name: JacobsDoor
   m_TagString: Interactable
@@ -336,7 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108508beb2d849149b677f92f9f10eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitleTrigger: {fileID: 66692089}
+  subtitleTriggerDay1: {fileID: 66692089}
+  subtitleTriggerDay3: {fileID: 66692090}
 --- !u!114 &66692089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +354,21 @@ MonoBehaviour:
   subtitleManager: {fileID: 424650666}
   subtitles:
   - Jacobs back, I shouldn't go into his room right now without his permission.
+--- !u!114 &66692090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66692084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 424650666}
+  subtitles:
+  - Ugh, do I really have to do this?
 --- !u!1 &155488186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,6 +2824,7 @@ GameObject:
   - component: {fileID: 1189855510}
   - component: {fileID: 1189855509}
   - component: {fileID: 1189855508}
+  - component: {fileID: 1189855512}
   m_Layer: 0
   m_Name: Jacob
   m_TagString: Interactable
@@ -2855,6 +2873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTrigger: {fileID: 1189855508}
+  dialogueTriggerDay3: {fileID: 1189855512}
   interactable: 0
 --- !u!54 &1189855510
 Rigidbody:
@@ -2899,6 +2918,30 @@ Transform:
   - {fileID: 1660402543}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 312.892, z: 0}
+--- !u!114 &1189855512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189855507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 615378954}
+  dialogues:
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Uh... I was just wondering if you had any plans today.
+  - name: Jacob
+    characterPortrait: {fileID: 0}
+    sentence: Oh, I've been kind of bored lately. I was thinking of going to Boston
+      for a stroll, you wanna to come with?
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Sure, sure, I don't have anything else to do today.
 --- !u!1 &1263638867
 GameObject:
   m_ObjectHideFlags: 0

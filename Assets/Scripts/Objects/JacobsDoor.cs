@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class JacobsDoor : MonoBehaviour, Interactable
 {
-    public SubtitleTrigger subtitleTrigger;
+    public SubtitleTrigger subtitleTriggerDay1;
+    public SubtitleTrigger subtitleTriggerDay3;
 
     private bool active;
 
@@ -19,7 +20,8 @@ public class JacobsDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome || LivingRoomManager.state == LivingRoomState.Day1JacobsBackAfterBed || LivingRoomManager.state == LivingRoomState.Day2TalkedWithJacob);
+        this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome || LivingRoomManager.state == LivingRoomState.Day1JacobsBackAfterBed || 
+                        LivingRoomManager.state == LivingRoomState.Day1TalkedWithJacob || LivingRoomManager.state == LivingRoomState.Day3Start);
     }
 
     public void Interact()
@@ -31,11 +33,20 @@ public class JacobsDoor : MonoBehaviour, Interactable
                 break;
 
             case LivingRoomState.Day1JacobsBackAfterBed:
-                subtitleTrigger.TriggerSubtitle();
+                subtitleTriggerDay1.TriggerSubtitle();
                 break;
 
-            case LivingRoomState.Day2TalkedWithJacob:
-                subtitleTrigger.TriggerSubtitle();
+            case LivingRoomState.Day1TalkedWithJacob:
+                subtitleTriggerDay1.TriggerSubtitle();
+                break;
+
+            case LivingRoomState.Day3Start:
+                subtitleTriggerDay3.TriggerSubtitle(() =>
+                {
+                    //TODO Play Minigame
+
+                    GameManager.state = GameState.Day3FinishedMiniGame;
+                });
                 break;
         }
     }

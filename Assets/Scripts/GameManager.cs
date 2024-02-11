@@ -35,6 +35,8 @@ public enum GameState
 
 	// Day 3
 	Day3StartTomsRoom,
+    Day3FinishedMiniGame,
+    Day3TalkedWithJacob,
 
 
 }

@@ -18,7 +18,7 @@ public class TomsDoor : MonoBehaviour, Interactable
     void Update()
     {
         this.active = (LivingRoomManager.state == LivingRoomState.Day1ReturnHome || LivingRoomManager.state == LivingRoomState.Day1JacobsBackAfterBed || 
-            LivingRoomManager.state == LivingRoomState.Day2TalkedWithJacob || LivingRoomManager.state == LivingRoomState.Day3Start);
+            LivingRoomManager.state == LivingRoomState.Day1TalkedWithJacob || LivingRoomManager.state == LivingRoomState.Day3Start);
     }
 
     public void Interact()
@@ -33,7 +33,7 @@ public class TomsDoor : MonoBehaviour, Interactable
                 SceneManager.LoadScene("TomsRoom");
                 break;
 
-            case LivingRoomState.Day2TalkedWithJacob:
+            case LivingRoomState.Day1TalkedWithJacob:
                 SceneManager.LoadScene("TomsRoom");
                 break;
 
