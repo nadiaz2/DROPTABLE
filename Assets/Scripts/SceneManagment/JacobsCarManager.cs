@@ -16,6 +16,7 @@ public enum JacobsCarState
 public class JacobsCarManager : MonoBehaviour
 {
     public SubtitleTrigger trigger;
+    public SubtitleTrigger trigger2;
 
     public static JacobsCarState state { get; set; }
 
@@ -34,8 +35,12 @@ public class JacobsCarManager : MonoBehaviour
         }
     }
 
-    private void delayedSubtitlesPlay()
+    private void delayedSubtitlePlay()
     {
-        trigger.TriggerSubtitle();
+        trigger.TriggerSubtitle(() =>
+        {
+            // Car Swerving
+            trigger2.TriggerSubtitle();
+        });
     }
 }

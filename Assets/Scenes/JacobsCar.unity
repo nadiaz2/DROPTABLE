@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 224510025}
   - component: {fileID: 224510027}
   - component: {fileID: 224510026}
+  - component: {fileID: 224510028}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -265,12 +266,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleManager: {fileID: 1635548810}
   subtitles:
-  - 'Jacob: What''s wrong, you''ve been acting wierd lately.'
+  - 'Jacob: What''s wrong, you''ve been acting weird lately.'
   - Ah... nothing, how have you been lately?
   - 'Jacob: Me? Nothing interesting, just that guy downstairs, what an idiot.'
   - 'Jacob: I''ve explained everything so many times and he still asks me the same
     questions.'
   - 'Jacob: I''m really fed up with his shit.'
+  - 'Jacob: What about you? What have you been up to lately, why are you acting all
+    sneaky?'
+  - Me? Uh... I...
 --- !u!114 &224510027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +288,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 224510026}
+  trigger2: {fileID: 224510028}
+--- !u!114 &224510028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224510024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 1635548810}
+  subtitles:
+  - Damn it, do you know how to drive! Are you an idiot?
 --- !u!1 &307135592
 GameObject:
   m_ObjectHideFlags: 0
