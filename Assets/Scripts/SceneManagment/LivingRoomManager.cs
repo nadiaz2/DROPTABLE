@@ -101,6 +101,11 @@ public class LivingRoomManager : MonoBehaviour
                 jacob.gameObject.SetActive(true);
                 jacob.interactable = true;
                 break;
+
+            case GameState.Day3TalkedWithJacob:
+                jacob.gameObject.SetActive(false);
+                jacob.interactable = false;
+                break;
         }
     }
 

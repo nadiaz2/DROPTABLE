@@ -28,6 +28,10 @@ public class OutsideDoor : MonoBehaviour, Interactable
                 SceneManager.LoadScene("OutsideHome");
                 break;
 
+            case LivingRoomState.Day3TalkedWithJacob:
+                SceneManager.LoadScene("OutsideHome");
+                break;
+
         }
 
     }

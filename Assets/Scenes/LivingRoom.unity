@@ -2942,6 +2942,9 @@ MonoBehaviour:
   - name: Tom (You)
     characterPortrait: {fileID: 0}
     sentence: Sure, sure, I don't have anything else to do today.
+  - name: Jacob
+    characterPortrait: {fileID: 0}
+    sentence: I'll wait for you at my car outside.
 --- !u!1 &1263638867
 GameObject:
   m_ObjectHideFlags: 0
