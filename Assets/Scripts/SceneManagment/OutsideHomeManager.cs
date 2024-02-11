@@ -21,8 +21,9 @@ public enum OutsideHomeState
 public class OutsideHomeManager : MonoBehaviour
 {
     public GameObject onWayHomeSceneTrigger;
-    //public SubtitleTrigger subtitleTrigger;
+
     public TrashBags trashBags;
+    public JacobsCar jacobsCar;
 
     public BlackScreen blackScreen;
 
@@ -43,6 +44,13 @@ public class OutsideHomeManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
+
+        if (GameManager.state == GameState.GameStart)
+        {
+            GameManager.state = GameState.Day3TalkedWithJacob;
+        }
+
+
         switch (GameManager.state)
         {
             case GameState.ReturningHomeAfterHeadphones:
@@ -60,6 +68,7 @@ public class OutsideHomeManager : MonoBehaviour
 
             case GameState.Day3TalkedWithJacob:
                 OutsideHomeManager.state = OutsideHomeState.Day3HeadToBackBay;
+                jacobsCar.interactable = true;
                 break;
         }
 
