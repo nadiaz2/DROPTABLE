@@ -708,7 +708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.4
+      value: 8.399994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
       propertyPath: m_LocalPosition.z
@@ -720,15 +720,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -745,6 +745,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
       propertyPath: m_Name
       value: MODERNHATCH
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3738,7 +3742,7 @@ SceneRoots:
   - {fileID: 1989352190}
   - {fileID: 661181123}
   - {fileID: 1023213328}
+  - {fileID: 444481134}
   - {fileID: 1339561148}
   - {fileID: 8349061}
   - {fileID: 1338350972}
-  - {fileID: 444481134}

@@ -13,6 +13,9 @@ public enum OutsideHomeState
 
     //Day 2
     Day2BackFromSchool,
+
+    //Day 3
+    Day3HeadToBackBay,
 }
 
 public class OutsideHomeManager : MonoBehaviour
@@ -53,6 +56,10 @@ public class OutsideHomeManager : MonoBehaviour
 
             case GameState.Day2HeadBackHome:
                 OutsideHomeManager.state = OutsideHomeState.Day2BackFromSchool;
+                break;
+
+            case GameState.Day3TalkedWithJacob:
+                OutsideHomeManager.state = OutsideHomeState.Day3HeadToBackBay;
                 break;
         }
 
