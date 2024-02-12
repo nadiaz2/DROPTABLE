@@ -31,15 +31,27 @@ public class LivingRoomManager : MonoBehaviour
     public Transform inFrontTomsDoor;
     public SubtitleTrigger reminderTrigger;
 
+    public Transform jacobSeat;
+    public Transform tomSeat;
+
 
     public BlackScreen blackScreen;
 
 
     public static LivingRoomState state { get; set; }
+    public static LivingRoomManager currentInstance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    private static LivingRoomManager _instance;
 
     // Start is called before the first frame update
     void Start()
     {
+        LivingRoomManager._instance = this;
         blackScreen.goBlacked = false;
 
         //Temp for testing
@@ -109,6 +121,13 @@ public class LivingRoomManager : MonoBehaviour
         }
     }
 
+    public void SitCharacters()
+    {
+        player.transform.position = tomSeat.position;
+        player.transform.rotation = tomSeat.rotation;
+        jacob.transform.position = jacobSeat.position;
+        jacob.transform.rotation = jacobSeat.rotation;
+    }
 
     public void FadeOut()
     {

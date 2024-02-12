@@ -6,12 +6,22 @@ using UnityEngine.UI;
 public class JacobLivingRoom : MonoBehaviour, Interactable
 {
     public DialogueTrigger dialogueTrigger;
+    public SubtitleTrigger foodArrivedSubtitle;
     public DialogueTrigger dialogueTriggerDay3;
+
+    public SplineMovement getFoodPath;
 
     public bool interactable = false;
     private bool dialogueTriggerStarted = false;
     private bool dialogueTriggerDay3Started = false;
 
+
+    public void EndStudySession()
+    {
+        foodArrivedSubtitle.TriggerSubtitle(() => {
+            getFoodPath.StartMovement();
+        });
+    }
 
     public void Interact()
     {
@@ -23,6 +33,12 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                     dialogueTrigger.TriggerDialogue(() => {
                         this.interactable = false;
                         LivingRoomManager.state = LivingRoomState.Day1TalkedWithJacob;
+
+                        LivingRoomManager manager = LivingRoomManager.currentInstance;
+                        manager.FadeOut();
+                        manager.Invoke("SitCharacters", 2.5f);
+                        Invoke("EndStudySession", 2.7f);
+                        manager.Invoke("FadeIn", 3.0f);
                     });
                     dialogueTriggerStarted = true;
                 }

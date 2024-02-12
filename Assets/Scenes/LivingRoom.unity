@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 23010934}
   m_Layer: 0
-  m_Name: Chair (1)
+  m_Name: JacobChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +154,7 @@ Transform:
   m_Children:
   - {fileID: 999645127}
   - {fileID: 1687627133}
+  - {fileID: 616358656}
   m_Father: {fileID: 2011511414}
   m_LocalEulerAnglesHint: {x: 0, y: 159.963, z: 0}
 --- !u!1 &42409703
@@ -719,7 +720,7 @@ GameObject:
   - component: {fileID: 204491740}
   - component: {fileID: 204491739}
   - component: {fileID: 204491738}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,8 +1004,8 @@ Transform:
   m_GameObject: {fileID: 337201400}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 500, y: 20, z: 800}
+  m_LocalPosition: {x: -0.0000038147, y: 0, z: 0}
+  m_LocalScale: {x: 750, y: 20, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2011511414}
@@ -1020,7 +1021,7 @@ GameObject:
   - component: {fileID: 414144900}
   - component: {fileID: 414144902}
   - component: {fileID: 414144903}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OutsideDoor
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -1130,6 +1131,198 @@ MonoBehaviour:
   subTitleText: {fileID: 574527660}
   animator: {fileID: 928667772}
   textSpeed: 0.01
+--- !u!1 &427516091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 427516093}
+  - component: {fileID: 427516092}
+  m_Layer: 0
+  m_Name: SplineContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &427516092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427516091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Spline:
+    m_EditModeType: 1
+    m_Knots: []
+    m_MetaData: []
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Splines:
+  - m_EditModeType: 1
+    m_Knots:
+    - Position:
+        x: -16.85247
+        y: -44.791565
+        z: -577.2531
+      TangentIn:
+        x: 0
+        y: 0
+        z: -7.820523
+      TangentOut:
+        x: 0
+        y: 0
+        z: 37.48333
+      Rotation:
+        value:
+          x: 0
+          y: 0.9202288
+          z: 0
+          w: 0.39138108
+    - Position:
+        x: 116.24753
+        y: -61.791565
+        z: -609.05316
+      TangentIn:
+        x: 0
+        y: 0
+        z: -63.859917
+      TangentOut:
+        x: 0
+        y: 0
+        z: 29.123358
+      Rotation:
+        value:
+          x: 0.00000005759648
+          y: 0.4764703
+          z: -0.00000003118568
+          w: 0.8791905
+    - Position:
+        x: 170.14752
+        y: -84.791565
+        z: -513.2531
+      TangentIn:
+        x: 0
+        y: 0
+        z: -54.0053
+      TangentOut:
+        x: 0
+        y: 0
+        z: 27.002651
+      Rotation:
+        value:
+          x: 0
+          y: 0.08081208
+          z: 0
+          w: 0.9967293
+    - Position:
+        x: 147.74753
+        y: -90.69157
+        z: -217.75311
+      TangentIn:
+        x: -0
+        y: -0
+        z: -97.171005
+      TangentOut:
+        x: 0
+        y: 0
+        z: 98.88767
+      Rotation:
+        value:
+          x: -0.007295901
+          y: -0.14813572
+          z: 0.0025253687
+          w: 0.98893696
+    - Position:
+        x: -4.452469
+        y: -76.39156
+        z: 48.4469
+      TangentIn:
+        x: -0.000003580004
+        y: 3.330669e-16
+        z: -67.39986
+      TangentOut:
+        x: 0.00000024214387
+        y: -2.7755576e-17
+        z: 67.399826
+      Rotation:
+        value:
+          x: -2.3941443e-12
+          y: -0.053777914
+          z: 4.4454673e-11
+          w: 0.9985529
+    - Position:
+        x: -14.052467
+        y: -76.39156
+        z: 137.64688
+      TangentIn:
+        x: 0
+        y: 0
+        z: 0
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0
+      Rotation:
+        value:
+          x: 3.6352016e-24
+          y: -0.053579662
+          z: -6.77492e-23
+          w: 0.9985636
+    m_MetaData:
+    - Mode: 3
+      Tension: 0.5
+    - Mode: 3
+      Tension: 0.5
+    - Mode: 3
+      Tension: 0.5
+    - Mode: 0
+      Tension: 0.5
+    - Mode: 4
+      Tension: 0.5
+    - Mode: 1
+      Tension: 0.5
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Knots:
+    m_KnotsLink: []
+--- !u!4 &427516093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427516091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -122.14753, y: 107.791565, z: -487.7469}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574527658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1664,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 155488187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &616358655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616358656}
+  m_Layer: 0
+  m_Name: SitPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &616358656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616358655}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.6749466, z: 0, w: 0.73786664}
+  m_LocalPosition: {x: -6.199996, y: 18.9, z: 0.000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 23010934}
+  m_LocalEulerAnglesHint: {x: 0, y: -84.9, z: 0}
 --- !u!1 &618416415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 618416416}
   m_Layer: 0
-  m_Name: Chair (2)
+  m_Name: EmptyChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2569,6 +2793,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1071246927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071246928}
+  m_Layer: 0
+  m_Name: SitPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1071246928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071246927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.67365766, z: 0, w: 0.73904353}
+  m_LocalPosition: {x: 0, y: 17.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1890241534}
+  m_LocalEulerAnglesHint: {x: 0, y: -84.7, z: 0}
 --- !u!1 &1103557577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,6 +3080,7 @@ GameObject:
   - component: {fileID: 1189855509}
   - component: {fileID: 1189855508}
   - component: {fileID: 1189855512}
+  - component: {fileID: 1189855513}
   m_Layer: 0
   m_Name: Jacob
   m_TagString: Interactable
@@ -2874,6 +3130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTrigger: {fileID: 1189855508}
   dialogueTriggerDay3: {fileID: 1189855512}
+  getFoodPath: {fileID: 0}
   interactable: 0
 --- !u!54 &1189855510
 Rigidbody:
@@ -2945,6 +3202,25 @@ MonoBehaviour:
   - name: Jacob
     characterPortrait: {fileID: 0}
     sentence: I'll wait for you at my car outside.
+--- !u!114 &1189855513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189855507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad39ece1444893b4499010d146e96c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineContainer: {fileID: 427516092}
+  splineIndex: 0
+  speed: 7.04
+  reverseMovement: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 1843
 --- !u!1 &1263638867
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,7 +3896,7 @@ GameObject:
   - component: {fileID: 1466236907}
   - component: {fileID: 1466236906}
   - component: {fileID: 1466236905}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4790,7 +5066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1890241534}
   m_Layer: 0
-  m_Name: Chair
+  m_Name: TomChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4811,6 +5087,7 @@ Transform:
   m_Children:
   - {fileID: 1327558481}
   - {fileID: 1007708868}
+  - {fileID: 1071246928}
   m_Father: {fileID: 2011511414}
   m_LocalEulerAnglesHint: {x: 0, y: -159.811, z: 0}
 --- !u!1 &1917166355
@@ -5272,3 +5549,4 @@ SceneRoots:
   - {fileID: 1189855511}
   - {fileID: 1011823258}
   - {fileID: 1179467066}
+  - {fileID: 427516093}
