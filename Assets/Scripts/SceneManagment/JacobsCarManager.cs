@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
 
@@ -12,6 +13,7 @@ public enum JacobsCarState
 
     // Day 3 States
     Day3GoingToBackBay,
+    Day3SkipToBackBay,
 
 }
 
@@ -27,6 +29,7 @@ public class JacobsCarManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (GameManager.state == GameState.GameStart)
         {
             GameManager.state = GameState.Day3TalkedWithJacob;
@@ -41,10 +44,17 @@ public class JacobsCarManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+
+        switch (JacobsCarManager.state)
         {
-            Debug.Log("Scene change");
-            prompt.text = "";
+            case JacobsCarState.Day3SkipToBackBay:
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                {
+                    SceneManager.LoadScene("BackBay");
+                    prompt.text = "";
+                    GameManager.state = GameState.Day3InBackBay;
+                }
+                break;
         }
     }
 
@@ -58,6 +68,7 @@ public class JacobsCarManager : MonoBehaviour
                 // Skip to next scene
                 string targetPrompt = GetPrompt();
                 prompt.text = (targetPrompt == null) ? "" : $"[E] {targetPrompt}";
+                JacobsCarManager.state = JacobsCarState.Day3SkipToBackBay;
             });
         });
     }
