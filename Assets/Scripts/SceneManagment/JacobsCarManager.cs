@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public enum JacobsCarState
 {
@@ -17,6 +19,8 @@ public class JacobsCarManager : MonoBehaviour
 {
     public SubtitleTrigger trigger;
     public SubtitleTrigger trigger2;
+
+    public Text prompt;
 
     public static JacobsCarState state { get; set; }
 
@@ -35,12 +39,31 @@ public class JacobsCarManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Scene change");
+            prompt.text = "";
+        }
+    }
+
     private void delayedSubtitlePlay()
     {
         trigger.TriggerSubtitle(() =>
         {
             // Car Swerving
-            trigger2.TriggerSubtitle();
+            trigger2.TriggerSubtitle(() =>
+            {
+                // Skip to next scene
+                string targetPrompt = GetPrompt();
+                prompt.text = (targetPrompt == null) ? "" : $"[E] {targetPrompt}";
+            });
         });
+    }
+
+    public string GetPrompt() 
+    { 
+        return "Skip to BackBay"; 
     }
 }

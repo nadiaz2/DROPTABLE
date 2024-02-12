@@ -68,6 +68,7 @@ public class OutsideHomeManager : MonoBehaviour
 
             case GameState.Day3TalkedWithJacob:
                 OutsideHomeManager.state = OutsideHomeState.Day3HeadToBackBay;
+                jacobsCar.gameObject.SetActive(true);
                 jacobsCar.interactable = true;
                 break;
         }

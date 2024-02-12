@@ -289,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 224510026}
   trigger2: {fileID: 224510028}
+  prompt: {fileID: 131140670}
 --- !u!114 &224510028
 MonoBehaviour:
   m_ObjectHideFlags: 0
