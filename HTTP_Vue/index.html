@@ -7,7 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to Vuetify 3</title>
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
-  <link rel="manifest" href="/manifest.json"> 
+  <link rel="manifest" href="/manifest.json">
+  <script type="module">
+    import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js"
+    import connection from "@/plugins/connection.js"
+  </script>
 
 
 </head>

@@ -1,6 +1,8 @@
+
 <template>
   <v-app>
-    <v-container >
+
+    <v-container>
       <v-app-bar elevation="0" aspect-ratio="1" class="bar">
         <v-btn @click="navigateToPage(route)">
           <v-icon size="40">mdi-arrow-left</v-icon>
@@ -11,141 +13,60 @@
     </v-container>
 
     <v-container class="photo">
-      <v-row>
-        <v-col cols="4" v-for="(image, index) in images" :key="index" class="no-padding">
-          <v-img :src="image" aspect-ratio="1" cover></v-img>
-        </v-col>
-      </v-row>
-    </v-container>
+    <v-row>
+      <v-col cols="4" v-for="(item, index) in items" :key="index" class="no-padding">
+        <!-- Use a div as a clickable wrapper for the image -->
+        <div @click="sendMsg(item.Message)" class="image-container cursor-pointer">
+          <v-img :src="item.image" aspect-ratio="1" cover></v-img>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
   </v-app>
 </template>
 
 <script>
+
+
 export default {
+
   name: 'game1_album',
   data() {
     return {
+
       route: 'game1_main',
-      images: [
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg', 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
-        'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg',
+      items: [
+
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '01-FOUNDPHOTO', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
+        { Message: '', image: 'https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg' },
 
         // Add more image URLs here
-      ]
+      ],
+
+      connection: {
+        send: function(msg) {
+          console.log("Sending message:", msg); // Replace this with actual connection logic
+        }
+      }
     };
   },
   methods: {
@@ -154,6 +75,9 @@ export default {
     },
     navigateToPage(routeName) {
       this.$router.push({ name: routeName });
+    },
+    sendMsg(message) {
+      this.connection.send(message);
     }
   }
 }
@@ -164,12 +88,15 @@ export default {
   margin-top: 10%;
 
 }
+
 .no-padding {
   padding: 1% !important;
 }
+
 .bar {
   padding-top: 2%;
 }
+
 .title-size {
   font-size: 150%;
   /* font-weight: bold; */
