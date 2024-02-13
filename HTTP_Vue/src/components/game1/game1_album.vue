@@ -27,9 +27,8 @@
 
 <script>
 
-
+import connection from "@/plugins/connection";
 export default {
-
   name: 'game1_album',
   data() {
     return {
@@ -62,11 +61,7 @@ export default {
         // Add more image URLs here
       ],
 
-      connection: {
-        send: function(msg) {
-          console.log("Sending message:", msg); // Replace this with actual connection logic
-        }
-      }
+
     };
   },
   methods: {
@@ -77,7 +72,8 @@ export default {
       this.$router.push({ name: routeName });
     },
     sendMsg(message) {
-      this.connection.send(message);
+      connection.send(message);
+      console.log(message);
     }
   }
 }
