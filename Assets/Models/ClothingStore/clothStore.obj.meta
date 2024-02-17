@@ -1,0 +1,1004 @@
+fileFormatVersion: 2
+guid: 77600475f0aafac46b0813fad374fffd
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao01_01Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao01_02Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao01_03Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao01_04Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao02_01Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao02_02Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao02_03Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao02_04Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao03_1Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao03_2Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao03_3Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bao03_4Mat
+    second: {fileID: 2100000, guid: 362b4839bd569ff4fafb536c8bb424a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: baojiaziMat
+    second: {fileID: 2100000, guid: 804a82f9d249e4a40b3d572e537eb54a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan01Mat
+    second: {fileID: 2100000, guid: 3ce1904deeffeda428085950093540e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan02Mat
+    second: {fileID: 2100000, guid: 33929853ac47aaa458814244d40edc4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan03Mat
+    second: {fileID: 2100000, guid: db8aef80b1540fa4fbb06bf6f5c07f79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan04Mat
+    second: {fileID: 2100000, guid: 3940daacb54586b45b90d12bb6ba558a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan05Mat
+    second: {fileID: 2100000, guid: e5a8614adc5358a40a5fa176358fb153, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan06Mat
+    second: {fileID: 2100000, guid: 9dc5b086354768043a9cb49d4730e6a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan07Mat
+    second: {fileID: 2100000, guid: bcc9d17382835dc42b96a267175286ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan08Mat
+    second: {fileID: 2100000, guid: e5c67c53eea201a49b964180b1e742a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan09Mat
+    second: {fileID: 2100000, guid: adb62e6dd59dc8c43b831faa01f66aca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan10Mat
+    second: {fileID: 2100000, guid: dbab8f8b059405241a6d5d8da88ce794, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan11Mat
+    second: {fileID: 2100000, guid: 94ad2633f03a5cb44b91c1c43203108b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan12Mat
+    second: {fileID: 2100000, guid: f4e74d0bbd1830d4099fe48a25f24b2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan13Mat
+    second: {fileID: 2100000, guid: 087b72efafa56a744a68313b1148ebe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan14Mat
+    second: {fileID: 2100000, guid: 515c8eaee26815f4c8eefb92a3baf23c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan15Mat
+    second: {fileID: 2100000, guid: 04625125d8e799c43a7eb646d572ff35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan16Mat
+    second: {fileID: 2100000, guid: 01d479209137fe1459e339259ff1c2c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan17Mat
+    second: {fileID: 2100000, guid: 30dd108c011321d47af9bcf12663e83b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan18Mat
+    second: {fileID: 2100000, guid: ba142a904ea32d64bb5684556242015a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan19Mat
+    second: {fileID: 2100000, guid: 3da7e8370d5a5c84b8e331004f259fe3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan20Mat
+    second: {fileID: 2100000, guid: 4724a5fa764494b49a83e839dacad27c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan21Mat
+    second: {fileID: 2100000, guid: 4035ea9d15e97b141a30e3952b8f62b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan22Mat
+    second: {fileID: 2100000, guid: a9f36672800b4114dbdfbb9d0ed2aead, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan23Mat
+    second: {fileID: 2100000, guid: 9f71492d46a73e9449f18cf438faf947, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan24Mat
+    second: {fileID: 2100000, guid: 417a6a7d81fc1b04cbe436a7e7ca4c77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan25Mat
+    second: {fileID: 2100000, guid: cfabad6fe105c4546b7c3a3b8f378a6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan26Mat
+    second: {fileID: 2100000, guid: fea34f1effe590841a4ff8e9a1d60a41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan27Mat
+    second: {fileID: 2100000, guid: 5c35f8259a1515340a40dac0ad679f9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshan28Mat
+    second: {fileID: 2100000, guid: 4dff6651a179f0f4f9c8b2f156bb5905, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chenshanguiziMat
+    second: {fileID: 2100000, guid: f43c46d2f901ece48b2e33881f58bc44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chuanglianMat
+    second: {fileID: 2100000, guid: 2ce55121ed1d52443a35599d033d92c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dianhuaPOSMat
+    second: {fileID: 2100000, guid: 3d95233c8c928cd499460df827e096ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: diannao_jianpanMat
+    second: {fileID: 2100000, guid: 32b66fc3b55f8e64d9ab368fb5491ce8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: diannao_pingmuMat
+    second: {fileID: 2100000, guid: b96401c42a7c4de4aa74e3f1a6fab00f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: diannao_suliaoMat
+    second: {fileID: 2100000, guid: e3054341c30575d4593302b01eb41c0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: diannao_xianMat
+    second: {fileID: 2100000, guid: 4967f00229cc6b345a7134a32619ee4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dibanMat
+    second: {fileID: 2100000, guid: e702efad9cf69284cbc66ac017887132, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ditanMat
+    second: {fileID: 2100000, guid: 51959ae08943cb2499c385934b93279b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: erweimaMat
+    second: {fileID: 2100000, guid: 0dd78059c15ee434dac0a9ab7edf6541, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie01_1Mat
+    second: {fileID: 2100000, guid: 703bb5557b6b10942b0efd79d067dcc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie01_2Mat
+    second: {fileID: 2100000, guid: b3356902ae8c15b418bb1c006f9919c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie01_3Mat
+    second: {fileID: 2100000, guid: da4ad92727941514fb5e3d8f4f59a9c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie01_4Mat
+    second: {fileID: 2100000, guid: 8e349da809e81ff4dadc48f21f0eae45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie02Mat
+    second: {fileID: 2100000, guid: 5ee7cd54ae2bac64abeccd63a56ea569, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie03_1Mat
+    second: {fileID: 2100000, guid: 66cfd986d8ccae74084ca572c2a310cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie03_2Mat
+    second: {fileID: 2100000, guid: 4890856f73612e3499f7322df2eaa195, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie03_3Mat
+    second: {fileID: 2100000, guid: 4ae94d6d24cab6e479b7a35ece919855, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie03_4Mat
+    second: {fileID: 2100000, guid: 1a06c7660d79d6f48bcdcd4d75db2fbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie03_5Mat
+    second: {fileID: 2100000, guid: 49d36eb68d2927747b2fdf229b16caef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaogenxie04Mat
+    second: {fileID: 2100000, guid: 02048aa1833f9084c9bd71cd9e848aa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gengyijian_dengzihongMat
+    second: {fileID: 2100000, guid: 1fb32b2a453e62f4f9bc01cd49b3ffe1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gengyijian_dengzilanMat
+    second: {fileID: 2100000, guid: 5c791217ad6b246428fda7de1f751eee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gengyijian_ditanMat
+    second: {fileID: 2100000, guid: 8ab8eb3cd440173459b6ad988b30e089, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gengyijian_jingziMat
+    second: {fileID: 2100000, guid: 7bf258666336da44fbe24f2b74b2156c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gengyijian_kuangjiaMat
+    second: {fileID: 2100000, guid: 34a29b0b5cdf1ee468d784b90970ae0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gengyijianjiaziMat
+    second: {fileID: 2100000, guid: f3d3256c04bce6b499d98951a94d1ab4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: heitieMat
+    second: {fileID: 2100000, guid: e9180615623cb73439984820a0d8dc64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi01_heitieMat
+    second: {fileID: 2100000, guid: 4ea14b34557f3574083f00793c8f74b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi01_mutouMat
+    second: {fileID: 2100000, guid: 5d2b68450e99e0d4295342aaef6e5aaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi01_mutouhuawenMat
+    second: {fileID: 2100000, guid: 551520ad15cc2ab42aec45805ecbdbee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi02_01Mat
+    second: {fileID: 2100000, guid: 7599cf26ed2c08d4eab85ecfc712b4a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi02_02Mat
+    second: {fileID: 2100000, guid: 0ad8aeeaf7b8db34cbcd4bd4ba6d3e7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_kuzi01Mat
+    second: {fileID: 2100000, guid: 18d06ffa79cf6484faf0e2875b4b0512, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_kuzi02Mat
+    second: {fileID: 2100000, guid: d04c51569fcef1b4b88b0bb5ffd8cd2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_kuzi03Mat
+    second: {fileID: 2100000, guid: 1918a499e7f352f4083ff921e322c48a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_kuzi04Mat
+    second: {fileID: 2100000, guid: 98698f1861bea924da399493ed8c4c7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_kuzi05Mat
+    second: {fileID: 2100000, guid: de787885c2147b443b5cad49be141b91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_modelshangyi01Mat
+    second: {fileID: 2100000, guid: 21cbc39b55322884fbb864bf574168fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_modelshangyi02Mat
+    second: {fileID: 2100000, guid: 0fd05381ed7a97145a30a0a96e5dd198, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_mutouMat
+    second: {fileID: 2100000, guid: 31c0fda93abdc2a499cd99471a042042, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_shangyi01Mat
+    second: {fileID: 2100000, guid: db3b488ea669bf344a5965da6cdb098b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_shangyi02Mat
+    second: {fileID: 2100000, guid: 7386fee42211edb4e9e7698f7a58e51a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_shangyi03Mat
+    second: {fileID: 2100000, guid: 9fb66af19a9119d459d8591302288be1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_shangyi04Mat
+    second: {fileID: 2100000, guid: 2aa680ec1fef7944a898016b635fc696, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_shangyi05Mat
+    second: {fileID: 2100000, guid: 802f5a0c9bc25994aa2264b64d416491, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_shangyi06Mat
+    second: {fileID: 2100000, guid: b3a9c2d1bd2228947aba4653eb62f4b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_shangyi07Mat
+    second: {fileID: 2100000, guid: b798a9f039c3081418351934611578e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jiazi03_shangyi08Mat
+    second: {fileID: 2100000, guid: 6e9ae92aae098d747a48721e62e57fbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lingdaiMat
+    second: {fileID: 2100000, guid: 48f912ed283f62f4fa872e0033ff7247, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: model_kuziMat
+    second: {fileID: 2100000, guid: 782ec2632f31d334386a52ea539da785, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mujiaziMat
+    second: {fileID: 2100000, guid: ff2f1d3c994d1e1409db35a4c772ff17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nanxie_01Mat
+    second: {fileID: 2100000, guid: 1ec8a44ed81c7fb47a21d587d5161a46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nanxie_02Mat
+    second: {fileID: 2100000, guid: 60d2c9ebd8fdd9f45976bd5910d56544, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nanxie_03Mat
+    second: {fileID: 2100000, guid: 1b2877489110b40418dbf7e95635772c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface1Mat
+    second: {fileID: 2100000, guid: 0efeae6b45aca0540ad1e49c1da98cee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface2Mat
+    second: {fileID: 2100000, guid: 0efeae6b45aca0540ad1e49c1da98cee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shafa_buliaoMat
+    second: {fileID: 2100000, guid: da25e078d63f35c4c9586f71a04bd031, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shafa_shafa_mutouMat
+    second: {fileID: 2100000, guid: 6ddb44394d57ec043a9a9602b04373d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xie_zhijiaMat
+    second: {fileID: 2100000, guid: b3af96021c615c3458739879050b7b0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiebaozhuanghe_1Mat
+    second: {fileID: 2100000, guid: c2ea0aa0446ff7844a6d9f6c724222ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiebaozhuanghe_2Mat
+    second: {fileID: 2100000, guid: 63a097024345f4e4c8b063acdcc039bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiebaozhuanghe_3Mat
+    second: {fileID: 2100000, guid: e931e7920d9797e46aab0c3800257571, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiebaozhuanghe_4Mat
+    second: {fileID: 2100000, guid: e517071474ea7fd4baac6ab0bb22b5ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiebaozhuanghe_5Mat
+    second: {fileID: 2100000, guid: 35c11a6fc8f74b0488a2d6f14d75528f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiebaozhuanghe_6Mat
+    second: {fileID: 2100000, guid: 483e427188117ce49bfb8d2c3721dde8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiebaozhuanghe_7Mat
+    second: {fileID: 2100000, guid: dfa98c11de018fc4683bd8f7f118c944, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiebaozhuanghe_8Mat
+    second: {fileID: 2100000, guid: da421832176cb644cbd0622df6785f83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xiejiazi_mutouMat
+    second: {fileID: 2100000, guid: f274ba785eca05d419e38a977e686e29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu04_1Mat
+    second: {fileID: 2100000, guid: 25025d7b0777f7c419c4644ac95e936b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu04_2Mat
+    second: {fileID: 2100000, guid: 4e9bcc1cfca5d3e458569f95527b8196, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu05Mat
+    second: {fileID: 2100000, guid: 15e73e7c428195d488f529b7a60d0745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu06_1Mat
+    second: {fileID: 2100000, guid: fbb0b327c1385db418575ee79183fe0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu06_2Mat
+    second: {fileID: 2100000, guid: 50ada4f1bada8684f9dc203ec402efe8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu06_3Mat
+    second: {fileID: 2100000, guid: ff09acbd5f7ab6c41a47f93a4be41ae7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu06_4Mat
+    second: {fileID: 2100000, guid: 06dbba4b9e35d764cab70b2ed748f559, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu06guagou_jinshuMat
+    second: {fileID: 2100000, guid: 432c06e544d2b9e4ebc4f755ddc4cf0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu06guagou_mutouMat
+    second: {fileID: 2100000, guid: a9519c256cb38524fa724244017972db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu07guagou_jinshuMat
+    second: {fileID: 2100000, guid: b2ed39ae03269d545ae19bf879845a32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu07guagou_mutouMat
+    second: {fileID: 2100000, guid: 39b8f5d425e24a54bb0e522fd45f9728, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu08_1Mat
+    second: {fileID: 2100000, guid: dff27c0be64522543bdbe28d58edb2c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu08_2Mat
+    second: {fileID: 2100000, guid: deaba202988bbd944a44c3c494ead9e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu08guagou_jinshuMat
+    second: {fileID: 2100000, guid: 43ee733e03149a14494700043cf532e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu08guagou_mutouMat
+    second: {fileID: 2100000, guid: c15a181a7e07aa6499605ca0b37d7410, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu0901Mat
+    second: {fileID: 2100000, guid: 770f1b9c6b5c3b440b9fd0dcde35152f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu0902Mat
+    second: {fileID: 2100000, guid: 108646fb4eb9e4c4f9dd68c4bd2a04e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu0903Mat
+    second: {fileID: 2100000, guid: 70c692f3834ced64e9a560d40c45bcc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu0904Mat
+    second: {fileID: 2100000, guid: 5f410d99315752144947abca0adc4484, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu0905_kuzi01Mat
+    second: {fileID: 2100000, guid: 51d96dbb946f27d4eb0ff4ceed737f40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu0905_kuzi02Mat
+    second: {fileID: 2100000, guid: dcb869f7e322f814fbe16b62d742784a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu09_duanku01Mat
+    second: {fileID: 2100000, guid: 4dc12aa6c4dfbfc41ae23001cdfb654a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu09_duanku02Mat
+    second: {fileID: 2100000, guid: 380f3bb4cf023ac45bdf7f94e56e9958, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu09_guagoujinshuMat
+    second: {fileID: 2100000, guid: 3a427f4ab1eb8614884db1a62abf99d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu09_guagoumutouMat
+    second: {fileID: 2100000, guid: dae8fa77b24176d42a43f58bbe660c03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu09kuziguagouMat
+    second: {fileID: 2100000, guid: 52b186cb107ac3f4f939a1b9ef7f7c92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10_kuzi_01Mat
+    second: {fileID: 2100000, guid: 84fd2629f4e80764ba09ef609c20c9f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10_kuzi_02Mat
+    second: {fileID: 2100000, guid: 822626a4cf5776e438ee6e2a6f23537c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10_kuzi_03Mat
+    second: {fileID: 2100000, guid: 3424135e9a2f6e046ba216f62db78fc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10_txu_01Mat
+    second: {fileID: 2100000, guid: d20b6cb8c09154c429b6efc836aa81d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10_txu_02Mat
+    second: {fileID: 2100000, guid: 98815923deb57d84cb9968e32f2a9589, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10_xizhuang_01Mat
+    second: {fileID: 2100000, guid: c8f01a36636c56a4e953e68d2c1cdd12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10_xizhuang_02Mat
+    second: {fileID: 2100000, guid: 6c9a274cb6941c944bba9a3fd730e049, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10_xizhuang_03Mat
+    second: {fileID: 2100000, guid: 4e1265ede3db26a44b5d5b71178a7add, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10guagoujinshuMat
+    second: {fileID: 2100000, guid: b1de13257fc33494fb875c5d6b8ed486, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10guagoumutouMat
+    second: {fileID: 2100000, guid: 34f2ebc751eea1c438fb9beb003bf8b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10heitieMat
+    second: {fileID: 2100000, guid: 96674a99d8a9b794ea97415e72e538e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu10jiazi_mutouMat
+    second: {fileID: 2100000, guid: af185669c88c71442bf9ab94e933ac98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu11_01Mat
+    second: {fileID: 2100000, guid: 97549a0facf55c04ba1e20dec8d89486, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu11_02Mat
+    second: {fileID: 2100000, guid: 2bbf61518e569a649948cc434adcadbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu11_03Mat
+    second: {fileID: 2100000, guid: 13dba6d96bee7254eb5486780d44282a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu11_04Mat
+    second: {fileID: 2100000, guid: 1b3e87ac6c479b14e9eb123afe6c432a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu11_jinshuMat
+    second: {fileID: 2100000, guid: 60223fd88517a204eb7f9884869c92a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu11_mutouMat
+    second: {fileID: 2100000, guid: 0beb20aa7a2fdbe4aada41c3fc93daad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12duanku_01Mat
+    second: {fileID: 2100000, guid: 5db510d7a8f35a44fa7fe44864a7cd05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12duanku_02Mat
+    second: {fileID: 2100000, guid: 1dfb04013ace1d244aa634d0ed26a573, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12guagoujinshuMat
+    second: {fileID: 2100000, guid: 05682bd123d38da47ada27ea8e2b7a96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12guagoumutouMat
+    second: {fileID: 2100000, guid: d91b0ae1ca51ef34d832531111056b2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12heitieMat
+    second: {fileID: 2100000, guid: 12ed5d827f1ec4d44bb85640985b7e2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12jiazi_mutouMat
+    second: {fileID: 2100000, guid: cf4d8ac371a408047949807afc90ae95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12kuzi_01Mat
+    second: {fileID: 2100000, guid: 0dae944c9cf19a34d99dc7a39064dcf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12kuzi_02Mat
+    second: {fileID: 2100000, guid: 5f8cad433ac0f0c4ab9291813f31e235, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12kuzi_03Mat
+    second: {fileID: 2100000, guid: 24957332015603b4ea1f280793374cfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12kuzi_04Mat
+    second: {fileID: 2100000, guid: d0cbb623666de3342b2a3e06cca440b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12kuziguagouMat
+    second: {fileID: 2100000, guid: 59918e9feebe42148b9eee019e2adce5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12txu_01Mat
+    second: {fileID: 2100000, guid: 4f4ab8b5b73396c498853f158ccdb1c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12txu_02Mat
+    second: {fileID: 2100000, guid: e64b06caacd4e8d428ad2cc51ead0a84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12txu_03Mat
+    second: {fileID: 2100000, guid: 0fb107192be401d458f881dacc306bca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu12txu_04Mat
+    second: {fileID: 2100000, guid: 30cc9a3802254194c82cddff6b780c54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu_01Mat
+    second: {fileID: 2100000, guid: dd82189097b139d47956719d02edcd48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu_02Mat
+    second: {fileID: 2100000, guid: a9b15302584989f48872ecf9ac703c9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu_03Mat
+    second: {fileID: 2100000, guid: 392b50961ea9daf4da17ebf2e6f21357, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu_07_01_1Mat
+    second: {fileID: 2100000, guid: 20c87b5844f433c41916bf7c20945f9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu_07_01_2Mat
+    second: {fileID: 2100000, guid: eccf9652ab8d7a54193ff3f9042d6423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifu_07_01_3Mat
+    second: {fileID: 2100000, guid: 7f94280c30ec2824a97f2bc15f866ba5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yifumodelMat
+    second: {fileID: 2100000, guid: ad1f47796f5786f47a5bd247d4f2c83a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: zhuozi_dalishiMat
+    second: {fileID: 2100000, guid: 9fc26a361bacff4448bdb45ef5e390f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: zhuozi_lashoujinshuMat
+    second: {fileID: 2100000, guid: 9fc26a361bacff4448bdb45ef5e390f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: zhuozi_mutouMat
+    second: {fileID: 2100000, guid: 9fc26a361bacff4448bdb45ef5e390f8, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
