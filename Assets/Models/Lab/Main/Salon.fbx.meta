@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: fbf9f2e738a361940b95d1f1ebc7ea0b
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Cubemap
+      assembly: UnityEngine.CoreModule
+      name: diffuse_cube
+    second: {fileID: 8900000, guid: 9f005835f9464254ca96bd64430927f4, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PARED
+    second: {fileID: 2100000, guid: f8d03fdd0cd4f5245a0286e56b9bf1c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS1
+    second: {fileID: 2100000, guid: 88986b40595a2984eab38f4f273bd6b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS10
+    second: {fileID: 2100000, guid: 3266f73ff4a9eaf48beeb8186c02867d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS11
+    second: {fileID: 2100000, guid: 1fc0eae5fbe8cd5478bb6e8fb28f691c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS2
+    second: {fileID: 2100000, guid: ee43337ef2a72104da2e6d667fffa8ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS4
+    second: {fileID: 2100000, guid: f68fdd6166f94be4086d2b72b9ac95b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS5
+    second: {fileID: 2100000, guid: e5142e72fbad3ed4a9f2b92472af9650, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS6
+    second: {fileID: 2100000, guid: f06386871996f434bacfcec8c80720d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS7
+    second: {fileID: 2100000, guid: 1e467a84f85962e4fa81b92cb14df9e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StingrayPBS9
+    second: {fileID: 2100000, guid: c7af8bfca9debf14db5a55fe089e4b42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VENTANAS
+    second: {fileID: 2100000, guid: 973cc2bab6a41b3468e81b8dd5d7e0d5, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CCORK
+    second: {fileID: 2800000, guid: 734908e4a47e85347aabd3ab089add2b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CMADERA
+    second: {fileID: 2800000, guid: ab3c6d3f44aeeaf4595b4fe9ebea974d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CMADERA_OBSCURA
+    second: {fileID: 2800000, guid: d1d6a2a79e5b26347ba639b5f40f3b5b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CMETAL
+    second: {fileID: 2800000, guid: 1e58b49d0a338dd46ab05f961a6a7e21, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CMETALOBSCURO
+    second: {fileID: 2800000, guid: 6c66d59926ae6f14c940292c94c5e374, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CORK_METAL
+    second: {fileID: 2800000, guid: aaec5db5b65924f4d9ab61bcb0a536e4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CORK_ROUGH
+    second: {fileID: 2800000, guid: b352da392d06f3144a332859df927de9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CPAREDES
+    second: {fileID: 2800000, guid: e798ef2acdcbf9447b9d767056e33c0d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CPISO
+    second: {fileID: 2800000, guid: 063cf590b58e75e46b6fe9fa1078fb51, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CPIZARRON
+    second: {fileID: 2800000, guid: 16ef344695eea5b41910bbef492c8207, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: CPUERTA
+    second: {fileID: 2800000, guid: 01c300b881f36b047bcbf55905b3b63e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MADERA_METAL
+    second: {fileID: 2800000, guid: 02f65a74668ddec40989adcfb5e2a249, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MADERA_OBSCURA_METAL
+    second: {fileID: 2800000, guid: b308e834c52d52145a987aaa488cc990, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MADERA_OBSCURA_ROUGH
+    second: {fileID: 2800000, guid: f45ac1901194061469dec2d8c55048d3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MADERA_ROUGH
+    second: {fileID: 2800000, guid: df1e4f8ca53ad874c9284ec72cc216c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METALOBSCURO_METAL.als
+    second: {fileID: 2800000, guid: 328e69dad105f52468a4f11eea96a3c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METALOBSCURO_ROUGH
+    second: {fileID: 2800000, guid: ed458f6b336a0a2479276ddfc0a5f7c6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL_METAL
+    second: {fileID: 2800000, guid: b542c6e20a550c74db69728dc90ea2cc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL_ROUGH
+    second: {fileID: 2800000, guid: 606bdeda7bcff274cbcdda683eab2549, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PAREDES_METAL
+    second: {fileID: 2800000, guid: 0b9bf1252f9734e49ac4cd6c51236b74, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PAREDES_ROUGH
+    second: {fileID: 2800000, guid: 83bac319db65ddf498677f9f335652e7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PISO_METAL
+    second: {fileID: 2800000, guid: 1e34592af04a6f5468fee14ab7e19b43, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PISO_ROUGH
+    second: {fileID: 2800000, guid: efc5d3d4125eb59409c41cd90d9e35a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PIZARRON_METAL
+    second: {fileID: 2800000, guid: 5741ffdb652c04a4aae203d5425969bd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PIZARRON_ROUGH
+    second: {fileID: 2800000, guid: e5eea82eba38124408c8092587d48393, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PUERTA_METAL
+    second: {fileID: 2800000, guid: f7f3a04394d0f954c96f9b034c892518, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PUERTA_ROUGH
+    second: {fileID: 2800000, guid: d766759b29b01f949bb013dcd06b87b2, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
