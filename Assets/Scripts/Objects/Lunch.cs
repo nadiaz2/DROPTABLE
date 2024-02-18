@@ -10,7 +10,7 @@ public class Lunch : MonoBehaviour, Interactable
     public void Interact()
     {
         this.interactable = false;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         CafeteriaManager.state = CafeteriaState.Day2EmilyPhone;
     }
 
