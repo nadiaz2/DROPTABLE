@@ -9,8 +9,24 @@ public class GuessingInteractable : MonoBehaviour, Interactable
 
     public bool hasInteracted = false;
 
+    private bool started = false;
+
+    void Update()
+    {
+        if (!started)
+        {
+            this.hasInteracted = true;
+        }
+        if (ClothingStoreManager.state == ClothingStoreState.Day3InsideClothingStore && !started)
+        {
+            started = true;
+            this.hasInteracted = false;
+        }
+    }
+
     public void Interact()
     {
+
         this.hasInteracted = true;
         clothingStoreManager.itemCount++;
     }

@@ -14,6 +14,7 @@ public enum JacobsCarState
     // Day 3 States
     Day3GoingToBackBay,
     Day3SkipToBackBay,
+    Day3GoingHome,
 
 }
 
@@ -21,8 +22,12 @@ public class JacobsCarManager : MonoBehaviour
 {
     public SubtitleTrigger trigger;
     public SubtitleTrigger trigger2;
+    public SubtitleTrigger trigger3;
+    public SubtitleTrigger trigger4;
 
     public Text prompt;
+
+    public BlackScreen blackScreen;
 
     public static JacobsCarState state { get; set; }
 
@@ -30,15 +35,25 @@ public class JacobsCarManager : MonoBehaviour
     void Start()
     {
 
+        blackScreen.goBlacked = false;
+
         if (GameManager.state == GameState.GameStart)
         {
-            GameManager.state = GameState.Day3TalkedWithJacob;
+            GameManager.state = GameState.Day3End;
         }
 
-        if (GameManager.state == GameState.Day3TalkedWithJacob)
+
+        switch (GameManager.state)
         {
-            state = JacobsCarState.Day3GoingToBackBay;
-            Invoke("delayedSubtitlePlay", 5);
+            case GameState.Day3TalkedWithJacob:
+                state = JacobsCarState.Day3GoingToBackBay;
+                Invoke("delayedSubtitlePlay", 5);
+                break;
+
+            case GameState.Day3End:
+                state = JacobsCarState.Day3GoingHome;
+                Invoke("delayedGoingHomeSubtitlePlay", 3);
+                break;
         }
     }
 
@@ -73,8 +88,43 @@ public class JacobsCarManager : MonoBehaviour
         });
     }
 
+    private void delayedGoingHomeSubtitlePlay()
+    {
+        trigger3.TriggerSubtitle(() =>
+        {
+            Invoke("part2SubtitleEnd", 6);
+        });
+    }
+
+    private void part2SubtitleEnd()
+    {
+        trigger4.TriggerSubtitle(() =>
+        {
+            Invoke("FadeOut", 5);
+            SceneManager.LoadScene("TomsRoom");
+            GameManager.state = GameState.Day4StartTomsRoom;
+        });
+    }
+
     public string GetPrompt() 
     { 
         return "Skip to BackBay"; 
+    }
+
+
+    public void FadeOut()
+    {
+        if (blackScreen != null)
+        {
+            blackScreen.goBlacked = true;
+        }
+    }
+
+    public void FadeIn()
+    {
+        if (blackScreen != null)
+        {
+            blackScreen.goBlacked = false;
+        }
     }
 }

@@ -14,7 +14,11 @@ public enum BackBayState
 
 public class BackBayManager : MonoBehaviour
 {
+    public GameObject jacobsCarSceneTrigger;
+
     public SubtitleTrigger subtitleTrigger;
+    public SubtitleTrigger subtitleTriggerHeadBackHome;
+
 
     public BlackScreen blackScreen;
 
@@ -38,13 +42,20 @@ public class BackBayManager : MonoBehaviour
 
         if (GameManager.state == GameState.GameStart)
         {
-            GameManager.state = GameState.Day3InBackBay;
+            GameManager.state = GameState.Day3End;
         }
 
         switch (GameManager.state)
         {
             case GameState.Day3InBackBay:
                 Invoke("startSubtitle", 3);
+                break;
+
+            case GameState.Day3End:
+                subtitleTriggerHeadBackHome.TriggerSubtitle(() =>
+                {
+                    jacobsCarSceneTrigger.SetActive(true);
+                });
                 break;
         }
 
