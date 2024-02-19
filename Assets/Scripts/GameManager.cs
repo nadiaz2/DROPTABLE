@@ -1,22 +1,4 @@
-/*
-enum GameState
-{
-	GameStart,
-	TalkingToJacob,
-	FinishedTalking,
-	PlayingGame,
-	GamePaused,
-	ClassRoomStart,
-	ClassRoomSeated,
-	ClassRoomSubtitleEnd,
-	ClassOver,
-	OnWayHomeStart,
-	BackToClassroom,
-	PickedupHeadphones,
-	MorganCloseUp,
-	AfterHeadphones,
-}
-*/
+
 public enum GameState
 {
 	GameStart,
@@ -40,6 +22,9 @@ public enum GameState
 	Day3InBackBay,
 	Day3InClothingStore,
 	Day3End,
+
+	// Day 4
+	Day4StartTomsRoom,
 
 
 }
