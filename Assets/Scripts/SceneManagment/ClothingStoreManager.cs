@@ -16,12 +16,16 @@ public enum ClothingStoreState
 
 public class ClothingStoreManager : MonoBehaviour
 {
-    public GameObject player; 
+    public GameObject player;
+    public GameObject playerEmily;
+    public GameObject rachel;
+    public GameObject rachelDialogueTrigger;
 
     public SubtitleTrigger subtitleTrigger;
     public SubtitleTrigger subtitleTriggerItem1;
     public SubtitleTrigger subtitleTriggerItem2;
     public SubtitleTrigger subtitleTriggerItem3;
+    public SubtitleTrigger flashBackSubtitleTrigger;
     public GuessingInteractable item1;
     public GuessingInteractable item2;
     public GuessingInteractable item3;
@@ -35,6 +39,7 @@ public class ClothingStoreManager : MonoBehaviour
     private bool item1SubtitleTriggered = false;
     private bool item2SubtitleTriggered = false;
     private bool item3SubtitleTriggered = false;
+    private bool flashBackSubtitleTriggered = false;
 
     public static ClothingStoreState state { get; set; }
     public static ClothingStoreManager currentInstance
@@ -107,19 +112,39 @@ public class ClothingStoreManager : MonoBehaviour
                 break;
 
             case ClothingStoreState.Day3EmilyFlashBack:
-                player.SetActive(false);
+                Invoke("FadeOut", 0.1f);
+                Invoke("FadeIn", 2);
+                Invoke("setUpFalshBackCharacters", 2);
+                Invoke("startFlashBackSubtitle", 4);
                 break;
         }
     }
 
+    private void setUpFalshBackCharacters()
+    {
+        player.SetActive(false);
+        playerEmily.SetActive(true);
+    }
 
     private void startSubtitle()
     {
         subtitleTrigger.TriggerSubtitle(() =>
         {
             state = ClothingStoreState.Day3InsideClothingStore;
-
         });
+    }
+
+    private void startFlashBackSubtitle()
+    {
+        if (!flashBackSubtitleTriggered)
+        {
+            flashBackSubtitleTrigger.TriggerSubtitle(() =>
+            {
+                rachelDialogueTrigger.SetActive(true);
+                rachel.SetActive(true);
+            });
+            flashBackSubtitleTriggered = true;
+        }
     }
 
 

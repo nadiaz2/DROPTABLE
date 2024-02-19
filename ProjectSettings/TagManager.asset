@@ -12,6 +12,7 @@ TagManager:
   - Interactable
   - Morgan
   - GoToClassReminder
+  - RachelDialogueTrigger
   layers:
   - Default
   - TransparentFX
