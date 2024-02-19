@@ -12,6 +12,7 @@ public enum ClothingStoreState
     Day3InsideClothingStore,
     Day3StartYellowDressDialogue,
     Day3EmilyFlashBack,
+    Day3EmilyFlashBackFinished,
 }
 
 public class ClothingStoreManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class ClothingStoreManager : MonoBehaviour
     public GameObject player;
     public GameObject playerEmily;
     public GameObject rachel;
+    public GameObject man;
     public GameObject rachelDialogueTrigger;
 
     public SubtitleTrigger subtitleTrigger;
@@ -26,6 +28,8 @@ public class ClothingStoreManager : MonoBehaviour
     public SubtitleTrigger subtitleTriggerItem2;
     public SubtitleTrigger subtitleTriggerItem3;
     public SubtitleTrigger flashBackSubtitleTrigger;
+    public DialogueTrigger dialogueTrigger;
+
     public GuessingInteractable item1;
     public GuessingInteractable item2;
     public GuessingInteractable item3;
@@ -40,6 +44,7 @@ public class ClothingStoreManager : MonoBehaviour
     private bool item2SubtitleTriggered = false;
     private bool item3SubtitleTriggered = false;
     private bool flashBackSubtitleTriggered = false;
+    private bool dialogueTriggerStarted = false;
 
     public static ClothingStoreState state { get; set; }
     public static ClothingStoreManager currentInstance
@@ -114,16 +119,44 @@ public class ClothingStoreManager : MonoBehaviour
             case ClothingStoreState.Day3EmilyFlashBack:
                 Invoke("FadeOut", 0.1f);
                 Invoke("FadeIn", 2);
-                Invoke("setUpFalshBackCharacters", 2);
+                Invoke("setUpFlashBackCharacters", 2);
                 Invoke("startFlashBackSubtitle", 4);
+                break;
+
+            case ClothingStoreState.Day3EmilyFlashBackFinished:
+                Invoke("FadeOut", 0.1f);
+                Invoke("FadeIn", 2);
+                Invoke("setUpAfterFlashBack", 2);
+                if (dialogueTriggerStarted)
+                {
+                    if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                    {
+                        dialogueTrigger.ContinueDialogue();
+                    }
+                }
                 break;
         }
     }
 
-    private void setUpFalshBackCharacters()
+    private void setUpFlashBackCharacters()
     {
         player.SetActive(false);
         playerEmily.SetActive(true);
+    }
+
+    private void setUpAfterFlashBack()
+    {
+        playerEmily.SetActive(false);
+        man.SetActive(false);
+        rachel.SetActive(false);
+        player.SetActive(true);
+
+        if (!dialogueTriggerStarted)
+        {
+            dialogueTrigger.TriggerDialogue();
+            dialogueTriggerStarted = true;
+        }
+        
     }
 
     private void startSubtitle()
@@ -142,6 +175,7 @@ public class ClothingStoreManager : MonoBehaviour
             {
                 rachelDialogueTrigger.SetActive(true);
                 rachel.SetActive(true);
+                man.SetActive(true);
             });
             flashBackSubtitleTriggered = true;
         }

@@ -1063,6 +1063,7 @@ GameObject:
   - component: {fileID: 260462744}
   - component: {fileID: 260462745}
   - component: {fileID: 260462746}
+  - component: {fileID: 260462747}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1103,7 +1104,7 @@ MonoBehaviour:
   - We're just looking around.
   - 'Receptionist: No problem, if you gentlemen need anything, please feel free to
     ask me.'
-  - Come on Jacob, I'm going to pick some clothes and you have to guess the prices
+  - Come on Jacob, I'm going to pick some things and you have to guess the prices
     of them.
 --- !u!114 &260462742
 MonoBehaviour:
@@ -1120,12 +1121,14 @@ MonoBehaviour:
   player: {fileID: 2003555338}
   playerEmily: {fileID: 1095199705}
   rachel: {fileID: 1794306689}
+  man: {fileID: 999505185}
   rachelDialogueTrigger: {fileID: 325964876}
   subtitleTrigger: {fileID: 260462741}
   subtitleTriggerItem1: {fileID: 260462743}
   subtitleTriggerItem2: {fileID: 260462744}
   subtitleTriggerItem3: {fileID: 260462745}
   flashBackSubtitleTrigger: {fileID: 260462746}
+  dialogueTrigger: {fileID: 260462747}
   item1: {fileID: 145063018}
   item2: {fileID: 72589873}
   item3: {fileID: 833702344}
@@ -1204,6 +1207,30 @@ MonoBehaviour:
   subtitleManager: {fileID: 828871880}
   subtitles:
   - I think there's a customer in the front, I should go ask if they need anything.
+--- !u!114 &260462747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260462739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 1852048628}
+  dialogues:
+  - name: Emily
+    characterPortrait: {fileID: 0}
+    sentence: Rachel, ah... yes, she often wore this dress.
+  - name: Emily
+    characterPortrait: {fileID: 0}
+    sentence: This dress is a limited edition long dress from our ALBION brand's
+      EXCIA series for spring and summer.
+  - name: Emily
+    characterPortrait: {fileID: 0}
+    sentence: And so far only one customer in New England has ordered it.
 --- !u!64 &289834964
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1296,7 +1323,7 @@ Transform:
   m_GameObject: {fileID: 325964876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 384, y: 154.7, z: -837}
+  m_LocalPosition: {x: -233.6, y: 154.7, z: -837}
   m_LocalScale: {x: 496, y: 288, z: 447}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1367,6 +1394,113 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 354390895268378112, guid: 77600475f0aafac46b0813fad374fffd, type: 3}
+--- !u!1 &332565537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 332565538}
+  - component: {fileID: 332565541}
+  - component: {fileID: 332565540}
+  - component: {fileID: 332565539}
+  m_Layer: 0
+  m_Name: Capsule
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &332565538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332565537}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 32, y: 32, z: 32}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 999505187}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &332565539
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332565537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &332565540
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332565537}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 106ba7db0951d4b46beb74f51e15848c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &332565541
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332565537}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &332753038
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1508,6 +1642,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337051232}
   m_CullTransparentMesh: 1
+--- !u!1 &354697819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 354697821}
+  - component: {fileID: 354697820}
+  m_Layer: 0
+  m_Name: BringRachelToWomensIsle
+  m_TagString: WomensIsle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &354697820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354697819}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &354697821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354697819}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 339, y: 154.7, z: -1275}
+  m_LocalScale: {x: 385.2, y: 288, z: 624.65}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &355373029
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3507,6 +3694,66 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6633641436476535497, guid: 77600475f0aafac46b0813fad374fffd, type: 3}
+--- !u!1 &999505185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 999505187}
+  - component: {fileID: 999505186}
+  m_Layer: 0
+  m_Name: Man
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!54 &999505186
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999505185}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!4 &999505187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999505185}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.3996144, z: -0, w: -0.9166834}
+  m_LocalPosition: {x: -127.09999, y: 111.4, z: -956}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 332565538}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 312.892, z: 0}
 --- !u!64 &1010385988
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3769,6 +4016,7 @@ GameObject:
   - component: {fileID: 1095199706}
   - component: {fileID: 1095199711}
   - component: {fileID: 1095199710}
+  - component: {fileID: 1095199712}
   m_Layer: 0
   m_Name: EmilyPlayer
   m_TagString: Player
@@ -3864,6 +4112,21 @@ MonoBehaviour:
   subtitleManager: {fileID: 828871880}
   subtitles:
   - 'Emily: Welcome to ALBION, how may I help you?'
+  - 'Man: Do you have any good-looking new products?'
+  - 'Emily: Ah, are you shopping for yourself or...
+
+'
+  - 'Man: I''m buying for my girlfriend.
+
+'
+  - 'Emily: Ah, okay.
+
+'
+  - "Man: Baby, just look around, if you like anything, let me know.\r"
+  - 'Emily: The women''s section is this way, please, these are all new models just
+    off the runway.
+
+'
 --- !u!114 &1095199711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3877,6 +4140,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subtitleTrigger: {fileID: 1095199710}
+  subtitleTrigger2: {fileID: 1095199712}
+  womensIsleTrigger: {fileID: 354697819}
+--- !u!114 &1095199712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095199705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 828871880}
+  subtitles:
+  - 'Man: How about this one?'
+  - 'Emily: Ah, this one is a limited edition dress just off the high-end runway.'
+  - 'Emily: Are you sure you want this one? I''ll ask the manager for you.
+
+'
+  - 'Man: "Baby, what do you think of this one?"'
 --- !u!64 &1109309832
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6138,7 +6423,7 @@ Transform:
   m_GameObject: {fileID: 1794306689}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.3996144, z: -0, w: -0.9166834}
-  m_LocalPosition: {x: 377.5, y: 111.4, z: -846.4}
+  m_LocalPosition: {x: -229.2, y: 111.4, z: -898.3}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7075,7 +7360,7 @@ Transform:
   m_GameObject: {fileID: 2003555338}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.3996144, z: -0, w: -0.9166834}
-  m_LocalPosition: {x: 499.2, y: 102.7, z: -929.6}
+  m_LocalPosition: {x: 455.6, y: 102.7, z: -963.8}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22632,6 +22917,7 @@ SceneRoots:
   - {fileID: 1161804558}
   - {fileID: 2003555343}
   - {fileID: 1794306691}
+  - {fileID: 999505187}
   - {fileID: 1095199709}
   - {fileID: 145063017}
   - {fileID: 72589874}
@@ -22639,3 +22925,4 @@ SceneRoots:
   - {fileID: 1834088765}
   - {fileID: 389796197}
   - {fileID: 325964877}
+  - {fileID: 354697821}
