@@ -1061,6 +1061,7 @@ GameObject:
   - component: {fileID: 260462741}
   - component: {fileID: 260462743}
   - component: {fileID: 260462744}
+  - component: {fileID: 260462745}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1118,8 +1119,11 @@ MonoBehaviour:
   subtitleTrigger: {fileID: 260462741}
   subtitleTriggerItem1: {fileID: 260462743}
   subtitleTriggerItem2: {fileID: 260462744}
+  subtitleTriggerItem3: {fileID: 260462745}
   item1: {fileID: 145063018}
   item2: {fileID: 72589873}
+  item3: {fileID: 833702344}
+  yellowDress: {fileID: 1834088766}
   blackScreen: {fileID: 825503558}
   itemCount: 0
   itemsActive: 1
@@ -1158,7 +1162,27 @@ MonoBehaviour:
   subtitles:
   - What about this one?
   - 'Jacob: $1000?'
-  - Nope, these are only 500 actually.
+  - Nope, these are only $500 actually.
+--- !u!114 &260462745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260462739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 828871880}
+  subtitles:
+  - Okay, this last one?
+  - 'Jacob: $2000?'
+  - Nope, these are $10,000.
+  - 'Jacob: WTF, how???'
+  - Hmmm, wait that yellow dress at the front looks familiar.
+  - I should go check it out.
 --- !u!64 &289834964
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2960,6 +2984,53 @@ MonoBehaviour:
   subTitleText: {fileID: 181293210}
   animator: {fileID: 1516358829}
   textSpeed: 0.01
+--- !u!1 &833702343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833702345}
+  - component: {fileID: 833702344}
+  m_Layer: 0
+  m_Name: ItemInteractable3
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &833702344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833702343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fbb37ae5c52104081080f80c10e59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingStoreManager: {fileID: 260462742}
+  hasInteracted: 0
+--- !u!4 &833702345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833702343}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 478.6, y: 146.7, z: -2002.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3838075570551507672}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &836889411
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5865,6 +5936,99 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8094836951787768039, guid: 77600475f0aafac46b0813fad374fffd, type: 3}
+--- !u!1 &1834088763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834088765}
+  - component: {fileID: 1834088766}
+  - component: {fileID: 1834088767}
+  m_Layer: 0
+  m_Name: YellowDressInteractable
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1834088765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834088763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 284.5, y: 179.7, z: -1138}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1970427606892769303}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1834088766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834088763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c7a74f26fce584797eb6e596887a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTrigger: {fileID: 1834088767}
+  interactable: 0
+--- !u!114 &1834088767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834088763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 1852048628}
+  dialogues:
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Isn't this the dress Rachel was wearing?
+  - name: Jacob
+    characterPortrait: {fileID: 0}
+    sentence: What did you say?
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Nothing, just talking to myself.
+  - name: ???
+    characterPortrait: {fileID: 0}
+    sentence: May I help you with anything?
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Ah, what are you doing here?
+  - name: ???
+    characterPortrait: {fileID: 0}
+    sentence: Uh, are you mistaken?
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Aren't you Emily? From xxx school?
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: I saw you in the cafeteria before, you were talking about Rachel.
+  - name: Emily
+    characterPortrait: {fileID: 0}
+    sentence: Yes, I work here part-time to earn living expenses, can I help you
+      with anything else?
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Do you know if Rachel used to wear this dress often?
 --- !u!64 &1834871182
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5954,7 +6118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2003555341}
-  nameText: {fileID: 239616023}
+  nameText: {fileID: 764299844}
   dialogueText: {fileID: 239616023}
   characterPortriatImage: {fileID: 0}
   animator: {fileID: 1624255105}
@@ -7481,7 +7645,6 @@ Transform:
   m_Children:
   - {fileID: 1938634222106831640}
   - {fileID: 6835748677044914407}
-  - {fileID: 3838075570551507672}
   - {fileID: 2384521716410075217}
   - {fileID: 1547121174790704114}
   - {fileID: 7062739759942629476}
@@ -7601,7 +7764,6 @@ Transform:
   - {fileID: 5403832229302179585}
   - {fileID: 7797513433699638544}
   - {fileID: 1754781009770908557}
-  - {fileID: 1970427606892769303}
   - {fileID: 8762163659555705094}
   - {fileID: 8337412388217281983}
   - {fileID: 2240933537084269527}
@@ -10123,12 +10285,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9017621887022224175}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -208.5, y: -150.7, z: -287.7727}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652012878951}
+  m_Father: {fileID: 1834088765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2003251652313469908
 Transform:
@@ -13410,12 +13572,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6175162857551173878}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -402.6, y: -117.7, z: 576.6273}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652012878951}
+  m_Father: {fileID: 833702345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3886503238455026933
 MeshRenderer:
@@ -22001,4 +22163,6 @@ SceneRoots:
   - {fileID: 2003555343}
   - {fileID: 145063017}
   - {fileID: 72589874}
+  - {fileID: 833702345}
+  - {fileID: 1834088765}
   - {fileID: 389796197}

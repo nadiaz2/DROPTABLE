@@ -17,8 +17,11 @@ public class ClothingStoreManager : MonoBehaviour
     public SubtitleTrigger subtitleTrigger;
     public SubtitleTrigger subtitleTriggerItem1;
     public SubtitleTrigger subtitleTriggerItem2;
+    public SubtitleTrigger subtitleTriggerItem3;
     public GuessingInteractable item1;
     public GuessingInteractable item2;
+    public GuessingInteractable item3;
+    public ClothingStoreYellowDress yellowDress;
 
     public BlackScreen blackScreen;
 
@@ -27,6 +30,7 @@ public class ClothingStoreManager : MonoBehaviour
     public bool itemsActive = true;
     private bool item1SubtitleTriggered = false;
     private bool item2SubtitleTriggered = false;
+    private bool item3SubtitleTriggered = false;
 
     public static ClothingStoreState state { get; set; }
     public static ClothingStoreManager currentInstance
@@ -64,28 +68,38 @@ public class ClothingStoreManager : MonoBehaviour
 
     private void Update()
     {
-        if (itemCount == 1 && !item1SubtitleTriggered && itemsActive)
-        {
-            item1SubtitleTriggered = true;
-            itemsActive = false;
-            subtitleTriggerItem1.TriggerSubtitle(() =>
-            {
-                itemsActive = true;
-            });
-        }
-        if (itemCount == 2 && !item2SubtitleTriggered && itemsActive)
-        {
-            item2SubtitleTriggered = true;
-            itemsActive = false;
-            subtitleTriggerItem2.TriggerSubtitle(() =>
-            {
-                itemsActive = true;
-            });
-        }
 
         switch (ClothingStoreManager.state)
         {
             case ClothingStoreState.Day3InsideClothingStore:
+                if (itemCount == 1 && !item1SubtitleTriggered && itemsActive)
+                {
+                    item1SubtitleTriggered = true;
+                    itemsActive = false;
+                    subtitleTriggerItem1.TriggerSubtitle(() =>
+                    {
+                        itemsActive = true;
+                    });
+                }
+                if (itemCount == 2 && !item2SubtitleTriggered && itemsActive)
+                {
+                    item2SubtitleTriggered = true;
+                    itemsActive = false;
+                    subtitleTriggerItem2.TriggerSubtitle(() =>
+                    {
+                        itemsActive = true;
+                    });
+                }
+                if (itemCount == 3 && !item3SubtitleTriggered && itemsActive)
+                {
+                    item3SubtitleTriggered = true;
+                    itemsActive = false;
+                    subtitleTriggerItem3.TriggerSubtitle(() =>
+                    {
+                        itemsActive = true;
+                        yellowDress.interactable = true;
+                    });
+                }
                 break;
         }
     }
