@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
+using UnityEngine.SceneManagement;
 
 [System.Flags]
 public enum ClothingStoreState
@@ -153,10 +154,19 @@ public class ClothingStoreManager : MonoBehaviour
 
         if (!dialogueTriggerStarted)
         {
-            dialogueTrigger.TriggerDialogue();
+            dialogueTrigger.TriggerDialogue(() =>
+            {
+                Invoke("backOutToBackBay", 2);
+                GameManager.state = GameState.Day3End;
+            });
             dialogueTriggerStarted = true;
         }
         
+    }
+
+    private void backOutToBackBay()
+    {
+        SceneManager.LoadScene("BackBay");
     }
 
     private void startSubtitle()

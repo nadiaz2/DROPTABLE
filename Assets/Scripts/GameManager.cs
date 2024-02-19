@@ -39,6 +39,7 @@ public enum GameState
     Day3TalkedWithJacob,
 	Day3InBackBay,
 	Day3InClothingStore,
+	Day3End,
 
 
 }

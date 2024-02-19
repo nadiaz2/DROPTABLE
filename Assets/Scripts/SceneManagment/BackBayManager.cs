@@ -15,6 +15,7 @@ public enum BackBayState
 public class BackBayManager : MonoBehaviour
 {
     public SubtitleTrigger subtitleTrigger;
+    public SubtitleTrigger subtitleTriggerHeadBackHome;
 
     public BlackScreen blackScreen;
 
@@ -45,6 +46,10 @@ public class BackBayManager : MonoBehaviour
         {
             case GameState.Day3InBackBay:
                 Invoke("startSubtitle", 3);
+                break;
+
+            case GameState.Day3End:
+                subtitleTriggerHeadBackHome.TriggerSubtitle();
                 break;
         }
 

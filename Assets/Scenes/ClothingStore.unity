@@ -1231,6 +1231,9 @@ MonoBehaviour:
   - name: Emily
     characterPortrait: {fileID: 0}
     sentence: And so far only one customer in New England has ordered it.
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Jacob let's go, hurry.
 --- !u!64 &289834964
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4161,7 +4164,7 @@ MonoBehaviour:
   - 'Emily: Are you sure you want this one? I''ll ask the manager for you.
 
 '
-  - 'Man: "Baby, what do you think of this one?"'
+  - 'Man: Baby, what do you think of this one?'
 --- !u!64 &1109309832
 MeshCollider:
   m_ObjectHideFlags: 0
