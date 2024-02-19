@@ -1116,6 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 640c253c24e1f8649941585a9aa5024c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2003555338}
   subtitleTrigger: {fileID: 260462741}
   subtitleTriggerItem1: {fileID: 260462743}
   subtitleTriggerItem2: {fileID: 260462744}
@@ -6567,7 +6568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementReference: {fileID: 1809671662}
-  moveSpeed: 100
+  moveSpeed: 150
   groundDrag: 5
 --- !u!54 &2003555342
 Rigidbody:
@@ -6605,7 +6606,7 @@ Transform:
   m_GameObject: {fileID: 2003555338}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.3996144, z: -0, w: -0.9166834}
-  m_LocalPosition: {x: 499.2, y: 95.1, z: -929.6}
+  m_LocalPosition: {x: 499.2, y: 100.3, z: -929.6}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:

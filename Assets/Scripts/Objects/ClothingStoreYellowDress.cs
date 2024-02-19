@@ -11,21 +11,35 @@ public class ClothingStoreYellowDress : MonoBehaviour, Interactable
 
     private bool started = false;
 
+    void Update()
+    {
+        switch (ClothingStoreManager.state)
+        {
+            case ClothingStoreState.Day3StartYellowDressDialogue:
+                if (!started)
+                {
+                    dialogueTrigger.TriggerDialogue(() =>
+                    {
+                        ClothingStoreManager.state = ClothingStoreState.Day3EmilyFlashBack;
+                    });
+                    started = true;
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                    {
+                        dialogueTrigger.ContinueDialogue();
+                    }
+                }
+                break;
+        }
+    }
+
     public void Interact()
     {
         //gameObject.SetActive(false);
-        if (!started)
-        {
-            dialogueTrigger.TriggerDialogue(() =>
-            {
-                this.interactable = false;
-            });
-            started = false;
-        }
-        else
-        {
-            dialogueTrigger.ContinueDialogue();
-        }
+        ClothingStoreManager.state = ClothingStoreState.Day3StartYellowDressDialogue;
+        this.interactable = false;
     }
 
     public string GetPrompt()

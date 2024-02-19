@@ -10,10 +10,14 @@ public enum ClothingStoreState
 
     //Day 3
     Day3InsideClothingStore,
+    Day3StartYellowDressDialogue,
+    Day3EmilyFlashBack,
 }
 
 public class ClothingStoreManager : MonoBehaviour
 {
+    public GameObject player; 
+
     public SubtitleTrigger subtitleTrigger;
     public SubtitleTrigger subtitleTriggerItem1;
     public SubtitleTrigger subtitleTriggerItem2;
@@ -100,6 +104,10 @@ public class ClothingStoreManager : MonoBehaviour
                         yellowDress.interactable = true;
                     });
                 }
+                break;
+
+            case ClothingStoreState.Day3EmilyFlashBack:
+                player.SetActive(false);
                 break;
         }
     }
