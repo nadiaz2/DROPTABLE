@@ -59,7 +59,7 @@ public class SocketClient : MonoBehaviour
             Debug.Log($"{DateTime.Now} Reconnecting: attempt = {e}");
         };
 
-        _socket.On("ID", (response) => _roomID = response.GetValue<string>());
+        _socket.On("UUID", (response) => _roomID = response.GetValue<string>());
         /*
         socket.On("PlayerConnect", (response) =>
         {
@@ -93,13 +93,15 @@ public class SocketClient : MonoBehaviour
             //Debug.Log(obj);
             PhoneFoundDialogue.photoFound = true;
         });*/
+        
+        Debug.Log("Connecting Socket...");
+        _socket.Connect();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Connecting Socket...");
-        _socket.Connect();
+        
     }
 
     void OnDestroy()

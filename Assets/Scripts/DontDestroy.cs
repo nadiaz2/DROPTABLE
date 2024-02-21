@@ -9,11 +9,7 @@ public class DontDestroy : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         objectID = scene.name + name + transform.position.ToString();
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
         var existingObjects = Object.FindObjectsOfType<DontDestroy>();
         for (int i = 0; i < existingObjects.Length; i++)
         {

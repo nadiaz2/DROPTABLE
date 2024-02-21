@@ -3,7 +3,7 @@ const { RTCPeerConnection, RTCSessionDescription, RTCIceCandidate } = require('w
     { Server } = require('socket.io'),
     UUID = require('crypto').randomUUID(),
     PORT = 3500,
-    WEB_URL = ""
+    WEB_URL = "https://echoes-through-the-screen-8aqb2.ondigitalocean.app/"
 
 // WebRTC variables
 let _peer     // The RTCPeerConnection object connected to the other user
@@ -16,11 +16,8 @@ unitySocketIO.on('connection', function(socket) {
 
     // Pass all messages from unity to phone
     socket.use((packet, next) => {
-        let mainData = JSON.parse(packet[1])
-        mainData.name = packet[0]
-
-        let dataStr = JSON.parse(mainData)
-        _channel.send(dataStr)  // send to phone
+        // send to phone
+        _channel.send(`${packet[0]}-${packet[1]}`)
     })
 
     socket.on('disconnect', () => {
@@ -97,13 +94,8 @@ function handleDataChannelEvent(e) {
 }
 
 function handleChannelMessage(event) {
-    const dataObj = JSON.parse(event.data)
-
-    const name = dataObj.name
-    delete dataObj.name
-    const newDataStr = JSON.stringify(dataObj)
-
-    unitySocketIO.emit(name, newDataStr)
+    const parts = event.datasplit('-', 1)
+    unitySocketIO.emit(parts[0], parts[1])
 }
 
 function handleChannelOpen(event) {
