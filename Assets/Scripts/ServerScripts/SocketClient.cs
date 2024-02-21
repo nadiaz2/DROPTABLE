@@ -10,14 +10,32 @@ public class SocketClient : MonoBehaviour
 {
     public int port;
 
-    private SocketIOUnity socket;
-    private bool minigamePlayed = false;
+    public static SocketIOUnity Socket
+    {
+        get
+        {
+            return _socket;
+        }
+    }
+    private static SocketIOUnity _socket;
 
-    void Awake() {
+    public static string RoomID
+    {
+        get
+        {
+            return _roomID;
+        }
+    }
+    private static string _roomID;
+
+    //private bool minigamePlayed = false;
+
+    void Awake()
+    {
         Debug.Log("Initializing socket...");
-        
+
         var uri = new Uri($"http://localhost:{port}/");
-        socket = new SocketIOUnity(uri, new SocketIOOptions
+        _socket = new SocketIOUnity(uri, new SocketIOOptions
         {
             Query = new Dictionary<string, string>
             {
@@ -25,22 +43,24 @@ public class SocketClient : MonoBehaviour
             },
             Transport = SocketIOClient.Transport.TransportProtocol.WebSocket
         });
-        socket.JsonSerializer = new NewtonsoftJsonSerializer();
+        _socket.JsonSerializer = new NewtonsoftJsonSerializer();
 
 
-        socket.OnConnected += (sender, e) =>
+        _socket.OnConnected += (sender, e) =>
         {
             //socket.Emit("Device", "Unity");
         };
-        socket.OnDisconnected += (sender, e) =>
+        _socket.OnDisconnected += (sender, e) =>
         {
             Debug.Log("disconnect: " + e);
         };
-        socket.OnReconnectAttempt += (sender, e) =>
+        _socket.OnReconnectAttempt += (sender, e) =>
         {
             Debug.Log($"{DateTime.Now} Reconnecting: attempt = {e}");
         };
 
+        _socket.On("ID", (response) => _roomID = response.GetValue<string>());
+        /*
         socket.On("PlayerConnect", (response) =>
         {
             var obj = response.GetValue<string>();
@@ -72,19 +92,20 @@ public class SocketClient : MonoBehaviour
             //var obj = response.GetValue<string>();
             //Debug.Log(obj);
             PhoneFoundDialogue.photoFound = true;
-        });
+        });*/
     }
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Connecting Socket...");
-        socket.Connect();
+        _socket.Connect();
     }
 
-    void OnDestroy() {
+    void OnDestroy()
+    {
         Debug.Log("Destroying socket.");
-        socket.Disconnect();
-        socket.Dispose();
+        _socket.Disconnect();
+        _socket.Dispose();
     }
 }

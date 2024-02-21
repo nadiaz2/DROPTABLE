@@ -17,12 +17,7 @@ public class NodeJsController : MonoBehaviour {
         }
 
     }
-
-/*
-    void Update() {
-    }
-*/
-
+    
     void OnDestroy() {
         Debug.Log("Stopping Node.js script");
         nodejs.Stop();
