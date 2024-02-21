@@ -1,38 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    [HideInInspector]
-    public string objectID;
+    private string objectID;
 
     private void Awake()
     {
-        objectID = name + transform.position.ToString();
+        Scene scene = SceneManager.GetActiveScene();
+        objectID = scene.name + name + transform.position.ToString();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < Object.FindObjectsOfType<DontDestroy>().Length; i++)
+        var existingObjects = Object.FindObjectsOfType<DontDestroy>();
+        for (int i = 0; i < existingObjects.Length; i++)
         {
-            if (Object.FindObjectsOfType<DontDestroy>()[i] != this)
+            if ((existingObjects[i] != this) && (existingObjects[i].objectID == objectID))
             {
-                if (Object.FindObjectsOfType<DontDestroy>()[i].objectID == objectID)
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
-           
-        }
-        DontDestroyOnLoad(gameObject);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
+        DontDestroyOnLoad(gameObject); // Runs only if object is not destroyed
     }
 }
