@@ -26,7 +26,7 @@ public enum LivingRoomState
 
 public class LivingRoomManager : MonoBehaviour
 {
-    public GameObject player;
+    public PlayerMovement player;
     public JacobLivingRoom jacob;
     public Transform inFrontTomsDoor;
     public SubtitleTrigger reminderTrigger;
@@ -53,12 +53,6 @@ public class LivingRoomManager : MonoBehaviour
     {
         LivingRoomManager._instance = this;
         blackScreen.goBlacked = false;
-
-        //Temp for testing
-        if (GameManager.state == GameState.GameStart)
-        {
-            GameManager.state = GameState.ReturningHomeAfterHeadphones;
-        }
 
         switch (GameManager.state)
         {
@@ -123,6 +117,7 @@ public class LivingRoomManager : MonoBehaviour
 
     public void SitCharacters()
     {
+        player.immobile = true;
         player.transform.position = tomSeat.position;
         player.transform.rotation = tomSeat.rotation;
         jacob.transform.position = jacobSeat.position;

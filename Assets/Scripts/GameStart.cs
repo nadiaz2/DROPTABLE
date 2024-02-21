@@ -31,12 +31,12 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("Classroom");
                 break;
             case GameState.ReturningHomeAfterHeadphones:
-                SceneManager.LoadScene("OnWayHome");
-                break;
-            Day1LivingRoomStart:
                 SceneManager.LoadScene("LivingRoom");
                 break;
-            Day1JacobsBack:
+            case GameState.Day1LivingRoomStart:
+                SceneManager.LoadScene("LivingRoom");
+                break;
+            case GameState.Day1JacobsBack:
                 SceneManager.LoadScene("LivingRoom");
                 break;
 

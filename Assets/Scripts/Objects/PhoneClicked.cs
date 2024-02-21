@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using System;
 using System.Linq;
@@ -15,7 +16,7 @@ public class PhoneClicked : MonoBehaviour, Interactable
 
     // QRCode Fields
     public Animator animator;
-    public GameObject phoneScreen;
+    public Image phoneScreen;
     private Texture2D _storeEncodedTexture;
 
 
@@ -23,7 +24,7 @@ public class PhoneClicked : MonoBehaviour, Interactable
     void Start()
     {
         _storeEncodedTexture = new Texture2D(256, 256);
-        active = true;
+        active = false;
 
         SocketIOUnity Socket = SocketClient.Socket;
         Socket.On("01", (response) =>
@@ -55,7 +56,7 @@ public class PhoneClicked : MonoBehaviour, Interactable
         _storeEncodedTexture.SetPixels32(_convertPixelToTexture);
         _storeEncodedTexture.Apply();
 
-        phoneScreen.GetComponent<Renderer>().material.mainTexture = _storeEncodedTexture;
+        phoneScreen.material.mainTexture = _storeEncodedTexture;
     }
 
     private Color32[] Encode(string textForEncoding, int width, int height)

@@ -10,6 +10,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
     public DialogueTrigger dialogueTriggerDay3;
 
     public SplineMovement getFoodPath;
+    public PhoneClicked phone;
 
     public bool interactable = false;
     private bool dialogueTriggerStarted = false;
@@ -20,6 +21,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
     {
         foodArrivedSubtitle.TriggerSubtitle(() => {
             getFoodPath.StartMovement();
+            phone.active = true;
         });
     }
 
