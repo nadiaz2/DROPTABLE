@@ -59,7 +59,9 @@ public class SocketClient : MonoBehaviour
             Debug.Log($"{DateTime.Now} Reconnecting: attempt = {e}");
         };
 
-        _socket.On("UUID", (response) => _roomID = response.GetValue<string>());
+        _socket.On("UUID", (response) => {
+            _roomID = response.GetValue<string>();
+        });
         /*
         socket.On("PlayerConnect", (response) =>
         {

@@ -94,8 +94,6 @@ public class LivingRoomManager : MonoBehaviour
                 jacob.interactable = false;
                 break;
         }
-        Debug.Log($"Game: {GameManager.state}, Tom: {TomsRoomManager.state}, Living Room: {state}");
-        
     }
 
 

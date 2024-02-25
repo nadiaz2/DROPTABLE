@@ -9,7 +9,7 @@ using System.Linq;
 using ZXing;
 using ZXing.QrCode;
 
-public class PhoneClicked : MonoBehaviour, Interactable
+public class LivingRoomPhone : MonoBehaviour, Interactable
 {
     public bool active;
     public static bool onPhone; //TODO: remove
@@ -27,7 +27,8 @@ public class PhoneClicked : MonoBehaviour, Interactable
         active = false;
 
         SocketIOUnity Socket = SocketClient.Socket;
-        Socket.On("01", (response) =>
+        Socket.Off("01"); // clear all listeners for this event
+        Socket.OnUnityThread("01", (response) =>
         {
             string command = response.GetValue<string>();
             switch (command)
@@ -47,7 +48,7 @@ public class PhoneClicked : MonoBehaviour, Interactable
     private void DisplayQRCode()
     {
         string roomID = SocketClient.RoomID;
-        EncodeTextToQRCode($"https://echoes-through-the-screen-8aqb2.ondigitalocean.app/room?id={roomID}");
+        EncodeTextToQRCode($"https://echoes-through-the-screen-8aqb2.ondigitalocean.app/?id={roomID}");
     }
 
     private void EncodeTextToQRCode(string textWrite)

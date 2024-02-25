@@ -34,7 +34,7 @@ public class PlayerMovement2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialogueManager.dialogueOngoing || PhoneClicked.onPhone)
+        if (DialogueManager.dialogueOngoing || LivingRoomPhone.onPhone)
         {
             rb.velocity = Vector3.zero;
             rb.drag = groundDrag;
@@ -55,7 +55,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (DialogueManager.dialogueOngoing || PhoneClicked.onPhone)
+        if (DialogueManager.dialogueOngoing || LivingRoomPhone.onPhone)
         {
             rb.velocity = Vector3.zero;
             return;

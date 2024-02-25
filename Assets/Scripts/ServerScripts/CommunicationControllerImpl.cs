@@ -7,11 +7,11 @@ public class CommunicationControllerImpl : CommunicationController
 
     public override void OutputData(string message)
     {
-        Debug.Log(message);
+        Debug.Log($"Node.JS: {message}");
     }
 
     public override void ErrorData(string message)
     {
-        Debug.Log($"ERROR: {message}");
+        Debug.LogError($"Node.JS Error: {message}");
     }
 }

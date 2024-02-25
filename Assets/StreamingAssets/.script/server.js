@@ -12,7 +12,7 @@ let _channel  // The data channel used to communicate to the peer
 // ---------- Socket IO Server ----------
 const unitySocketIO = new Server(PORT)
 unitySocketIO.on('connection', function(socket) {
-    console.log('connection')
+    console.log('Socket.IO connected to Unity')
 
     // Pass all messages from unity to phone
     socket.use((packet, next) => {
@@ -35,10 +35,10 @@ const socket = io(WEB_URL, {rejectUnauthorized: false})
 socket.on('offer', handleOffer)
 socket.on('ice-candidate', function(incoming) {
     const candidate = new RTCIceCandidate(incoming)
-    _peer.addIceCandidate(candidate).catch(e => console.log(e))
+    _peer.addIceCandidate(candidate).catch(e => console.error(`Error adding ICE candidate: ${incoming}`))
 })
 socket.on('connect', function() {
-    console.log('Connected!')
+    console.log('Socket.IO connected to Web Server')
     socket.emit('create room', UUID)
 })
 
@@ -94,8 +94,12 @@ function handleDataChannelEvent(e) {
 }
 
 function handleChannelMessage(event) {
-    const parts = event.datasplit('-', 1)
-    unitySocketIO.emit(parts[0], parts[1])
+    console.log('WebRTC message recieved')
+    const str = event.data
+    const index = str.indexOf('-')
+    const name = str.substring(0, index)
+    const command = str.substring(index+1)
+    unitySocketIO.emit(name, command)
 }
 
 function handleChannelOpen(event) {
@@ -103,7 +107,7 @@ function handleChannelOpen(event) {
 }
 
 function handleChannelClose(event) {
-    console.log('Phone connection closed')
+    console.log('Phone WebRTC connection closed')
 }
 
 // ----- End WebRTC Phone Connection ----
