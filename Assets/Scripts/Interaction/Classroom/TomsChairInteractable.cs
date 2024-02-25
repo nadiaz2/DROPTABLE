@@ -7,6 +7,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
     public PlayerMovement player;
     public Transform sittingPlacement;
     public Transform standingPlacement;
+    public GameObject ChairSeat;
 
     private ClassroomState lastState;
     private bool active;
@@ -25,6 +26,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
         {
             player.transform.position = sittingPlacement.position;
             player.transform.rotation = sittingPlacement.rotation;
+            ChairSeat.transform.Rotate(0, 0, 88);
         }
 
         if (ClassroomManager.state == lastState)

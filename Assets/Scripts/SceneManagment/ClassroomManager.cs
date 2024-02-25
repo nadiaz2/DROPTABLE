@@ -50,6 +50,12 @@ public class ClassroomManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
+        if (GameManager.state == GameState.GameStart)
+        {
+            //GameManager.state = GameState.BackToClassroom;
+        }
+
+
         // Returning to classroom to pick up headphones
         if (GameManager.state == GameState.BackToClassroom)
         {
