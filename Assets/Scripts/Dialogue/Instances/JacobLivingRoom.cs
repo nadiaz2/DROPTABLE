@@ -5,17 +5,47 @@ using UnityEngine.UI;
 
 public class JacobLivingRoom : MonoBehaviour, Interactable
 {
-    public DialogueTrigger dialogueTrigger;
-    public SubtitleTrigger foodArrivedSubtitle;
-    public DialogueTrigger dialogueTriggerDay3;
-
-    public SplineMovement getFoodPath;
     public LivingRoomPhone phone;
 
+    [Header("Day 1")]
+    public DialogueTrigger jacobReturnDialogue;
+    public SubtitleTrigger foodArrivedSubtitle;
+    public SplineMovement getFoodPath;
+    public SplineMovement returnFromFoodPath;
+    public DialogueTrigger backFromFoodDialogue;
+    public ChoiceTrigger day1Choice;
+
+
+    [Header("Day 3")]
+    public DialogueTrigger dialogueTriggerDay3;
+
+
+    [HideInInspector]
     public bool interactable = false;
     private bool dialogueTriggerStarted = false;
     private bool dialogueTriggerDay3Started = false;
 
+    private LivingRoomState lastState;
+
+    public void Start() {
+        lastState = LivingRoomManager.state;
+    }
+
+    public void Update() {
+        if(LivingRoomManager.state != lastState) {
+            lastState = LivingRoomManager.state;
+            if(LivingRoomManager.state == LivingRoomState.Day1FoundPhoto) {
+                returnFromFoodPath.StartMovement();
+                interactable = true;
+                backFromFoodDialogue.TriggerDialogue(() => {
+                    interactable = false;
+                    day1Choice.PresentChoice((int choiceIndex) => {
+                        Debug.Log(choiceIndex);
+                    });
+                });
+            }
+        }
+    }
 
     public void EndStudySession()
     {
@@ -32,7 +62,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
             case LivingRoomState.Day1JacobsBackAfterBed:
                 if (!dialogueTriggerStarted)
                 {
-                    dialogueTrigger.TriggerDialogue(() => {
+                    jacobReturnDialogue.TriggerDialogue(() => {
                         this.interactable = false;
                         LivingRoomManager.state = LivingRoomState.Day1TalkedWithJacob;
 
@@ -46,8 +76,12 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                 }
                 else
                 {
-                    dialogueTrigger.ContinueDialogue();
+                    jacobReturnDialogue.ContinueDialogue();
                 }
+                break;
+
+            case LivingRoomState.Day1FoundPhoto:
+                backFromFoodDialogue.ContinueDialogue();
                 break;
 
             case LivingRoomState.Day3Start:

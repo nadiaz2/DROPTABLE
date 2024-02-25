@@ -11,10 +11,12 @@ using ZXing.QrCode;
 
 public class LivingRoomPhone : MonoBehaviour, Interactable
 {
+    [HideInInspector]
     public bool active;
-    public static bool onPhone; //TODO: remove
+    public static bool onPhone; //TODO: remove; currently needed by PlayerMovement2D
 
     // QRCode Fields
+    public SubtitleTrigger photoFoundTrigger;
     public Animator animator;
     public Image phoneScreen;
     private Texture2D _storeEncodedTexture;
@@ -34,7 +36,10 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
             switch (command)
             {
                 case "FOUNDPHOTO":
-                    animator.SetBool("isOpen", false);
+                    photoFoundTrigger.TriggerSubtitle(() => {
+                        animator.SetBool("isOpen", false);
+                        LivingRoomManager.state = LivingRoomState.Day1FoundPhoto;
+                    });
                     break;
                 default:
                     Debug.Log($"Unkown command recieved: 01-{response}");

@@ -4,16 +4,17 @@ using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
 public enum LivingRoomState
-{
+{/*
     Start,
     TalkingToJacob,
     FinishedTalking,
     PlayingGame,
 	GamePaused,
-
+*/
     Day1ReturnHome,
     Day1JacobsBackAfterBed,
     Day1TalkedWithJacob,
+    Day1FoundPhoto,
 
     //Day 2 States
     Day2Start,
