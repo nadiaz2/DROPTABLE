@@ -47,12 +47,12 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
             }
         });
 
-        DisplayQRCode();
+        DisplayQRCode(SocketClient.RoomID);
+        SocketClient.onRoomChange = DisplayQRCode;
     }
 
-    private void DisplayQRCode()
+    public void DisplayQRCode(string roomID)
     {
-        string roomID = SocketClient.RoomID;
         EncodeTextToQRCode($"https://echoes-through-the-screen-8aqb2.ondigitalocean.app/?id={roomID}");
     }
 

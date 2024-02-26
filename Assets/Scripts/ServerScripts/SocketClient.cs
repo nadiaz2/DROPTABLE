@@ -29,6 +29,8 @@ public class SocketClient : MonoBehaviour
     private static string _roomID;
 
     //private bool minigamePlayed = false;
+    [HideInInspector]
+    public static Action<string> onRoomChange;
 
     void Awake()
     {
@@ -61,6 +63,7 @@ public class SocketClient : MonoBehaviour
 
         _socket.On("UUID", (response) => {
             _roomID = response.GetValue<string>();
+            onRoomChange?.Invoke(_roomID);
         });
         /*
         socket.On("PlayerConnect", (response) =>
