@@ -28,6 +28,13 @@ public class DialogueManager : MonoBehaviour
         _dialogueOngoing = false;
     }
 
+    private void Update() {
+        if (_dialogueOngoing && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
+        {
+            //DisplayNextSentence();
+        }
+    }
+
     private Queue<Dialogue> slides = new Queue<Dialogue>();
     private Action callbackFunc;
 
