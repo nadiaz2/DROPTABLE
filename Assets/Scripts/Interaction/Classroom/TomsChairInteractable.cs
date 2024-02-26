@@ -26,7 +26,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
         {
             player.transform.position = sittingPlacement.position;
             player.transform.rotation = sittingPlacement.rotation;
-            ChairSeat.transform.Rotate(0, 0, 88);
+            //ChairSeat.transform.Rotate(0, 0, 88);
         }
 
         if (ClassroomManager.state == lastState)
