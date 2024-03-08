@@ -6805,6 +6805,8 @@ GameObject:
   - component: {fileID: 1879460809}
   - component: {fileID: 1879460810}
   - component: {fileID: 1879460811}
+  - component: {fileID: 1879460812}
+  - component: {fileID: 1879460813}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -6843,6 +6845,8 @@ MonoBehaviour:
   jacob: {fileID: 1189855509}
   inFrontTomsDoor: {fileID: 1179467066}
   reminderTrigger: {fileID: 1879460811}
+  endGameTrigger: {fileID: 1879460812}
+  continueToDay2Trigger: {fileID: 1879460813}
   jacobSeat: {fileID: 616358656}
   tomSeat: {fileID: 1071246928}
   blackScreen: {fileID: 224432382}
@@ -6861,6 +6865,76 @@ MonoBehaviour:
   subtitleManager: {fileID: 424650666}
   subtitles:
   - "I'm a bit tired, maybe I should go lay down in my room. \r\n"
+--- !u!114 &1879460812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879460808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 615378954}
+  dialogues:
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Did you get a girlfriend behind my back?
+  - name: Jacob
+    characterPortrait: {fileID: 0}
+    sentence: What are you talking about?
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Don't play dumb, the girl in the light yellow dress, although I didn't
+      see her face.
+  - name: Jacob
+    characterPortrait: {fileID: 0}
+    sentence: "You flipped through my photo album, didn\u2019t you?"
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: "Sorry, I was just bored and took a look. You don\u2019t mind, do you?
+      But forget about that, when did you get a girlfriend?"
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Why didn't you introduce her to me?
+  - name: Jacob
+    characterPortrait: {fileID: 0}
+    sentence: Yeah, just started dating. I'll introduce you to her later?
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: That sounds reasonable. But about the homework...
+  - name: Jacob
+    characterPortrait: {fileID: 0}
+    sentence: "I\u2019ll send you mine later, I'm a bit tired and going to sleep."
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Okay.
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Then I'll go back to my room and won't bother you. You rest first.
+--- !u!114 &1879460813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879460808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 615378954}
+  dialogues:
+  - name: Tom (You)
+    characterPortrait: {fileID: 0}
+    sentence: Where did the guy deliver the takeout to?
+  - name: Jacob
+    characterPortrait: {fileID: 0}
+    sentence: The idiot actually delivered our takeout next door, how many times
+      has this happened this month?
 --- !u!1 &1890241533
 GameObject:
   m_ObjectHideFlags: 0

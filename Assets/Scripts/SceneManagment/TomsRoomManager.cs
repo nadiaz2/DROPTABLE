@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 
@@ -12,6 +13,7 @@ public enum TomsRoomState
     // Day 1
     Day1Start,
     Day1JacobsBack,
+    Day1EndGame,
 
 
     // States for Day2
@@ -55,10 +57,9 @@ public class TomsRoomManager : MonoBehaviour
         if (GameManager.state == GameState.GameStart)
         {
             //GameManager.state = GameState.Day2StartTomsRoom;
-            GameManager.state = GameState.Day3StartTomsRoom;
+            GameManager.state = GameState.Day2StartTomsRoom;
         }
 
-        //Start of Day 2
 
         switch (GameManager.state)
         {
@@ -67,7 +68,7 @@ public class TomsRoomManager : MonoBehaviour
                 tomsBed.interactable = true;
                 break;
 
-
+            //Start of Day 2
             case GameState.Day2StartTomsRoom:
                 //TODO Send message to phone to send noticification from school on phone
 
@@ -87,6 +88,15 @@ public class TomsRoomManager : MonoBehaviour
                 break;
 
 
+        }
+
+        switch (TomsRoomManager.state)
+        {
+            case TomsRoomState.Day1EndGame:
+                // Testing to end the game
+                //EditorApplication.Exit(0);
+                Debug.Log("Die");
+                break;
         }
 
     }

@@ -46,13 +46,13 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                         if (choiceIndex == 0)
                         {
                             GameManager.day1BranchEndGame = true;
-
-                            // Testing to end the game
-                            // EditorApplication.Exit(0);
+                            GameManager.state = GameState.Day1GameEndChoice;
 
                             Debug.Log($"End Game: {choiceIndex}");
                         }
                         else if (choiceIndex == 1){
+                            GameManager.state = GameState.Day1GameEndChoice;
+
                             Debug.Log($"Continue Game: {choiceIndex}");
                             return;
                         }

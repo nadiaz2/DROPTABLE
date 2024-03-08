@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
+using UnityEngine.SceneManagement;
 
 public enum LivingRoomState
 {/*
@@ -31,10 +32,14 @@ public class LivingRoomManager : MonoBehaviour
     public JacobLivingRoom jacob;
     public Transform inFrontTomsDoor;
     public SubtitleTrigger reminderTrigger;
+    public DialogueTrigger endGameTrigger;
+    public DialogueTrigger continueToDay2Trigger;
 
     public Transform jacobSeat;
     public Transform tomSeat;
 
+    private bool dialogueTriggerStarted;
+    private bool dialogueTriggerStarted2;
 
     public BlackScreen blackScreen;
 
@@ -102,6 +107,50 @@ public class LivingRoomManager : MonoBehaviour
     {
         switch (GameManager.state)
         {
+
+            case GameState.Day1GameEndChoice:
+                if (GameManager.day1BranchEndGame)
+                {
+                    if (!dialogueTriggerStarted)
+                    {
+                        endGameTrigger.TriggerDialogue(() =>
+                        {
+                            // Go to Toms Room then => Losing Screen/Bring up losing Screen
+                            SceneManager.LoadScene("TomsRoom");
+                            TomsRoomManager.state = TomsRoomState.Day1EndGame;
+                        });
+                        dialogueTriggerStarted = true;
+                    }
+                    else
+                    {
+                        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                        {
+                            endGameTrigger.ContinueDialogue();
+                        }
+                    }
+                }else if (!GameManager.day1BranchEndGame)
+                {
+                    if (!dialogueTriggerStarted2)
+                    {
+                        continueToDay2Trigger.TriggerDialogue(() =>
+                        {
+                            SceneManager.LoadScene("TomsRoom");
+                            GameManager.state = GameState.Day2StartTomsRoom;
+                        });
+                        dialogueTriggerStarted2 = true;
+                    }
+                    else
+                    {
+                        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                        {
+                            continueToDay2Trigger.ContinueDialogue();
+                        }
+                    }
+
+                }
+
+                break;
+
             case GameState.Day3FinishedMiniGame:
                 jacob.gameObject.SetActive(true);
                 jacob.interactable = true;
@@ -111,6 +160,7 @@ public class LivingRoomManager : MonoBehaviour
                 jacob.gameObject.SetActive(false);
                 jacob.interactable = false;
                 break;
+
         }
     }
 

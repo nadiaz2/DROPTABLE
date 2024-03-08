@@ -8,6 +8,7 @@ public enum GameState
 	ReturningHomeAfterHeadphones,
 	Day1LivingRoomStart,
 	Day1JacobsBack,
+	Day1GameEndChoice,
 
 	// Day 2
 	Day2StartTomsRoom,
