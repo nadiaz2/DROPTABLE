@@ -31,5 +31,12 @@ public enum GameState
 
 public class GameManager
 {
+	// Day 1 talking to jacob given 2 choices
+	// 0 Ends the game
+	// 1 Continues the game
+	public static bool day1BranchEndGame = false;
+
 	public static GameState state = GameState.GameStart;
+
+
 }

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class JacobLivingRoom : MonoBehaviour, Interactable
 {
+
+    [Header("Game Objects")]
     public LivingRoomPhone phone;
 
     [Header("Day 1")]
@@ -40,7 +43,19 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                 backFromFoodDialogue.TriggerDialogue(() => {
                     interactable = false;
                     day1Choice.PresentChoice((int choiceIndex) => {
-                        Debug.Log(choiceIndex);
+                        if (choiceIndex == 0)
+                        {
+                            GameManager.day1BranchEndGame = true;
+
+                            // Testing to end the game
+                            // EditorApplication.Exit(0);
+
+                            Debug.Log($"End Game: {choiceIndex}");
+                        }
+                        else if (choiceIndex == 1){
+                            Debug.Log($"Continue Game: {choiceIndex}");
+                            return;
+                        }
                     });
                 });
             }
