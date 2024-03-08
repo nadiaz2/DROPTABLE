@@ -24,6 +24,7 @@ public class JacobsCarManager : MonoBehaviour
     public SubtitleTrigger trigger2;
     public SubtitleTrigger trigger3;
     public SubtitleTrigger trigger4;
+    public ChoiceTrigger day3Choice;
 
     public Text prompt;
 
@@ -100,9 +101,22 @@ public class JacobsCarManager : MonoBehaviour
     {
         trigger4.TriggerSubtitle(() =>
         {
-            Invoke("FadeOut", 5);
-            SceneManager.LoadScene("TomsRoom");
-            GameManager.state = GameState.Day4StartTomsRoom;
+            day3Choice.PresentChoice((int choiceIndex) =>
+            {
+                if (choiceIndex == 0)
+                {
+                    GameManager.day3BranchRomanticRoute = false;
+                    Debug.Log($"End Game: {choiceIndex}");
+                }
+                else if (choiceIndex == 1)
+                {
+                    GameManager.day3BranchRomanticRoute = true;
+                    Debug.Log($"End Game: {choiceIndex}");
+                }
+                Invoke("FadeOut", 5);
+                SceneManager.LoadScene("TomsRoom");
+                GameManager.state = GameState.Day4StartTomsRoom;
+            });
         });
     }
 

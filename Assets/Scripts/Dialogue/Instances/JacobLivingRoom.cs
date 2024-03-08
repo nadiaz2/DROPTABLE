@@ -51,6 +51,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                             Debug.Log($"End Game: {choiceIndex}");
                         }
                         else if (choiceIndex == 1){
+                            GameManager.day1BranchEndGame = false;
                             GameManager.state = GameState.Day1GameEndChoice;
 
                             Debug.Log($"Continue Game: {choiceIndex}");

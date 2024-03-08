@@ -37,7 +37,14 @@ public class GameManager
 	// 1 Continues the game
 	public static bool day1BranchEndGame = false;
 
-	public static GameState state = GameState.GameStart;
+	// Day 2 Tom talking in his head given 2 choices
+	// 0 Continues the story with no changes
+	// 1 Unlocks the Romantic Route
+    public static bool day3BranchRomanticRoute = false;
+
+
+
+    public static GameState state = GameState.GameStart;
 
 
 }
