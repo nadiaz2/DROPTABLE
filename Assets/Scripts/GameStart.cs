@@ -68,7 +68,8 @@ public class GameStart : MonoBehaviour
                 break;
 
             // Day 4
-            Day4StartTomsRoom:
+            case GameState.Day4StartTomsRoom:
+                SceneManager.LoadScene("TomsRoom");
                 break;
         }
     }

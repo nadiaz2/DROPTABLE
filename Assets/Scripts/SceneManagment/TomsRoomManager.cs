@@ -87,6 +87,10 @@ public class TomsRoomManager : MonoBehaviour
                 }
                 break;
 
+            case GameState.Day4StartTomsRoom:
+
+                break;
+
 
         }
 

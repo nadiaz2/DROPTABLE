@@ -32,6 +32,8 @@ public enum GameState
 
 public class GameManager
 {
+	public static bool cameraMove = false;
+
 	// Day 1 talking to jacob given 2 choices
 	// 0 Ends the game
 	// 1 Continues the game

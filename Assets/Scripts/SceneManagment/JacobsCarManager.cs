@@ -35,6 +35,7 @@ public class JacobsCarManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.cameraMove = true;
 
         blackScreen.goBlacked = false;
 
@@ -101,6 +102,7 @@ public class JacobsCarManager : MonoBehaviour
     {
         trigger4.TriggerSubtitle(() =>
         {
+            GameManager.cameraMove = false;
             day3Choice.PresentChoice((int choiceIndex) =>
             {
                 if (choiceIndex == 0)
