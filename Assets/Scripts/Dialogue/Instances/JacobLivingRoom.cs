@@ -22,6 +22,8 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
     [Header("Day 3")]
     public DialogueTrigger dialogueTriggerDay3;
 
+    [Header("Animator")]
+    public Animator animator;
 
     [HideInInspector]
     public bool interactable = false;
@@ -68,7 +70,14 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
         foodArrivedSubtitle.TriggerSubtitle(() => {
             getFoodPath.StartMovement();
             phone.active = true;
+            animator.SetBool("IsSitting", false);
+            animator.SetBool("IsWalking", true);
         });
+    }
+
+    public void sitCharacter()
+    {
+        animator.SetBool("IsSitting", true);
     }
 
     public void Interact()
@@ -85,6 +94,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                         LivingRoomManager manager = LivingRoomManager.currentInstance;
                         manager.FadeOut();
                         manager.Invoke("SitCharacters", 2.5f);
+                        Invoke("sitCharacter", 2.5f);
                         Invoke("EndStudySession", 2.7f);
                         manager.Invoke("FadeIn", 3.0f);
                     });
