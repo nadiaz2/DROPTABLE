@@ -1040,6 +1040,156 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goBlacked: 1
   fadeSeconds: 2
+--- !u!1 &230565100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 230565101}
+  - component: {fileID: 230565103}
+  - component: {fileID: 230565102}
+  m_Layer: 5
+  m_Name: MorganPortrait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &230565101
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230565100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853780706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &230565102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230565100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 41dddb89333a2af42bb13c1f7749afbe, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &230565103
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230565100}
+  m_CullTransparentMesh: 1
+--- !u!1 &241592393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241592394}
+  - component: {fileID: 241592396}
+  - component: {fileID: 241592395}
+  m_Layer: 5
+  m_Name: JacobPortrait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &241592394
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241592393}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853780706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &241592395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241592393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e00ce306d7882914dab3546eb31fe036, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &241592396
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241592393}
+  m_CullTransparentMesh: 1
 --- !u!1 &328801220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,6 +2674,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &779956522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779956523}
+  - component: {fileID: 779956525}
+  - component: {fileID: 779956524}
+  m_Layer: 5
+  m_Name: RachealPortrait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &779956523
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779956522}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853780706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &779956524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779956522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4578b23fbd7320944b45fc425c1705d0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &779956525
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779956522}
+  m_CullTransparentMesh: 1
 --- !u!1 &798868625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,6 +3517,11 @@ RectTransform:
   - {fileID: 1955988227}
   - {fileID: 419408752}
   - {fileID: 224432379}
+  - {fileID: 1230372047}
+  - {fileID: 241592394}
+  - {fileID: 230565101}
+  - {fileID: 1238176845}
+  - {fileID: 779956523}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4321,6 +4551,156 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1230372046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1230372047}
+  - component: {fileID: 1230372049}
+  - component: {fileID: 1230372048}
+  m_Layer: 5
+  m_Name: TomPortrait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1230372047
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230372046}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853780706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1230372048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230372046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d3c7dc0c86d846541ad47ec809f33e4c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1230372049
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230372046}
+  m_CullTransparentMesh: 1
+--- !u!1 &1238176844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1238176845}
+  - component: {fileID: 1238176847}
+  - component: {fileID: 1238176846}
+  m_Layer: 5
+  m_Name: EmilyPortrait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1238176845
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238176844}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853780706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1238176846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238176844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e49280f6a5567ab43838e1587e045c93, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1238176847
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238176844}
+  m_CullTransparentMesh: 1
 --- !u!1 &1263638867
 GameObject:
   m_ObjectHideFlags: 0
@@ -6612,39 +6992,39 @@ MonoBehaviour:
   dialogueManager: {fileID: 615378954}
   dialogues:
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Did you get a girlfriend behind my back?
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: What are you talking about?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Don't play dumb, the girl in the light yellow dress, although I didn't
       see her face.
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: "You flipped through my photo album, didn\u2019t you?"
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: "Sorry, I was just bored and took a look. You don\u2019t mind, do you?
       But forget about that, when did you get a girlfriend?"
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Why didn't you introduce her to me?
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: Yeah, just started dating. I'll introduce you to her later?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: That sounds reasonable. But about the homework...
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: "I\u2019ll send you mine later, I'm a bit tired and going to sleep."
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Okay.
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Then I'll go back to my room and won't bother you. You rest first.
 --- !u!114 &1879460813
 MonoBehaviour:
@@ -6661,10 +7041,10 @@ MonoBehaviour:
   dialogueManager: {fileID: 615378954}
   dialogues:
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Where did the guy deliver the takeout to?
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: The idiot actually delivered our takeout next door, how many times
       has this happened this month?
 --- !u!1 &1890241533
@@ -33770,17 +34150,17 @@ MonoBehaviour:
   dialogueManager: {fileID: 615378954}
   dialogues:
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Uh... I was just wondering if you had any plans today.
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: Oh, I've been kind of bored lately. I was thinking of going to Boston
       for a stroll, you wanna to come with?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Sure, sure, I don't have anything else to do today.
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: I'll wait for you at my car outside.
 --- !u!114 &8936107687572286104
 MonoBehaviour:
@@ -33813,11 +34193,11 @@ MonoBehaviour:
   dialogueManager: {fileID: 615378954}
   dialogues:
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: Is this guy an idiot? I've told him so many times, and he still...
       What are you doing? Why are you so stiff?
   - name: Tom
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: No, nothing, just too bored and playing games on your phone.
 --- !u!114 &8936107687572286106
 MonoBehaviour:
@@ -33890,18 +34270,18 @@ MonoBehaviour:
   dialogueManager: {fileID: 615378954}
   dialogues:
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: What did you go out for so late? Does discussing with the professor
       really take this long? Or did you hook up with the professor?
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: Nothing much, just chatted with an acquaintance.
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 241592395}
     sentence: You said you wanted help with the homework. Get set up at the table.
       I'll order some takeout first. Do you want anything?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1230372048}
     sentence: Just get me whatever you're having, thanks.
 --- !u!114 &8936107687572286110
 MonoBehaviour:
