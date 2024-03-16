@@ -20,7 +20,8 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
     {
         this.active = (TomsRoomManager.state == TomsRoomState.Day1Start || JacobsRoomManager.state == JacobsRoomState.Day1Start ||
                         TomsRoomManager.state == TomsRoomState.Day1JacobsBack || TomsRoomManager.state == TomsRoomState.RachelDeathMessageSeen ||
-                        TomsRoomManager.state == TomsRoomState.StartDay3);
+                        TomsRoomManager.state == TomsRoomState.StartDay3 || TomsRoomManager.state == TomsRoomState.Day4GoToJacobsRoom ||
+                        JacobsRoomManager.state == JacobsRoomState.Day4FoundKey);
     }
 
     public void Interact()
@@ -45,12 +46,20 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
                 SceneManager.LoadScene("LivingRoom");
                 break;
 
+            case TomsRoomState.Day4GoToJacobsRoom:
+                SceneManager.LoadScene("LivingRoom");
+                break;
+
 
         }
 
         switch (JacobsRoomManager.state)
         {
             case JacobsRoomState.Day1Start:
+                SceneManager.LoadScene("LivingRoom");
+                break;
+
+            case JacobsRoomState.Day4FoundKey:
                 SceneManager.LoadScene("LivingRoom");
                 break;
         }
@@ -60,7 +69,7 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
 
     public string GetPrompt()
     {
-        return "Living Room";
+        return "Livingroom";
     }
 
     public bool IsActive()

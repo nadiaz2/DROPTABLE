@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 66692088}
   - component: {fileID: 66692089}
   - component: {fileID: 66692090}
+  - component: {fileID: 66692091}
   m_Layer: 0
   m_Name: JacobsDoor
   m_TagString: Interactable
@@ -474,6 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleTriggerDay1: {fileID: 66692089}
   subtitleTriggerDay3: {fileID: 66692090}
+  subtitleTriggerDay4: {fileID: 66692091}
 --- !u!114 &66692089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +506,22 @@ MonoBehaviour:
   subtitleManager: {fileID: 424650666}
   subtitles:
   - Ugh, do I really have to do this?
+--- !u!114 &66692091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66692084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 424650666}
+  subtitles:
+  - Hmmmm... Nothing, he might not be awake.
+  - This is my chance.
 --- !u!1 &155488186
 GameObject:
   m_ObjectHideFlags: 0
@@ -6919,6 +6937,7 @@ GameObject:
   - component: {fileID: 1879460811}
   - component: {fileID: 1879460812}
   - component: {fileID: 1879460813}
+  - component: {fileID: 1879460814}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -6959,6 +6978,7 @@ MonoBehaviour:
   reminderTrigger: {fileID: 1879460811}
   endGameTrigger: {fileID: 1879460812}
   continueToDay2Trigger: {fileID: 1879460813}
+  headToJacobsLabReminder: {fileID: 1879460814}
   jacobSeat: {fileID: 616358656}
   tomSeat: {fileID: 1071246928}
   blackScreen: {fileID: 224432382}
@@ -7047,6 +7067,21 @@ MonoBehaviour:
     characterPortrait: {fileID: 241592395}
     sentence: The idiot actually delivered our takeout next door, how many times
       has this happened this month?
+--- !u!114 &1879460814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879460808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 424650666}
+  subtitles:
+  - Next stop is Jacob's Lab, I should be able to get in with these keys.
 --- !u!1 &1890241533
 GameObject:
   m_ObjectHideFlags: 0
@@ -34111,7 +34146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &8936107687572286102
 CapsuleCollider:
   m_ObjectHideFlags: 0

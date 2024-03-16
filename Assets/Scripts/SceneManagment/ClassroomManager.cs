@@ -16,6 +16,7 @@ public enum ClassroomState
     PickedUpHeadphones = 16,
     MorganCloseUp = 32,
     AfterHeadphones = 64,
+    FinishedTalkMorgan,
 
     // States for Day 2
     Day2AfternoonClass,

@@ -23,7 +23,12 @@ public enum LivingRoomState
 
     //Day 3 States
     Day3Start,
+    Day3StartMinigame,
     Day3TalkedWithJacob,
+
+    //Day 4 Stats
+    Day4Start,
+    Day4StartMinigame,
 }
 
 public class LivingRoomManager : MonoBehaviour
@@ -34,6 +39,7 @@ public class LivingRoomManager : MonoBehaviour
     public SubtitleTrigger reminderTrigger;
     public DialogueTrigger endGameTrigger;
     public DialogueTrigger continueToDay2Trigger;
+    public SubtitleTrigger headToJacobsLabReminder;
 
     public Transform jacobSeat;
     public Transform tomSeat;
@@ -89,6 +95,17 @@ public class LivingRoomManager : MonoBehaviour
 
             case GameState.Day3StartTomsRoom:
                 state = LivingRoomState.Day3Start;
+                break;
+
+            case GameState.Day4StartTomsRoom:
+                state = LivingRoomState.Day4Start;
+                break;
+
+            case GameState.Day4HeadToJacobsLab:
+                headToJacobsLabReminder.TriggerSubtitle(() =>
+                {
+                    //TODO Enable the door to go outside
+                });
                 break;
 
         }
@@ -161,6 +178,13 @@ public class LivingRoomManager : MonoBehaviour
                 jacob.interactable = false;
                 break;
 
+        }
+
+        switch (LivingRoomManager.state)
+        {
+            case LivingRoomState.Day4Start:
+
+                break;
         }
     }
 

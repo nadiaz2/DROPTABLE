@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
@@ -23,6 +24,7 @@ public enum TomsRoomState
 
     // States for Day 3
     StartDay3,
+    Day4GoToJacobsRoom,
 
 }
 
@@ -32,6 +34,7 @@ public class TomsRoomManager : MonoBehaviour
     public TomsBed tomsBed;
 
     public SubtitleTrigger subtitleTrigger;
+    public SubtitleTrigger subtitleTriggerDay4;
 
     public BlackScreen blackScreen;
 
@@ -88,7 +91,7 @@ public class TomsRoomManager : MonoBehaviour
                 break;
 
             case GameState.Day4StartTomsRoom:
-
+                Invoke("delayedDay4Dialogue", 2);
                 break;
 
 
@@ -103,6 +106,16 @@ public class TomsRoomManager : MonoBehaviour
                 break;
         }
 
+        
+
+    }
+
+    private void delayedDay4Dialogue()
+    {
+        subtitleTriggerDay4.TriggerSubtitle(() =>
+        {
+            state = TomsRoomState.Day4GoToJacobsRoom;
+        });
     }
 
 

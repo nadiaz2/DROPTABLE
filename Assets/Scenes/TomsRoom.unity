@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 150243188}
   - component: {fileID: 150243189}
   - component: {fileID: 150243190}
+  - component: {fileID: 150243191}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tomsBed: {fileID: 1120736203}
   subtitleTrigger: {fileID: 150243190}
+  subtitleTriggerDay4: {fileID: 150243191}
   blackScreen: {fileID: 1992151177}
 --- !u!114 &150243190
 MonoBehaviour:
@@ -189,6 +191,21 @@ MonoBehaviour:
   - I need to figure out what happened. I'm going to need to get the keys to Jacob's
     lab.
   - He should have it in his room.
+--- !u!114 &150243191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150243187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 1284605634}
+  subtitles:
+  - I wonder if he's still asleep. I should go knock and see.
 --- !u!1 &169694340
 GameObject:
   m_ObjectHideFlags: 0

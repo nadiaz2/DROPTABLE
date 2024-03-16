@@ -39,7 +39,10 @@ public class MorganClassroomDialogue : MonoBehaviour
                 {
                     if (!talking)
                     {
-                        trigger.TriggerDialogue();
+                        trigger.TriggerDialogue(() =>
+                        {
+                            Invoke("delayedStateChange", 3);
+                        });
                         triggerStarted = true;
                     }
                 }
@@ -50,5 +53,11 @@ public class MorganClassroomDialogue : MonoBehaviour
                 break;
         }
 
+    }
+
+
+    private void delayedStateChange()
+    {
+        ClassroomManager.state = ClassroomState.FinishedTalkMorgan;
     }
 }
