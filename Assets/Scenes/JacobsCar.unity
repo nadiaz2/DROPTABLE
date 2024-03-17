@@ -1916,7 +1916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
       propertyPath: m_Name
-      value: MODERNHATCH
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2745,27 +2745,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.85
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.85
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.85
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.138899
+      value: -10.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.8
+      value: 15.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -694.76
+      value: -689.97
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2800,9 +2800,13 @@ PrefabInstance:
       value: JacobModel
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
+    - target: {fileID: 5866666021909216657, guid: f4ede4ea7bca8d84597ba28ed0649d70, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 87f2dcb3762cc4c4790f85cc6f8e858f, type: 2}
+      objectReference: {fileID: 9100000, guid: e13e354d74143fb4b99970fea5f9410c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
