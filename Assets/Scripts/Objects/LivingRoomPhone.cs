@@ -47,8 +47,8 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
             }
         });
 
-        DisplayQRCode(SocketClient.RoomID);
         SocketClient.onRoomChange = DisplayQRCode;
+        DisplayQRCode(SocketClient.RoomID);
     }
 
     public void DisplayQRCode(string roomID)

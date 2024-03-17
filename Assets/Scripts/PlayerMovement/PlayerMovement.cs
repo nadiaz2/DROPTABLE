@@ -41,9 +41,6 @@ public class PlayerMovement : MonoBehaviour
         _rb.freezeRotation = true;
         _rb.drag = groundDrag;
 
-        forward = Vector3.ProjectOnPlane(movementReference.forward, Vector3.up).normalized;
-        right = Vector3.ProjectOnPlane(movementReference.right, Vector3.up).normalized;
-
         immobile = false;
     }
 
@@ -90,6 +87,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        Vector3 forward = Vector3.ProjectOnPlane(movementReference.forward, Vector3.up).normalized;
+        Vector3 right = Vector3.ProjectOnPlane(movementReference.right, Vector3.up).normalized;
+
         // calcaulate movement direction
         moveDirection = (forward * verticalInput) + (right * horizontalInput);
         _rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);

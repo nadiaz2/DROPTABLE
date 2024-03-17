@@ -69,7 +69,7 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
 
     public string GetPrompt()
     {
-        return "Livingroom";
+        return "Living Room";
     }
 
     public bool IsActive()

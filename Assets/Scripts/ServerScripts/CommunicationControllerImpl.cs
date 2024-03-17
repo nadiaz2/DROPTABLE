@@ -12,6 +12,6 @@ public class CommunicationControllerImpl : CommunicationController
 
     public override void ErrorData(string message)
     {
-        Debug.LogError($"Node.JS Error: {message}");
+        Debug.LogWarning($"Node.JS Error: {message}");
     }
 }
