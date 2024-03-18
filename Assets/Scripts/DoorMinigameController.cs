@@ -12,8 +12,10 @@ public class DoorMinigameController : MonoBehaviour
     public Scrollbar alertBar;
 
     [Header("Speed Parameters")]
-    public float progressSpeed;
-    public float alertSpeed;
+    public float progressFillSpeed;
+    public float progressEmptySpeed;
+    public float alertFillSpeed;
+    public float alertEmptySpeed;
 
     private bool minigameActive;
     private Action<bool> callback;
@@ -58,11 +60,13 @@ public class DoorMinigameController : MonoBehaviour
         {
             this.mouseHeldTime += Time.deltaTime;
 
-            progressBar.size += 0.0001f * progressSpeed * Time.deltaTime;
-            alertBar.size += (0.0001f * alertSpeed * this.mouseHeldTime) * (0.0001f * alertSpeed * this.mouseHeldTime);
+            progressBar.size += 0.001f * progressFillSpeed * Time.deltaTime;
+            alertBar.size += (0.001f * alertFillSpeed * this.mouseHeldTime) * (0.001f * alertFillSpeed * this.mouseHeldTime);
         }
         else
         {
+            progressBar.size -= 0.001f * progressEmptySpeed * Time.deltaTime;
+            alertBar.size -= 0.001f * alertEmptySpeed * Time.deltaTime;
             this.mouseHeldTime = 0.0f;
         }
     }

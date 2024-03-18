@@ -33266,8 +33266,10 @@ MonoBehaviour:
   minigameUI: {fileID: 689203265}
   progressBar: {fileID: 1205078134}
   alertBar: {fileID: 1225750977}
-  progressSpeed: 2
-  alertSpeed: 2
+  progressFillSpeed: 50
+  progressEmptySpeed: 10
+  alertFillSpeed: 20
+  alertEmptySpeed: 10
 --- !u!1 &9074102512537729085
 GameObject:
   m_ObjectHideFlags: 0
