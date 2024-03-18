@@ -16,6 +16,7 @@ public class OnWayHomeManager : MonoBehaviour
     public GameObject outsideHomeSceneTriggerDay1;
     public GameObject cafeteriaSceneTrigger;
     public GameObject outsideHomeSceneTriggerDay2;
+    public GameObject schoolCorridorSceneTrigger;
     public SubtitleTrigger subtitleTrigger;
 
     public GameObject player;
@@ -43,38 +44,44 @@ public class OnWayHomeManager : MonoBehaviour
 
         Debug.Log(GameManager.state);
 
-        if (GameManager.state == GameState.OnWayHomeStart)
+        switch (GameManager.state)
         {
-            state = OnWayHomeState.Start;
-            outsideHomeSceneTriggerDay1.SetActive(false);
-            classroomSceneTrigger.SetActive(false);
-            player.transform.position = new Vector3(-248, 27, -555);
-            //player.transform.position = comingFromClassroom.position;
+            case GameState.OnWayHomeStart:
+                state = OnWayHomeState.Start;
+                outsideHomeSceneTriggerDay1.SetActive(false);
+                classroomSceneTrigger.SetActive(false);
+                player.transform.position = new Vector3(-248, 27, -555);
+                //player.transform.position = comingFromClassroom.position;
 
-            subtitleTrigger.TriggerSubtitle(() =>
-            {
-                classroomSceneTrigger.SetActive(true);
-            });
-        }
-        else if (GameManager.state == GameState.ReturningHomeAfterHeadphones)
-        {
-           outsideHomeSceneTriggerDay1.SetActive(true);
-           classroomSceneTrigger.SetActive(false);
-           player.transform.position = new Vector3(-248, 27, -555);
-           //player.transform.position = comingFromClassroom.position;
+                subtitleTrigger.TriggerSubtitle(() =>
+                {
+                    classroomSceneTrigger.SetActive(true);
+                });
+                break;
 
+            case GameState.ReturningHomeAfterHeadphones:
+                outsideHomeSceneTriggerDay1.SetActive(true);
+                classroomSceneTrigger.SetActive(false);
+                player.transform.position = new Vector3(-248, 27, -555);
+                //player.transform.position = comingFromClassroom.position;
+                break;
+
+            case GameState.Day2HeadBackToSchool:
+                //Debug.Log(GameManager.state);
+                cafeteriaSceneTrigger.SetActive(true);
+                //player.transform.position = comingFromOutsideHouse.position;
+                player.transform.position = new Vector3(-248, 27, -1600);
+                break;
+
+            case GameState.Day2HeadBackHome:
+                outsideHomeSceneTriggerDay2.SetActive(true);
+                break;
+
+            case GameState.Day4HeadToJacobsLab:
+                schoolCorridorSceneTrigger.SetActive(true);
+                break;
         }
-        else if (GameManager.state == GameState.Day2HeadBackToSchool)
-        {
-            //Debug.Log(GameManager.state);
-            cafeteriaSceneTrigger.SetActive(true);
-            //player.transform.position = comingFromOutsideHouse.position;
-            player.transform.position = new Vector3(-248, 27, -1600);
-        }
-        else if (GameManager.state == GameState.Day2HeadBackHome)
-        {
-            outsideHomeSceneTriggerDay2.SetActive(true);
-        }
+
 
     }
 

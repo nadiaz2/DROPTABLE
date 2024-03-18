@@ -5,6 +5,7 @@ using UnityEngine;
 public class ReminderTriggerSubtitle : MonoBehaviour
 {
     public SubtitleTrigger subtitleTrigger;
+    public SubtitleTrigger subtitleTriggerDay4Reminder;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,10 @@ public class ReminderTriggerSubtitle : MonoBehaviour
         if (other.gameObject.tag == "GoToClassReminder" && GameManager.state == GameState.Day2HeadBackToSchool)
         {
             subtitleTrigger.TriggerSubtitle();
+        }
+        else if (other.gameObject.tag == "GoToClassReminder" && GameManager.state == GameState.Day4HeadToJacobsLab)
+        {
+            subtitleTriggerDay4Reminder.TriggerSubtitle();
         }
     }
 }

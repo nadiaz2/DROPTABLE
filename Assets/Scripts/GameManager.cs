@@ -27,6 +27,8 @@ public enum GameState
 	// Day 4
 	Day4StartTomsRoom,
 	Day4HeadToJacobsLab,
+	Day4InLab,
+	Day4FinishedMiniGame
 
 
 }

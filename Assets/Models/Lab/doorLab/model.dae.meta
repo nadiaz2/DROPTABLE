@@ -3,12 +3,7 @@ guid: 1245d88a5086a2e43884da3987c04125
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: T_theatre_door_blue_1001
-    second: {fileID: 2100000, guid: ea63fe1abde9e7c46858258834aa9e62, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

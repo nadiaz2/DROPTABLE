@@ -71,6 +71,14 @@ public class GameStart : MonoBehaviour
             case GameState.Day4StartTomsRoom:
                 SceneManager.LoadScene("TomsRoom");
                 break;
+
+            case GameState.Day4HeadToJacobsLab:
+                SceneManager.LoadScene("SchoolCorridor");
+                break;
+
+            case GameState.Day4InLab:
+                SceneManager.LoadScene("Lab");
+                break;
         }
     }
 }
