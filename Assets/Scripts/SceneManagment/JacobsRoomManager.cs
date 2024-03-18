@@ -15,10 +15,13 @@ public enum JacobsRoomState
     // Day 4
     Day4SearchJacobsRoom,
     Day4FoundKey,
+    Day4JacobFlashBack,
 }
 
 public class JacobsRoomManager : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject jacobPlayable;
     public JacobsDrawer jacobsDrawer;
 
     public SubtitleTrigger subtitleTrigger;
@@ -45,6 +48,11 @@ public class JacobsRoomManager : MonoBehaviour
             case GameState.Day4StartTomsRoom:
                 state = JacobsRoomState.Day4SearchJacobsRoom;
                 jacobsDrawer.interactable = true;
+                break;
+
+            case GameState.Day4JacobFlashBack:
+                player.SetActive(false);
+                jacobPlayable.SetActive(true);
                 break;
 
         }

@@ -21,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     // Current Movement Values
     private Vector3 moveDirection;
     private Rigidbody _rb;
+
+    [Header("Animator")]
+    public Animator animator;
+
     public Rigidbody rb
     {
         get
@@ -55,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
 
         SpeedControl();
         MyInput();
+
+
+
     }
 
     private void FixedUpdate()
@@ -71,6 +78,9 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+
+
     }
 
     private void SpeedControl()
@@ -99,6 +109,20 @@ public class PlayerMovement : MonoBehaviour
         if (facing.sqrMagnitude > 0.0f)
         {
             transform.rotation = Quaternion.LookRotation(facing);
+        }
+
+        if (animator != null)
+        {
+            if(_rb.velocity.magnitude > 0.0f)
+            {
+                animator.SetBool("IsWalking", true);
+                animator.SetBool("IsStanding", false);
+            }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+                animator.SetBool("IsStanding", true);
+            }
         }
     }
 }

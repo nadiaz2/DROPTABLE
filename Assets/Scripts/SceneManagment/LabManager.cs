@@ -59,6 +59,7 @@ public class LabManager : MonoBehaviour
                     subtitleTriggered = true;
                     subtitleTrigger.TriggerSubtitle(() =>
                     {
+                        GameManager.state = GameState.Day4JacobFlashBack;
                         Invoke("delayedFlashBack", 2);
                     });
                 }

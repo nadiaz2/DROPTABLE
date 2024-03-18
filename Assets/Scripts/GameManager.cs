@@ -28,7 +28,8 @@ public enum GameState
 	Day4StartTomsRoom,
 	Day4HeadToJacobsLab,
 	Day4InLab,
-	Day4FinishedMiniGame
+	Day4FinishedMiniGame,
+	Day4JacobFlashBack,
 
 
 }
