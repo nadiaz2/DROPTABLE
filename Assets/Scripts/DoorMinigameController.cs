@@ -41,31 +41,25 @@ public class DoorMinigameController : MonoBehaviour
 
         if ((alertBar.size >= 0.75f) || (progressBar.size >= 1.0f))
         {
-            // fail
-            this.callback.Invoke(false);
-            minigameUI.SetActive(false);
+            EndMinigame(false);
             return;
         }
 
         // Check for E press
         if (Input.GetKeyDown(KeyCode.E))
         {
-            this.minigameActive = false;
-
-            // Check if bar is in the success range
-            bool success = (progressBar.size > 0.6f) && (progressBar.size < 0.85f);
-            this.callback.Invoke(success);
-            minigameUI.SetActive(false);
+            // Win if bar is in the success range
+            EndMinigame((progressBar.size > 0.6f) && (progressBar.size < 0.85f));
             return;
         }
 
         // Check for Left Click
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             this.mouseHeldTime += Time.deltaTime;
 
-            progressBar.size += progressSpeed * Time.deltaTime;
-            alertBar.size += (alertSpeed * this.mouseHeldTime) * (alertSpeed * this.mouseHeldTime);
+            progressBar.size += 0.0001f * progressSpeed * Time.deltaTime;
+            alertBar.size += (0.0001f * alertSpeed * this.mouseHeldTime) * (0.0001f * alertSpeed * this.mouseHeldTime);
         }
         else
         {
@@ -82,5 +76,12 @@ public class DoorMinigameController : MonoBehaviour
 
         minigameUI.SetActive(true);
         minigameActive = true;
+    }
+
+    private void EndMinigame(bool result)
+    {
+        this.minigameActive = false;
+        this.callback.Invoke(result);
+        minigameUI.SetActive(false);
     }
 }
