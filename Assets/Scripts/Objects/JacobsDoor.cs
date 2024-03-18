@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class JacobsDoor : MonoBehaviour, Interactable
 {
+    public DoorMinigameController doorMinigame;
+
+    [Header("Subtitles")]
     public SubtitleTrigger subtitleTriggerDay1;
     public SubtitleTrigger subtitleTriggerDay3;
     public SubtitleTrigger subtitleTriggerDay4;
@@ -47,8 +50,11 @@ public class JacobsDoor : MonoBehaviour, Interactable
                 subtitleTriggerDay3.TriggerSubtitle(() =>
                 {
                     //TODO Play Minigame
-
-                    GameManager.state = GameState.Day3FinishedMiniGame;
+                    doorMinigame.StartMinigame((result) => {
+                        Debug.Log(result);
+                        GameManager.state = GameState.Day3FinishedMiniGame;
+                    });
+                    LivingRoomManager.state = LivingRoomState.Day3StartMinigame;
                 });
                 break;
 

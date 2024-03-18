@@ -54,6 +54,7 @@ public class GameStart : MonoBehaviour
 
             // Day 3
             case GameState.Day3StartTomsRoom:
+                SceneManager.LoadScene("TomsRoom");
                 break;
             case GameState.Day3FinishedMiniGame:
                 break;
