@@ -18,6 +18,7 @@ unitySocketIO.on('connection', function(socket) {
     socket.use((packet, next) => {
         if(packet[0] === "SERVER") {
             next()
+            return
         }
 
         // send to phone
@@ -42,7 +43,7 @@ unitySocketIO.on('connection', function(socket) {
         }
         socket.emit('UUID', UUID)
         console.log("sending uuid")
-    }, 500)
+    }, 1000)
 })
 // -------- End Socket IO Server --------
 
