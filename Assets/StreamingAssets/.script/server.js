@@ -16,6 +16,10 @@ unitySocketIO.on('connection', function(socket) {
 
     // Pass all messages from unity to phone
     socket.use((packet, next) => {
+        if(packet[0] === "SERVER") {
+            next()
+        }
+
         // send to phone
         _channel.send(`${packet[0]}-${packet[1]}`)
     })
@@ -24,7 +28,21 @@ unitySocketIO.on('connection', function(socket) {
         console.log('Unity SocketIO disconnected')
     })
 
-    socket.emit('UUID', UUID)
+    let uuidRecieved = false
+    socket.on("SERVER", (msg) => {
+        if(msg === "UUID Received") {
+            uuidRecieved = true
+        }
+    })
+
+    //socket.emit('UUID', UUID)
+    let uuidInterval = setInterval(() => {
+        if(uuidRecieved) {
+            clearInterval(uuidInterval)
+        }
+        socket.emit('UUID', UUID)
+        console.log("sending uuid")
+    }, 500)
 })
 // -------- End Socket IO Server --------
 

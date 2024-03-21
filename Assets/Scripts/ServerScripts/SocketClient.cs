@@ -51,6 +51,7 @@ public class SocketClient : MonoBehaviour
         _socket.OnConnected += (sender, e) =>
         {
             //socket.Emit("Device", "Unity");
+            Debug.Log("Unity connected to Node.JS");
         };
         _socket.OnDisconnected += (sender, e) =>
         {
@@ -65,6 +66,8 @@ public class SocketClient : MonoBehaviour
             _roomID = response.GetValue<string>();
             onRoomChange?.Invoke(_roomID);
             Debug.Log($"Room ID: {_roomID}");
+
+            _socket.Emit("SERVER", "UUID Received");
         });
         /*
         socket.On("PlayerConnect", (response) =>

@@ -2265,7 +2265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineManager: {fileID: 602918004}
   prompt: {fileID: 1955988229}
-  interactionRadius: 120
+  interactionRadius: 130
 --- !u!114 &579341654
 MonoBehaviour:
   m_ObjectHideFlags: 0
