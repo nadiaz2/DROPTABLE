@@ -64,6 +64,7 @@ public class SocketClient : MonoBehaviour
         _socket.On("UUID", (response) => {
             _roomID = response.GetValue<string>();
             onRoomChange?.Invoke(_roomID);
+            Debug.Log($"Room ID: {_roomID}");
         });
         /*
         socket.On("PlayerConnect", (response) =>
