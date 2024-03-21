@@ -9,6 +9,8 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
 
     [Header("Game Objects")]
     public LivingRoomPhone phone;
+    public Camera mainCamera;
+    public Transform oppositeCameraPosition;
 
     [Header("Day 1")]
     public DialogueTrigger jacobReturnDialogue;
@@ -29,6 +31,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
     public bool interactable = false;
     private bool dialogueTriggerStarted = false;
     private bool dialogueTriggerDay3Started = false;
+    private bool changedCamera = false;
 
     private LivingRoomState lastState;
 
@@ -93,6 +96,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
 
                         LivingRoomManager manager = LivingRoomManager.currentInstance;
                         manager.FadeOut();
+                        Invoke("cameraChange", 2.5f);
                         manager.Invoke("SitCharacters", 2.5f);
                         Invoke("sitCharacter", 2.5f);
                         Invoke("EndStudySession", 2.7f);
@@ -133,6 +137,18 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                     dialogueTriggerDay3.ContinueDialogue();
                 }
                 break;
+        }
+    }
+
+    private void cameraChange()
+    {
+        if (!changedCamera)
+        {
+            if (LivingRoomManager.state == LivingRoomState.Day1TalkedWithJacob)
+            {
+                mainCamera.transform.SetPositionAndRotation(oppositeCameraPosition.position, oppositeCameraPosition.rotation);
+            }
+            changedCamera = true;
         }
     }
 

@@ -10,6 +10,7 @@ public class TriggerTracking : MonoBehaviour
     public Transform oppositeCameraPosition;
     private bool playerIn = false;
 
+
     private void OnTriggerEnter(Collider other)
     {  
         playerIn = true;
@@ -23,4 +24,5 @@ public class TriggerTracking : MonoBehaviour
             mainCamera.transform.SetPositionAndRotation(oppositeCameraPosition.position, oppositeCameraPosition.rotation);
         }
     }
+
 }

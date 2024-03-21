@@ -113,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (animator != null)
         {
+            
             if(_rb.velocity.magnitude > 0.0f)
             {
                 animator.SetBool("IsWalking", true);
