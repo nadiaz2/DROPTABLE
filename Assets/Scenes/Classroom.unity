@@ -23003,7 +23003,7 @@ Transform:
   m_GameObject: {fileID: 1358617591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.09110998, z: -0, w: 0.99584085}
-  m_LocalPosition: {x: 17.2, y: 5.7, z: 69}
+  m_LocalPosition: {x: 74.2, y: -41.3, z: 43.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29045,6 +29045,7 @@ MonoBehaviour:
   movementReference: {fileID: 610999418}
   moveSpeed: 100
   groundDrag: 5
+  animator: {fileID: 0}
 --- !u!136 &1679122204
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31627,7 +31628,7 @@ GameObject:
   - component: {fileID: 1848165712}
   - component: {fileID: 1848165711}
   - component: {fileID: 1848165710}
-  - component: {fileID: 1848165709}
+  - component: {fileID: 1848165713}
   m_Layer: 0
   m_Name: MorganCapsule
   m_TagString: Morgan
@@ -31635,29 +31636,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1848165709
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848165706}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1848165710
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31724,6 +31702,27 @@ Transform:
   - {fileID: 253344050}
   m_Father: {fileID: 1787457580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1848165713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848165706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.14, y: 2.42, z: 7.74}
+  m_Center: {x: 0.39, y: 0.03, z: -0.26}
 --- !u!64 &1851807958
 MeshCollider:
   m_ObjectHideFlags: 0
