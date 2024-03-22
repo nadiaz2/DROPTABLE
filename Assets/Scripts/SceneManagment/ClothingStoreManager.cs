@@ -64,12 +64,6 @@ public class ClothingStoreManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
-
-        if (GameManager.state == GameState.GameStart)
-        {
-            GameManager.state = GameState.Day3InBackBay;
-        }
-
         switch (GameManager.state)
         {
             case GameState.Day3InBackBay:
@@ -118,15 +112,15 @@ public class ClothingStoreManager : MonoBehaviour
                 break;
 
             case ClothingStoreState.Day3EmilyFlashBack:
-                Invoke("FadeOut", 0.1f);
-                Invoke("FadeIn", 2);
+                ClothingStoreManager.currentInstance.Invoke("FadeOut", 1);
+                ClothingStoreManager.currentInstance.Invoke("FadeIn", 4);
                 Invoke("setUpFlashBackCharacters", 2);
                 Invoke("startFlashBackSubtitle", 4);
                 break;
 
             case ClothingStoreState.Day3EmilyFlashBackFinished:
-                Invoke("FadeOut", 0.1f);
-                Invoke("FadeIn", 2);
+                ClothingStoreManager.currentInstance.Invoke("FadeOut", 1);
+                ClothingStoreManager.currentInstance.Invoke("FadeIn", 4);
                 Invoke("setUpAfterFlashBack", 2);
                 if (dialogueTriggerStarted)
                 {
@@ -157,7 +151,6 @@ public class ClothingStoreManager : MonoBehaviour
             dialogueTrigger.TriggerDialogue(() =>
             {
                 Invoke("backOutToBackBay", 2);
-                GameManager.state = GameState.Day3End;
             });
             dialogueTriggerStarted = true;
         }
@@ -167,6 +160,8 @@ public class ClothingStoreManager : MonoBehaviour
     private void backOutToBackBay()
     {
         SceneManager.LoadScene("BackBay");
+        GameManager.state = GameState.Day3End;
+        BackBayManager.state = BackBayState.Day3BackBayEnd;
     }
 
     private void startSubtitle()

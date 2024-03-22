@@ -61,11 +61,12 @@ public class GameStart : MonoBehaviour
             case GameState.Day3TalkedWithJacob:
                 break;
             case GameState.Day3InBackBay:
+                SceneManager.LoadScene("BackBay");
                 break;
             case GameState.Day3InClothingStore:
                 break;
             case GameState.Day3End:
-                SceneManager.LoadScene("JacobsCar");
+                SceneManager.LoadScene("BackBay");
                 break;
 
             // Day 4

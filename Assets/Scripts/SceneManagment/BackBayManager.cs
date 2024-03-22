@@ -10,6 +10,7 @@ public enum BackBayState
 
     //Day 3
     Day3GoInsideStore,
+    Day3BackBayEnd,
 }
 
 public class BackBayManager : MonoBehaviour
@@ -39,11 +40,6 @@ public class BackBayManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
-
-        if (GameManager.state == GameState.GameStart)
-        {
-            GameManager.state = GameState.Day3End;
-        }
 
         switch (GameManager.state)
         {
