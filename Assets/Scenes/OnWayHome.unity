@@ -889,7 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: Cafeteria
-  gameState: 8
+  gameState: 9
 --- !u!54 &625798072
 Rigidbody:
   m_ObjectHideFlags: 0

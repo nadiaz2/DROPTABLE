@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: OnWayHome
-  gameState: 8
+  gameState: 9
 --- !u!54 &8349059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2102,6 +2102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subtitleTrigger: {fileID: 661181126}
+  subtitleTriggerDay4Reminder: {fileID: 0}
 --- !u!1 &664304632
 GameObject:
   m_ObjectHideFlags: 0

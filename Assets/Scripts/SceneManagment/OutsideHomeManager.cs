@@ -45,12 +45,6 @@ public class OutsideHomeManager : MonoBehaviour
         blackScreen.goBlacked = false;
 
 
-        if (GameManager.state == GameState.GameStart)
-        {
-            GameManager.state = GameState.Day3TalkedWithJacob;
-        }
-
-
         switch (GameManager.state)
         {
             case GameState.ReturningHomeAfterHeadphones:

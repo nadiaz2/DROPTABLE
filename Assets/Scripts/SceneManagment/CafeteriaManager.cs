@@ -27,11 +27,6 @@ public class CafeteriaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Testing
-        if (GameManager.state == GameState.GameStart)
-        {
-            GameManager.state = GameState.Day2HeadBackToSchool;
-        }
 
         if (GameManager.state == GameState.Day2HeadBackToSchool)
         {

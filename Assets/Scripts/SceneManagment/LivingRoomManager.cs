@@ -86,7 +86,7 @@ public class LivingRoomManager : MonoBehaviour
 
             case GameState.Day2HeadBackToSchool:
                 state = LivingRoomState.Day2Start;
-                player.transform.position = new Vector3(205, 53, -516);
+                //player.transform.position = new Vector3(205, 53, -516);
                 break;
 
             case GameState.Day2HeadBackHome:
