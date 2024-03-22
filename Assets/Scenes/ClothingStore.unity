@@ -4057,6 +4057,7 @@ MonoBehaviour:
   movementReference: {fileID: 1809671662}
   moveSpeed: 150
   groundDrag: 5
+  animator: {fileID: 0}
 --- !u!54 &1095199708
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6756,35 +6757,35 @@ MonoBehaviour:
   dialogueManager: {fileID: 1852048628}
   dialogues:
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1618069876}
     sentence: Isn't this the dress Rachel was wearing?
   - name: Jacob
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1118456733}
     sentence: What did you say?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1618069876}
     sentence: Nothing, just talking to myself.
   - name: ???
     characterPortrait: {fileID: 0}
     sentence: May I help you with anything?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1618069876}
     sentence: Ah, what are you doing here?
   - name: ???
     characterPortrait: {fileID: 0}
     sentence: Uh, are you mistaken?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1618069876}
     sentence: Aren't you Emily? From xxx school?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1618069876}
     sentence: I saw you in the cafeteria before, you were talking about Rachel.
   - name: Emily
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 221239226}
     sentence: Yes, I work here part-time to earn living expenses, can I help you
       with anything else?
   - name: Tom (You)
-    characterPortrait: {fileID: 0}
+    characterPortrait: {fileID: 1618069876}
     sentence: Do you know if Rachel used to wear this dress often?
 --- !u!64 &1834871182
 MeshCollider:
@@ -7251,6 +7252,7 @@ MonoBehaviour:
   movementReference: {fileID: 1809671662}
   moveSpeed: 150
   groundDrag: 5
+  animator: {fileID: 0}
 --- !u!54 &2003555342
 Rigidbody:
   m_ObjectHideFlags: 0

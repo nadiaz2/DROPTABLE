@@ -7815,8 +7815,8 @@ MonoBehaviour:
   - "Jacob can't be that kind of person, can he? But how do you explain the dress
     in his photo?\r"
   - "Maybe it was just taken outside with a girl who happened to have the same dress.\r\n\r\n\r"
-  - "But that's not right, that dress is a very expensive brand, xxx. No one around
-    us should have the means to afford it, and why is it on the ground?\r\n\r\n\r"
+  - "But that's not right, that dress is a very expensive brand, xxx.\r\n\r\n\r"
+  - No one around us should have the means to afford it, and why is it on the ground?
   - Could it be a photo taken after the incident? It's very likely, but this floor
     pattern looks familiar. Where is this place...
   - 'Professor: Alright, students, don''t forget to submit your assignments to the
@@ -118541,9 +118541,9 @@ SceneRoots:
   - {fileID: 1787457580}
   - {fileID: 1432583744}
   - {fileID: 1268657418}
-  - {fileID: 809392392}
+  - {fileID: 1679122198}
   - {fileID: 1603795418}
+  - {fileID: 809392392}
   - {fileID: 1348080696}
   - {fileID: 2071959866}
   - {fileID: 543450652138207748}
-  - {fileID: 1679122198}
