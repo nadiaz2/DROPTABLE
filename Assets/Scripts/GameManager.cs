@@ -1,3 +1,4 @@
+using UnityEngine;
 
 public enum GameState
 {
@@ -18,8 +19,8 @@ public enum GameState
 
 	// Day 3
 	Day3StartTomsRoom,
-    Day3FinishedMiniGame,
-    Day3TalkedWithJacob,
+	Day3FinishedMiniGame,
+	Day3TalkedWithJacob,
 	Day3InBackBay,
 	Day3InClothingStore,
 	Day3End,
@@ -46,11 +47,19 @@ public class GameManager
 	// Day 2 Tom talking in his head given 2 choices
 	// 0 Continues the story with no changes
 	// 1 Unlocks the Romantic Route
-    public static bool day3BranchRomanticRoute = false;
+	public static bool day3BranchRomanticRoute = false;
 
 
-
-    public static GameState state = GameState.GameStart;
+	private static GameState _state = GameState.GameStart;
+	public static GameState state
+	{
+		get { return _state; }
+		set
+		{
+			Debug.Log($"<color=#00CC00>Game State:</color> {_state} -> {value}");
+			_state = value;
+		}
+	}
 
 
 }
