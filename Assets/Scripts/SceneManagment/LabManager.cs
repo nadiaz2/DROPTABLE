@@ -42,7 +42,10 @@ public class LabManager : MonoBehaviour
                 });
                 break;
 
-
+            case GameState.Day4BackToPresent:
+                morgan.SetActive(true);
+                Jacob.SetActive(true);
+                break;
         }
 
     }

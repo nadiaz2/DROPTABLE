@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
+using UnityEngine.SceneManagement;
 
 public enum SchoolCorridorState
 {
@@ -11,6 +12,8 @@ public enum SchoolCorridorState
     Day4TryToOpenDoor,
     Day4MorganHere,
     Day4LabDoorsOpen,
+    Day4FlashBack,
+    Day4FlashBackTalkToMorgan,
 
 }
 
@@ -18,11 +21,16 @@ public class SchoolCorridorManager : MonoBehaviour
 {
     public SubtitleTrigger subtitleTrigger;
     public DialogueTrigger dialogueTrigger;
+    public DialogueTrigger talkToMorganTrigger;
 
+    public GameObject player;
     public GameObject morgan;
+    public GameObject jacobPlayable;
+    public GameObject morganInteractable;
 
     private bool subtitleplayed = false;
     private bool dialogueTriggerStarted = false;
+    private bool dialogueTriggerStartedMorgan = false;
 
     public BlackScreen blackScreen;
 
@@ -39,6 +47,12 @@ public class SchoolCorridorManager : MonoBehaviour
         {
             case GameState.Day4HeadToJacobsLab:
                 state = SchoolCorridorState.Day4CheckJacobsLab;
+                break;
+
+            case GameState.Day4JacobFlashBack:
+                jacobPlayable.SetActive(true);
+                player.SetActive(false);
+                morganInteractable.SetActive(true);
                 break;
 
         }
@@ -76,6 +90,28 @@ public class SchoolCorridorManager : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
                     {
                         dialogueTrigger.ContinueDialogue();
+                    }
+                }
+                break;
+
+            case SchoolCorridorState.Day4FlashBack:
+                break;
+
+            case SchoolCorridorState.Day4FlashBackTalkToMorgan:
+                if (!dialogueTriggerStartedMorgan)
+                {
+                    talkToMorganTrigger.TriggerDialogue(() =>
+                    {
+                        SceneManager.LoadScene("Lab");
+                        GameManager.state = GameState.Day4BackToPresent;
+                    });
+                    dialogueTriggerStartedMorgan = true;
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                    {
+                        talkToMorganTrigger.ContinueDialogue();
                     }
                 }
                 break;

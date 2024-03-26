@@ -9,6 +9,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public PlayerMovement player;
+    public PlayerMovement otherPlayableCharacters;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Image characterPortriatImage;
@@ -44,6 +45,7 @@ public class DialogueManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         player.immobile = true;
+        otherPlayableCharacters.immobile = true;
 
         _dialogueOngoing = true;
 
@@ -100,6 +102,7 @@ public class DialogueManager : MonoBehaviour
 
         _dialogueOngoing = false;
         player.immobile = false;
+        otherPlayableCharacters.immobile = false;
 
         this.callbackFunc?.Invoke();
         /*

@@ -5187,6 +5187,7 @@ GameObject:
   - component: {fileID: 654009203}
   - component: {fileID: 654009204}
   - component: {fileID: 654009205}
+  - component: {fileID: 654009206}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -5225,6 +5226,7 @@ MonoBehaviour:
   jacobPlayable: {fileID: 1787533279}
   jacobsDrawer: {fileID: 3469287838512677133}
   subtitleTrigger: {fileID: 654009205}
+  flashbackSubtitleTrigger: {fileID: 654009206}
   blackScreen: {fileID: 1167292940}
 --- !u!114 &654009205
 MonoBehaviour:
@@ -5243,6 +5245,22 @@ MonoBehaviour:
   - How did this go so smoothly.
   - What if Jacob is actually awake and has been watching me the whole time?
   - I should get out of the room before I wake him up.
+--- !u!114 &654009206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654009202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 144062134}
+  subtitles:
+  - I should get to my lab to work on my project.
+  - I think I left my keys in the drawer.
 --- !u!1 &657994518
 GameObject:
   m_ObjectHideFlags: 0
@@ -18801,6 +18819,7 @@ GameObject:
   - component: {fileID: 1711813854720259526}
   - component: {fileID: 1318316357}
   - component: {fileID: 3469287838512677133}
+  - component: {fileID: 3469287838512677134}
   m_Layer: 0
   m_Name: jacobsDrawer
   m_TagString: Interactable
@@ -18870,7 +18889,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38de5541286208f4dbf7487c1d272d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: {fileID: 3469287838512677134}
   interactable: 0
+--- !u!114 &3469287838512677134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148191908883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 144062134}
+  subtitles:
+  - My keys are gone? How is that possible?
+  - Did I drop them somewhere?
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

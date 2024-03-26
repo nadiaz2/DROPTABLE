@@ -15,7 +15,8 @@ public enum JacobsRoomState
     // Day 4
     Day4SearchJacobsRoom,
     Day4FoundKey,
-    Day4JacobFlashBack,
+    Day4FlashBack,
+    Day4FlashBackRoomDone,
 }
 
 public class JacobsRoomManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class JacobsRoomManager : MonoBehaviour
     public JacobsDrawer jacobsDrawer;
 
     public SubtitleTrigger subtitleTrigger;
+    public SubtitleTrigger flashbackSubtitleTrigger;
 
     private bool triggered = false;
 
@@ -53,6 +55,10 @@ public class JacobsRoomManager : MonoBehaviour
             case GameState.Day4JacobFlashBack:
                 player.SetActive(false);
                 jacobPlayable.SetActive(true);
+                flashbackSubtitleTrigger.TriggerSubtitle(() =>
+                {
+                    state = JacobsRoomState.Day4FlashBack;
+                });
                 break;
 
         }
@@ -75,6 +81,9 @@ public class JacobsRoomManager : MonoBehaviour
 
                 break;
 
+            case JacobsRoomState.Day4FlashBack:
+                jacobsDrawer.interactable = true;
+                break;
         }
     }
 
