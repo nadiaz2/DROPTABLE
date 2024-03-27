@@ -85,6 +85,10 @@ public class GameStart : MonoBehaviour
             case GameState.Day4JacobFlashBack:
                 SceneManager.LoadScene("JacobsRoom");
                 break;
+
+            case GameState.Day4BackToPresent:
+                SceneManager.LoadScene("Lab");
+                break;
         }
     }
 }

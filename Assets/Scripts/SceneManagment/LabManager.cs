@@ -9,6 +9,7 @@ public enum LabState
 
     // Day 4
     Day4InsideLab,
+    Day4Run,
 
 }
 
@@ -16,8 +17,15 @@ public class LabManager : MonoBehaviour
 {
     public SubtitleTrigger reminder;
     public SubtitleTrigger subtitleTrigger;
+    public DialogueTrigger backFromFlashbackDialogueTrigger;
+    public DialogueTrigger confrontingTomDialogue;
+    public SubtitleTrigger beforeMinigameSubtitleTrigger;
+    public SubtitleTrigger runSubtitleTrigger;
 
     private bool subtitleTriggered;
+    private bool backFromFlashbackTriggered;
+    private bool confrontingTomTriggered;
+    private bool runSubtitleTriggered;
 
     public GameObject morgan;
     public GameObject Jacob;
@@ -42,10 +50,6 @@ public class LabManager : MonoBehaviour
                 });
                 break;
 
-            case GameState.Day4BackToPresent:
-                morgan.SetActive(true);
-                Jacob.SetActive(true);
-                break;
         }
 
     }
@@ -65,6 +69,63 @@ public class LabManager : MonoBehaviour
                         GameManager.state = GameState.Day4JacobFlashBack;
                         Invoke("delayedFlashBack", 2);
                     });
+                }
+                break;
+
+            case GameState.Day4BackToPresent:
+                morgan.SetActive(true);
+                Jacob.SetActive(true);
+                //TODO Spawn in front of Jacobs station
+                if (!backFromFlashbackTriggered)
+                {
+                    backFromFlashbackDialogueTrigger.TriggerDialogue(() =>
+                    {
+                        morgan.SetActive(false);
+                        GameManager.state = GameState.Day4ConfrontingTom;
+                    });
+                    backFromFlashbackTriggered = true;
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                    {
+                        backFromFlashbackDialogueTrigger.ContinueDialogue();
+                    }
+                }
+                break;
+
+            case GameState.Day4ConfrontingTom:
+                if (!confrontingTomTriggered)
+                {
+                    confrontingTomDialogue.TriggerDialogue(() =>
+                    {
+                        beforeMinigameSubtitleTrigger.TriggerSubtitle(() =>
+                        {
+                            GameManager.state = GameState.Day4ThrowWaterMiniGame;
+                        });
+                    });
+                    confrontingTomTriggered = true;
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+                    {
+                        confrontingTomDialogue.ContinueDialogue();
+                    }
+                }
+                break;
+
+            case GameState.Day4ThrowWaterMiniGame:
+                //TODO Quick time minigame with throwing cup of water then set game state
+                GameManager.state = GameState.Day4FinishedTrowWaterMiniGame;
+                break;
+
+            case GameState.Day4FinishedTrowWaterMiniGame:
+                if (!runSubtitleTriggered)
+                {
+                    runSubtitleTrigger.TriggerSubtitle();
+                    runSubtitleTriggered = true;
+                    state = LabState.Day4Run;
                 }
                 break;
 

@@ -32,6 +32,9 @@ public enum GameState
 	Day4FinishedMiniGame,
 	Day4JacobFlashBack,
 	Day4BackToPresent,
+	Day4ConfrontingTom,
+	Day4ThrowWaterMiniGame,
+	Day4FinishedTrowWaterMiniGame,
 
 }
 
