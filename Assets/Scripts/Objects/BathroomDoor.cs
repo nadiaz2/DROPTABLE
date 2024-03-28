@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SchoolCorridorDoor : MonoBehaviour, Interactable
+public class BathroomDoor : MonoBehaviour, Interactable
 {
 
     private bool active;
@@ -17,17 +17,15 @@ public class SchoolCorridorDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (LabManager.state == LabState.Day4Run);
+        this.active = (GameManager.state == GameState.Day4Run);
     }
 
     public void Interact()
     {
-        switch (LabManager.state)
+        switch (GameManager.state)
         {
-            case LabState.Day4Run:
-                SceneManager.LoadScene("SchoolCorridor");
-                GameManager.state = GameState.Day4Run;
-                SchoolCorridorManager.state = SchoolCorridorState.Day4Run;
+            case GameState.Day4Run:
+                SceneManager.LoadScene("Bathroom");
                 break;
         }
     }
@@ -35,7 +33,7 @@ public class SchoolCorridorDoor : MonoBehaviour, Interactable
 
     public string GetPrompt()
     {
-        return "Run";
+        return "Bathroom";
     }
 
     public bool IsActive()

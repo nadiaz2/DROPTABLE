@@ -768,8 +768,6 @@ Transform:
   m_Children:
   - {fileID: 543450653230717611}
   - {fileID: 543450653531747075}
-  - {fileID: 543450652813500913}
-  - {fileID: 543450653314406267}
   - {fileID: 543450652560386071}
   - {fileID: 543450653368041531}
   - {fileID: 543450651990424309}
@@ -7220,6 +7218,7 @@ GameObject:
   - component: {fileID: 971678191}
   - component: {fileID: 971678192}
   - component: {fileID: 971678193}
+  - component: {fileID: 971678194}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -7257,6 +7256,7 @@ MonoBehaviour:
   subtitleTrigger: {fileID: 971678191}
   dialogueTrigger: {fileID: 971678192}
   talkToMorganTrigger: {fileID: 971678193}
+  runAwayReminderTrigger: {fileID: 971678194}
   player: {fileID: 919132149195153316}
   morgan: {fileID: 175804373}
   jacobPlayable: {fileID: 1682499172}
@@ -7341,6 +7341,21 @@ MonoBehaviour:
   - name: Morgan
     characterPortrait: {fileID: 927694931}
     sentence: No problem, I was heading that way myself. Let's go together.
+--- !u!114 &971678194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971678188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 1940750395}
+  subtitles:
+  - I need to hide somewhere, he's coming for me.
 --- !u!1 &977744000
 GameObject:
   m_ObjectHideFlags: 0
@@ -19845,13 +19860,13 @@ Transform:
   m_GameObject: {fileID: 919132148875098955}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -525.9, y: -24.699997, z: -125.079956}
+  m_LocalPosition: {x: 1556.9, y: 150.7, z: -1049.08}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9009820236575647773}
   - {fileID: 3952807917020143426}
-  m_Father: {fileID: 50368788}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653230717611
 Transform:
@@ -19886,7 +19901,7 @@ Transform:
   m_GameObject: {fileID: 919132149581483457}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -717.6, y: -19.799988, z: -123.5}
+  m_LocalPosition: {x: 1974.1001, y: 155.6, z: -1047.5}
   m_LocalScale: {x: 150, y: 150, z: 150}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19896,7 +19911,7 @@ Transform:
   - {fileID: 890584254012667531}
   - {fileID: 2823837984203232526}
   - {fileID: 21388371960663975}
-  m_Father: {fileID: 50368788}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653368041531
 Transform:
@@ -19907,7 +19922,7 @@ Transform:
   m_GameObject: {fileID: 919132149360401025}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -780.1, y: 36.700012, z: -124.099976}
+  m_LocalPosition: {x: -171.19995, y: 36.700012, z: -124.099976}
   m_LocalScale: {x: 700, y: 699.99994, z: 699.99994}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19922,7 +19937,7 @@ Transform:
   m_GameObject: {fileID: 919132149322803641}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.8, y: -73.549324, z: -127.099976}
+  m_LocalPosition: {x: -623, y: -73.549324, z: -127.099976}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21296,13 +21311,26 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652813500913}
+  - component: {fileID: 919132148875098956}
   m_Layer: 0
   m_Name: MedDoor
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148875098956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148875098955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4c7eb844f65664b816ff5803f40c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &919132149040228639
 GameObject:
   m_ObjectHideFlags: 0
@@ -21399,13 +21427,26 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653314406267}
+  - component: {fileID: 919132149581483458}
   m_Layer: 0
   m_Name: BathroomDoor
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132149581483458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149581483457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b4ef876d1371a4c9ac871ccbacdb48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &920701016226614503
 Transform:
   m_ObjectHideFlags: 0
@@ -58180,6 +58221,8 @@ SceneRoots:
   - {fileID: 543450653668361502}
   - {fileID: 1682499173}
   - {fileID: 50368788}
+  - {fileID: 543450652813500913}
+  - {fileID: 543450653314406267}
   - {fileID: 543450652288967497}
   - {fileID: 1890017852}
   - {fileID: 543450652775248805}

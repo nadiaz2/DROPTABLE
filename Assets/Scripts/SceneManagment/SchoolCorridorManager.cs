@@ -14,6 +14,7 @@ public enum SchoolCorridorState
     Day4LabDoorsOpen,
     Day4FlashBack,
     Day4FlashBackTalkToMorgan,
+    Day4Run,
 
 }
 
@@ -22,6 +23,7 @@ public class SchoolCorridorManager : MonoBehaviour
     public SubtitleTrigger subtitleTrigger;
     public DialogueTrigger dialogueTrigger;
     public DialogueTrigger talkToMorganTrigger;
+    public SubtitleTrigger runAwayReminderTrigger;
 
     public GameObject player;
     public GameObject morgan;
@@ -55,6 +57,12 @@ public class SchoolCorridorManager : MonoBehaviour
                 morganInteractable.SetActive(true);
                 break;
 
+            case GameState.Day4Run:
+                runAwayReminderTrigger.TriggerSubtitle(() =>
+                {
+
+                });
+                break;
         }
 
     }
