@@ -35,6 +35,7 @@ public enum GameState
 	Day4ConfrontingTom,
 	Day4ThrowWaterMiniGame,
 	Day4FinishedTrowWaterMiniGame,
+	Day4Run,
 
 }
 

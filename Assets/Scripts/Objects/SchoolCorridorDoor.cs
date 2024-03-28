@@ -26,6 +26,7 @@ public class SchoolCorridorDoor : MonoBehaviour, Interactable
         {
             case LabState.Day4Run:
                 SceneManager.LoadScene("SchoolCorridor");
+                GameManager.state = GameState.Day4Run;
                 break;
         }
     }

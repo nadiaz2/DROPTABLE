@@ -28,7 +28,11 @@ public class MedbayManager : MonoBehaviour
 
         switch (GameManager.state)
         {
-
+            case GameState.Day4Run:
+                //TODO Create hiding spot and good/bad ending
+                //TODO Pick up scalpel
+                //TODO Killing Tom
+                break;
         }
 
     }
