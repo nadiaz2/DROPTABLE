@@ -19,7 +19,7 @@ public class OnWayHomeManager : MonoBehaviour
     public GameObject schoolCorridorSceneTrigger;
     public SubtitleTrigger subtitleTrigger;
 
-    public GameObject player;
+    public PlayerMovement2D player;
     public Transform comingFromOutsideHouse;
     public Transform comingFromClassroom;
 
@@ -50,8 +50,7 @@ public class OnWayHomeManager : MonoBehaviour
                 state = OnWayHomeState.Start;
                 outsideHomeSceneTriggerDay1.SetActive(false);
                 classroomSceneTrigger.SetActive(false);
-                player.transform.position = new Vector3(-248, 27, -555);
-                //player.transform.position = comingFromClassroom.position;
+                player.TeleportPlayer(comingFromClassroom);
 
                 subtitleTrigger.TriggerSubtitle(() =>
                 {
@@ -62,23 +61,23 @@ public class OnWayHomeManager : MonoBehaviour
             case GameState.ReturningHomeAfterHeadphones:
                 outsideHomeSceneTriggerDay1.SetActive(true);
                 classroomSceneTrigger.SetActive(false);
-                player.transform.position = new Vector3(-248, 27, -555);
-                //player.transform.position = comingFromClassroom.position;
+                player.TeleportPlayer(comingFromClassroom);
                 break;
 
             case GameState.Day2HeadBackToSchool:
                 //Debug.Log(GameManager.state);
                 cafeteriaSceneTrigger.SetActive(true);
-                //player.transform.position = comingFromOutsideHouse.position;
-                player.transform.position = new Vector3(-248, 27, -1600);
+                player.TeleportPlayer(comingFromOutsideHouse);
                 break;
 
             case GameState.Day2HeadBackHome:
                 outsideHomeSceneTriggerDay2.SetActive(true);
+                player.TeleportPlayer(comingFromClassroom);
                 break;
 
             case GameState.Day4HeadToJacobsLab:
                 schoolCorridorSceneTrigger.SetActive(true);
+                player.TeleportPlayer(comingFromOutsideHouse);
                 break;
         }
 
