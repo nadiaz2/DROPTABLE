@@ -20,12 +20,16 @@ public enum OutsideHomeState
 
 public class OutsideHomeManager : MonoBehaviour
 {
+    public PlayerMovement2D player;
     public GameObject onWayHomeSceneTrigger;
 
     public TrashBags trashBags;
     public JacobsCar jacobsCar;
 
     public BlackScreen blackScreen;
+
+    [Header("Spawn Locations")]
+    public Transform doorSpawn;
 
     public static OutsideHomeState state { get; set; }
     public static OutsideHomeManager currentInstance
@@ -54,6 +58,7 @@ public class OutsideHomeManager : MonoBehaviour
 
             case GameState.Day2HeadBackToSchool:
                 onWayHomeSceneTrigger.SetActive(true);
+                player.TeleportPlayer(doorSpawn);
                 break;
 
             case GameState.Day2HeadBackHome:
@@ -64,6 +69,7 @@ public class OutsideHomeManager : MonoBehaviour
                 OutsideHomeManager.state = OutsideHomeState.Day3HeadToBackBay;
                 jacobsCar.gameObject.SetActive(true);
                 jacobsCar.interactable = true;
+                player.TeleportPlayer(doorSpawn);
                 break;
         }
 

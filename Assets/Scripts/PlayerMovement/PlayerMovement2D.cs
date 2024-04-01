@@ -10,16 +10,14 @@ public class PlayerMovement2D : MonoBehaviour
 
     public float groundDrag;
 
-    [Header("Ground Check")]
-    public float playerHeight;
-
     public Transform orientation;
 
-    float horizontalInput;
 
-    Vector3 moveDirection;
+    private float horizontalInput;
 
-    Rigidbody rb;
+    private Vector3 moveDirection;
+
+    private Rigidbody rb;
 
 
     private Transform teleportLocation = null;

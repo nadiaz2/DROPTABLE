@@ -7,6 +7,8 @@ public class MorganCloseUp : MonoBehaviour
 
     public GameObject playerCamera, morganCamera;
 
+    public SplineMovement morganMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class MorganCloseUp : MonoBehaviour
             playerCamera.SetActive(false);
             this.gameObject.SetActive(false);
             ClassroomManager.state = ClassroomState.MorganCloseUp;
+            morganMovement.StopMovement();
         }
 
     }

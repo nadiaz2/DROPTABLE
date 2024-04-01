@@ -22,6 +22,9 @@ public class OutsideDoor : MonoBehaviour, Interactable
 
     public void Interact()
     {
+        string sceneName = SceneManager.GetActiveScene().name;
+        GameManager.lastScene = sceneName;
+
         switch (LivingRoomManager.state)
         {
             case LivingRoomState.Day2Start:

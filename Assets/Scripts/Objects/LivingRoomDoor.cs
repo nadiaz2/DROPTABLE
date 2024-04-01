@@ -7,7 +7,6 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
 {
     private bool active;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,44 +25,51 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
 
     public void Interact()
     {
-        switch (TomsRoomManager.state)
+        string sceneName = SceneManager.GetActiveScene().name;
+        GameManager.lastScene = sceneName;
+
+        if (sceneName == "TomsRoom")
         {
-            case TomsRoomState.Day1Start:
-                SceneManager.LoadScene("LivingRoom");
-                break;
+            switch (TomsRoomManager.state)
+            {
+                case TomsRoomState.Day1Start:
+                    SceneManager.LoadScene("LivingRoom");
+                    break;
 
-            case TomsRoomState.Day1JacobsBack:
-                GameManager.state = GameState.Day1JacobsBack;
-                SceneManager.LoadScene("LivingRoom");
-                break;
+                case TomsRoomState.Day1JacobsBack:
+                    GameManager.state = GameState.Day1JacobsBack;
+                    SceneManager.LoadScene("LivingRoom");
+                    break;
 
-            case TomsRoomState.RachelDeathMessageSeen:
-                GameManager.state = GameState.Day2HeadBackToSchool;
-                SceneManager.LoadScene("LivingRoom");
-                break;
+                case TomsRoomState.RachelDeathMessageSeen:
+                    GameManager.state = GameState.Day2HeadBackToSchool;
+                    SceneManager.LoadScene("LivingRoom");
+                    break;
 
-            case TomsRoomState.StartDay3:
-                SceneManager.LoadScene("LivingRoom");
-                break;
+                case TomsRoomState.StartDay3:
+                    SceneManager.LoadScene("LivingRoom");
+                    break;
 
-            case TomsRoomState.Day4GoToJacobsRoom:
-                SceneManager.LoadScene("LivingRoom");
-                break;
+                case TomsRoomState.Day4GoToJacobsRoom:
+                    SceneManager.LoadScene("LivingRoom");
+                    break;
 
 
+            }
         }
-
-        switch (JacobsRoomManager.state)
+        else if (sceneName == "JacobsRoom")
         {
-            case JacobsRoomState.Day1Start:
-                SceneManager.LoadScene("LivingRoom");
-                break;
+            switch (JacobsRoomManager.state)
+            {
+                case JacobsRoomState.Day1Start:
+                    SceneManager.LoadScene("LivingRoom");
+                    break;
 
-            case JacobsRoomState.Day4FoundKey:
-                SceneManager.LoadScene("LivingRoom");
-                break;
+                case JacobsRoomState.Day4FoundKey:
+                    SceneManager.LoadScene("LivingRoom");
+                    break;
+            }
         }
-
     }
 
 

@@ -35,22 +35,28 @@ public enum LivingRoomState
 
 public class LivingRoomManager : MonoBehaviour
 {
+    [Header("Characters")]
     public PlayerMovement player;
     public JacobLivingRoom jacob;
 
+    [Header("Spawn Points")]
     public Transform inFrontTomsDoor;
+    public Transform inFrontJacobsDoor;
 
+    [Header("Text Triggers")]
     public SubtitleTrigger reminderTrigger;
     public DialogueTrigger endGameTrigger;
     public DialogueTrigger continueToDay2Trigger;
     public SubtitleTrigger headToJacobsLabReminder;
 
+    [Header("Chairs")]
     public Transform jacobSeat;
     public Transform tomSeat;
 
     private bool dialogueTriggerStarted;
     private bool dialogueTriggerStarted2;
 
+    [Header("Black Screen")]
     public BlackScreen blackScreen;
 
 
@@ -70,6 +76,17 @@ public class LivingRoomManager : MonoBehaviour
         LivingRoomManager._instance = this;
         blackScreen.goBlacked = false;
 
+        switch(GameManager.lastScene)
+        {
+            case "TomsRoom":
+                player.TeleportPlayer(inFrontTomsDoor);
+                break;
+
+            case "JacobsRoom":
+                player.TeleportPlayer(inFrontJacobsDoor);
+                break;
+        }
+
         switch (GameManager.state)
         {
             // Day 1 first time in livingroom
@@ -80,7 +97,6 @@ public class LivingRoomManager : MonoBehaviour
                 break;
 
             case GameState.Day1JacobsBack:
-                player.TeleportPlayer(inFrontTomsDoor);
                 if (LivingRoomManager.state != LivingRoomState.Day1TalkedWithJacob)
                 {
                     state = LivingRoomState.Day1JacobsBackAfterBed;
@@ -91,7 +107,6 @@ public class LivingRoomManager : MonoBehaviour
 
             case GameState.Day2HeadBackToSchool:
                 state = LivingRoomState.Day2Start;
-                player.TeleportPlayer(inFrontTomsDoor);
                 break;
 
             case GameState.Day2HeadBackHome:

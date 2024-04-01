@@ -38,8 +38,8 @@ public class SplineMovement : MonoBehaviour
 
         float usePercent = reverseMovement ? (1.0f-percentPos) : percentPos;
 
-        float3 splinePosition = splineContainer.EvaluatePosition(splineIndex, percentPos);
-        float3 splineTangent = splineContainer.EvaluateTangent(splineIndex, percentPos);
+        float3 splinePosition = splineContainer.EvaluatePosition(splineIndex, usePercent);
+        float3 splineTangent = splineContainer.EvaluateTangent(splineIndex, usePercent);
 
         RaycastHit Hit;
         Physics.Raycast(splinePosition, -Vector3.up, out Hit, 500.0f, groundLayers);
@@ -52,5 +52,10 @@ public class SplineMovement : MonoBehaviour
 
     public void StartMovement() {
         this.animate = true;
+    }
+
+    public void StopMovement()
+    {
+        this.animate = false;
     }
 }

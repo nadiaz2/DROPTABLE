@@ -53,6 +53,8 @@ public class GameManager
 	// 1 Unlocks the Romantic Route
 	public static bool day3BranchRomanticRoute = false;
 
+	public static string lastScene = "";
+
 
 	private static GameState _state = GameState.GameStart;
 	public static GameState state

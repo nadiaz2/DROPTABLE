@@ -73,7 +73,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
 
             case ClassroomState.ClassOver:
                 player.immobile = false;
-                player.TeleportPlayer(sittingPlacement);
+                player.TeleportPlayer(standingPlacement);
                 this.active = false;
                 break;
 
@@ -88,7 +88,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
 
             case ClassroomState.Day2ClassOver:
                 player.immobile = false;
-                player.TeleportPlayer(sittingPlacement);
+                player.TeleportPlayer(standingPlacement);
                 this.active = false;
                 break;
 
