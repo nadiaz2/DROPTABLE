@@ -75,7 +75,7 @@ public class GameStart : MonoBehaviour
                 break;
 
             case GameState.Day4HeadToJacobsLab:
-                SceneManager.LoadScene("SchoolCorridor");
+                SceneManager.LoadScene("LivingRoom");
                 break;
 
             case GameState.Day4InLab:

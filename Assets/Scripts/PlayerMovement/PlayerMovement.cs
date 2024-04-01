@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 facing = _rb.velocity.normalized;
         facing.y = 0;
-        if (facing.sqrMagnitude > 0.0f)
+        if (facing != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(facing);
         }

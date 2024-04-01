@@ -17,7 +17,7 @@ public class OutsideDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (LivingRoomManager.state == LivingRoomState.Day2Start || LivingRoomManager.state == LivingRoomState.Day3TalkedWithJacob);
+        this.active = (LivingRoomManager.state == LivingRoomState.Day2Start || LivingRoomManager.state == LivingRoomState.Day3TalkedWithJacob || LivingRoomManager.state == LivingRoomState.Day4GoToLab);
     }
 
     public void Interact()
@@ -29,6 +29,10 @@ public class OutsideDoor : MonoBehaviour, Interactable
                 break;
 
             case LivingRoomState.Day3TalkedWithJacob:
+                SceneManager.LoadScene("OutsideHome");
+                break;
+
+            case LivingRoomState.Day4GoToLab:
                 SceneManager.LoadScene("OutsideHome");
                 break;
 
