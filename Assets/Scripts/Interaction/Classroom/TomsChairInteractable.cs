@@ -24,8 +24,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
     {
         if (ClassroomManager.state == ClassroomState.Seated)
         {
-            player.transform.position = sittingPlacement.position;
-            player.transform.rotation = sittingPlacement.rotation;
+            player.TeleportPlayer(sittingPlacement);
             //ChairSeat.transform.Rotate(0, 0, 88);
         }
 
@@ -67,25 +66,20 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
         {
             case ClassroomState.Start:
                 player.immobile = true;
-                player.rb.velocity = Vector3.zero;
-                player.transform.position = sittingPlacement.position;
-                player.transform.rotation = sittingPlacement.rotation;
+                player.TeleportPlayer(sittingPlacement);
                 this.active = false;
                 ClassroomManager.state = ClassroomState.Seated;
                 break;
 
             case ClassroomState.ClassOver:
                 player.immobile = false;
-                player.transform.position = standingPlacement.position;
-                player.transform.rotation = standingPlacement.rotation;
+                player.TeleportPlayer(sittingPlacement);
                 this.active = false;
                 break;
 
             case ClassroomState.Day2AfternoonClass:
                 player.immobile = true;
-                player.rb.velocity = Vector3.zero;
-                player.transform.position = sittingPlacement.position;
-                player.transform.rotation = sittingPlacement.rotation;
+                player.TeleportPlayer(sittingPlacement);
                 this.active = false;
                 ClassroomManager.currentInstance.Invoke("FadeOut", 1);
                 StartCoroutine(ChangeSceneState(4f, ClassroomState.Day2Seated));
@@ -94,8 +88,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
 
             case ClassroomState.Day2ClassOver:
                 player.immobile = false;
-                player.transform.position = standingPlacement.position;
-                player.transform.rotation = standingPlacement.rotation;
+                player.TeleportPlayer(sittingPlacement);
                 this.active = false;
                 break;
 

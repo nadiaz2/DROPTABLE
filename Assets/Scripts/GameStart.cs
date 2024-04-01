@@ -37,7 +37,7 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("LivingRoom");
                 break;
             case GameState.Day1JacobsBack:
-                SceneManager.LoadScene("LivingRoom");
+                SceneManager.LoadScene("TomsRoom");
                 break;
 
             // Day 2
@@ -88,6 +88,10 @@ public class GameStart : MonoBehaviour
 
             case GameState.Day4BackToPresent:
                 SceneManager.LoadScene("Lab");
+                break;
+
+            case GameState.Day4Run:
+                SceneManager.LoadScene("Bathroom");
                 break;
         }
     }

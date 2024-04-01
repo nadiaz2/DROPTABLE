@@ -4922,6 +4922,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 473572121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1218515070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218515071}
+  m_Layer: 0
+  m_Name: StallCameraPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1218515071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218515070}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.43257302, y: 0.26502994, z: -0.1346901, w: 0.85117465}
+  m_LocalPosition: {x: 1800.46, y: 159.27, z: -502}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 53.88, y: 34.59, z: 0}
 --- !u!1 &1220777202
 GameObject:
   m_ObjectHideFlags: 0
@@ -5093,6 +5124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1299925078}
   - component: {fileID: 1299925079}
+  - component: {fileID: 1299925080}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -5127,7 +5159,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9aed0ed8ab9641409e8a9221d32f995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkPhoneTrigger: {fileID: 1299925080}
   blackScreen: {fileID: 1174416900}
+--- !u!114 &1299925080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299925077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 1089434294}
+  subtitles:
+  - 'Maybe I should call someone for help. '
+  - I should check my phone.
 --- !u!1 &1333662217
 GameObject:
   m_ObjectHideFlags: 0
@@ -6624,6 +6673,37 @@ Transform:
   - {fileID: 658586908}
   m_Father: {fileID: 403557264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1761801420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761801421}
+  m_Layer: 0
+  m_Name: BathroomCameraPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761801421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761801420}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.19458129, y: 0.2797374, z: -0.0580072, w: 0.93836045}
+  m_LocalPosition: {x: 1627, y: 157.4, z: -808.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1816668398
 GameObject:
   m_ObjectHideFlags: 0
@@ -7126,7 +7206,7 @@ Transform:
   m_GameObject: {fileID: 1896744671}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1825.9067, y: 69.66191, z: -466.4703}
+  m_LocalPosition: {x: 1825.9067, y: 0.7, z: -466.4703}
   m_LocalScale: {x: 72.6, y: 56.7, z: 64.91}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8659,6 +8739,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1424512318}
   insideStall: {fileID: 1896744672}
+  mainCamera: {fileID: 1372213875}
+  oppositeCameraPosition: {fileID: 1218515071}
 --- !u!1 &5741870414166109568
 GameObject:
   m_ObjectHideFlags: 0
@@ -9031,8 +9113,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1422209017}
-  - {fileID: 1372213876}
   - {fileID: 236677697}
+  - {fileID: 1372213876}
+  - {fileID: 1761801421}
+  - {fileID: 1218515071}
   - {fileID: 1231906333}
   - {fileID: 1870957153}
   - {fileID: 1424512321}

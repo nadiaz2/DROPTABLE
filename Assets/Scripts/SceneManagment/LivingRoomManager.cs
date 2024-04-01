@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
 using UnityEngine.SceneManagement;
+using System;
 
 public enum LivingRoomState
 {/*
@@ -35,7 +36,9 @@ public class LivingRoomManager : MonoBehaviour
 {
     public PlayerMovement player;
     public JacobLivingRoom jacob;
+
     public Transform inFrontTomsDoor;
+
     public SubtitleTrigger reminderTrigger;
     public DialogueTrigger endGameTrigger;
     public DialogueTrigger continueToDay2Trigger;
@@ -76,6 +79,7 @@ public class LivingRoomManager : MonoBehaviour
                 break;
 
             case GameState.Day1JacobsBack:
+                player.TeleportPlayer(inFrontTomsDoor);
                 if (LivingRoomManager.state != LivingRoomState.Day1TalkedWithJacob)
                 {
                     state = LivingRoomState.Day1JacobsBackAfterBed;
@@ -86,7 +90,7 @@ public class LivingRoomManager : MonoBehaviour
 
             case GameState.Day2HeadBackToSchool:
                 state = LivingRoomState.Day2Start;
-                //player.transform.position = new Vector3(205, 53, -516);
+                player.TeleportPlayer(inFrontTomsDoor);
                 break;
 
             case GameState.Day2HeadBackHome:

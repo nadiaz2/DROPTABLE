@@ -37,6 +37,12 @@ public class PlayerMovement : MonoBehaviour
     // Other scripts will generally set this value
     public bool immobile { get; set; }
 
+    private Transform teleportLocation = null;
+    public void TeleportPlayer(Transform loc)
+    {
+        teleportLocation = loc;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(teleportLocation != null)
+        {
+            transform.SetPositionAndRotation(teleportLocation.position, teleportLocation.rotation);
+            teleportLocation = null;
+        }
+
         if (immobile)
         {
             _rb.velocity = Vector3.zero;
@@ -59,9 +71,6 @@ public class PlayerMovement : MonoBehaviour
 
         SpeedControl();
         MyInput();
-
-
-
     }
 
     private void FixedUpdate()
@@ -78,9 +87,6 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
-
-
     }
 
     private void SpeedControl()
@@ -102,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
 
         // calcaulate movement direction
         moveDirection = (forward * verticalInput) + (right * horizontalInput);
-        _rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        _rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
 
         Vector3 facing = _rb.velocity.normalized;
         facing.y = 0;
