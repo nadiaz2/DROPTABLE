@@ -14,52 +14,27 @@ public class BathroomStall : MonoBehaviour, Interactable
 
     private bool active;
 
-    private bool inStall = false;
-    private bool inPlace = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        active = false;
+        active = true;
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (!inStall)
-        {
-            this.active = (GameManager.state == GameState.Day4Run);
-        }
-        else
-        {
-            this.active = false;
-            if (!inPlace)
-            {
-                positionChange();
-                inPlace = true;
-            }
-            
-        }
-    }
+    
 
     public void Interact()
     {
         switch (GameManager.state)
         {
             case GameState.Day4Run:
-                inStall = true;
+                active = false;
                 BathroomManager.state = BathroomState.Day4Phone;
+                player.TeleportPlayer(insideStall);
                 cameraChange();
                 break;
         }
     }
-
-    private void positionChange()
-    {
-        player.transform.position = insideStall.position;
-        player.transform.rotation = insideStall.rotation;
-    }
-
+    
     private void cameraChange()
     {
         if (!changedCamera)

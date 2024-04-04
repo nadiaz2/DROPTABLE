@@ -1140,8 +1140,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChoiceMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1581652319}
+        m_TargetAssemblyTypeName: ChoiceManager, Assembly-CSharp
         m_MethodName: ChoiceMade
         m_Mode: 3
         m_Arguments:
@@ -2000,8 +2000,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChoiceMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1581652319}
+        m_TargetAssemblyTypeName: ChoiceManager, Assembly-CSharp
         m_MethodName: ChoiceMade
         m_Mode: 3
         m_Arguments:
@@ -3737,8 +3737,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChoiceMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1581652319}
+        m_TargetAssemblyTypeName: ChoiceManager, Assembly-CSharp
         m_MethodName: ChoiceMade
         m_Mode: 3
         m_Arguments:
@@ -8342,13 +8342,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896744671}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1825.9067, y: 0.7, z: -466.4703}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1812.4, y: 0.7, z: -460.1}
   m_LocalScale: {x: 72.6, y: 56.7, z: 64.91}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1906297728
 GameObject:
   m_ObjectHideFlags: 0
@@ -8819,8 +8819,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChoiceMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1581652319}
+        m_TargetAssemblyTypeName: ChoiceManager, Assembly-CSharp
         m_MethodName: ChoiceMade
         m_Mode: 3
         m_Arguments:
@@ -9499,8 +9499,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChoiceMenuManager, Assembly-CSharp
+      - m_Target: {fileID: 1581652319}
+        m_TargetAssemblyTypeName: ChoiceManager, Assembly-CSharp
         m_MethodName: ChoiceMade
         m_Mode: 3
         m_Arguments:
