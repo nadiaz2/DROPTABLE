@@ -185,7 +185,6 @@ public class LivingRoomManager : MonoBehaviour
                     }
 
                 }
-
                 break;
 
             case GameState.Day3FinishedMiniGame:

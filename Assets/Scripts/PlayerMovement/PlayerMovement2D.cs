@@ -17,7 +17,14 @@ public class PlayerMovement2D : MonoBehaviour
 
     private Vector3 moveDirection;
 
-    private Rigidbody rb;
+    private Rigidbody _rb;
+    public Rigidbody rb
+    {
+        get
+        {
+            return this._rb;
+        }
+    }
 
 
     private Transform teleportLocation = null;
@@ -29,9 +36,9 @@ public class PlayerMovement2D : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
-        rb.drag = groundDrag;
+        _rb = GetComponent<Rigidbody>();
+        _rb.freezeRotation = true;
+        _rb.drag = groundDrag;
     }
 
     // Update is called once per frame
@@ -45,7 +52,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         if (DialogueManager.dialogueOngoing)
         {
-            rb.velocity = Vector3.zero;
+            _rb.velocity = Vector3.zero;
             return;
         }
 
@@ -57,7 +64,7 @@ public class PlayerMovement2D : MonoBehaviour
     {
         if (DialogueManager.dialogueOngoing)
         {
-            rb.velocity = Vector3.zero;
+            _rb.velocity = Vector3.zero;
             return;
         }
 
@@ -76,10 +83,10 @@ public class PlayerMovement2D : MonoBehaviour
 
         // calcaulate movement direction
         moveDirection = right * horizontalInput;
-        rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
+        _rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
 
 
-        Vector3 facing = rb.velocity;
+        Vector3 facing = _rb.velocity;
         facing.x = 0;
         facing.y = 0;
         if (facing.magnitude >= 0.01f)
@@ -90,13 +97,13 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void SpeedControl()
     {
-        Vector3 flatVel = new Vector3(0f, 0f, rb.velocity.z);
+        Vector3 flatVel = new Vector3(0f, 0f, _rb.velocity.z);
 
         // limit velocity if needed
         if(flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            _rb.velocity = new Vector3(limitedVel.x, _rb.velocity.y, limitedVel.z);
         }
     }
 }

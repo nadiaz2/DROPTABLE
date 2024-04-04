@@ -39,11 +39,6 @@ public class JacobsCarManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
-        if (GameManager.state == GameState.GameStart)
-        {
-            GameManager.state = GameState.Day3End;
-        }
-
 
         switch (GameManager.state)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ public enum BackBayState
 public class BackBayManager : MonoBehaviour
 {
     public GameObject jacobsCarSceneTrigger;
+    public PlayerMovement2D player;
+    public Animator jacob;
 
     public SubtitleTrigger subtitleTrigger;
     public SubtitleTrigger subtitleTriggerHeadBackHome;
@@ -57,6 +60,32 @@ public class BackBayManager : MonoBehaviour
 
     }
 
+
+    void Update()
+    {
+        switch (GameManager.state)
+        {
+            case GameState.Day3InBackBay:
+            case GameState.Day3End:
+            {
+                Vector3 newPos = jacob.transform.position;
+                newPos.z = player.transform.position.z;
+
+                Vector3 facing = player.rb.velocity;
+                facing.y = 0;
+                newPos -= 0.08f * facing;
+
+
+                jacob.transform.position = newPos;
+                jacob.transform.rotation = player.transform.rotation;
+
+                bool moving = (facing != Vector3.zero);
+                jacob.SetBool("IsWalking", moving);
+                jacob.SetBool("IsStanding", !moving);
+                break;
+            }
+        }
+    }
 
     private void startSubtitle()
     {

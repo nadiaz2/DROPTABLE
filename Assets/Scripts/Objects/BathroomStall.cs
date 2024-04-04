@@ -15,6 +15,7 @@ public class BathroomStall : MonoBehaviour, Interactable
     private bool active;
 
     private bool inStall = false;
+    private bool inPlace = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,12 @@ public class BathroomStall : MonoBehaviour, Interactable
         else
         {
             this.active = false;
+            if (!inPlace)
+            {
+                positionChange();
+                inPlace = true;
+            }
+            
         }
     }
 
@@ -40,7 +47,6 @@ public class BathroomStall : MonoBehaviour, Interactable
         switch (GameManager.state)
         {
             case GameState.Day4Run:
-                positionChange();
                 inStall = true;
                 BathroomManager.state = BathroomState.Day4Phone;
                 cameraChange();
