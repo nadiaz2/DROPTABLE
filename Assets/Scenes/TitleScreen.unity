@@ -247,8 +247,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1416129326}
-  - {fileID: 872291479}
+  - {fileID: 990161797}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &658198222
@@ -263,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d2281272b95fb4b83c6abb3af5f3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &872291477
+--- !u!1 &990161796
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,43 +270,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 872291479}
-  - component: {fileID: 872291478}
+  - component: {fileID: 990161797}
+  - component: {fileID: 990161798}
   m_Layer: 0
-  m_Name: SocketClient
+  m_Name: PhoneConnection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &872291478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872291477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0709bddba3c44144faa7397cfb4bc909, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 3500
---- !u!4 &872291479
+--- !u!4 &990161797
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872291477}
+  m_GameObject: {fileID: 990161796}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 658198221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &990161798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990161796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b064d5c5c5b1ac468aa7cad7f14550a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1395172282
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,86 +398,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1416129322
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1416129326}
-  - component: {fileID: 1416129325}
-  - component: {fileID: 1416129324}
-  - component: {fileID: 1416129323}
-  m_Layer: 0
-  m_Name: NodeJS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1416129323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416129322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff05ec0cb6ff82a48ac8928836c1d334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1416129324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416129322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21fa613472f34da41a61705fc681a006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodejs: {fileID: 1416129325}
---- !u!114 &1416129325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416129322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f00393d72fb432046ba9089c11284ae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useNodeEmbedded: 1
-  useNodeDefault: 1
-  nodePath: 
-  useScriptPathDefault: 1
-  scriptPath: 
-  scriptName: server.js
-  scriptArguments: 
-  useCommunication: 1
-  communicationController: {fileID: 1416129323}
---- !u!4 &1416129326
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416129322}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 658198221}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1579198380
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677974e712126e845a41b7ab9a66396b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startState: 27
+  startState: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

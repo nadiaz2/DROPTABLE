@@ -28,11 +28,9 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
         _storeEncodedTexture = new Texture2D(256, 256);
         active = false;
 
-        SocketIOUnity Socket = SocketClient.Socket;
-        Socket.Off("01"); // clear all listeners for this event
-        Socket.OnUnityThread("01", (response) =>
+        DisplayQRCode(Connection.RoomID);
+        Connection.SetListener("01", (command) =>
         {
-            string command = response.GetValue<string>();
             switch (command)
             {
                 case "FOUNDPHOTO":
@@ -42,13 +40,10 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
                     });
                     break;
                 default:
-                    Debug.Log($"Unkown command recieved: 01-{response}");
+                    Debug.Log($"Unkown command recieved: 01-{command}");
                     break;
             }
         });
-
-        SocketClient.onRoomChange = DisplayQRCode;
-        DisplayQRCode(SocketClient.RoomID);
     }
 
     public void DisplayQRCode(string roomID)
@@ -83,6 +78,7 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
     {
         animator.SetBool("isOpen", true);
         this.active = false;
+        Connection.MessagePhone("01-START");
     }
 
     public string GetPrompt()
