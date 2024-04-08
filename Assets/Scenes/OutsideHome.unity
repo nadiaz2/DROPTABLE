@@ -547,6 +547,102 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8348165731046832307, guid: c38b205bc45f85c49a074ba339dd7191, type: 3}
+--- !u!1 &185667396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185667400}
+  - component: {fileID: 185667399}
+  - component: {fileID: 185667398}
+  - component: {fileID: 185667397}
+  m_Layer: 0
+  m_Name: OnWayHomeSceneTriggerDay4
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &185667397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185667396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba4f194c59f2574bb749ceab58afd3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: OnWayHome
+  gameState: 19
+--- !u!54 &185667398
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185667396}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &185667399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185667396}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 100, y: 100, z: 50}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &185667400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185667396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 161.7, y: 17.4, z: -350.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &237651274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1763,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f0bebd6d71d68541aa14128408bae37, type: 3}
       insertIndex: -1
       addedObject: {fileID: 557355603}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f0bebd6d71d68541aa14128408bae37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 557355606}
   m_SourcePrefab: {fileID: 100100000, guid: 7f0bebd6d71d68541aa14128408bae37, type: 3}
 --- !u!1 &557355596 stripped
 GameObject:
@@ -1687,7 +1786,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 300
   groundDrag: 20
-  playerHeight: 96
   orientation: {fileID: 1870051588}
 --- !u!136 &557355601
 CapsuleCollider:
@@ -1766,8 +1864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d786c4dc97293794ba696db7f6e8cf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitleTrigger: {fileID: 0}
-  subtitleTriggerDay4Reminder: {fileID: 0}
+  subtitleTrigger: {fileID: 557355603}
+  subtitleTriggerDay4Reminder: {fileID: 557355606}
 --- !u!114 &557355605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,6 +1881,21 @@ MonoBehaviour:
   outlineManager: {fileID: 1870051593}
   prompt: {fileID: 524261415}
   interactionRadius: 50
+--- !u!114 &557355606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557355596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 765405025}
+  subtitles:
+  - I should get to Jacob's Lab.
 --- !u!1001 &564506213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4265,6 +4378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 557355600}
   onWayHomeSceneTrigger: {fileID: 8349057}
+  onWayHomeSceneTriggerDay4: {fileID: 185667396}
   trashBags: {fileID: 1305269480}
   jacobsCar: {fileID: 444481136}
   blackScreen: {fileID: 641870445}
@@ -4283,6 +4397,7 @@ SceneRoots:
   - {fileID: 444481134}
   - {fileID: 1339561148}
   - {fileID: 8349061}
+  - {fileID: 185667400}
   - {fileID: 1338350972}
   - {fileID: 1410853039}
   - {fileID: 557355595}

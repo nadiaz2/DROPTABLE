@@ -22,6 +22,7 @@ public class OutsideHomeManager : MonoBehaviour
 {
     public PlayerMovement2D player;
     public GameObject onWayHomeSceneTrigger;
+    public GameObject onWayHomeSceneTriggerDay4;
 
     public TrashBags trashBags;
     public JacobsCar jacobsCar;
@@ -69,6 +70,12 @@ public class OutsideHomeManager : MonoBehaviour
                 OutsideHomeManager.state = OutsideHomeState.Day3HeadToBackBay;
                 jacobsCar.gameObject.SetActive(true);
                 jacobsCar.interactable = true;
+                player.TeleportPlayer(doorSpawn);
+                break;
+
+            case GameState.Day4HeadToJacobsLab:
+                onWayHomeSceneTriggerDay4.SetActive(true);
+                jacobsCar.gameObject.SetActive(true);
                 player.TeleportPlayer(doorSpawn);
                 break;
         }
