@@ -40,7 +40,7 @@ public class Connection : MonoBehaviour
 
     public static void SetListener(string name, Action<string> callback)
     {
-        _listeners.Add(name, callback);
+        _listeners[name] = callback;
     }
 
     public static void RemoveListener(string name)
@@ -133,7 +133,7 @@ public class Connection : MonoBehaviour
     {
         timeSinceLastSend += Time.deltaTime;
 
-        if ((timeSinceLastSend > 1.0f))
+        if (timeSinceLastSend > 1.0f)
         {
             timeSinceLastSend = 0.0f;
             if ((_channel != null) && (_channel.ReadyState == RTCDataChannelState.Open))
