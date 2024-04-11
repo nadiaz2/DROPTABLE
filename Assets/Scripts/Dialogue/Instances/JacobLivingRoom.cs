@@ -11,6 +11,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
     public LivingRoomPhone phone;
     public Camera mainCamera;
     public Transform oppositeCameraPosition;
+    public PlayerMovement player;
 
     [Header("Day 1")]
     public DialogueTrigger jacobReturnDialogue;
@@ -81,6 +82,7 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
     public void sitCharacter()
     {
         animator.SetBool("IsSitting", true);
+        player.seated = true;
     }
 
     public void Interact()

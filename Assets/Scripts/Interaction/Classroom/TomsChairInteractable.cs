@@ -62,10 +62,10 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
 
     public void Interact()
     {
-        
         switch (ClassroomManager.state)
         {
             case ClassroomState.Start:
+                player.seated = true;
                 player.immobile = true;
                 player.TeleportPlayer(sittingPlacement);
                 this.active = false;
@@ -73,12 +73,14 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
                 break;
 
             case ClassroomState.ClassOver:
+                player.seated = false;
                 player.immobile = false;
                 player.TeleportPlayer(standingPlacement);
                 this.active = false;
                 break;
 
             case ClassroomState.Day2AfternoonClass:
+                player.seated = true;
                 player.immobile = true;
                 player.TeleportPlayer(sittingPlacement);
                 this.active = false;
@@ -88,6 +90,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
                 break;
 
             case ClassroomState.Day2ClassOver:
+                player.seated = false;
                 player.immobile = false;
                 player.TeleportPlayer(standingPlacement);
                 this.active = false;

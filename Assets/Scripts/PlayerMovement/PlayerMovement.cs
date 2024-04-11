@@ -80,9 +80,13 @@ public class PlayerMovement : MonoBehaviour
         if (immobile)
         {
             _rb.velocity = Vector3.zero;
-            animator.SetBool("IsWalking", false);
-            animator.SetBool("IsStanding", false);
-            animator.SetBool("IsSitting", true);
+            if (animator != null && seated)
+            {
+                animator.SetBool("IsWalking", false);
+                animator.SetBool("IsStanding", false);
+                animator.SetBool("IsSitting", true);
+            }
+
             return;
         }
         MovePlayer();
@@ -129,12 +133,14 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("IsWalking", true);
                 animator.SetBool("IsStanding", false);
                 animator.SetBool("IsSitting", false);
+                seated = false;
             }
             else
             {
                 animator.SetBool("IsWalking", false);
                 animator.SetBool("IsStanding", true);
                 animator.SetBool("IsSitting", false);
+                seated = false;
             }
 
         }

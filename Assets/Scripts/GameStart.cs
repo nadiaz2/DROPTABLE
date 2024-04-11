@@ -37,7 +37,7 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("LivingRoom");
                 break;
             case GameState.Day1JacobsBack:
-                SceneManager.LoadScene("TomsRoom");
+                SceneManager.LoadScene("LivingRoom");
                 break;
 
             // Day 2
