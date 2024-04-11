@@ -26,12 +26,15 @@ public enum ClassroomState
 
 public class ClassroomManager : MonoBehaviour
 {
+    [Header("Game Objects")]
     public GameObject jacob;
     public Headphones headphones;
 
+    [Header("Triggers")]
     public SubtitleTrigger subtitleTriggerDay2;
     public bool day2SubtitleTriggered;
 
+    [HideInInspector]
     public BlackScreen blackScreen;
 
     public static ClassroomState state { get; set; }
@@ -95,6 +98,7 @@ public class ClassroomManager : MonoBehaviour
                 break;
         }
     }
+
 
     public void FadeOut()
     {

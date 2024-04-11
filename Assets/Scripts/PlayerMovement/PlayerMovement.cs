@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Animator")]
     public Animator animator;
 
+    public bool seated = false;
+
     public Rigidbody rb
     {
         get
@@ -78,6 +80,9 @@ public class PlayerMovement : MonoBehaviour
         if (immobile)
         {
             _rb.velocity = Vector3.zero;
+            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsStanding", false);
+            animator.SetBool("IsSitting", true);
             return;
         }
         MovePlayer();
@@ -119,17 +124,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (animator != null)
         {
-            
-            if(_rb.velocity.magnitude > 0.0f)
+            if (_rb.velocity.magnitude > 0.0f)
             {
                 animator.SetBool("IsWalking", true);
                 animator.SetBool("IsStanding", false);
+                animator.SetBool("IsSitting", false);
             }
             else
             {
                 animator.SetBool("IsWalking", false);
                 animator.SetBool("IsStanding", true);
+                animator.SetBool("IsSitting", false);
             }
+
         }
     }
 }

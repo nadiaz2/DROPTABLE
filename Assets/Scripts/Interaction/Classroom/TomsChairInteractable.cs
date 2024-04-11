@@ -62,6 +62,7 @@ public class TomsChairInteractable : MonoBehaviour, Interactable
 
     public void Interact()
     {
+        
         switch (ClassroomManager.state)
         {
             case ClassroomState.Start:

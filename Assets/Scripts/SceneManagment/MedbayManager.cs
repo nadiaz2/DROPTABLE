@@ -39,11 +39,7 @@ public class MedbayManager : MonoBehaviour
 
     private void Update()
     {
-        switch (SchoolCorridorManager.state)
-        {
-           
 
-        }
     }
 
     public void FadeOut()

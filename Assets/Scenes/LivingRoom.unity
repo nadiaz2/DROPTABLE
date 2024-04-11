@@ -2109,6 +2109,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7f0bebd6d71d68541aa14128408bae37, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 55d8056305608b9489cb1458f4a1128d, type: 3}
+    - target: {fileID: 5866666021909216657, guid: 7f0bebd6d71d68541aa14128408bae37, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dd81bf541ce54b045bd836539054066f, type: 2}
     - target: {fileID: 5935594554457759916, guid: 7f0bebd6d71d68541aa14128408bae37, type: 3}
       propertyPath: m_Layer
       value: 21
@@ -2229,7 +2237,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 21
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 7f0bebd6d71d68541aa14128408bae37, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
