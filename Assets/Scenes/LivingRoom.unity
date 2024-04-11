@@ -1367,6 +1367,10 @@ PrefabInstance:
       value: TempTom
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fddcaaba76df00243b172c7f2bf2c47f, type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fddcaaba76df00243b172c7f2bf2c47f, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}

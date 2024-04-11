@@ -50,6 +50,7 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("Classroom");
                 break;
             case GameState.Day2HeadBackHome:
+                SceneManager.LoadScene("LivingRoom");
                 break;
 
             // Day 3

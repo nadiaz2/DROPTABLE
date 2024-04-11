@@ -10823,7 +10823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: OutsideHome
-  gameState: 10
+  gameState: 11
 --- !u!54 &1316558927
 Rigidbody:
   m_ObjectHideFlags: 0
