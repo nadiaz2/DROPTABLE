@@ -4,5 +4,44 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 42e4422831e09c24b96301eabfba222b
+  - enabled: 1
+    path: Assets/Scenes/LivingRoom.unity
+    guid: fb1d442a7a1afa94ca203983a95a92a2
+  - enabled: 1
+    path: Assets/Scenes/TomsRoom.unity
+    guid: ed1970375ad005544be671505b7ddfeb
+  - enabled: 1
+    path: Assets/Scenes/BackBay.unity
+    guid: d06cd303d4927c74eb519e8e8ca3a31e
+  - enabled: 1
+    path: Assets/Scenes/Cafeteria.unity
+    guid: 4963e8400578b59449c7781b1a5e05a3
+  - enabled: 1
+    path: Assets/Scenes/Classroom.unity
+    guid: 0cdf189c9a83bb74d8b4d07d2d311dd6
+  - enabled: 1
+    path: Assets/Scenes/ClothingStore.unity
+    guid: 67c4570a92c7c1940913132f44cb55a9
+  - enabled: 1
+    path: Assets/Scenes/JacobsCar.unity
+    guid: a29a3ba3373771a45ae556bddcb70d8d
+  - enabled: 1
+    path: Assets/Scenes/JacobsRoom.unity
+    guid: 7ffa47dd156e6dc4abca961cb986e998
+  - enabled: 1
+    path: Assets/Scenes/Lab.unity
+    guid: 968f8a7da475079419d2e6a9ac0731a8
+  - enabled: 1
+    path: Assets/Scenes/OnWayHome.unity
+    guid: 3828bb698e0fe2e418f26a34d9cba068
+  - enabled: 1
+    path: Assets/Scenes/OutsideHome.unity
+    guid: 4d5fde9412e20804bb30134c4e6d18d1
+  - enabled: 1
+    path: Assets/Scenes/SchoolCorridor.unity
+    guid: 8b6bf16521f2cbf4a8898a6174b58b8c
   m_configObjects: {}
