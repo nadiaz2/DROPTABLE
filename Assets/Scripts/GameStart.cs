@@ -28,7 +28,7 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("OnWayHome");
                 break;
             case GameState.BackToClassroom:
-                SceneManager.LoadScene("Classroom");
+                SceneManager.LoadScene("OnWayHome");
                 break;
             case GameState.ReturningHomeAfterHeadphones:
                 SceneManager.LoadScene("LivingRoom");

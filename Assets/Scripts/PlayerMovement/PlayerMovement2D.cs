@@ -17,6 +17,9 @@ public class PlayerMovement2D : MonoBehaviour
 
     private Vector3 moveDirection;
 
+    [Header("Animator")]
+    public Animator animator;
+
     private Rigidbody _rb;
     public Rigidbody rb
     {
@@ -92,6 +95,23 @@ public class PlayerMovement2D : MonoBehaviour
         if (facing.magnitude >= 0.01f)
         {
             transform.rotation = Quaternion.LookRotation(facing.normalized);
+        }
+
+        if (animator != null)
+        {
+            if (_rb.velocity.magnitude > 0.0f)
+            {
+                animator.SetBool("IsWalking", true);
+                animator.SetBool("IsStanding", false);
+                animator.SetBool("IsSitting", false);
+            }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+                animator.SetBool("IsStanding", true);
+                animator.SetBool("IsSitting", false);
+            }
+
         }
     }
 
