@@ -79,12 +79,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(teleportLocation != null)
-        {
-            transform.SetPositionAndRotation(teleportLocation.position, teleportLocation.rotation);
-            teleportLocation = null;
-        }
-
         if (_immobile)
         {
             _rb.velocity = Vector3.zero;
@@ -97,6 +91,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (teleportLocation != null)
+        {
+            transform.SetPositionAndRotation(teleportLocation.position, teleportLocation.rotation);
+            teleportLocation = null;
+        }
+
         if (_immobile)
         {
             _rb.velocity = Vector3.zero;
