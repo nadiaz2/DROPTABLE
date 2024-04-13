@@ -121,11 +121,11 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
         switch(LivingRoomManager.state)
         {
             case LivingRoomState.Day1TalkedWithJacob:
-                Connection.MessagePhone("START01");
+                Connection.MessagePhone("01-START");
                 break;
                 
             case LivingRoomState.Day2ReturnHome:
-                Connection.MessagePhone("START02");
+                Connection.MessagePhone("02-START");
                 break;
         }
     }
