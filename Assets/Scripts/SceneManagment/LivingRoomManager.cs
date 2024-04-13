@@ -20,6 +20,7 @@ public enum LivingRoomState
     //Day 2 States
     Day2Start,
     Day2ReturnHome,
+    Day2JacobsReturned,
 
     //Day 3 States
     Day3Start,
@@ -37,6 +38,7 @@ public class LivingRoomManager : MonoBehaviour
     [Header("Characters")]
     public PlayerMovement player;
     public JacobLivingRoom jacob;
+    public LivingRoomPhone phone;
 
     [Header("Spawn Points")]
     public Transform inFrontTomsDoor;
@@ -46,6 +48,7 @@ public class LivingRoomManager : MonoBehaviour
     public SubtitleTrigger reminderTrigger;
     public DialogueTrigger endGameTrigger;
     public DialogueTrigger continueToDay2Trigger;
+    public SubtitleTrigger day2ReturnHomeTrigger;
     public SubtitleTrigger headToJacobsLabReminder;
 
     [Header("Chairs")]
@@ -75,7 +78,7 @@ public class LivingRoomManager : MonoBehaviour
         LivingRoomManager._instance = this;
         blackScreen.goBlacked = false;
 
-        switch(GameManager.lastScene)
+        switch (GameManager.lastScene)
         {
             case "TomsRoom":
                 player.TeleportPlayer(inFrontTomsDoor);
@@ -110,6 +113,10 @@ public class LivingRoomManager : MonoBehaviour
 
             case GameState.Day2HeadBackHome:
                 state = LivingRoomState.Day2ReturnHome;
+                day2ReturnHomeTrigger.TriggerSubtitle(() =>
+                {
+                    phone.active = true;
+                });
                 break;
 
             case GameState.Day3StartTomsRoom:
@@ -164,7 +171,8 @@ public class LivingRoomManager : MonoBehaviour
                             endGameTrigger.ContinueDialogue();
                         }
                     }
-                }else if (!GameManager.day1BranchEndGame)
+                }
+                else if (!GameManager.day1BranchEndGame)
                 {
                     if (!dialogueTriggerStarted2)
                     {

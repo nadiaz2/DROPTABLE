@@ -5595,7 +5595,8 @@ MonoBehaviour:
   - 'Tom: "It seems Jacob''s lab has some connection to this event. I need to visit
     there sometime."'
   - Footsteps can be heard in the distance.
-  - 'Tom: "It sounds like Jacob''s coming. I should get off his phone."'
+  - 'Tom: "It sounds like Jacob''s coming. I should put his phone down before he
+    catches me."'
 --- !u!114 &1926368477
 MonoBehaviour:
   m_ObjectHideFlags: 0
