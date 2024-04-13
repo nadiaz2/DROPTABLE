@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Current Movement Values
     private Vector3 moveDirection;
     private Rigidbody _rb;
+    private CapsuleCollider playerCollider;
 
     [Header("Animator")]
     public Animator animator;
@@ -46,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
         }
         set
         {
-            this._rb.isKinematic = !value;
-            gameObject.GetComponent<CapsuleCollider>().enabled = !value;
+            _rb.useGravity = !value;
+            playerCollider.enabled = !value;
             _immobile = value;
         }
     }
@@ -65,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _rb.freezeRotation = true;
         _rb.drag = groundDrag;
+
+        playerCollider = GetComponent<CapsuleCollider>();
 
         _immobile = false;
     }
