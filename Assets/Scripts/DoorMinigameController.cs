@@ -51,7 +51,7 @@ public class DoorMinigameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             // Win if bar is in the success range
-            EndMinigame((progressBar.size > 0.6f) && (progressBar.size < 0.85f));
+            EndMinigame((progressBar.size > 0.7f) && (progressBar.size < 0.77f));
             return;
         }
 

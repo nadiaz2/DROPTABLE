@@ -65,7 +65,13 @@ public class JacobsDoor : MonoBehaviour, Interactable
                 {
                     // Play the Doorknob mimi game again
                     // If win go inside jacobs room
-                    SceneManager.LoadScene("JacobsRoom");
+                    doorMinigame.StartMinigame((result) => {
+                        Debug.Log(result);
+                        if(result)
+                        {
+                            SceneManager.LoadScene("JacobsRoom");
+                        }
+                    });
                 });
                 break;
         }

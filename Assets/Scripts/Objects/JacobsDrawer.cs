@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class JacobsDrawer : MonoBehaviour, Interactable
 {
-
-    public SubtitleTrigger trigger;
+    public SubtitleTrigger day4StealingKeyTrigger;
+    public DoorMinigameController drawerMinigame;
+    public SubtitleTrigger day4JacobFlashbackTrigger;
 
     public bool interactable = false;
 
@@ -18,12 +19,22 @@ public class JacobsDrawer : MonoBehaviour, Interactable
         {
             // Play the doorknob minigame again but for the drawer
             // If win then change state
-            JacobsRoomManager.state = JacobsRoomState.Day4FoundKey;
+            day4StealingKeyTrigger.TriggerSubtitle(() =>
+            {
+                drawerMinigame.StartMinigame((result) =>
+                {
+                    Debug.Log(result);
+                    if (result)
+                    {
+                        JacobsRoomManager.state = JacobsRoomState.Day4FoundKey;
+                    }
+                });
+            });
         }
         else if (JacobsRoomManager.state == JacobsRoomState.Day4FlashBack)
         {
             JacobsRoomManager.state = JacobsRoomState.Day4FlashBackRoomDone;
-            trigger.TriggerSubtitle(() =>
+            day4JacobFlashbackTrigger.TriggerSubtitle(() =>
             {
                 SchoolCorridorManager.state = SchoolCorridorState.Day4FlashBack;
                 SceneManager.LoadScene("SchoolCorridor");
