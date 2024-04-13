@@ -50,6 +50,10 @@ public class PlayerMovement : MonoBehaviour
             _rb.useGravity = !value;
             playerCollider.enabled = !value;
             _immobile = value;
+            if(value)
+            {
+                _rb.velocity = Vector3.zero;
+            }
         }
     }
 

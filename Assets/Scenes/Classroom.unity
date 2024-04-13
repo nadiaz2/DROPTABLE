@@ -849,6 +849,55 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 9128466305238999362, guid: 5ecbd34db565c6f45a4b38fb7e93e59d, type: 3}
+--- !u!1 &61062966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61062968}
+  - component: {fileID: 61062967}
+  m_Layer: 0
+  m_Name: ChairHolder
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &61062967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61062966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9052d09eec42d45b5b034f920decf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 469270166}
+  sittingPlacement: {fileID: 257571188}
+  standingPlacement: {fileID: 1358617592}
+  ChairSeat: {fileID: 5125301749898317178}
+--- !u!4 &61062968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61062966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1837.3, y: 61.5, z: -760.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1348080696}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &71720600
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12462,7 +12511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splineContainer: {fileID: 1268657417}
   splineIndex: 0
-  speed: 60
+  speed: 10
   reverseMovement: 0
   groundLayers:
     serializedVersion: 2
@@ -15245,10 +15294,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1348080696}
-  - component: {fileID: 1348080697}
   m_Layer: 0
   m_Name: Chair
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15261,8 +15309,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348080695}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1822.7, y: 61.5, z: -760.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -28.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15272,24 +15320,8 @@ Transform:
   - {fileID: 7787469457885799152}
   - {fileID: 1358617592}
   - {fileID: 257571188}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 61062968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1348080697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348080695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd9052d09eec42d45b5b034f920decf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 469270166}
-  sittingPlacement: {fileID: 257571188}
-  standingPlacement: {fileID: 1358617592}
-  ChairSeat: {fileID: 5125301749898317178}
 --- !u!64 &1348300981
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55240,7 +55272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2767659690523203680
 GameObject:
   m_ObjectHideFlags: 0
@@ -123114,7 +123146,7 @@ SceneRoots:
   - {fileID: 469270161}
   - {fileID: 543450652130057777}
   - {fileID: 543450652890840803}
-  - {fileID: 1348080696}
+  - {fileID: 61062968}
   - {fileID: 1448779301}
   - {fileID: 2071959866}
   - {fileID: 543450652138207748}
