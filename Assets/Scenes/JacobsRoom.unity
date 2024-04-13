@@ -5222,7 +5222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6412db708df25534c89a1f25d7135a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1627796700}
   jacobPlayable: {fileID: 1787533279}
   jacobsDrawer: {fileID: 3469287838512677133}
   subtitleTrigger: {fileID: 654009205}
@@ -11000,8 +11000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807a90703784ce5418acb6c9b91ac8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  otherPlayableCharacters: {fileID: 0}
+  player: {fileID: 1627796703}
+  otherPlayableCharacters: {fileID: 1787533283}
   nameText: {fileID: 421593246}
   dialogueText: {fileID: 888133398}
   characterPortriatImage: {fileID: 503086180}
