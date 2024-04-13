@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         player.immobile = true;
-        if (otherPlayableCharacters != null)
+        if (otherPlayableCharacters != null && otherPlayableCharacters.isActiveAndEnabled)
         {
             otherPlayableCharacters.immobile = true;
         }
@@ -105,7 +105,7 @@ public class DialogueManager : MonoBehaviour
 
         _dialogueOngoing = false;
         player.immobile = false;
-        if (otherPlayableCharacters != null)
+        if (otherPlayableCharacters != null && otherPlayableCharacters.isActiveAndEnabled)
         {
             otherPlayableCharacters.immobile = false;
         }
