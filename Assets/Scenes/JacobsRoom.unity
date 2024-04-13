@@ -8651,7 +8651,6 @@ Transform:
   - {fileID: 1108364848}
   - {fileID: 1937206800}
   - {fileID: 1258580092}
-  - {fileID: 1751649423}
   - {fileID: 1801760307}
   - {fileID: 1339872737}
   - {fileID: 1704770409}
@@ -9657,7 +9656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goBlacked: 1
-  fadeSeconds: 2
+  fadeSeconds: 1
 --- !u!114 &1167292941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15296,13 +15295,13 @@ Transform:
   m_GameObject: {fileID: 1751649422}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 296.9, y: 77.9, z: -77.5}
+  m_LocalPosition: {x: 306.5, y: 77.9, z: -846.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2137022238}
   - {fileID: 297999995}
-  m_Father: {fileID: 1077549817}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1751649425
 Rigidbody:
@@ -15343,6 +15342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c414f821f7c5374b8389a4e756181ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackScreen: {fileID: 1167292940}
 --- !u!1 &1769576192
 GameObject:
   m_ObjectHideFlags: 0
@@ -18917,5 +18917,6 @@ SceneRoots:
   - {fileID: 1218386974}
   - {fileID: 1627796699}
   - {fileID: 1787533280}
+  - {fileID: 1751649423}
   - {fileID: 1077549817}
   - {fileID: 543450652381974185}

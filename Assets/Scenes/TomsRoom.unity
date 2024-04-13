@@ -1026,13 +1026,13 @@ Transform:
   m_GameObject: {fileID: 437069545}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 298.1, y: 79.3, z: 57.9}
+  m_LocalPosition: {x: 307.7, y: 79.3, z: -711.19995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1287398627}
   - {fileID: 964422420}
-  m_Father: {fileID: 609338293}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &437069547
 Rigidbody:
@@ -1073,6 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c414f821f7c5374b8389a4e756181ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackScreen: {fileID: 1992151177}
 --- !u!64 &450284541
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1401,7 +1402,6 @@ Transform:
   - {fileID: 623296628}
   - {fileID: 1644188736}
   - {fileID: 897796457}
-  - {fileID: 437069546}
   - {fileID: 933787799}
   - {fileID: 1701622098}
   - {fileID: 1408238405}
@@ -4437,7 +4437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goBlacked: 1
-  fadeSeconds: 2
+  fadeSeconds: 1
 --- !u!114 &1992151178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,4 +5016,5 @@ SceneRoots:
   - {fileID: 929213539}
   - {fileID: 198756338}
   - {fileID: 818767074}
+  - {fileID: 437069546}
   - {fileID: 609338293}

@@ -7,6 +7,8 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
 {
     private bool active;
 
+    public BlackScreen blackScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,16 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
     }
 
     public void Interact()
+    {
+
+        blackScreen.goBlacked = true;
+        Invoke("ChangeScene", blackScreen.fadeSeconds);
+
+  
+    }
+
+
+    private void ChangeScene()
     {
         string sceneName = SceneManager.GetActiveScene().name;
         GameManager.lastScene = sceneName;
@@ -71,6 +83,8 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
             }
         }
     }
+
+
 
 
     public string GetPrompt()

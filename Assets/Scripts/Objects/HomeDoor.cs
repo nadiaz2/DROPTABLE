@@ -21,6 +21,14 @@ public class HomeDoor : MonoBehaviour, Interactable
 
     public void Interact()
     {
+
+        OutsideHomeManager.currentInstance.FadeOut();
+        Invoke("ChangeScene", 2);
+
+    }
+
+    private void ChangeScene()
+    {
         switch (OutsideHomeManager.state)
         {
             case OutsideHomeState.BackFromSchool:
@@ -33,7 +41,6 @@ public class HomeDoor : MonoBehaviour, Interactable
 
 
         }
-
     }
 
 
