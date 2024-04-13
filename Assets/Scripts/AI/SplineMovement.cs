@@ -22,16 +22,16 @@ public class SplineMovement : MonoBehaviour
     {
         get
         {
-            return animate;
+            return _animate;
         }
         set
         {
-            if(!value && animate != value)
+            if(!value && _animate != value)
             {
                 endCallback?.Invoke();
                 endCallback = null;
             }
-            animate = value;
+            _animate = value;
         }
     }
 
