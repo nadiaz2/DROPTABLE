@@ -44,10 +44,15 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
         if(LivingRoomManager.state != lastState) {
             lastState = LivingRoomManager.state;
             if(LivingRoomManager.state == LivingRoomState.Day1FoundPhoto) {
-                returnFromFoodPath.StartMovement();
+                returnFromFoodPath.StartMovement(() =>
+                {
+                    animator.SetBool("IsWalking", false);
+                    animator.SetBool("IsStanding", true);
+                });
                 interactable = true;
                 backFromFoodDialogue.TriggerDialogue(() => {
                     interactable = false;
+                    player.immobile = true;
                     day1Choice.PresentChoice((int choiceIndex) => {
                         if (choiceIndex == 0)
                         {
