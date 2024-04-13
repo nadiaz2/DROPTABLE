@@ -37,7 +37,20 @@ public class PlayerMovement : MonoBehaviour
 
     // If the player is currently frozen due to movement being restricted (sitting, on phone, etc.)
     // Other scripts will generally set this value
-    public bool immobile { get; set; }
+    private bool _immobile;
+    public bool immobile
+    {
+        get
+        {
+            return this._immobile;
+        }
+        set
+        {
+            this._rb.isKinematic = !value;
+            gameObject.GetComponent<CapsuleCollider>().enabled = !value;
+            _immobile = value;
+        }
+    }
 
     private Transform teleportLocation = null;
     public void TeleportPlayer(Transform loc)
@@ -53,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         _rb.freezeRotation = true;
         _rb.drag = groundDrag;
 
-        immobile = false;
+        _immobile = false;
     }
 
     // Update is called once per frame
@@ -65,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             teleportLocation = null;
         }
 
-        if (immobile)
+        if (_immobile)
         {
             _rb.velocity = Vector3.zero;
             return;
@@ -77,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (immobile)
+        if (_immobile)
         {
             _rb.velocity = Vector3.zero;
             if (animator != null && seated)
