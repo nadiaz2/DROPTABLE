@@ -17,8 +17,8 @@ public class SplineMovement : MonoBehaviour
     private float percentPos;
     private Action endCallback;
     
-    private bool animate;
-    private bool _animate
+    private bool _animate;
+    private bool animate
     {
         get
         {
@@ -49,6 +49,7 @@ public class SplineMovement : MonoBehaviour
     {
         if(!animate || (percentPos == 1.0f))
         {
+            animate = false;
             return;
         }
 
