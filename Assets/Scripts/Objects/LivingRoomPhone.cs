@@ -13,13 +13,21 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
 {
     [HideInInspector]
     public bool active;
-    public static bool onPhone; //TODO: remove; currently needed by PlayerMovement2D
 
     // QRCode Fields
-    public SubtitleTrigger photoFoundTrigger;
+    [Header("World Objects")]
     public Animator animator;
     public Image phoneScreen;
     private Texture2D _storeEncodedTexture;
+
+    [Header("Day 1 Subtitles")]
+    public SubtitleTrigger photoFoundTrigger;
+
+    [Header("Day 2 Subtitles")]
+    public SubtitleTrigger albumOpenTrigger;
+    public SubtitleTrigger browserOpenTrigger;
+    public SubtitleTrigger chatOpenTrigger;
+    public SubtitleTrigger keyChatFoundTrigger;
 
 
     // Start is called before the first frame update
@@ -34,13 +42,43 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
             switch (command)
             {
                 case "FOUNDPHOTO":
-                    photoFoundTrigger.TriggerSubtitle(() => {
+                    photoFoundTrigger.TriggerSubtitle(() =>
+                    {
                         animator.SetBool("isOpen", false);
                         LivingRoomManager.state = LivingRoomState.Day1FoundPhoto;
                     });
                     break;
                 default:
                     Debug.Log($"Unkown command recieved: 01-{command}");
+                    break;
+            }
+        });
+
+        Connection.SetListener("02", (command) =>
+        {
+            switch (command)
+            {
+                case "ALBUM":
+                    albumOpenTrigger.TriggerSubtitle();
+                    break;
+
+                case "BROWSER":
+                    browserOpenTrigger.TriggerSubtitle();
+                    break;
+
+                case "CHATAPP":
+                    chatOpenTrigger.TriggerSubtitle();
+                    break;
+
+                case "FOUNDCHAT":
+                    keyChatFoundTrigger.TriggerSubtitle();
+                    break;
+
+                case "FINISH":
+                    break;
+
+                default:
+                    Debug.Log($"Unkown command recieved: 02-{command}");
                     break;
             }
         });
@@ -78,7 +116,17 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
     {
         animator.SetBool("isOpen", true);
         this.active = false;
-        Connection.MessagePhone("01-START");
+
+        switch(LivingRoomManager.state)
+        {
+            case LivingRoomState.Day1TalkedWithJacob:
+                Connection.MessagePhone("START01");
+                break;
+                
+            case LivingRoomState.Day2ReturnHome:
+                Connection.MessagePhone("START02");
+                break;
+        }
     }
 
     public string GetPrompt()

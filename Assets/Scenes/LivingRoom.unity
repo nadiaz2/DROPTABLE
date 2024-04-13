@@ -5491,6 +5491,10 @@ GameObject:
   - component: {fileID: 1926368473}
   - component: {fileID: 1926368474}
   - component: {fileID: 1926368475}
+  - component: {fileID: 1926368479}
+  - component: {fileID: 1926368478}
+  - component: {fileID: 1926368477}
+  - component: {fileID: 1926368476}
   m_Layer: 9
   m_Name: Phone
   m_TagString: Interactable
@@ -5549,9 +5553,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
-  photoFoundTrigger: {fileID: 1926368475}
   animator: {fileID: 960442326}
   phoneScreen: {fileID: 380434829}
+  photoFoundTrigger: {fileID: 1926368475}
+  albumOpenTrigger: {fileID: 1926368479}
+  browserOpenTrigger: {fileID: 1926368478}
+  chatOpenTrigger: {fileID: 1926368477}
+  keyChatFoundTrigger: {fileID: 1926368476}
 --- !u!114 &1926368475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5569,6 +5577,77 @@ MonoBehaviour:
   - 'Is this a skirt?  Why is it lying on the ground? This guy is wild, hiding a
     girlfriend behind my back and playing so wild? '
   - Let me see if there are any sweet moments of this little couple...
+--- !u!114 &1926368476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926368471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 424650666}
+  subtitles:
+  - 'Tom: "Lab? What are they doing in Jacob''s lab?"'
+  - 'Tom: "It seems Jacob''s lab has some connection to this event. I need to visit
+    there sometime."'
+  - Footsteps can be heard in the distance.
+  - 'Tom: "It sounds like Jacob''s coming. I should get off his phone."'
+--- !u!114 &1926368477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926368471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 424650666}
+  subtitles:
+  - 'Tom: "This person is boring enough, all discussing academic issues."'
+  - 'Tom: "Academics, academics, friends, academics, professors, academics. Hmm,
+    what''s this?"'
+--- !u!114 &1926368478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926368471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 424650666}
+  subtitles:
+  - 'Tom: "Hmm? What''s this?"'
+  - "Phone app: \"\u3084\u3081\u3066\u304F\u3060\u3055\u3044~~\""
+  - 'Tom: "Uh... probably not this. Let me check his texts next."'
+--- !u!114 &1926368479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926368471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 424650666}
+  subtitles:
+  - 'Tom: "Wait, why is the photo of the dress not here?"'
+  - 'Tom: "Did he realize I went through his phone? If he finds out I saw those photos,
+    I might be in danger."'
+  - 'Tom: "Maybe I can find something if I check the browser."'
 --- !u!1 &1955988226
 GameObject:
   m_ObjectHideFlags: 0
