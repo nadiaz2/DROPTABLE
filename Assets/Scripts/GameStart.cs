@@ -93,7 +93,7 @@ public class GameStart : MonoBehaviour
                 break;
 
             case GameState.Day4Run:
-                SceneManager.LoadScene("Bathroom");
+                SceneManager.LoadScene("MedBay");
                 break;
         }
     }
