@@ -65,8 +65,8 @@ public class ClothingStoreManager : MonoBehaviour
 
         switch (GameManager.state)
         {
-            case GameState.Day3InBackBay:
-                GameManager.state = GameState.Day3InClothingStore;
+
+            case GameState.Day3InClothingStore:
                 Invoke("startSubtitle", 2);
                 break;
         }
@@ -80,6 +80,7 @@ public class ClothingStoreManager : MonoBehaviour
         switch (ClothingStoreManager.state)
         {
             case ClothingStoreState.Day3InsideClothingStore:
+                Debug.Log("Here");
                 if (itemCount == 1 && !item1SubtitleTriggered && itemsActive)
                 {
                     item1SubtitleTriggered = true;

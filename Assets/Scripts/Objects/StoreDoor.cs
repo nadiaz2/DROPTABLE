@@ -24,6 +24,7 @@ public class StoreDoor : MonoBehaviour, Interactable
         switch (BackBayManager.state)
         {
             case BackBayState.Day3GoInsideStore:
+                GameManager.state = GameState.Day3InClothingStore;
                 SceneManager.LoadScene("ClothingStore");
                 break;
 

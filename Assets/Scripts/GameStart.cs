@@ -65,6 +65,7 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("BackBay");
                 break;
             case GameState.Day3InClothingStore:
+                SceneManager.LoadScene("ClothingStore");
                 break;
             case GameState.Day3End:
                 SceneManager.LoadScene("JacobsCar");
