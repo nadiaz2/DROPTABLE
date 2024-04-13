@@ -26,7 +26,11 @@ public class ClassroomNPC : MonoBehaviour
             return;
         }
 
-        movement.StartMovement();
+        movement.StartMovement(() => {
+            animator.SetBool("IsWalking", false);
+            animator.SetBool("IsStanding", true);
+        });
+        animator.SetBool("IsStanding", false);
         animator.SetBool("IsWalking", true);
         moved = true;
 
