@@ -28,6 +28,8 @@ public class ClassroomManager : MonoBehaviour
     [Header("Game Objects")]
     public GameObject jacob;
     public Headphones headphones;
+    public GameObject professor;
+    public GameObject npc1;
 
     [Header("Triggers")]
     public SubtitleTrigger subtitleTriggerDay2;
@@ -53,18 +55,14 @@ public class ClassroomManager : MonoBehaviour
 
         blackScreen.goBlacked = false;
 
-        if (GameManager.state == GameState.GameStart)
-        {
-            //GameManager.state = GameState.BackToClassroom;
-        }
-
-
         // Returning to classroom to pick up headphones
         if (GameManager.state == GameState.BackToClassroom)
         {
             jacob.SetActive(false);
             headphones.gameObject.SetActive(true);
             headphones.interactable = true;
+            npc1.SetActive(false);
+            professor.SetActive(false);
             state = ClassroomState.Return;
         }else if (GameManager.state == GameState.Day2AfternoonClass)
         {

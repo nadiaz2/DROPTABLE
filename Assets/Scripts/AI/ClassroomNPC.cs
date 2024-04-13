@@ -9,6 +9,9 @@ public class ClassroomNPC : MonoBehaviour
 
     private bool moved;
 
+    [Header("Animator")]
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,10 @@ public class ClassroomNPC : MonoBehaviour
     {
         if((ClassroomManager.state != movementStart) || moved)
         {
+            if(movement.moving)
+            {
+                animator.SetBool("IsWalking", true);
+            }
             return;
         }
 

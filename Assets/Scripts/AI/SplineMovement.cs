@@ -14,27 +14,40 @@ public class SplineMovement : MonoBehaviour
 
     private float splineLength;
     private bool animate;
-    private float percentPos;
+    private float distAmount;
+
+    private bool _moving;
+    public bool moving
+    {
+        get
+        {
+            return _moving;
+        } 
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
         splineLength = splineContainer.CalculateLength(splineIndex);
+        _moving = false;
         animate = false;
-        percentPos = 0.0f;
+        distAmount = 0.0f;
         //Debug.Log($"{ splineContainer.EvaluatePosition(splineIndex, 0.01f)}");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!animate || (percentPos == 1.0f))
+        if(!animate || (distAmount >= splineLength))
         {
+            _moving = false;
             return;
         }
+        _moving = true;
 
-        percentPos += Time.deltaTime * speed / 100.0f;
-        percentPos = Mathf.Min(percentPos, 1.0f);
+        distAmount += Time.deltaTime * speed;
+        float percentPos = Mathf.Min(distAmount / splineLength, 1.0f);
 
         float usePercent = reverseMovement ? (1.0f-percentPos) : percentPos;
 

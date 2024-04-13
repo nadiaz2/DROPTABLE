@@ -5,6 +5,7 @@ using UnityEngine;
 public class JacobClassroomInteractable : MonoBehaviour, Interactable
 {
     public DialogueTrigger trigger;
+    public PlayerMovement player;
 
     private ClassroomState lastState;
     private bool talking;
@@ -52,6 +53,7 @@ public class JacobClassroomInteractable : MonoBehaviour, Interactable
             talking = true;
             trigger.TriggerDialogue(() => {
                 this.active = false;
+                player.immobile = true;
                 ClassroomManager.currentInstance.Invoke("FadeOut", 1);
                 StartCoroutine(ChangeSceneState(3.5f, ClassroomState.ClassOver));
                 ClassroomManager.currentInstance.Invoke("FadeIn", 4);
