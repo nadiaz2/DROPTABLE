@@ -23,14 +23,11 @@ public class ClassroomNPC : MonoBehaviour
     {
         if((ClassroomManager.state != movementStart) || moved)
         {
-            if(movement.moving)
-            {
-                animator.SetBool("IsWalking", true);
-            }
             return;
         }
 
         movement.StartMovement();
+        animator.SetBool("IsWalking", true);
         moved = true;
 
         /*
