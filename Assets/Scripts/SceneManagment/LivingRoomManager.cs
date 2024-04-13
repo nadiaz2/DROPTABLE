@@ -5,13 +5,7 @@ using UnityEngine.SceneManagement;
 using System;
 
 public enum LivingRoomState
-{/*
-    Start,
-    TalkingToJacob,
-    FinishedTalking,
-    PlayingGame,
-	GamePaused,
-*/
+{
     Day1ReturnHome,
     Day1JacobsBackAfterBed,
     Day1TalkedWithJacob,
@@ -43,6 +37,7 @@ public class LivingRoomManager : MonoBehaviour
     [Header("Spawn Points")]
     public Transform inFrontTomsDoor;
     public Transform inFrontJacobsDoor;
+    public Transform offscreenPoint;
 
     [Header("Text Triggers")]
     public SubtitleTrigger reminderTrigger;
@@ -113,6 +108,8 @@ public class LivingRoomManager : MonoBehaviour
 
             case GameState.Day2HeadBackHome:
                 state = LivingRoomState.Day2ReturnHome;
+                jacob.gameObject.SetActive(true);
+                jacob.transform.position = offscreenPoint.position;
                 day2ReturnHomeTrigger.TriggerSubtitle(() =>
                 {
                     phone.active = true;

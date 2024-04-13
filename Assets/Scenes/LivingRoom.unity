@@ -417,6 +417,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 84.9, y: -18.751, z: -24.277}
+--- !u!1 &185886168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185886169}
+  m_Layer: 0
+  m_Name: OffscreenPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &185886169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185886168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1681, y: 82, z: 781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &223526965
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,6 +5324,7 @@ GameObject:
   - component: {fileID: 1879460811}
   - component: {fileID: 1879460812}
   - component: {fileID: 1879460813}
+  - component: {fileID: 1879460815}
   - component: {fileID: 1879460814}
   m_Layer: 0
   m_Name: SceneManager
@@ -5330,11 +5362,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 511203378}
   jacob: {fileID: 8936107687572286110}
+  phone: {fileID: 1926368474}
   inFrontTomsDoor: {fileID: 1179467066}
   inFrontJacobsDoor: {fileID: 2066401046}
+  offscreenPoint: {fileID: 185886169}
   reminderTrigger: {fileID: 1879460811}
   endGameTrigger: {fileID: 1879460812}
   continueToDay2Trigger: {fileID: 1879460813}
+  day2ReturnHomeTrigger: {fileID: 1879460815}
   headToJacobsLabReminder: {fileID: 1879460814}
   jacobSeat: {fileID: 616358656}
   tomSeat: {fileID: 1071246928}
@@ -5439,6 +5474,22 @@ MonoBehaviour:
   subtitleManager: {fileID: 424650666}
   subtitles:
   - Next stop is Jacob's Lab, I should be able to get in with these keys.
+--- !u!114 &1879460815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879460808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleManager: {fileID: 424650666}
+  subtitles:
+  - 'Tom: "Looks like Jacob''s not home, and he left his phone on the kitchen counter."'
+  - 'Tom: "I should take this opportunity to get another look at that photo I found."'
 --- !u!1 &1896916648
 GameObject:
   m_ObjectHideFlags: 0
@@ -5510,15 +5561,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926368471}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.33178657, y: 0.6244339, z: 0.6244339, w: 0.33178657}
-  m_LocalPosition: {x: -1592.5, y: 94.4, z: 1263.6}
+  m_LocalRotation: {x: -0.58426, y: 0.39829677, z: 0.39829677, w: 0.58426}
+  m_LocalPosition: {x: -1598.4, y: 94.4, z: 1217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 613913609}
   - {fileID: 1376362313}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 233.22, z: -109.187}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: -111.435}
 --- !u!65 &1926368473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32753,6 +32804,7 @@ GameObject:
   - component: {fileID: 8936107687572286106}
   - component: {fileID: 8936107687572286105}
   - component: {fileID: 8936107687572286104}
+  - component: {fileID: 8936107687572286111}
   - component: {fileID: 8936107687572286103}
   m_Layer: 0
   m_Name: JacobModel
@@ -32954,9 +33006,37 @@ MonoBehaviour:
   returnFromFoodPath: {fileID: 8936107687572286106}
   backFromFoodDialogue: {fileID: 8936107687572286105}
   day1Choice: {fileID: 8936107687572286104}
+  day2ReturnDialogue: {fileID: 8936107687572286111}
   dialogueTriggerDay3: {fileID: 8936107687572286103}
   animator: {fileID: 2425349893191084629}
   interactable: 0
+--- !u!114 &8936107687572286111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936107687572286101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689e62af807a2347b61a4a33672fbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 615378954}
+  dialogues:
+  - name: Jacob
+    characterPortrait: {fileID: 2103872471}
+    sentence: Oh, hey, you're home. I'm just stopping by to pick up my phone. Have
+      you seen it anywhere?
+  - name: Tom
+    characterPortrait: {fileID: 1486686021}
+    sentence: Yeah, you left it on the table.
+  - name: Jacob
+    characterPortrait: {fileID: 2103872471}
+    sentence: Thanks. I'm gonna head out and tutor a few people. See you later.
+  - name: Tom
+    characterPortrait: {fileID: 1486686021}
+    sentence: Yeah, see you later.
 --- !u!1 &8937111425952979107
 GameObject:
   m_ObjectHideFlags: 0
@@ -33871,3 +33951,4 @@ SceneRoots:
   - {fileID: 616358656}
   - {fileID: 1179467066}
   - {fileID: 2066401046}
+  - {fileID: 185886169}

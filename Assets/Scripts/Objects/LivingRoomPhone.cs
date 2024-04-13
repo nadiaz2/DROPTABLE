@@ -75,6 +75,7 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
                     break;
 
                 case "FINISH":
+                    LivingRoomManager.state = LivingRoomState.Day2JacobsReturned;
                     break;
 
                 default:

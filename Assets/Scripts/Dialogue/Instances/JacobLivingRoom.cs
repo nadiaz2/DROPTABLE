@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class JacobLivingRoom : MonoBehaviour, Interactable
 {
@@ -21,6 +22,9 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
     public DialogueTrigger backFromFoodDialogue;
     public ChoiceTrigger day1Choice;
 
+    [Header("Day 2")]
+    public DialogueTrigger day2ReturnDialogue;
+
 
     [Header("Day 3")]
     public DialogueTrigger dialogueTriggerDay3;
@@ -36,47 +40,81 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
 
     private LivingRoomState lastState;
 
-    public void Start() {
+    public void Start()
+    {
         lastState = LivingRoomManager.state;
     }
 
-    public void Update() {
-        if(LivingRoomManager.state != lastState) {
+    public void Update()
+    {
+        if (LivingRoomManager.state != lastState)
+        {
             lastState = LivingRoomManager.state;
-            if(LivingRoomManager.state == LivingRoomState.Day1FoundPhoto) {
-                returnFromFoodPath.StartMovement(() =>
-                {
-                    animator.SetBool("IsWalking", false);
-                    animator.SetBool("IsStanding", true);
-                });
-                interactable = true;
-                backFromFoodDialogue.TriggerDialogue(() => {
-                    interactable = false;
-                    player.immobile = true;
-                    day1Choice.PresentChoice((int choiceIndex) => {
-                        if (choiceIndex == 0)
-                        {
-                            GameManager.day1BranchEndGame = true;
-                            GameManager.state = GameState.Day1GameEndChoice;
 
-                            Debug.Log($"End Game: {choiceIndex}");
-                        }
-                        else if (choiceIndex == 1){
-                            GameManager.day1BranchEndGame = false;
-                            GameManager.state = GameState.Day1GameEndChoice;
-
-                            Debug.Log($"Continue Game: {choiceIndex}");
-                            return;
-                        }
+            switch (LivingRoomManager.state)
+            {
+                case LivingRoomState.Day1FoundPhoto:
+                    returnFromFoodPath.StartMovement(() =>
+                    {
+                        animator.SetBool("IsWalking", false);
+                        animator.SetBool("IsStanding", true);
                     });
-                });
+                    interactable = true;
+                    backFromFoodDialogue.TriggerDialogue(() =>
+                    {
+                        interactable = false;
+                        player.immobile = true;
+                        day1Choice.PresentChoice((int choiceIndex) =>
+                        {
+                            if (choiceIndex == 0)
+                            {
+                                GameManager.day1BranchEndGame = true;
+                                GameManager.state = GameState.Day1GameEndChoice;
+
+                                Debug.Log($"End Game: {choiceIndex}");
+                            }
+                            else if (choiceIndex == 1)
+                            {
+                                GameManager.day1BranchEndGame = false;
+                                GameManager.state = GameState.Day1GameEndChoice;
+
+                                Debug.Log($"Continue Game: {choiceIndex}");
+                                return;
+                            }
+                        });
+                    });
+                    break;
+
+                case LivingRoomState.Day2JacobsReturned:
+                    returnFromFoodPath.StartMovement(() =>
+                    {
+                        animator.SetBool("IsWalking", false);
+                        animator.SetBool("IsStanding", true);
+                    });
+                    animator.SetBool("IsWalking", true);
+
+                    day2ReturnDialogue.TriggerDialogue(() =>
+                    {
+                        LivingRoomManager.currentInstance.FadeOut();
+                        Invoke("EndDay", 1.0f);
+                    });
+                    break;
             }
+
+
         }
+    }
+
+    private void EndDay()
+    {
+        GameManager.state = GameState.Day3StartTomsRoom;
+        SceneManager.LoadScene("TomsRoom");
     }
 
     public void EndStudySession()
     {
-        foodArrivedSubtitle.TriggerSubtitle(() => {
+        foodArrivedSubtitle.TriggerSubtitle(() =>
+        {
             getFoodPath.StartMovement();
             phone.active = true;
             animator.SetBool("IsSitting", false);
@@ -97,7 +135,8 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
             case LivingRoomState.Day1JacobsBackAfterBed:
                 if (!dialogueTriggerStarted)
                 {
-                    jacobReturnDialogue.TriggerDialogue(() => {
+                    jacobReturnDialogue.TriggerDialogue(() =>
+                    {
                         this.interactable = false;
                         LivingRoomManager.state = LivingRoomState.Day1TalkedWithJacob;
 
