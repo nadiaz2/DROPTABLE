@@ -36,6 +36,7 @@ public class TomsRoomManager : MonoBehaviour
     public SubtitleTrigger subtitleTriggerDay4;
 
     public BlackScreen blackScreen;
+    public DayText dayText;
 
     public static TomsRoomState state { get; set; }
 
@@ -53,25 +54,30 @@ public class TomsRoomManager : MonoBehaviour
     {
         TomsRoomManager._instance = this;
 
-        blackScreen.goBlacked = false;
-
-        //TODO Temp for testing day 2 & Day 3
-        if (GameManager.state == GameState.GameStart)
-        {
-            //GameManager.state = GameState.Day2StartTomsRoom;
-            GameManager.state = GameState.Day2StartTomsRoom;
-        }
-
 
         switch (GameManager.state)
         {
             case GameState.Day1LivingRoomStart:
                 state = TomsRoomState.Day1Start;
                 tomsBed.interactable = true;
+                FadeIn();
                 break;
 
             //Start of Day 2
             case GameState.Day2StartTomsRoom:
+                if(GameManager.day2Started)
+                {
+                    dayText.SetText("");
+                    FadeIn();
+                }
+                else
+                {
+                    dayText.SetText("Day 2");
+                    Invoke("FadeIn", 1.5f);
+                    Invoke("EraseDayText", 3f);
+                    GameManager.day2Started = true;
+                }
+
                 //TODO Send message to phone to send noticification from school on phone
 
 
@@ -80,7 +86,20 @@ public class TomsRoomManager : MonoBehaviour
                 break;
 
             case GameState.Day3StartTomsRoom:
-                if(TomsRoomManager.state != TomsRoomState.StartDay3)
+                if (GameManager.day3Started)
+                {
+                    dayText.SetText("");
+                    FadeIn();
+                }
+                else
+                {
+                    dayText.SetText("Day 3");
+                    Invoke("FadeIn", 1.5f);
+                    Invoke("EraseDayText", 3f);
+                    GameManager.day3Started = true;
+                }
+
+                if (TomsRoomManager.state != TomsRoomState.StartDay3)
                 {
                     subtitleTrigger.TriggerSubtitle(() =>
                     {
@@ -90,10 +109,24 @@ public class TomsRoomManager : MonoBehaviour
                 break;
 
             case GameState.Day4StartTomsRoom:
-                Invoke("delayedDay4Dialogue", 2);
+                if (GameManager.day4Started)
+                {
+                    dayText.SetText("");
+                    FadeIn();
+                }
+                else
+                {
+                    dayText.SetText("Day 4");
+                    Invoke("FadeIn", 1.5f);
+                    Invoke("EraseDayText", 3f);
+                    GameManager.day4Started = true;
+                }
+                Invoke("delayedDay4Dialogue", 3.5f);
                 break;
 
-
+            default:
+                FadeIn();
+                break;
         }
 
         switch (TomsRoomManager.state)
@@ -123,6 +156,11 @@ public class TomsRoomManager : MonoBehaviour
         if (blackScreen != null)
         {
             blackScreen.goBlacked = true;
+        } 
+
+        if (dayText != null)
+        {
+            dayText.goInvisible = false;
         }
     }
 
@@ -132,5 +170,15 @@ public class TomsRoomManager : MonoBehaviour
         {
             blackScreen.goBlacked = false;
         }
+
+        if (dayText != null)
+        {
+            dayText.goInvisible = true;
+        }
+    }
+
+    private void EraseDayText()
+    {
+        dayText.SetText("");
     }
 }

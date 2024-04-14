@@ -56,6 +56,12 @@ public class GameManager
 	public static string lastScene = "";
 
 
+	public static bool day1Started = false;
+	public static bool day2Started = false;
+	public static bool day3Started = false;
+	public static bool day4Started = false;
+
+
 	private static GameState _state = GameState.GameStart;
 	public static GameState state
 	{

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Flags]
 public enum ClassroomState
@@ -35,8 +37,9 @@ public class ClassroomManager : MonoBehaviour
     public SubtitleTrigger subtitleTriggerDay2;
     public bool day2SubtitleTriggered;
 
-    [HideInInspector]
+    [Header("Screen Fade")]
     public BlackScreen blackScreen;
+    public DayText dayText;
 
     public static ClassroomState state { get; set; }
     public static ClassroomManager currentInstance
@@ -53,7 +56,18 @@ public class ClassroomManager : MonoBehaviour
     {
         ClassroomManager._instance = this;
 
-        blackScreen.goBlacked = false;
+        if (GameManager.day1Started)
+        {
+            dayText.SetText("");
+            FadeIn();
+        }
+        else
+        {
+            dayText.SetText("Day 1");
+            Invoke("FadeIn", 1.5f);
+            Invoke("EraseDayText", 3f);
+            GameManager.day1Started = true;
+        }
 
         // Returning to classroom to pick up headphones
         if (GameManager.state == GameState.BackToClassroom)
@@ -103,6 +117,11 @@ public class ClassroomManager : MonoBehaviour
         {
             blackScreen.goBlacked = true;
         }
+
+        if(dayText != null)
+        {
+            dayText.goInvisible = false;
+        }
     }
 
     public void FadeIn()
@@ -111,6 +130,15 @@ public class ClassroomManager : MonoBehaviour
         {
             blackScreen.goBlacked = false;
         }
+
+        if (dayText != null)
+        {
+            dayText.goInvisible = true;
+        }
     }
 
+    private void EraseDayText()
+    {
+        dayText.SetText("");
+    }
 }
