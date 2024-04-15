@@ -17,6 +17,7 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
     // QRCode Fields
     [Header("World Objects")]
     public Animator animator;
+    public PlayerMovement player;
     public Image phoneScreen;
     private Texture2D _storeEncodedTexture;
 
@@ -71,7 +72,13 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
                     break;
 
                 case "FOUNDCHAT":
-                    keyChatFoundTrigger.TriggerSubtitle();
+                    keyChatFoundTrigger.TriggerSubtitle(() =>
+                    {
+                        animator.SetBool("isOpen", false);
+                        // Player goes into dialogue. Will be mobile again afterwards
+                        //player.immobile = false;
+                        LivingRoomManager.state = LivingRoomState.Day2JacobsReturned;
+                    });
                     break;
 
                 case "FINISH":
@@ -126,6 +133,7 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
                 
             case LivingRoomState.Day2ReturnHome:
                 Connection.MessagePhone("02-START");
+                player.immobile = true;
                 break;
         }
     }

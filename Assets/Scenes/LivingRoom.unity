@@ -5605,6 +5605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   animator: {fileID: 960442326}
+  player: {fileID: 511203378}
   phoneScreen: {fileID: 380434829}
   photoFoundTrigger: {fileID: 1926368475}
   albumOpenTrigger: {fileID: 1926368479}
@@ -5642,12 +5643,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleManager: {fileID: 424650666}
   subtitles:
-  - 'Tom: "Lab? What are they doing in Jacob''s lab?"'
-  - 'Tom: "It seems Jacob''s lab has some connection to this event. I need to visit
-    there sometime."'
-  - Footsteps can be heard in the distance.
-  - 'Tom: "It sounds like Jacob''s coming. I should put his phone down before he
-    catches me."'
+  - Lab? What are they doing in Jacob's lab?
+  - It seems Jacob's lab has some connection to this event. I need to visit there
+    sometime.
+  - '*Footsteps can be heard in the distance.*'
+  - It sounds like Jacob's coming. I should put his phone down before he catches
+    me.
 --- !u!114 &1926368477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5662,9 +5663,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleManager: {fileID: 424650666}
   subtitles:
-  - 'Tom: "This person is boring enough, all discussing academic issues."'
-  - 'Tom: "Academics, academics, friends, academics, professors, academics. Hmm,
-    what''s this?"'
+  - This person is boring enough, all discussing academic issues.
+  - Academics, academics, friends, academics, professors, academics. Hmm, what's
+    this?
 --- !u!114 &1926368478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5679,9 +5680,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleManager: {fileID: 424650666}
   subtitles:
-  - 'Tom: "Hmm? What''s this?"'
-  - "Phone app: \"\u3084\u3081\u3066\u304F\u3060\u3055\u3044~~\""
-  - 'Tom: "Uh... probably not this. Let me check his texts next."'
+  - Hmm? What's this?
+  - '*Loud moans come from the phone.*'
+  - Uh... probably not this. Let me check his messages next.
 --- !u!114 &1926368479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5696,10 +5697,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitleManager: {fileID: 424650666}
   subtitles:
-  - 'Tom: "Wait, why is the photo of the dress not here?"'
-  - 'Tom: "Did he realize I went through his phone? If he finds out I saw those photos,
-    I might be in danger."'
-  - 'Tom: "Maybe I can find something if I check the browser."'
+  - Wait, why is the photo of the dress not here?
+  - Did Jacob realize I went through his phone? If he finds out I saw those photos,
+    I might be in danger.
+  - Maybe I can find something if I check the browser.
 --- !u!1 &1955988226
 GameObject:
   m_ObjectHideFlags: 0
