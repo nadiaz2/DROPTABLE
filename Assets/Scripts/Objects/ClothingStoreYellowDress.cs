@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ClothingStoreYellowDress : MonoBehaviour, Interactable
 {
     public DialogueTrigger dialogueTrigger;
+    public SplineMovement emilyMovement;
+    public Animator emilyAnimator;
 
     public bool interactable = false;
 
@@ -22,6 +24,7 @@ public class ClothingStoreYellowDress : MonoBehaviour, Interactable
                     {
                         ClothingStoreManager.state = ClothingStoreState.Day3EmilyFlashBack;
                     });
+                    Invoke("StartEmilyMovement", 1.0f);
                     started = true;
                 }
                 else
@@ -33,6 +36,16 @@ public class ClothingStoreYellowDress : MonoBehaviour, Interactable
                 }
                 break;
         }
+    }
+
+    private void StartEmilyMovement()
+    {
+        emilyMovement.StartMovement(() =>
+        {
+            emilyAnimator.SetBool("IsWalking", false);
+            emilyAnimator.SetBool("IsStanding", true);
+        });
+        emilyAnimator.SetBool("IsWalking", true);
     }
 
     public void Interact()

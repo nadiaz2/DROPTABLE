@@ -9,6 +9,12 @@ public class ClothingStoreRachelDialogueTrigger : MonoBehaviour
     public SubtitleTrigger subtitleTrigger;
     public SubtitleTrigger subtitleTrigger2;
 
+    public SplineMovement manMovement;
+    public SplineMovement rachelMovement;
+
+    public Animator manAnimator;
+    public Animator rachelAnimator;
+
     public GameObject womensIsleTrigger;
 
     private bool trigger1Started;
@@ -24,6 +30,20 @@ public class ClothingStoreRachelDialogueTrigger : MonoBehaviour
                 subtitleTrigger.TriggerSubtitle(() =>
                 {
                     womensIsleTrigger.SetActive(true);
+
+                    manMovement.StartMovement(() =>
+                    {
+                        manAnimator.SetBool("IsWalking", false);
+                        manAnimator.SetBool("IsStanding", true);
+                    });
+                    rachelMovement.StartMovement(() =>
+                    {
+                        rachelAnimator.SetBool("IsWalking", false);
+                        rachelAnimator.SetBool("IsStanding", true);
+                    });
+
+                    manAnimator.SetBool("IsWalking", true);
+                    rachelAnimator.SetBool("IsWalking", true);
                 });
             }
 
