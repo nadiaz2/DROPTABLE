@@ -45,6 +45,7 @@ public class GameStart : MonoBehaviour
                 SceneManager.LoadScene("TomsRoom");
                 break;
             case GameState.Day2HeadBackToSchool:
+                SceneManager.LoadScene("Cafeteria");
                 break;
             case GameState.Day2AfternoonClass:
                 SceneManager.LoadScene("Classroom");
