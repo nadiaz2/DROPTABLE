@@ -23505,7 +23505,7 @@ MonoBehaviour:
     sentence: "Hey, how did you do this problem. I don't even know how you could
       think of this algorithm. Why is this value assigned here?  Look \u2026"
   - name: Jacob
-    characterPortrait: {fileID: 387804977}
+    characterPortrait: {fileID: 1173044992}
     sentence: Wait a minute, the professor is talking about something again. I'll
       explain it to you later.
   - name: Tom(You)
