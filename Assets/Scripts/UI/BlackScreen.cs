@@ -14,7 +14,8 @@ public class BlackScreen : MonoBehaviour
     {
         // set color of the panel transparent
         this.image = GetComponent<Image>();
-        this.image.color = Color.black;
+        this.image.color = goBlacked ? Color.black : Color.clear;
+        this.percentFade = goBlacked ? 1.0f : 0.0f;
     }
 
     // Update is called once per frame
