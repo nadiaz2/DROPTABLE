@@ -39,7 +39,7 @@ public enum GameState
 
 }
 
-public class GameManager
+public class GameManager : MonoBehaviour
 {
 	public static bool cameraMove = false;
 
@@ -72,6 +72,4 @@ public class GameManager
 			_state = value;
 		}
 	}
-
-
 }
