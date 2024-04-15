@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,12 +18,16 @@ public enum ClothingStoreState
 
 public class ClothingStoreManager : MonoBehaviour
 {
+    [Header("Objects")]
     public GameObject player;
     public GameObject playerEmily;
     public GameObject rachel;
     public GameObject man;
     public GameObject rachelDialogueTrigger;
+    public GameObject emily;
+    public GameObject jacob;
 
+    [Header("Triggers")]
     public SubtitleTrigger subtitleTrigger;
     public SubtitleTrigger subtitleTriggerItem1;
     public SubtitleTrigger subtitleTriggerItem2;
@@ -30,6 +35,7 @@ public class ClothingStoreManager : MonoBehaviour
     public SubtitleTrigger flashBackSubtitleTrigger;
     public DialogueTrigger dialogueTrigger;
 
+    [Header("Interactables")]
     public GuessingInteractable item1;
     public GuessingInteractable item2;
     public GuessingInteractable item3;
@@ -135,6 +141,8 @@ public class ClothingStoreManager : MonoBehaviour
     private void setUpFlashBackCharacters()
     {
         player.SetActive(false);
+        emily.SetActive(false);
+        jacob.SetActive(false);
         playerEmily.SetActive(true);
     }
 
@@ -144,6 +152,8 @@ public class ClothingStoreManager : MonoBehaviour
         man.SetActive(false);
         rachel.SetActive(false);
         player.SetActive(true);
+        emily.SetActive(true);
+        jacob.SetActive(true);
 
         if (!dialogueTriggerStarted)
         {
