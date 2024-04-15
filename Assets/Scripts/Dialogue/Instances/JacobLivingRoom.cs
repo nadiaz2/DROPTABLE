@@ -91,8 +91,10 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                         animator.SetBool("IsWalking", false);
                         animator.SetBool("IsStanding", true);
                     });
+                    animator.SetBool("IsStanding", false);
                     animator.SetBool("IsWalking", true);
 
+                    interactable = true;
                     day2ReturnDialogue.TriggerDialogue(() =>
                     {
                         LivingRoomManager.currentInstance.FadeOut();
@@ -158,6 +160,10 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
 
             case LivingRoomState.Day1FoundPhoto:
                 backFromFoodDialogue.ContinueDialogue();
+                break;
+
+            case LivingRoomState.Day2JacobsReturned:
+                day2ReturnDialogue.ContinueDialogue();
                 break;
 
             case LivingRoomState.Day3Start:
