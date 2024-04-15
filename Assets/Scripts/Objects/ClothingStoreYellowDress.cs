@@ -13,6 +13,13 @@ public class ClothingStoreYellowDress : MonoBehaviour, Interactable
 
     private bool started = false;
 
+    private float startingY;
+
+    void Start()
+    {
+        startingY = transform.position.y;
+    }
+
     void Update()
     {
         switch (ClothingStoreManager.state)
@@ -44,6 +51,7 @@ public class ClothingStoreYellowDress : MonoBehaviour, Interactable
         {
             emilyAnimator.SetBool("IsWalking", false);
             emilyAnimator.SetBool("IsStanding", true);
+            //transform.position = new Vector3(transform.position.x, startingY, transform.position.z);
         });
         emilyAnimator.SetBool("IsWalking", true);
     }

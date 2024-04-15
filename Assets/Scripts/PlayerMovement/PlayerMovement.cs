@@ -106,6 +106,12 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("IsStanding", false);
                 animator.SetBool("IsSitting", true);
             }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+                animator.SetBool("IsStanding", true);
+                animator.SetBool("IsSitting", false);
+            }
 
             return;
         }

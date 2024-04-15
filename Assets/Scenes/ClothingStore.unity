@@ -7528,6 +7528,8 @@ MonoBehaviour:
   subtitleTrigger2: {fileID: 301200560}
   manMovement: {fileID: 999505188}
   rachelMovement: {fileID: 1794306692}
+  manAnimator: {fileID: 0}
+  rachelAnimator: {fileID: 0}
   womensIsleTrigger: {fileID: 354697819}
 --- !u!114 &301200560
 MonoBehaviour:
@@ -35909,7 +35911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTrigger: {fileID: 1834088767}
   emilyMovement: {fileID: 919132148885094626}
-  emilyAnimator: {fileID: 0}
+  emilyAnimator: {fileID: 919132148885094624}
   interactable: 0
 --- !u!114 &1834088767
 MonoBehaviour:
