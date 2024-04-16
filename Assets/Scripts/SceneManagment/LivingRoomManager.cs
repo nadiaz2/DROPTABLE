@@ -55,6 +55,7 @@ public class LivingRoomManager : MonoBehaviour
 
     [Header("Black Screen")]
     public BlackScreen blackScreen;
+    public DayText deathText;
 
 
     public static LivingRoomState state { get; set; }
@@ -149,15 +150,18 @@ public class LivingRoomManager : MonoBehaviour
         {
 
             case GameState.Day1GameEndChoice:
-                if (GameManager.day1BranchEndGame)
+                if (GameManager.day1BranchEndGame) // Bad choice; "Girlfriend"
                 {
                     if (!dialogueTriggerStarted)
                     {
                         endGameTrigger.TriggerDialogue(() =>
                         {
                             // Go to Toms Room then => Losing Screen/Bring up losing Screen
-                            SceneManager.LoadScene("TomsRoom");
-                            TomsRoomManager.state = TomsRoomState.Day1EndGame;
+                            //SceneManager.LoadScene("TomsRoom");
+                            //TomsRoomManager.state = TomsRoomState.Day1EndGame;
+                            //EndDay1();
+                            FadeOut("Tom died in his bed later that night...");
+                            Invoke("EndDay1", 3.0f);
                         });
                         dialogueTriggerStarted = true;
                     }
@@ -169,14 +173,16 @@ public class LivingRoomManager : MonoBehaviour
                         }
                     }
                 }
-                else if (!GameManager.day1BranchEndGame)
+                else if (!GameManager.day1BranchEndGame) // Good Choice; "Food"
                 {
                     if (!dialogueTriggerStarted2)
                     {
                         continueToDay2Trigger.TriggerDialogue(() =>
                         {
-                            SceneManager.LoadScene("TomsRoom");
-                            GameManager.state = GameState.Day2StartTomsRoom;
+                            //SceneManager.LoadScene("TomsRoom");
+                            //GameManager.state = GameState.Day2StartTomsRoom;
+                            FadeOut();
+                            Invoke("EndDay1", 1.0f);
                         });
                         dialogueTriggerStarted2 = true;
                     }
@@ -211,6 +217,19 @@ public class LivingRoomManager : MonoBehaviour
         }
     }
 
+    private void EndDay1()
+    {
+        if (GameManager.day1BranchEndGame) // Bad End
+        {
+            SceneManager.LoadScene("TitleScreen");
+        }
+        else // Good End
+        {
+            GameManager.state = GameState.Day2StartTomsRoom;
+            SceneManager.LoadScene("TomsRoom");
+        }
+    }
+
     public void SitCharacters()
     {
         player.immobile = true;
@@ -220,11 +239,17 @@ public class LivingRoomManager : MonoBehaviour
         jacob.transform.rotation = jacobSeat.rotation;
     }
 
-    public void FadeOut()
+    public void FadeOut(string text = "")
     {
         if (blackScreen != null)
         {
             blackScreen.goBlacked = true;
+        }
+
+        if (deathText != null)
+        {
+            deathText.SetText(text);
+            deathText.goInvisible = false;
         }
     }
 
@@ -233,6 +258,12 @@ public class LivingRoomManager : MonoBehaviour
         if (blackScreen != null)
         {
             blackScreen.goBlacked = false;
+        }
+
+        if (deathText != null)
+        {
+            deathText.SetText("");
+            deathText.goInvisible = true;
         }
     }
 }

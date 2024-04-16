@@ -22,9 +22,6 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
     public DialogueTrigger backFromFoodDialogue;
     public ChoiceTrigger day1Choice;
 
-    [Header("Day 2")]
-    public DialogueTrigger day2ReturnDialogue;
-
 
     [Header("Day 3")]
     public DialogueTrigger dialogueTriggerDay3;
@@ -93,24 +90,12 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
                     });
                     animator.SetBool("IsStanding", false);
                     animator.SetBool("IsWalking", true);
-
-                    interactable = true;
-                    day2ReturnDialogue.TriggerDialogue(() =>
-                    {
-                        LivingRoomManager.currentInstance.FadeOut();
-                        Invoke("EndDay", 1.0f);
-                    });
+                    
                     break;
             }
 
 
         }
-    }
-
-    private void EndDay()
-    {
-        GameManager.state = GameState.Day3StartTomsRoom;
-        SceneManager.LoadScene("TomsRoom");
     }
 
     public void EndStudySession()
@@ -160,10 +145,6 @@ public class JacobLivingRoom : MonoBehaviour, Interactable
 
             case LivingRoomState.Day1FoundPhoto:
                 backFromFoodDialogue.ContinueDialogue();
-                break;
-
-            case LivingRoomState.Day2JacobsReturned:
-                day2ReturnDialogue.ContinueDialogue();
                 break;
 
             case LivingRoomState.Day3Start:

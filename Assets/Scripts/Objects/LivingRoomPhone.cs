@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 using System;
 using System.Linq;
@@ -29,6 +30,9 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
     public SubtitleTrigger browserOpenTrigger;
     public SubtitleTrigger chatOpenTrigger;
     public SubtitleTrigger keyChatFoundTrigger;
+
+    [Header("Day 2 Dialogue")]
+    public DialogueTrigger day2ReturnDialogue;
 
 
     // Start is called before the first frame update
@@ -90,6 +94,13 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
                         // Player goes into dialogue. Will be mobile again afterwards
                         //player.immobile = false;
                         LivingRoomManager.state = LivingRoomState.Day2JacobsReturned;
+
+                        active = true;
+                        day2ReturnDialogue.TriggerDialogue(() =>
+                        {
+                            LivingRoomManager.currentInstance.FadeOut();
+                            Invoke("EndDay2", 1.0f);
+                        });
                     });
                     break;
 
@@ -98,6 +109,12 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
                     break;
             }
         });
+    }
+
+    private void EndDay2()
+    {
+        GameManager.state = GameState.Day3StartTomsRoom;
+        SceneManager.LoadScene("TomsRoom");
     }
 
     public void DisplayQRCode(string roomID)
@@ -130,6 +147,12 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
 
     public void Interact()
     {
+        if(LivingRoomManager.state == LivingRoomState.Day2JacobsReturned)
+        {
+            day2ReturnDialogue.ContinueDialogue();
+            return;
+        }
+
         animator.SetBool("isOpen", true);
         this.active = false;
 
@@ -148,7 +171,10 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
 
     public string GetPrompt()
     {
-        return "Jacob's Phone";
+        // The Phone controls the dialogue for day 2 since the player's position can vary.
+        return (LivingRoomManager.state == LivingRoomState.Day2JacobsReturned) ?
+                "Talk to Jacob" :
+                "Jacob's Phone";
     }
 
     public bool IsActive()
