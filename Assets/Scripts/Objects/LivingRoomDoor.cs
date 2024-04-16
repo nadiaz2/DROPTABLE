@@ -19,19 +19,26 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
     // Update is called once per frame
     void Update()
     {
-        this.active = (TomsRoomManager.state == TomsRoomState.Day1Start || JacobsRoomManager.state == JacobsRoomState.Day1Start ||
-                        TomsRoomManager.state == TomsRoomState.Day1JacobsBack || TomsRoomManager.state == TomsRoomState.RachelDeathMessageSeen ||
-                        TomsRoomManager.state == TomsRoomState.StartDay3 || TomsRoomManager.state == TomsRoomState.Day4GoToJacobsRoom ||
-                        JacobsRoomManager.state == JacobsRoomState.Day4FoundKey);
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "TomsRoom")
+        {
+            this.active = (TomsRoomManager.state == TomsRoomState.Day1Start) ||
+                        (TomsRoomManager.state == TomsRoomState.Day1JacobsBack) ||
+                        (TomsRoomManager.state == TomsRoomState.RachelDeathMessageSeen) ||
+                        (TomsRoomManager.state == TomsRoomState.StartDay3) ||
+                        (TomsRoomManager.state == TomsRoomState.Day4GoToJacobsRoom);
+        }
+        else if (sceneName == "JacobsRoom")
+        {
+            this.active = (JacobsRoomManager.state == JacobsRoomState.Day1Start) ||
+                        (JacobsRoomManager.state == JacobsRoomState.Day4FoundKey);
+        }
     }
 
     public void Interact()
     {
-
         blackScreen.goBlacked = true;
         Invoke("ChangeScene", blackScreen.fadeSeconds);
-
-  
     }
 
 
@@ -65,8 +72,6 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
                 case TomsRoomState.Day4GoToJacobsRoom:
                     SceneManager.LoadScene("LivingRoom");
                     break;
-
-
             }
         }
         else if (sceneName == "JacobsRoom")
@@ -83,9 +88,6 @@ public class LivingRoomDoor : MonoBehaviour, Interactable
             }
         }
     }
-
-
-
 
     public string GetPrompt()
     {

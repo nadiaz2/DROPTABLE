@@ -102,6 +102,7 @@ public class TomsRoomManager : MonoBehaviour
                 }
                 else
                 {
+                    state = TomsRoomState.StartDay2;
                     dayText.SetText("Day 2");
                     Invoke("FadeIn", 1.5f);
                     Invoke("EraseDayText", 3f);
