@@ -11,6 +11,7 @@ public class JacobsDoor : MonoBehaviour, Interactable
     public SubtitleTrigger subtitleTriggerDay1;
     public SubtitleTrigger subtitleTriggerDay3;
     public SubtitleTrigger subtitleTriggerDay4;
+    public SubtitleTrigger failDoorGameTrigger;
 
     private bool active;
 
@@ -49,12 +50,11 @@ public class JacobsDoor : MonoBehaviour, Interactable
                 LivingRoomManager.state = LivingRoomState.Day3StartMinigame;
                 subtitleTriggerDay3.TriggerSubtitle(() =>
                 {
-                    //TODO Play Minigame
+                    // It doesn't mater if they fail or succeed on this first play
                     doorMinigame.StartMinigame((result) => {
                         Debug.Log(result);
                         GameManager.state = GameState.Day3FinishedMiniGame;
                     });
-                    LivingRoomManager.state = LivingRoomState.Day3StartMinigame;
                 });
                 break;
 
@@ -67,9 +67,18 @@ public class JacobsDoor : MonoBehaviour, Interactable
                     // If win go inside jacobs room
                     doorMinigame.StartMinigame((result) => {
                         Debug.Log(result);
+
+                        // If win,m go into room. If lose, warn the player.
                         if(result)
                         {
                             SceneManager.LoadScene("JacobsRoom");
+                        }
+                        else
+                        {
+                            failDoorGameTrigger.TriggerSubtitle(() =>
+                            {
+                                LivingRoomManager.state = LivingRoomState.Day4Start;
+                            });
                         }
                     });
                 });
