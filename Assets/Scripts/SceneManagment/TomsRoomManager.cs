@@ -76,6 +76,7 @@ public class TomsRoomManager : MonoBehaviour
                     Invoke("FadeIn", 1.5f);
                     Invoke("EraseDayText", 3f);
                     GameManager.day2Started = true;
+                    Connection.MessagePhone("02-DIALOG");
                 }
 
                 //TODO Send message to phone to send noticification from school on phone
