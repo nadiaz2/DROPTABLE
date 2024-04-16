@@ -28,6 +28,7 @@ public class TitleScreenRedirect : MonoBehaviour
         if(secondsPressed >= neededHoldTime)
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             SceneManager.LoadScene("TitleScreen");
         }
     }
