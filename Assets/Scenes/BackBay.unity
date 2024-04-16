@@ -14216,50 +14216,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.24205387, y: 23.969213, z: 2.6951575}
     m_Extent: {x: 1.8383552, y: 0.5282116, z: 0.72815394}
   m_DirtyAABB: 0
---- !u!1 &1156683865
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1156683867}
-  - component: {fileID: 1156683866}
-  m_Layer: 0
-  m_Name: CameraHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1156683866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156683865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0436a5707430aad479e6780a3a2937fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1156683867
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156683865}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -177, y: 77, z: -364}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1162241236 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 01c718f0c33073046bc9cf63eecedd34, type: 3}
@@ -24260,7 +24216,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 306630795}
   - {fileID: 983119848}
-  - {fileID: 1156683867}
   - {fileID: 288277933}
   - {fileID: 284572774}
   - {fileID: 65937376}

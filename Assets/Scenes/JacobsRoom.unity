@@ -19705,8 +19705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38de5541286208f4dbf7487c1d272d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  day4StealingKeyTrigger: {fileID: 3469287838512677136}
   drawerMinigame: {fileID: 3469287838512677135}
-  trigger: {fileID: 3469287838512677134}
+  day4JacobFlashbackTrigger: {fileID: 3469287838512677134}
   interactable: 0
 --- !u!114 &3469287838512677134
 MonoBehaviour:
