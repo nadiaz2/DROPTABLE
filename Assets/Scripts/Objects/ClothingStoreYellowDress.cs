@@ -50,7 +50,7 @@ public class ClothingStoreYellowDress : MonoBehaviour, Interactable
         emilyMovement.StartMovement(() =>
         {
             emilyAnimator.SetBool("IsWalking", false);
-            emilyAnimator.SetBool("IsStanding", true);
+            emilyAnimator.SetBool("IsStanding2", true);
             //transform.position = new Vector3(transform.position.x, startingY, transform.position.z);
         });
         emilyAnimator.SetBool("IsWalking", true);

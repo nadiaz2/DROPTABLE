@@ -25,6 +25,7 @@ public class ClothingStoreManager : MonoBehaviour
     public GameObject man;
     public GameObject rachelDialogueTrigger;
     public GameObject emily;
+    public GameObject emilyAfterFlashBack;
     public GameObject jacob;
 
     [Header("Triggers")]
@@ -119,14 +120,14 @@ public class ClothingStoreManager : MonoBehaviour
             case ClothingStoreState.Day3EmilyFlashBack:
                 ClothingStoreManager.currentInstance.Invoke("FadeOut", 1);
                 ClothingStoreManager.currentInstance.Invoke("FadeIn", 4);
-                Invoke("setUpFlashBackCharacters", 2);
+                Invoke("setUpFlashBackCharacters", 3);
                 Invoke("startFlashBackSubtitle", 4);
                 break;
 
             case ClothingStoreState.Day3EmilyFlashBackFinished:
                 ClothingStoreManager.currentInstance.Invoke("FadeOut", 1);
                 ClothingStoreManager.currentInstance.Invoke("FadeIn", 4);
-                Invoke("setUpAfterFlashBack", 2);
+                Invoke("setUpAfterFlashBack", 3);
                 if (dialogueTriggerStarted)
                 {
                     if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
@@ -152,7 +153,7 @@ public class ClothingStoreManager : MonoBehaviour
         man.SetActive(false);
         rachel.SetActive(false);
         player.SetActive(true);
-        emily.SetActive(true);
+        emilyAfterFlashBack.SetActive(true);
         jacob.SetActive(true);
 
         if (!dialogueTriggerStarted)
