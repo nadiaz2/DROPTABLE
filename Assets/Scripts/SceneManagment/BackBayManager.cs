@@ -15,10 +15,16 @@ public enum BackBayState
 
 public class BackBayManager : MonoBehaviour
 {
+    [Header("Objects")]
     public GameObject jacobsCarSceneTrigger;
     public PlayerMovement2D player;
+    public Transform startLocation;
+    public Transform clothingStoreExitLocation;
+
+    [Header("Animator")]
     public Animator jacob;
 
+    [Header("Triggers")]
     public SubtitleTrigger subtitleTrigger;
     public SubtitleTrigger subtitleTriggerHeadBackHome;
 
@@ -46,10 +52,12 @@ public class BackBayManager : MonoBehaviour
         switch (GameManager.state)
         {
             case GameState.Day3InBackBay:
+                player.TeleportPlayer(startLocation);
                 Invoke("startSubtitle", 3);
                 break;
 
             case GameState.Day3End:
+                player.TeleportPlayer(clothingStoreExitLocation);
                 subtitleTriggerHeadBackHome.TriggerSubtitle(() =>
                 {
                     jacobsCarSceneTrigger.SetActive(true);
