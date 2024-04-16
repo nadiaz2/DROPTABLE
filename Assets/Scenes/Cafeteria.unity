@@ -30082,7 +30082,7 @@ MonoBehaviour:
   subtitleTrigger2: {fileID: 919132148965330131}
   dialogueTrigger: {fileID: 919132148965330129}
   rachelPhoto: {fileID: 1746645131}
-  player: {fileID: 0}
+  player: {fileID: 1440288032}
   interactable: 0
 --- !u!114 &919132148965330129
 MonoBehaviour:

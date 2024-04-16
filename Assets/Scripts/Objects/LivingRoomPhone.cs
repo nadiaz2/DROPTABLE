@@ -72,6 +72,7 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
                     break;
 
                 case "FOUNDCHAT":
+                /*
                     keyChatFoundTrigger.TriggerSubtitle(() =>
                     {
                         animator.SetBool("isOpen", false);
@@ -79,10 +80,17 @@ public class LivingRoomPhone : MonoBehaviour, Interactable
                         //player.immobile = false;
                         LivingRoomManager.state = LivingRoomState.Day2JacobsReturned;
                     });
+                    */
                     break;
 
                 case "FINISH":
-                    LivingRoomManager.state = LivingRoomState.Day2JacobsReturned;
+                    keyChatFoundTrigger.TriggerSubtitle(() =>
+                    {
+                        animator.SetBool("isOpen", false);
+                        // Player goes into dialogue. Will be mobile again afterwards
+                        //player.immobile = false;
+                        LivingRoomManager.state = LivingRoomState.Day2JacobsReturned;
+                    });
                     break;
 
                 default:
