@@ -33946,7 +33946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ca59df7f3eb3d49aa135b752efb185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitleManager: {fileID: 0}
+  subtitleManager: {fileID: 424650666}
   subtitles:
   - If I keep failing, I'm going to get caught.
 --- !u!1 &9074102512537729085

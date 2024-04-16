@@ -63,6 +63,8 @@ public class ClothingStoreManager : MonoBehaviour
     }
     private static ClothingStoreManager _instance;
 
+    private ClothingStoreState lastState;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +85,28 @@ public class ClothingStoreManager : MonoBehaviour
 
     private void Update()
     {
+        // Only triggers on state change
+        if(ClothingStoreManager.state != lastState)
+        {
+            lastState = ClothingStoreManager.state;
+            switch (ClothingStoreManager.state)
+            {
+                case ClothingStoreState.Day3EmilyFlashBack:
+                    ClothingStoreManager.currentInstance.Invoke("FadeOut", 1);
+                    ClothingStoreManager.currentInstance.Invoke("FadeIn", 4);
+                    Invoke("setUpFlashBackCharacters", 3);
+                    Invoke("startFlashBackSubtitle", 4);
+                    break;
 
+                case ClothingStoreState.Day3EmilyFlashBackFinished:
+                    FadeOut();
+                    Invoke("FadeIn", 4.0f);
+                    Invoke("setUpAfterFlashBack", 2.0f);
+                    break;
+            }
+        }
+
+        // Triggers contantly for state
         switch (ClothingStoreManager.state)
         {
             case ClothingStoreState.Day3InsideClothingStore:
@@ -117,17 +140,7 @@ public class ClothingStoreManager : MonoBehaviour
                 }
                 break;
 
-            case ClothingStoreState.Day3EmilyFlashBack:
-                ClothingStoreManager.currentInstance.Invoke("FadeOut", 1);
-                ClothingStoreManager.currentInstance.Invoke("FadeIn", 4);
-                Invoke("setUpFlashBackCharacters", 3);
-                Invoke("startFlashBackSubtitle", 4);
-                break;
-
             case ClothingStoreState.Day3EmilyFlashBackFinished:
-                ClothingStoreManager.currentInstance.Invoke("FadeOut", 1);
-                ClothingStoreManager.currentInstance.Invoke("FadeIn", 4);
-                Invoke("setUpAfterFlashBack", 3);
                 if (dialogueTriggerStarted)
                 {
                     if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
