@@ -25,6 +25,7 @@ public enum TomsRoomState
 
 
     // States for Day 3
+    BeforeSubtitleEnd,
     StartDay3,
     Day4GoToJacobsRoom,
 
@@ -102,7 +103,7 @@ public class TomsRoomManager : MonoBehaviour
                 }
                 else
                 {
-                    state = TomsRoomState.StartDay2;
+                    TomsRoomManager.state = TomsRoomState.StartDay2;
                     dayText.SetText("Day 2");
                     Invoke("FadeIn", 1.5f);
                     Invoke("EraseDayText", 3f);
@@ -124,6 +125,7 @@ public class TomsRoomManager : MonoBehaviour
                 }
                 else
                 {
+                    TomsRoomManager.state = TomsRoomState.BeforeSubtitleEnd;
                     dayText.SetText("Day 3");
                     Invoke("FadeIn", 1.5f);
                     Invoke("EraseDayText", 3f);
