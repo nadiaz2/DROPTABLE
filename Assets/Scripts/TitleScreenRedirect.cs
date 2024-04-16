@@ -16,7 +16,7 @@ public class TitleScreenRedirect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Equals))
+        if(Input.GetKey(KeyCode.Equals))
         {
             secondsPressed += Time.deltaTime;
         }
