@@ -182,7 +182,7 @@ public class LivingRoomManager : MonoBehaviour
                             //SceneManager.LoadScene("TomsRoom");
                             //GameManager.state = GameState.Day2StartTomsRoom;
                             FadeOut();
-                            Invoke("EndDay1", 1.0f);
+                            Invoke("EndDay1", 2.0f);
                         });
                         dialogueTriggerStarted2 = true;
                     }
