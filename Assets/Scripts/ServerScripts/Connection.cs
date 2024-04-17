@@ -236,9 +236,8 @@ public class Connection : MonoBehaviour
     private void handleChannelMessage(byte[] bytes)
     {
         string str = Encoding.UTF8.GetString(bytes, 0, bytes.Length);
-        Log($"Message - \"{str}\"");
 
-        // IF ACK message, remove from UnACKed and early out
+        // If ACK message, remove from UnACKed and early out
         if (str.Substring(0, 5) == "(ACK)")
         {
             string message = str.Substring(5);
@@ -246,14 +245,15 @@ public class Connection : MonoBehaviour
             return;
         }
 
+        // If this message has already been received, do not send to listener
         if(receivedMessages.Contains(str))
         {
+            Log($"Duplicate Message - \"{str}\"");
             return;
         }
-        else
-        {
-            receivedMessages.Add(str);
-        }
+        
+        receivedMessages.Add(str);
+        Log($"Message - \"{str}\"");
 
         // Split message & call appropriate handler
         int index = str.IndexOf('-');
