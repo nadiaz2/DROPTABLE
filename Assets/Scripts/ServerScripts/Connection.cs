@@ -49,7 +49,9 @@ public class Connection : MonoBehaviour
     }
 
     // ACK list to guarentee messages
+    private static string? lastMessageSent = null;
     private static List<string> nonACKed = new List<string>();
+    private static List<string> receivedMessages = new List<string>();
     private float timeSinceLastSend = 0f;
 
 
@@ -223,6 +225,11 @@ public class Connection : MonoBehaviour
         _channel.OnOpen = handleChannelOpen;
         _channel.OnClose = handleChannelClose;
         _channel.OnError = handleChannelError;
+
+        if((lastMessageSent != null) && !nonACKed.Contains(lastMessageSent))
+        {
+            MessagePhone(lastMessageSent);
+        }
     }
 
     private void handleChannelMessage(byte[] bytes)
@@ -236,6 +243,15 @@ public class Connection : MonoBehaviour
             string message = str.Substring(5);
             nonACKed.Remove(message);
             return;
+        }
+
+        if(receivedMessages.Contains(str))
+        {
+            return;
+        }
+        else
+        {
+            receivedMessages.Add(str);
         }
 
         // Split message & call appropriate handler
