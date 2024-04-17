@@ -32,6 +32,7 @@ public class Connection : MonoBehaviour
 
     public static void MessagePhone(string message)
     {
+        lastMessageSent = message;
         nonACKed.Add(message);
     }
 
@@ -228,7 +229,7 @@ public class Connection : MonoBehaviour
 
         if((lastMessageSent != null) && !nonACKed.Contains(lastMessageSent))
         {
-            MessagePhone(lastMessageSent);
+            nonACKed.Add(lastMessageSent);
         }
     }
 
